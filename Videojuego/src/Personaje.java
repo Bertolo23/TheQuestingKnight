@@ -1,5 +1,4 @@
 
-import java.io.BufferedReader;
 import java.io.IOException;
 
 import Utilidades.Utilidades;
@@ -7,7 +6,6 @@ import Utilidades.Utilidades;
 /**
  * Clase abstracta de personaje la cúal se expandira en los diferentes personajes en sus respectivas clases
  */
-
 public abstract class Personaje {
     
     /**

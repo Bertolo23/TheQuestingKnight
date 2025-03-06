@@ -1,5 +1,5 @@
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
 /**
  * Clase que se encarga de Tener la Tienda que sera igual para todos los personajes
