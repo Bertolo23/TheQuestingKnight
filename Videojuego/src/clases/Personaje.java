@@ -1,7 +1,7 @@
 
 import java.io.IOException;
+import util.Utilidades;
 
-import Utilidades.Utilidades;
 
 /**
  * Clase abstracta de personaje la cúal se expandira en los diferentes personajes en sus respectivas clases

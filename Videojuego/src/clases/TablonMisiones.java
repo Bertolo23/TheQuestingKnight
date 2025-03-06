@@ -1,7 +1,7 @@
 
 import java.io.IOException;
+import util.Utilidades;
 
-import Utilidades.Utilidades;
 /**
  * Clase que se encarga de recoger los diferentes Tablosnes de misiones de cada tipo de personaje
  */

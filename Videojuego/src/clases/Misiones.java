@@ -1,7 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
 
-import Utilidades.Utilidades;
+import util.Utilidades;
+
+import java.io.IOException;
 
 /**
  * Clase que representa la estructura de como van a ser las misiones que los personajes pueden completar

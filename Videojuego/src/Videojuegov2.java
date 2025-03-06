@@ -1,9 +1,7 @@
-
-import java.io.BufferedReader;
+import util.Utilidades;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
-import Utilidades.Utilidades;
+
 /**
  * Clase Principal donde recojo todos los métodos y hago la estructura del juego
  */
@@ -49,7 +47,6 @@ public class Videojuegov2 {
         Tienda tienda = new Tienda();
         TablonMisiones tablonMisiones = new TablonMisiones();
         InfoMisiones info = new InfoMisiones();
-        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 
         boolean salir = false;
         String continuarDescripcion = " ";

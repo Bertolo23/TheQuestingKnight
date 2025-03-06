@@ -1,7 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
 
-import Utilidades.Utilidades;
+import java.io.IOException;
+import util.Utilidades;
+
 
 /**
  * Clase que representa un objeto disponible en la tienda del juego
