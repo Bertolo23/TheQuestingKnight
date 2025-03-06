@@ -66,8 +66,8 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public int menuAcciones(int eleccionAccion, Titulos titulos, Personaje personaje, Titulos titulo) throws IOException {
-        titulos.tituloMenuAcciones();
+    public int menuAcciones(int eleccionAccion, Personaje personaje) throws IOException {
+        Titulos.tituloMenuAcciones();
         String [] textoMenuAcciones = {"Si entrenas, ganas experiencia y la puedes gastar en mejorar tus estadísticas. Cada vez que llegues a 5 o multiplo de 5 subiras un nivel.",
                                         "Si haces misiones, se te pagará, pero necesitarás unas buenas estadísticas y perderás salud.",
                                         "En la tienda se pueden comprar objetos con dinero que te modificarán las estadísticas."};
@@ -77,7 +77,7 @@ public class Menus {
             System.out.println();
             System.out.println();
             System.out.println();
-            titulo.imprimirCuadroTexto(textoMenuAcciones);
+            Titulos.imprimirCuadroTexto(textoMenuAcciones);
             System.out.println();
             margen = 80;
             System.out.println(" ".repeat(margen) +"SALUD  " + ANSI_CYAN + personaje.getSalud() + ANSI_RESET + "       DINERO  " + ANSI_YELLOW + personaje.getDinero() + ANSI_RESET + "");

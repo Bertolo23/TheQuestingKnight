@@ -253,8 +253,8 @@ public abstract class Personaje {
      * 
      * @param titulo Objeto Titulos utilizado para mostrar el titulo de las estadísticas.
      */
-    public void enseñarEstadisticas(Titulos titulo){
-        titulo.tituloEstadisticas();
+    public void enseñarEstadisticas(){
+        Titulos.tituloEstadisticas();
         System.out.println();
         System.out.println();
         int margen = 50;

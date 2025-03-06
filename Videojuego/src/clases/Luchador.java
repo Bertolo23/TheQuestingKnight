@@ -121,8 +121,8 @@ public class Luchador extends Personaje {
      * @param titulo   Objeto Titulos para mostrar encabezados en pantalla.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
-    public void entrenamientoLuchador(Luchador luchador, Titulos titulo) throws IOException {
-        titulo.tituloEntrenamiento();
+    public void entrenamientoLuchador(Luchador luchador) throws IOException {
+        Titulos.tituloEntrenamiento();
         setExperiencia(getExperiencia() + 1);
         super.subirNivel();
         boolean salirBucleExperiencia = false;
@@ -188,10 +188,10 @@ public class Luchador extends Personaje {
      * @param titulo Objeto Titulos para mostrar encabezados en pantalla.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
-    public void enseñarEstadisticasLuchador(Titulos titulo) throws IOException {
+    public void enseñarEstadisticasLuchador() throws IOException {
         int margenTexto = 50;
         int margenEntreNumeros = 7;
-        super.enseñarEstadisticas(titulo);
+        super.enseñarEstadisticas();
         System.out.println(ANSI_PURPLE + "║ CORAJE ║" + ANSI_RESET);
         System.out.println(ANSI_GREEN + " ".repeat(margenTexto + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_RED +
                 "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_YELLOW +
