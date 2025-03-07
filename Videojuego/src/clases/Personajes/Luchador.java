@@ -88,9 +88,7 @@ public class Luchador extends Personaje {
                 "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 2) + ANSI_PURPLE +
                 "║ " + coraje + " ║" + " ".repeat(margenEntreNumeros - 4) + ANSI_CYAN +
                 "║ " + getSalud() + " ║");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        Utilidades.espacios();
         System.out.println(ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + ANSI_RESET);
     }
 
@@ -124,7 +122,7 @@ public class Luchador extends Personaje {
      * @param titulo   Objeto Titulos para mostrar encabezados en pantalla.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
-    public void entrenamientoLuchador(Luchador luchador) throws IOException {
+    public void entrenamientoLuchador() throws IOException {
         Titulos.tituloEntrenamiento();
         setExperiencia(getExperiencia() + 1);
         super.subirNivel();
@@ -141,7 +139,7 @@ public class Luchador extends Personaje {
                 int opcionMejora = 0;
 
                 do {
-                    opcionMejora = luchador.preguntasEntrenamientoLuchador();
+                    opcionMejora = preguntasEntrenamientoLuchador();
 
                     switch (opcionMejora) {
                         case 1: // Aumentar Vitalidad

@@ -1,7 +1,10 @@
 
 import java.io.IOException;
 import Interfaz.Menus;
+import Personajes.Asesino;
 import Personajes.Luchador;
+import Personajes.Mago;
+import Personajes.Tanque;
 /**
  * Clase Principal donde recojo todos los métodos y hago la estructura del juego
  */
@@ -13,8 +16,11 @@ public class Videojuegov2 {
          * Instanción de todos los objetos necesarios
          */
         Luchador luchador = new Luchador("Luchador", 0, 7, 7, 5, 2, 5, 0, 1, 8);
+        Asesino asesino = new Asesino("Asesino", 0, 5, 6, 8, 3, 3.5, 0, 1, 9);
+        Tanque tanque = new Tanque("Tanque", 0, 10, 7, 3, 0, 6, 0, 1, 7);
+        Mago mago = new Mago("Mago", 0, 4, 3, 5, 10, 4, 0, 1, 10);
 
-        Menus.menuPrincipal(luchador);
+        Menus.menuPrincipal(luchador, asesino, tanque, mago);
         
     } 
 

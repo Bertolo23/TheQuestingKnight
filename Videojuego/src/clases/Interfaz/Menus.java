@@ -122,7 +122,7 @@ public class Menus {
      * @param luchador objeto luchador necesario para las acciones de luchador
      * @throws IOException si ocurre un error al leer la entrada del usuario.
      */
-    public static void menuPrincipal(Luchador luchador)throws IOException{
+    public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;
         String continuarDescripcion = " ";
         Titulos.tituloInicio();
@@ -138,15 +138,15 @@ public class Menus {
                         break;
                         
                         case "a":
-                                System.out.println("No esta disponible aun");
+                                AccionesPersonajes.accionesAsesino(asesino, opcion);
 
                         break;
                         case "t":
-                                System.out.println("No esta disponible aun");
+                                AccionesPersonajes.accionesTanque(tanque, opcion);
 
                         break;
                         case "m":
-                                System.out.println("No esta disponible aun");
+                                AccionesPersonajes.accionesMago(mago, opcion);
 
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
