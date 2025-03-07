@@ -7,13 +7,13 @@ import java.io.IOException;
 public class Menus {
 
     // Códigos ANSI para cambiar colores en la consola
-    private  final String ANSI_RESET = "\u001B[0m";
-    private  final String ANSI_RED = "\u001B[31m";
-    private  final String ANSI_GREEN = "\u001B[32m";
-    private  final String ANSI_YELLOW = "\u001B[33m";
-    private  final String ANSI_BLUE = "\u001B[34m";
-    private  final String ANSI_UNDERLINE = "\u001B[4m";
-    private  final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
+    private static final String ANSI_BLUE = "\u001B[34m";
+    private static final String ANSI_UNDERLINE = "\u001B[4m";
+    private static final String ANSI_CYAN = "\u001B[36m";
 
     /**
      * Muestra el menú de elección de personaje y recoge la opción seleccionada.
@@ -21,7 +21,7 @@ public class Menus {
      * @return La opción elegida por el jugador en minúsculas.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public String menuPersonaje() throws IOException {
+    public static String menuPersonaje() throws IOException {
         int margen = 55;
         System.out.println(ANSI_RED + " ".repeat(margen) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL (o 's' para salir)" + ANSI_RESET);
         System.out.println();
@@ -38,7 +38,7 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public int menuTienda() throws IOException {
+    public static int menuTienda() throws IOException {
         int comprarObjetos = 0;
         try {
             System.out.println();
@@ -66,7 +66,7 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public int menuAcciones(int eleccionAccion, Personaje personaje) throws IOException {
+    public static int menuAcciones(int eleccionAccion, Personaje personaje) throws IOException {
         Titulos.tituloMenuAcciones();
         String [] textoMenuAcciones = {"Si entrenas, ganas experiencia y la puedes gastar en mejorar tus estadísticas. Cada vez que llegues a 5 o multiplo de 5 subiras un nivel.",
                                         "Si haces misiones, se te pagará, pero necesitarás unas buenas estadísticas y perderás salud.",
@@ -96,7 +96,7 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public int menuMisiones() throws IOException {
+    public static int menuMisiones() throws IOException {
         int opcionMision = 0;
         try {
             System.out.println();

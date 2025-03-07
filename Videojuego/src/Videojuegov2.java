@@ -42,9 +42,6 @@ public class Videojuegov2 {
          * Instanción de todos los objetos necesarios
          */
         Luchador luchador = new Luchador("Luchador", 0, 7, 7, 5, 2, 5, 0, 1, 8);
-        Menus menu = new Menus();
-        Tienda tienda = new Tienda();
-        TablonMisiones tablonMisiones = new TablonMisiones();
 
         boolean salir = false;
         String continuarDescripcion = " ";
@@ -53,7 +50,7 @@ public class Videojuegov2 {
         
         do{
             String opcion = "";  
-            opcion = menu.menuPersonaje();// Solo esta disponible el Luchador 
+            opcion = Menus.menuPersonaje();// Solo esta disponible el Luchador 
              
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
@@ -67,17 +64,17 @@ public class Videojuegov2 {
                                     
                                         // ------------------------------------------------------------------LUCHADOR/MENU ACCIONES-----------------------------------------------------------------------
                                         int eleccionAccion = 0;
-                                        eleccionAccion = menu.menuAcciones(eleccionAccion, luchador);
+                                        eleccionAccion = Menus.menuAcciones(eleccionAccion, luchador);
                             
                                     switch (eleccionAccion) {
                                         case 1:// ------------------------------------------------------------------LUCHADOR/ENTRENAMIENTO-----------------------------------------------------------------------
                                                 luchador.entrenamientoLuchador(luchador);
                                             break;
                                         case 2:// ------------------------------------------------------------------LUCHADOR/TIENDA-----------------------------------------------------------------------
-                                                tienda.tiendaDeObjetos(menu, luchador);
+                                                Tienda.tiendaDeObjetos(luchador);
                                             break;
                                         case 3:// ------------------------------------------------------------------LUCHADOR/MISIONES-----------------------------------------------------------------------
-                                                tablonMisiones.tablonMisionesLuchador(menu, luchador);
+                                                TablonMisiones.tablonMisionesLuchador(luchador);
                                             break;
                                         case 4:// ------------------------------------------------------------------LUCHADOR/STATS-----------------------------------------------------------------------
                                                 luchador.enseñarEstadisticasLuchador();

@@ -8,13 +8,13 @@ import util.Utilidades;
 public class TablonMisiones {
     
         // Códigos ANSI para cambiar colores en la consola
-        private  final String ANSI_RESET = "\u001B[0m";
-        private  final String ANSI_RED = "\u001B[31m";
-        private  final String ANSI_GREEN = "\u001B[32m";
-        private  final String ANSI_YELLOW = "\u001B[33m";
-        private  final String ANSI_BLUE = "\u001B[34m";
-        private  final String ANSI_UNDERLINE = "\u001B[4m";
-        private final String ANSI_PURPLE = "\u001B[35m";
+        private static final String ANSI_RESET = "\u001B[0m";
+        private static final String ANSI_RED = "\u001B[31m";
+        private static final String ANSI_GREEN = "\u001B[32m";
+        private static final String ANSI_YELLOW = "\u001B[33m";
+        private static final String ANSI_BLUE = "\u001B[34m";
+        private static final String ANSI_UNDERLINE = "\u001B[4m";
+        private static final String ANSI_PURPLE = "\u001B[35m";
 
           
         /**
@@ -25,7 +25,7 @@ public class TablonMisiones {
          * @param info Objeto de la clase InfoMisiones que nos envia la información especifica de cada misión
          * @throws IOException Si ocurre un error al leer la entrada del usuario.
          */
-        public void tablonMisionesLuchador(Menus menu, Luchador luchador)throws IOException{
+        public static void tablonMisionesLuchador(Luchador luchador)throws IOException{
 
             boolean salirTablonMisiones = false;
             
@@ -39,7 +39,7 @@ public class TablonMisiones {
                 Misiones mision4 = new Misiones(pagaMision[3], saludPerdida[3], InfoMisiones.textoMision4Luchador());
 
                 Titulos.tablonMisiones();
-                opcionMision = menu.menuMisiones();
+                opcionMision = Menus.menuMisiones();
                                                 
                 switch (opcionMision) {
                     case 1:// ------------------------------------------------------------------LUCHADOR/MISION1-----------------------------------------------------------------------

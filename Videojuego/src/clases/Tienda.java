@@ -18,7 +18,7 @@ public class Tienda {
      * @param personaje Objeto Personaje que realiza las compras y cuyos atributos pueden verse afectados.
      * @throws IOException Si ocurre un error en la lectura de la entrada del usuario.
      */
-    public void tiendaDeObjetos(Menus menu, Personaje personaje) throws IOException {
+    public static void tiendaDeObjetos(Personaje personaje) throws IOException {
 
         // Creación de objetos disponibles en la tienda
         ObjetoTienda objeto1 = new ObjetoTienda("Pechera", 40);
@@ -40,7 +40,7 @@ public class Tienda {
                 do {
                     // Muestra la tienda y obtiene la opción elegida por el usuario
                     Titulos.tituloTienda();
-                    comprarObjetos = menu.menuTienda();
+                    comprarObjetos = Menus.menuTienda();
 
                     switch (comprarObjetos) {
                         case 1: // Compra de Pechera
