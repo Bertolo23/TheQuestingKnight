@@ -7,6 +7,8 @@ import Personajes.Mago;
 import Personajes.Tanque;
 /**
  * Clase Principal donde recojo todos los métodos y hago la estructura del juego
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Videojuegov2 {
 

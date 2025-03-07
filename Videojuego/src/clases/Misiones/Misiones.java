@@ -6,6 +6,8 @@ import Personajes.Personaje;
 
 /**
  * Clase que representa la estructura de como van a ser las misiones que los personajes pueden completar
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Misiones {
     

@@ -2,6 +2,8 @@ package Misiones;
 
 /**
  * Clase que almacena la información de las misiones disponibles para el personaje
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class InfoMisiones {
     

@@ -6,6 +6,8 @@ import util.Utilidades;
 
 /**
  * Clase Mago la cúal es hija de la clase Personaje
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Mago extends Personaje {
     
@@ -59,19 +61,10 @@ public class Mago extends Personaje {
         this.poderDeHabilidad = poderDeHabilidad;
     }
 
-    private final String ANSI_PURPLE = "\u001B[35m";
-    private final String ANSI_RESET = "\u001B[0m";
-    private final String ANSI_RED_BACKGROUND = "\u001B[41m";
-    private final String ANSI_RED = "\u001B[31m";
-    private final String ANSI_GREEN = "\u001B[32m";
-    private final String ANSI_YELLOW = "\u001B[33m";
-    private final String ANSI_BLUE = "\u001B[34m";
-    private final String ANSI_CYAN = "\u001B[36m";
-    private final String ANSI_UNDERLINE = "\u001B[4m";
 
     /**
      * Método que muestra la introducción del personaje Mago, presentando sus estadísticas principales.
-     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y sigilo.
+     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y poder de habilidad.
      * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
      */
     public void introduccionMago(){
@@ -79,15 +72,15 @@ public class Mago extends Personaje {
         int margenTexto = 50;
         int margenEntreNumeros = 7;
         super.introduccionPersonaje();
-        System.out.println(ANSI_PURPLE + "║ PODER ║" + ANSI_CYAN + "║ SALUD ║");
-        System.out.println(ANSI_GREEN + " ".repeat(margenTexto + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_YELLOW +
-                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 5) + ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_PURPLE +
-                "║ " + poderDeHabilidad + " ║" + " ".repeat(margenEntreNumeros - 5) + ANSI_CYAN +
+        System.out.println(Utilidades.ANSI_PURPLE + "║ PODER ║" + Utilidades.ANSI_CYAN + "║ SALUD ║");
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margenTexto + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 5) + Utilidades.ANSI_BLUE +
+                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_PURPLE +
+                "║ " + poderDeHabilidad + " ║" + " ".repeat(margenEntreNumeros - 5) + Utilidades.ANSI_CYAN +
                 "║ " + getSalud() + " ║");
         Utilidades.espacios();
-        System.out.println(ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
     /**
@@ -97,14 +90,13 @@ public class Mago extends Personaje {
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
     public int preguntasEntrenamientoMago() throws IOException {
-        final String ANSI_RESET = "\u001B[0m";
         int opcionMejora = 0;
         super.preguntasEntrenamiento();
-        System.out.println(ANSI_PURPLE + "║ PODER ║" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_PURPLE + "║ PODER ║" + Utilidades.ANSI_RESET);
         try {
             opcionMejora = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
-            System.out.println(ANSI_UNDERLINE + "Escriba un carácter válido" + ANSI_RESET);
+            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
         }
         System.out.println();
         System.out.println();
@@ -116,8 +108,6 @@ public class Mago extends Personaje {
      * utilizando puntos de experiencia acumulados. Tambien introduce el método subir nivel de la clase
      * Persona cuando llegas a un número múltiplo de 5 para subir un nivel
      * 
-     * @param Mago Instancia del personaje Mago para actualizar sus atributos.
-     * @param titulo   Objeto Titulos para mostrar encabezados en pantalla.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
     public void entrenamientoMago() throws IOException {
@@ -142,23 +132,23 @@ public class Mago extends Personaje {
                     switch (opcionMejora) {
                         case 1: // Aumentar Vitalidad
                             setVitalidad(getVitalidad() + 1);
-                            System.out.println("Vitalidad: " + ANSI_GREEN + getVitalidad() + ANSI_RESET);
+                            System.out.println("Vitalidad: " + Utilidades.ANSI_GREEN + getVitalidad() + Utilidades.ANSI_RESET);
                             break;
                         case 2: // Aumentar Fuerza
                             setFuerza(getFuerza() + 1);
-                            System.out.println("Fuerza: " + ANSI_RED + getFuerza() + ANSI_RESET);
+                            System.out.println("Fuerza: " + Utilidades.ANSI_RED + getFuerza() + Utilidades.ANSI_RESET);
                             break;
                         case 3: // Aumentar Agilidad
                             setAgilidad(getAgilidad() + 1);
-                            System.out.println("Agilidad: " + ANSI_YELLOW + getAgilidad() + ANSI_RESET);
+                            System.out.println("Agilidad: " + Utilidades.ANSI_YELLOW + getAgilidad() + Utilidades.ANSI_RESET);
                             break;
                         case 4: // Aumentar Percepción Mágica
                             setPercepcionMagica(getPercepcionMagica() + 1);
-                            System.out.println("Percepción Mágica: " + ANSI_BLUE + getPercepcionMagica() + ANSI_RESET);
+                            System.out.println("Percepción Mágica: " + Utilidades.ANSI_BLUE + getPercepcionMagica() + Utilidades.ANSI_RESET);
                             break;
-                        case 5: // Aumentar Sigilo
+                        case 5: // Aumentar poder de habilidad
                             poderDeHabilidad++;
-                            System.out.println("Poder: " + ANSI_PURPLE + poderDeHabilidad + ANSI_RESET);
+                            System.out.println("Poder: " + Utilidades.ANSI_PURPLE + poderDeHabilidad + Utilidades.ANSI_RESET);
                             break;
                         default:
                             System.out.println("Escriba una de las opciones (1-5)");
@@ -190,12 +180,12 @@ public class Mago extends Personaje {
         int margenTexto = 50;
         int margenEntreNumeros = 7;
         super.enseñarEstadisticas();
-        System.out.println(ANSI_PURPLE + "║ PODER ║" + ANSI_RESET);
-        System.out.println(ANSI_GREEN + " ".repeat(margenTexto + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_YELLOW +
-                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros+1) + ANSI_PURPLE +
-                "║ " + poderDeHabilidad + " ║" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_PURPLE + "║ PODER ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margenTexto + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
+                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros+1) + Utilidades.ANSI_PURPLE +
+                "║ " + poderDeHabilidad + " ║" + Utilidades.ANSI_RESET);
         System.out.println();
         System.out.println();
         String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");

@@ -12,6 +12,8 @@ import util.Utilidades;
 
 /**
  * Clase que se encarga de recoger los diferentes Tablosnes de misiones de cada tipo de personaje
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class TablonMisiones {
     
@@ -27,10 +29,7 @@ public class TablonMisiones {
           
         /**
          * Método que se encarga de recoger el título, menú y todo sobre las misiones de personaje, incluye las restricciones y los mensajes de error o continuar
-         * @param titulo Objeto para mostrar el título del menú del Tablon de Misiones y para encuadrar las descripciones de las misiones.
-         * @param menu Objeto de la clase Menú que mostrar la opciones y te dara la opción escogida 
          * @param personaje Objeto de la clase personaje que realizará la misión
-         * @param info Objeto de la clase InfoMisiones que nos envia la información especifica de cada misión
          * @throws IOException Si ocurre un error al leer la entrada del usuario.
          */
         public static void tablonMisiones(Personaje personaje)throws IOException{

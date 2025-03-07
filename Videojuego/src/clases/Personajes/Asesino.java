@@ -7,6 +7,8 @@ import util.Utilidades;
 
 /**
  * Clase Asesino la cúal es hija de la clase Personaje
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Asesino extends Personaje {
     
@@ -71,7 +73,7 @@ public class Asesino extends Personaje {
     private final String ANSI_UNDERLINE = "\u001B[4m";
 
     /**
-     * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
+     * Método que muestra la introducción del personaje Asesino, presentando sus estadísticas principales.
      * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y sigilo.
      * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
      */
@@ -113,12 +115,10 @@ public class Asesino extends Personaje {
     }
 
     /**
-     * Método que gestiona el entrenamiento del luchador, permitiendo mejorar sus estadísticas
+     * Método que gestiona el entrenamiento del Asesino, permitiendo mejorar sus estadísticas
      * utilizando puntos de experiencia acumulados. Tambien introduce el método subir nivel de la clase
      * Persona cuando llegas a un número múltiplo de 5 para subir un nivel
      * 
-     * @param luchador Instancia del personaje luchador para actualizar sus atributos.
-     * @param titulo   Objeto Titulos para mostrar encabezados en pantalla.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
     public void entrenamientoAsesino() throws IOException {
@@ -182,7 +182,7 @@ public class Asesino extends Personaje {
     }
 
     /**
-     * Método que muestra las estadísticas actuales del luchador.
+     * Método que muestra las estadísticas actuales del Asesino.
      * Primero cogiendo el método generico de Personaje y completandolo aquí
      * 
      * @throws IOException Si ocurre un error en la lectura de la entrada.

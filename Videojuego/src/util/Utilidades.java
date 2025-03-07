@@ -3,8 +3,23 @@ package util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * Clase que recogo métodos útiles que tienen funciones muy usadas que de otra forma repetiria en las clases una y otra vez
+ * @author Iván Bertolo García
+ * @version 1.0
+ */
 public class Utilidades{
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_UNDERLINE = "\u001B[4m";
+    public static final String FONDO_AMARILLO = "\u001B[43m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
      static BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 

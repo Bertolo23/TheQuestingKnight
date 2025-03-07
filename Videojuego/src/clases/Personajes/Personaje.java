@@ -7,14 +7,16 @@ import util.Utilidades;
 
 /**
  * Clase abstracta de personaje la cúal se expandira en los diferentes personajes en sus respectivas clases
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public abstract class Personaje {
     
     /**
      * ATRIBUTOS DE LA CLASE PERSONAJE
      */
-    private String nombre;
-    private int dinero;// referencia en dinero de cada personaje
+    private String nombre;// referencia el nombre de cada personaje
+    private int dinero;// referencia el dinero de cada personaje
     private int vitalidad;// referencia la vitalidad de cada personaje
     private int fuerza;// referencia la fuerza de cada personaje
     private int agilidad;// referencia la agilidad de cada personaje
@@ -34,8 +36,8 @@ public abstract class Personaje {
      * @param agilidad atributo agilidad que se exportara a las demas clases que se extienden de Personaje mediante super()
      * @param percepcionMagica atributo percepcionMagica que se exportara a las demas clases que se extienden de Personaje mediante super()
      * @param salud atributo salud que se exportara a las demas clases que se extienden de Personaje mediante super()
-     * @param experiencia
-     * @param nivel
+     * @param experiencia atributo experiencia que se exportara a las demas clases que se extienden de Personaje mediante super()
+     * @param nivel atributo nivel que se exportara a las demas clases que se extienden de Personaje mediante super()
      */
     public Personaje(String nombre, int dinero, int vitalidad, int fuerza, int agilidad, int percepcionMagica,
             double salud, int experiencia, int nivel) {
@@ -204,25 +206,18 @@ public abstract class Personaje {
         this.nivel = nivel;
     }
 
-    private final String ANSI_RESET = "\u001B[0m";
-    private final String ANSI_RED = "\u001B[31m";
-    private final String ANSI_GREEN = "\u001B[32m";
-    private final String ANSI_YELLOW = "\u001B[33m";
-    private final String ANSI_BLUE = "\u001B[34m";
-    private final String ANSI_CYAN = "\u001B[36m";
-    private final String ANSI_UNDERLINE = "\u001B[4m";
-    private final String FONDO_AMARILLO = "\u001B[43m";
+
 
     /**
      * Muestra la introducción del personaje, incluyendo su nombre y sus estadísticas iniciales.
      */
     public void introduccionPersonaje() {
         int margen = 50;
-        System.out.println(" ".repeat(margen - 2) + ANSI_CYAN + "                    HAS ELEGIDO " + ANSI_UNDERLINE + nombre.toUpperCase() + ANSI_RESET + ANSI_CYAN + " TUS ESTADÍSTICAS SON");
+        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + nombre.toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.print(ANSI_GREEN + " ".repeat(margen - 2) + "     ║ VITALIDAD ║" + ANSI_RED + "║ FUERZA ║" + ANSI_YELLOW + "║ AGILIDAD ║" + ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
+        System.out.print(Utilidades.ANSI_GREEN + " ".repeat(margen - 2) + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
     }
 
     /**
@@ -230,12 +225,12 @@ public abstract class Personaje {
      */
     public void preguntasEntrenamiento(){
         int margen = 70;
-        System.out.println(" ".repeat(margen) + ANSI_CYAN + "QUE ESTADÍSTICA QUIERES MEJORAR(1-5)");
+        System.out.println(" ".repeat(margen) + Utilidades.ANSI_CYAN + "QUE ESTADÍSTICA QUIERES MEJORAR(1-5)");
         System.out.println();
         System.out.println();
         System.out.println();
         margen = 50;
-        System.out.print(" ".repeat(margen) + ANSI_GREEN + "     ║ VITALIDAD ║" + ANSI_RED + "║ FUERZA ║" + ANSI_YELLOW + "║ AGILIDAD ║" + ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
+        System.out.print(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
     }
 
     /**
@@ -247,20 +242,18 @@ public abstract class Personaje {
             System.out.println("HAS SUBIDO DE NIVEL");
             nivel++;
         }
-        System.out.println("NIVEL ACTUAL " + FONDO_AMARILLO + nivel + ANSI_RESET);
+        System.out.println("NIVEL ACTUAL " + Utilidades.FONDO_AMARILLO + nivel + Utilidades.ANSI_RESET);
     }
 
     /**
      * Muestra las estadísticas actuales del personaje.
-     * 
-     * @param titulo Objeto Titulos utilizado para mostrar el titulo de las estadísticas.
      */
     public void enseñarEstadisticas(){
         Titulos.tituloEstadisticas();
         System.out.println();
         System.out.println();
         int margen = 50;
-        System.out.print(" ".repeat(margen) + ANSI_GREEN + "     ║ VITALIDAD ║" + ANSI_RED + "║ FUERZA ║" + ANSI_YELLOW + "║ AGILIDAD ║" + ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
+        System.out.print(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
     }
 
     /**

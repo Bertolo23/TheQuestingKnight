@@ -2,10 +2,11 @@ package Interfaz;
 import util.Utilidades;
 import java.io.IOException;
 import Personajes.*;
-import util.Utilidades;
 
 /**
  * Clase que gestiona los diferentes menús del juego.
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Menus {
 

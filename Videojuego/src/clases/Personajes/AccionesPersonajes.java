@@ -4,7 +4,11 @@ import Interfaz.Menus;
 import Misiones.TablonMisiones;
 import Tienda.Tienda;
 import util.Utilidades;
-
+/**
+ * Clase que recoge las acciones de cada personaje en un swicth
+ * @author Iván Bertolo García
+ * @version 2.0
+ */
 public class AccionesPersonajes {
     
     private static final String ANSI_UNDERLINE = "\u001B[4m";

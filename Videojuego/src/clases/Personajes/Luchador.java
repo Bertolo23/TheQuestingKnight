@@ -6,6 +6,8 @@ import Interfaz.Titulos;
 
 /**
  * Clase Luchador la cúal es hija de la clase Personaje
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Luchador extends Personaje {
     
@@ -118,8 +120,6 @@ public class Luchador extends Personaje {
      * utilizando puntos de experiencia acumulados. Tambien introduce el método subir nivel de la clase
      * Persona cuando llegas a un número múltiplo de 5 para subir un nivel
      * 
-     * @param luchador Instancia del personaje luchador para actualizar sus atributos.
-     * @param titulo   Objeto Titulos para mostrar encabezados en pantalla.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
     public void entrenamientoLuchador() throws IOException {
