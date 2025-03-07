@@ -1,3 +1,4 @@
+package Misiones;
 
 /**
  * Clase que almacena la información de las misiones disponibles para el personaje

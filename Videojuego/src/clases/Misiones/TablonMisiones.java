@@ -1,5 +1,9 @@
+package Misiones;
 
 import java.io.IOException;
+import Interfaz.Menus;
+import Interfaz.Titulos;
+import Personajes.Luchador;
 import util.Utilidades;
 
 /**
@@ -56,7 +60,7 @@ public class TablonMisiones {
                            }else{
                                 System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+" y de "+ANSI_GREEN+"vitalidad"+ANSI_RESET);
                                 System.out.println();
-                                String volverMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver al Tablón de Misiones");
+                                String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");
                            } 
                         break;
                     case 2:// ------------------------------------------------------------------LUCHADOR/MISION2-----------------------------------------------------------------------
@@ -73,7 +77,7 @@ public class TablonMisiones {
                             }else{
                                 System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 9 de "+ANSI_GREEN+"vitalidad"+ANSI_RESET+", 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+", 7 de "+ANSI_YELLOW+"Agilidad "+ANSI_RESET+" y 12 de "+ANSI_PURPLE+" Coraje"+ANSI_RESET);
                                 System.out.println();
-                                String volverMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver al Tablón de Misiones");                            } 
+                                String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");                            } 
                         break;
                     case 3:// ------------------------------------------------------------------LUCHADOR/MISION3-----------------------------------------------------------------------
                             if (luchador.getVitalidad()>=10 && luchador.getFuerza()>=8 && luchador.getAgilidad()>=9 && luchador.getPercepcionMagica()>=5) {
@@ -92,7 +96,7 @@ public class TablonMisiones {
                             }else{
                                 System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 10 de "+ANSI_GREEN+"vitalidad"+ANSI_RESET+", 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+", 9 de "+ANSI_YELLOW+"Agilidad "+ANSI_RESET+"y 5 de "+ANSI_BLUE+"Percepción Mágica "+ANSI_RESET);
                                 System.out.println();
-                                String volverMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver al Tablón de Misiones");                            } 
+                                String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");                            } 
                         break;
                     case 4:// ------------------------------------------------------------------LUCHADOR/MISION4-----------------------------------------------------------------------
                             if (luchador.getVitalidad()>=12 && luchador.getFuerza()>=8 && luchador.getAgilidad()>=15 && luchador.getCoraje()>=13) {
@@ -108,7 +112,7 @@ public class TablonMisiones {
                             }else{
                                 System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 12 de "+ANSI_GREEN+"vitalidad"+ANSI_RESET+", 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+", 15 de "+ANSI_YELLOW+"Agilidad "+ANSI_RESET+" y 13 de "+ANSI_PURPLE+" Coraje"+ANSI_RESET);
                                 System.out.println();
-                                String volverMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver al Tablón de Misiones");
+                                String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");
                             }
                         break;
                     case 5:

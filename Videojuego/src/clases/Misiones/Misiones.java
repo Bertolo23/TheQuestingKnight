@@ -1,7 +1,8 @@
+package Misiones;
 
 import util.Utilidades;
-
 import java.io.IOException;
+import Personajes.Personaje;
 
 /**
  * Clase que representa la estructura de como van a ser las misiones que los personajes pueden completar
@@ -105,7 +106,7 @@ public class Misiones {
         System.out.println("Has perdido "+ANSI_UNDERLINE+ANSI_CYAN+mision.getSaludPerdida()+ANSI_RESET+" de salud");
         System.out.println("Has ganado "+ANSI_UNDERLINE+ANSI_YELLOW+mision.getPagaMision()+ANSI_RESET+" de dinero");
         System.out.println();
-        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver al menú de misiones");
+        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de misiones");
         System.out.println();
         System.out.println();
     }

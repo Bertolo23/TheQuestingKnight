@@ -1,3 +1,4 @@
+package Personajes;
 /**
  * Clase Mago la cúal es hija de la clase Personaje
  */

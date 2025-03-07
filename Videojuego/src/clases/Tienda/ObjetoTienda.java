@@ -1,5 +1,8 @@
+package Tienda;
 
 import java.io.IOException;
+
+import Personajes.Personaje;
 import util.Utilidades;
 
 
@@ -96,7 +99,7 @@ public class ObjetoTienda {
                 System.out.println("No tienes suficiente " + ANSI_UNDERLINE + "dinero" + ANSI_RESET);
                 System.out.println();
                 System.out.println();
-                String volverMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver a la Tienda");
+                String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver a la Tienda");
                 System.out.println();
                 System.out.println();
             }

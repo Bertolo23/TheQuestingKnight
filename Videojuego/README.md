@@ -9,7 +9,7 @@ Cada personaje tiene un valor único de salud la cúal no se puede aumentar, si 
 Todos los personajes empiezan con 0 y este dinero se puede usar para comprar equipamiento y para convertirte en rey
 
 3. PERSONAJES:
-Hay 4 a elegir (luchador, asesino, tanque y mago) cada uno tiene sus estadísticas propias
+Hay 4 a elegir (luchador, asesino, tanque y mago) cada uno tiene sus estadísticas propias, En el estado actual del juego solo esta disponible el Personaje de Luchador
 
 4. ESTADÍSTICAS
 Cada personaje tiene sus valores propios pero todos tienen las mismas(vitalidad, fuerza, agilidad, percepción mágica)

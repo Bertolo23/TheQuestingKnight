@@ -1,40 +1,11 @@
-import util.Utilidades;
+
 import java.io.IOException;
-
-
+import Interfaz.Menus;
+import Personajes.Luchador;
 /**
  * Clase Principal donde recojo todos los métodos y hago la estructura del juego
  */
 public class Videojuegov2 {
-
-    // Códigos ANSI para cambiar colores en la consola
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_UNDERLINE = "\u001B[4m";
-
-    /**
-     * Método para meter espacio entre líneas
-     */
-    public static void espacios(){
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        
-    }
-    /**
-     * Metodo que uso en varias ocasiones para poder hacer una pausa entre suceso y suceso del juego
-     * @param lector BufferedReader para leer la entrada del usuario.
-     * @param continuar recoge un String que será leido
-     * @return devuelve el mismo String pero con el valor escrito por el usuario
-     * @throws IOException Si ocurre un error al leer la entrada del usuario.
-     */
-    public static String continuar(String continuar)throws IOException{
-
-        continuar = Utilidades.leerStringConTexto("Pulse intro para continuar");
-
-        return continuar;
-    }
 
     public static void main(String[] args)throws IOException {
 
@@ -43,69 +14,9 @@ public class Videojuegov2 {
          */
         Luchador luchador = new Luchador("Luchador", 0, 7, 7, 5, 2, 5, 0, 1, 8);
 
-        boolean salir = false;
-        String continuarDescripcion = " ";
-        Titulos.tituloInicio();
-        continuar(continuarDescripcion);
+        Menus.menuPrincipal(luchador);
         
-        do{
-            String opcion = "";  
-            opcion = Menus.menuPersonaje();// Solo esta disponible el Luchador 
-             
-                switch (opcion) {
-                    case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
-                            luchador.introduccionLuchador();
-                            String continuar = continuar(opcion);
-                            espacios();
-                            boolean salirLuchador = false;
-                               
-                                do {
-                                    salirLuchador = luchador.condiccionesVictoria(salirLuchador);
-                                    
-                                        // ------------------------------------------------------------------LUCHADOR/MENU ACCIONES-----------------------------------------------------------------------
-                                        int eleccionAccion = 0;
-                                        eleccionAccion = Menus.menuAcciones(eleccionAccion, luchador);
-                            
-                                    switch (eleccionAccion) {
-                                        case 1:// ------------------------------------------------------------------LUCHADOR/ENTRENAMIENTO-----------------------------------------------------------------------
-                                                luchador.entrenamientoLuchador(luchador);
-                                            break;
-                                        case 2:// ------------------------------------------------------------------LUCHADOR/TIENDA-----------------------------------------------------------------------
-                                                Tienda.tiendaDeObjetos(luchador);
-                                            break;
-                                        case 3:// ------------------------------------------------------------------LUCHADOR/MISIONES-----------------------------------------------------------------------
-                                                TablonMisiones.tablonMisionesLuchador(luchador);
-                                            break;
-                                        case 4:// ------------------------------------------------------------------LUCHADOR/STATS-----------------------------------------------------------------------
-                                                luchador.enseñarEstadisticasLuchador();
-                                            break;
-                                        case 5:// ------------------------------------------------------------------LUCHADOR/SALIR-----------------------------------------------------------------------
-                                                salirLuchador=true;
-                                            break;
-                                        default:
-                                            System.out.println(ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+ANSI_RESET);
-                                            System.out.println();
-                                            System.out.println();
-                                            break;
-                                    }                                   
-                                } while (salirLuchador==false);
-                                salirLuchador = true;
-                        break;
+    } 
 
-                        case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
-                            salir = true;
-                        break;
-                  
-                    default:
-                            System.out.println(ANSI_UNDERLINE+"Escriba una inicial de personaje por favor"+ANSI_RESET);
-                            System.out.println();
-                            System.out.println();
-                        break;
-                } 
-    
-        }while(salir==false);
-        System.out.println("Saliendo del programa");
-    }
-        
 }
 

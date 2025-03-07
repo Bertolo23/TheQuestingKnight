@@ -1,6 +1,11 @@
+package Tienda;
 
 
 import java.io.IOException;
+
+import Interfaz.Menus;
+import Interfaz.Titulos;
+import Personajes.Personaje;
 /**
  * Clase que se encarga de Tener la Tienda que sera igual para todos los personajes
  */

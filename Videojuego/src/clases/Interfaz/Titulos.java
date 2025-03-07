@@ -1,3 +1,4 @@
+package Interfaz;
 
 /**
 *  Clase que guarda todos los títulos de las diferentes secciones del Juego.

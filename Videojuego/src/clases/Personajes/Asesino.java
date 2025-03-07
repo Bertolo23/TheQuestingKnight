@@ -1,5 +1,4 @@
-
-
+package Personajes;
 
 /**
  * Clase Asesino la cúal es hija de la clase Personaje

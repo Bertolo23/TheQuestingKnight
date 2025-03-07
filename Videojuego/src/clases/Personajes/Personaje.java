@@ -1,5 +1,7 @@
+package Personajes;
 
 import java.io.IOException;
+import Interfaz.Titulos;
 import util.Utilidades;
 
 
@@ -273,16 +275,14 @@ public abstract class Personaje {
             if (salud <= 0) {
                 System.out.println("Has muerto");
                 System.out.println();
-                System.out.println("Pulsa cualquier tecla para ir al menú de inicio");
                 return true;
             }
             if (dinero >= 250) {
                 System.out.println("LO HAS CONSEGUIDO, ERES EL REY");
                 System.out.println();
-                System.out.println("Pulsa cualquier tecla para ir al menú de inicio");
                 return true;
             }
-            String volverMenuInicio = Utilidades.leerStringConTexto("Pulsa cualquier tecla para ir al menú de inicio");
+            String volverMenuInicio = Utilidades.leerStringConTexto("Pulsa intro para ir al menú de inicio");
         }
         return false;
     }

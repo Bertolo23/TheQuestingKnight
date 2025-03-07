@@ -1,5 +1,8 @@
+package Personajes;
 import util.Utilidades;
 import java.io.IOException;
+
+import Interfaz.Titulos;
 
 /**
  * Clase Luchador la cúal es hija de la clase Personaje
@@ -200,7 +203,7 @@ public class Luchador extends Personaje {
                 "║ " + coraje + " ║" + ANSI_RESET);
         System.out.println();
         System.out.println();
-        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa cualquier tecla para volver al menú de acciones");
+        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");
         System.out.println();
         System.out.println();
     }

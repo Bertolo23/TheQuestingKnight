@@ -100,6 +100,32 @@ public class Utilidades{
 
     }
 
+    /**
+     * Método para meter espacio entre líneas
+     */
+    public static void espacios(){
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        
+    }
+
+    /**
+     * Metodo que uso en varias ocasiones para poder hacer una pausa entre suceso y suceso del juego
+     * @param lector BufferedReader para leer la entrada del usuario.
+     * @param continuar recoge un String que será leido
+     * @return devuelve el mismo String pero con el valor escrito por el usuario
+     * @throws IOException Si ocurre un error al leer la entrada del usuario.
+     */
+    public static String continuar(String continuar)throws IOException{
+
+        continuar = Utilidades.leerStringConTexto("Pulse intro para continuar");
+
+        return continuar;
+    }
+
 
 
 }

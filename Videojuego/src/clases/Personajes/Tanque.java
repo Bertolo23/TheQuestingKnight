@@ -1,3 +1,4 @@
+package Personajes;
 /**
  * Clase Tanque la cúal es hija de la clase Personaje
  */

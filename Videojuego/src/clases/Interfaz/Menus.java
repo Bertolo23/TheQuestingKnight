@@ -1,5 +1,8 @@
+package Interfaz;
 import util.Utilidades;
 import java.io.IOException;
+import Personajes.*;
+import util.Utilidades;
 
 /**
  * Clase que gestiona los diferentes menús del juego.
@@ -112,5 +115,52 @@ public class Menus {
             System.out.println(ANSI_UNDERLINE + "Escriba un carácter válido" + ANSI_RESET);
         }
         return opcionMision;
+    }
+
+    /**
+     * Método que establece el menu principal del programa
+     * @param luchador objeto luchador necesario para las acciones de luchador
+     * @throws IOException si ocurre un error al leer la entrada del usuario.
+     */
+    public static void menuPrincipal(Luchador luchador)throws IOException{
+        boolean salir = false;
+        String continuarDescripcion = " ";
+        Titulos.tituloInicio();
+        Utilidades.continuar(continuarDescripcion);
+        
+        do{
+            String opcion = "";  
+            opcion = menuPersonaje();// Solo esta disponible el Luchador 
+             
+                switch (opcion) {
+                    case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
+                                AccionesPersonajes.accionesLuchador(luchador, opcion);
+                        break;
+                        
+                        case "a":
+                                System.out.println("No esta disponible aun");
+
+                        break;
+                        case "t":
+                                System.out.println("No esta disponible aun");
+
+                        break;
+                        case "m":
+                                System.out.println("No esta disponible aun");
+
+                        break;
+                        case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
+                            salir = true;
+                        break;
+                  
+                    default:
+                            System.out.println(ANSI_UNDERLINE+"Escriba una inicial de personaje por favor"+ANSI_RESET);
+                            System.out.println();
+                            System.out.println();
+                        break;
+                } 
+    
+        }while(salir==false);
+        System.out.println("Saliendo del programa");
     }
 }
