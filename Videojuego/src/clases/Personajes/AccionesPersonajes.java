@@ -10,9 +10,6 @@ import util.Utilidades;
  * @version 2.0
  */
 public class AccionesPersonajes {
-    
-    private static final String ANSI_UNDERLINE = "\u001B[4m";
-    private static final String ANSI_RESET = "\u001B[0m";
 
     /**
      * Método que recoge todas las acciones de la clase luchador
@@ -50,7 +47,7 @@ public class AccionesPersonajes {
                             salirLuchador=true;
                         break;
                     default:
-                        System.out.println(ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+ANSI_RESET);
+                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
                         System.out.println();
                         System.out.println();
                         break;
@@ -95,7 +92,7 @@ public class AccionesPersonajes {
                     salirAsesino=true;
                         break;
                     default:
-                        System.out.println(ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+ANSI_RESET);
+                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
                         System.out.println();
                         System.out.println();
                         break;
@@ -134,7 +131,7 @@ public class AccionesPersonajes {
                     salirTanque=true;
                         break;
                     default:
-                        System.out.println(ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+ANSI_RESET);
+                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
                         System.out.println();
                         System.out.println();
                         break;
@@ -173,7 +170,7 @@ public class AccionesPersonajes {
                     salirMago=true;
                         break;
                     default:
-                        System.out.println(ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+ANSI_RESET);
+                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
                         System.out.println();
                         System.out.println();
                         break;

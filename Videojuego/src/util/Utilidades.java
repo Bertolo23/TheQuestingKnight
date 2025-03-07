@@ -20,6 +20,7 @@ public class Utilidades{
     public static final String FONDO_AMARILLO = "\u001B[43m";
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+    public static final String ANSI_BOLD = "\u001B[1m";
 
      static BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 

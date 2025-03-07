@@ -62,19 +62,6 @@ public class Luchador extends Personaje {
     }
 
     /**
-     * CONSTANTES ANSI PARA FORMATO DE TEXTO EN CONSOLA
-     */
-    private final String ANSI_PURPLE = "\u001B[35m";
-    private final String ANSI_RESET = "\u001B[0m";
-    private final String ANSI_RED_BACKGROUND = "\u001B[41m";
-    private final String ANSI_RED = "\u001B[31m";
-    private final String ANSI_GREEN = "\u001B[32m";
-    private final String ANSI_YELLOW = "\u001B[33m";
-    private final String ANSI_BLUE = "\u001B[34m";
-    private final String ANSI_CYAN = "\u001B[36m";
-    private final String ANSI_UNDERLINE = "\u001B[4m";
-
-    /**
      * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
      * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y coraje.
      * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
@@ -83,15 +70,15 @@ public class Luchador extends Personaje {
         int margenTexto = 50;
         int margenEntreNumeros = 7;
         super.introduccionPersonaje();
-        System.out.println(ANSI_PURPLE + "║ CORAJE ║" + ANSI_CYAN + "║ SALUD ║");
-        System.out.println(ANSI_GREEN + " ".repeat(margenTexto + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_YELLOW +
-                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 5) + ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 2) + ANSI_PURPLE +
-                "║ " + coraje + " ║" + " ".repeat(margenEntreNumeros - 4) + ANSI_CYAN +
+        System.out.println(Utilidades.ANSI_PURPLE + "║ CORAJE ║" + Utilidades.ANSI_CYAN + "║ SALUD ║");
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margenTexto + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 5) + Utilidades.ANSI_BLUE +
+                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 2) + Utilidades.ANSI_PURPLE +
+                "║ " + coraje + " ║" + " ".repeat(margenEntreNumeros - 4) + Utilidades.ANSI_CYAN +
                 "║ " + getSalud() + " ║");
         Utilidades.espacios();
-        System.out.println(ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
     /**
@@ -101,14 +88,14 @@ public class Luchador extends Personaje {
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
     public int preguntasEntrenamientoLuchador() throws IOException {
-        final String ANSI_RESET = "\u001B[0m";
+
         int opcionMejora = 0;
         super.preguntasEntrenamiento();
-        System.out.println(ANSI_PURPLE + "║ CORAJE ║" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_PURPLE + "║ CORAJE ║" + Utilidades.ANSI_RESET);
         try {
             opcionMejora = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
-            System.out.println(ANSI_UNDERLINE + "Escriba un carácter válido" + ANSI_RESET);
+            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
         }
         System.out.println();
         System.out.println();
@@ -144,23 +131,23 @@ public class Luchador extends Personaje {
                     switch (opcionMejora) {
                         case 1: // Aumentar Vitalidad
                             setVitalidad(getVitalidad() + 1);
-                            System.out.println("Vitalidad: " + ANSI_GREEN + getVitalidad() + ANSI_RESET);
+                            System.out.println("Vitalidad: " + Utilidades.ANSI_GREEN + getVitalidad() + Utilidades.ANSI_RESET);
                             break;
                         case 2: // Aumentar Fuerza
                             setFuerza(getFuerza() + 1);
-                            System.out.println("Fuerza: " + ANSI_RED + getFuerza() + ANSI_RESET);
+                            System.out.println("Fuerza: " + Utilidades.ANSI_RED + getFuerza() + Utilidades.ANSI_RESET);
                             break;
                         case 3: // Aumentar Agilidad
                             setAgilidad(getAgilidad() + 1);
-                            System.out.println("Agilidad: " + ANSI_YELLOW + getAgilidad() + ANSI_RESET);
+                            System.out.println("Agilidad: " + Utilidades.ANSI_YELLOW + getAgilidad() + Utilidades.ANSI_RESET);
                             break;
                         case 4: // Aumentar Percepción Mágica
                             setPercepcionMagica(getPercepcionMagica() + 1);
-                            System.out.println("Percepción Mágica: " + ANSI_BLUE + getPercepcionMagica() + ANSI_RESET);
+                            System.out.println("Percepción Mágica: " + Utilidades.ANSI_BLUE + getPercepcionMagica() + Utilidades.ANSI_RESET);
                             break;
                         case 5: // Aumentar Coraje
                             coraje++;
-                            System.out.println("Coraje: " + ANSI_PURPLE + coraje + ANSI_RESET);
+                            System.out.println("Coraje: " + Utilidades.ANSI_PURPLE + coraje + Utilidades.ANSI_RESET);
                             break;
                         default:
                             System.out.println("Escriba una de las opciones (1-5)");
@@ -193,12 +180,12 @@ public class Luchador extends Personaje {
         int margenTexto = 50;
         int margenEntreNumeros = 7;
         super.enseñarEstadisticas();
-        System.out.println(ANSI_PURPLE + "║ CORAJE ║" + ANSI_RESET);
-        System.out.println(ANSI_GREEN + " ".repeat(margenTexto + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + ANSI_YELLOW +
-                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + ANSI_PURPLE +
-                "║ " + coraje + " ║" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_PURPLE + "║ CORAJE ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margenTexto + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
+                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + Utilidades.ANSI_PURPLE +
+                "║ " + coraje + " ║" + Utilidades.ANSI_RESET);
         System.out.println();
         System.out.println();
         String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");

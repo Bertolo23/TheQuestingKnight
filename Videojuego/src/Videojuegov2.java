@@ -1,10 +1,8 @@
 
 import java.io.IOException;
 import Interfaz.Menus;
-import Personajes.Asesino;
-import Personajes.Luchador;
-import Personajes.Mago;
-import Personajes.Tanque;
+import Personajes.*;
+
 /**
  * Clase Principal donde recojo todos los métodos y hago la estructura del juego
  * @author Iván Bertolo García

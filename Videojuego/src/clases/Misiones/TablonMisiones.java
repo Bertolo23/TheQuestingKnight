@@ -16,16 +16,6 @@ import util.Utilidades;
  * @version 2.0
  */
 public class TablonMisiones {
-    
-        // Códigos ANSI para cambiar colores en la consola
-        private static final String ANSI_RESET = "\u001B[0m";
-        private static final String ANSI_RED = "\u001B[31m";
-        private static final String ANSI_GREEN = "\u001B[32m";
-        private static final String ANSI_YELLOW = "\u001B[33m";
-        private static final String ANSI_BLUE = "\u001B[34m";
-        private static final String ANSI_UNDERLINE = "\u001B[4m";
-        private static final String ANSI_PURPLE = "\u001B[35m";
-
           
         /**
          * Método que se encarga de recoger el título, menú y todo sobre las misiones de personaje, incluye las restricciones y los mensajes de error o continuar
@@ -78,7 +68,7 @@ public class TablonMisiones {
                                     salirTablonMisiones = true;
                                 }
                            }else{
-                                System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+" y de "+ANSI_GREEN+"vitalidad"+ANSI_RESET);
+                                System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+" y de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET);
                                 System.out.println();
                                 String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");
                            } 
@@ -95,7 +85,7 @@ public class TablonMisiones {
                                     salirTablonMisiones = true;
                                 }
                             }else{
-                                System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 9 de "+ANSI_GREEN+"vitalidad"+ANSI_RESET+", 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+", 7 de "+ANSI_YELLOW+"Agilidad "+ANSI_RESET+" y 12 de "+ANSI_PURPLE+nombreEstadisticaUnica+ANSI_RESET);
+                                System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 9 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 7 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 12 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
                                 System.out.println();
                                 String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");                            } 
                         break;
@@ -114,7 +104,7 @@ public class TablonMisiones {
                                     salirTablonMisiones = true;
                                 }
                             }else{
-                                System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 10 de "+ANSI_GREEN+"vitalidad"+ANSI_RESET+", 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+", 9 de "+ANSI_YELLOW+"Agilidad "+ANSI_RESET+"y 5 de "+ANSI_BLUE+"Percepción Mágica "+ANSI_RESET);
+                                System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 10 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 9 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+"y 5 de "+Utilidades.ANSI_BLUE+"Percepción Mágica "+Utilidades.ANSI_RESET);
                                 System.out.println();
                                 String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");                            } 
                         break;
@@ -130,7 +120,7 @@ public class TablonMisiones {
                                     salirTablonMisiones = true;
                                 }
                             }else{
-                                System.out.println(ANSI_UNDERLINE+"No puede cumplir esta misión"+ANSI_RESET+" ya que necesitaría 12 de "+ANSI_GREEN+"vitalidad"+ANSI_RESET+", 8 de "+ANSI_RED+"fuerza"+ANSI_RESET+", 15 de "+ANSI_YELLOW+"Agilidad "+ANSI_RESET+" y 13 de "+ANSI_PURPLE+nombreEstadisticaUnica+ANSI_RESET);
+                                System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 12 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 15 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 13 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
                                 System.out.println();
                                 String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al Tablón de Misiones");
                             }

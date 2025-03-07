@@ -10,15 +10,6 @@ import Personajes.*;
  */
 public class Menus {
 
-    // Códigos ANSI para cambiar colores en la consola
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_RED = "\u001B[31m";
-    private static final String ANSI_GREEN = "\u001B[32m";
-    private static final String ANSI_YELLOW = "\u001B[33m";
-    private static final String ANSI_BLUE = "\u001B[34m";
-    private static final String ANSI_UNDERLINE = "\u001B[4m";
-    private static final String ANSI_CYAN = "\u001B[36m";
-
     /**
      * Muestra el menú de elección de personaje y recoge la opción seleccionada.
      * 
@@ -27,9 +18,9 @@ public class Menus {
      */
     public static String menuPersonaje() throws IOException {
         int margen = 55;
-        System.out.println(ANSI_RED + " ".repeat(margen) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL (o 's' para salir)" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_RED + " ".repeat(margen) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL (o 's' para salir)" + Utilidades.ANSI_RESET);
         System.out.println();
-        System.out.println(ANSI_BLUE + " ".repeat(margen + 5) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ SALIR ║" + ANSI_RESET);
+        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen + 5) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ SALIR ║" + Utilidades.ANSI_RESET);
         System.out.println();
         
         String entrada = Utilidades.leerString();
@@ -46,17 +37,17 @@ public class Menus {
         int comprarObjetos = 0;
         try {
             System.out.println();
-            System.out.println("1. Pechera de Placas(+ " + ANSI_GREEN + "4" + ANSI_RESET + " Vitalidad - " + ANSI_YELLOW + "2 " + ANSI_RESET + "Agilidad )");
-            System.out.println("2. Mandoble de Acero de Damasco(+ " + ANSI_RED + "5" + ANSI_RESET + " Fuerza - " + ANSI_YELLOW + "1 " + ANSI_RESET + "Agilidad - " + ANSI_BLUE + "2" + ANSI_RESET + " Percepción Mágica)");
-            System.out.println("3. Báculo de Piedra-Bruja(+ " + ANSI_BLUE + "7" + ANSI_RESET + " Percepción Mágica - " + ANSI_RED + "3" + ANSI_RESET + " Fuerza )");
-            System.out.println("4. Manto Espectral(+ " + ANSI_YELLOW + "5" + ANSI_RESET + " Agilidad - " + ANSI_GREEN + "4" + ANSI_RESET + " Vitalidad + " + ANSI_BLUE + "2" + ANSI_RESET + " Percepción Mágica)");
+            System.out.println("1. Pechera de Placas(+ " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad - " + Utilidades.ANSI_YELLOW + "2 " + Utilidades.ANSI_RESET + "Agilidad )");
+            System.out.println("2. Mandoble de Acero de Damasco(+ " + Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
+            System.out.println("3. Báculo de Piedra-Bruja(+ " + Utilidades.ANSI_BLUE + "7" + Utilidades.ANSI_RESET + " Percepción Mágica - " + Utilidades.ANSI_RED + "3" + Utilidades.ANSI_RESET + " Fuerza )");
+            System.out.println("4. Manto Espectral(+ " + Utilidades.ANSI_YELLOW + "5" + Utilidades.ANSI_RESET + " Agilidad - " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad + " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
             System.out.println("5. No comprar Nada");
             System.out.println("¿Qué objeto quieres comprar? (1-5)");
             System.out.println();
 
             comprarObjetos = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
-            System.out.println(ANSI_UNDERLINE + "Escriba un carácter válido" + ANSI_RESET);
+            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
         }
         return comprarObjetos;
     }
@@ -77,19 +68,19 @@ public class Menus {
                                         "En la tienda se pueden comprar objetos con dinero que te modificarán las estadísticas."};
         int margen = 60;
         try {
-            System.out.print(" ".repeat(margen) + ANSI_BLUE + "║ ENTRENAR ║ ║ TIENDA ║ ║ MISIONES ║ ║ ESTADÍSTICAS ║ ║ SALIR ║"+ANSI_RESET);
+            System.out.print(" ".repeat(margen) + Utilidades.ANSI_BLUE + "║ ENTRENAR ║ ║ TIENDA ║ ║ MISIONES ║ ║ ESTADÍSTICAS ║ ║ SALIR ║"+Utilidades.ANSI_RESET);
             System.out.println();
             System.out.println();
             System.out.println();
             Titulos.imprimirCuadroTexto(textoMenuAcciones);
             System.out.println();
             margen = 80;
-            System.out.println(" ".repeat(margen) +"SALUD  " + ANSI_CYAN + personaje.getSalud() + ANSI_RESET + "       DINERO  " + ANSI_YELLOW + personaje.getDinero() + ANSI_RESET + "");
+            System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + personaje.getSalud() + Utilidades.ANSI_RESET + "       DINERO  " + Utilidades.ANSI_YELLOW + personaje.getDinero() + Utilidades.ANSI_RESET + "");
             System.out.println();
             System.out.println("¿Qué deseas hacer?(1-5)");
             eleccionAccion = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
-            System.out.println(ANSI_UNDERLINE + "Escriba un carácter válido" + ANSI_RESET);
+            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
         }
         return eleccionAccion;
     }
@@ -113,7 +104,7 @@ public class Menus {
             
             opcionMision = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
-            System.out.println(ANSI_UNDERLINE + "Escriba un carácter válido" + ANSI_RESET);
+            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
         }
         return opcionMision;
     }
@@ -155,7 +146,7 @@ public class Menus {
                         break;
                   
                     default:
-                            System.out.println(ANSI_UNDERLINE+"Escriba una inicial de personaje por favor"+ANSI_RESET);
+                            System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una inicial de personaje por favor"+Utilidades.ANSI_RESET);
                             System.out.println();
                             System.out.println();
                         break;

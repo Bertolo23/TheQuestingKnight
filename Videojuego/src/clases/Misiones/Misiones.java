@@ -87,14 +87,6 @@ public class Misiones {
     }
 
     /**
-     * CONSTANTES ANSI PARA FORMATO DE TEXTO EN CONSOLA
-     */
-    private final String ANSI_RESET = "\u001B[0m"; 
-    private final String ANSI_YELLOW = "\u001B[33m"; 
-    private final String ANSI_UNDERLINE = "\u001B[4m"; 
-    private final String ANSI_CYAN = "\u001B[36m";
-
-    /**
      * Método que estructura la misión, actualiza los atributos del personaje y muestra los resultados en consola
      * @param mision objeto de la clase Misiones con los datos de la misión actual
      * @param personaje objeto de la clase Personaje que realizará la misión
@@ -105,8 +97,8 @@ public class Misiones {
         personaje.setSalud(personaje.getSalud()-mision.getSaludPerdida());
         personaje.setDinero(personaje.getDinero()+mision.getPagaMision());
         System.out.println("Misión terminada");
-        System.out.println("Has perdido "+ANSI_UNDERLINE+ANSI_CYAN+mision.getSaludPerdida()+ANSI_RESET+" de salud");
-        System.out.println("Has ganado "+ANSI_UNDERLINE+ANSI_YELLOW+mision.getPagaMision()+ANSI_RESET+" de dinero");
+        System.out.println("Has perdido "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_CYAN+mision.getSaludPerdida()+Utilidades.ANSI_RESET+" de salud");
+        System.out.println("Has ganado "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_YELLOW+mision.getPagaMision()+Utilidades.ANSI_RESET+" de dinero");
         System.out.println();
         String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de misiones");
         System.out.println();

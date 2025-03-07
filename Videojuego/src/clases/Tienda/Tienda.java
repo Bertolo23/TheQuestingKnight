@@ -1,18 +1,13 @@
 package Tienda;
-
-
 import java.io.IOException;
-
 import Interfaz.Menus;
 import Interfaz.Titulos;
 import Personajes.Personaje;
+import util.Utilidades;
 /**
  * Clase que se encarga de Tener la Tienda que sera igual para todos los personajes
  */
 public class Tienda {
-    
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_UNDERLINE = "\u001B[4m";;
 
     /**
      * Permite al personaje comprar objetos en la tienda, afectando sus estadísticas y reduciendo su dinero.
@@ -88,7 +83,7 @@ public class Tienda {
                             System.out.println();
                             break;
                         default:
-                            System.out.println(ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + ANSI_RESET);
+                            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + Utilidades.ANSI_RESET);
                             break;
                     }
 
@@ -98,7 +93,7 @@ public class Tienda {
             } while (!salirTienda);  
 
             }else{
-                System.out.println(ANSI_UNDERLINE+"No tienes dinero no puedes comprar nada"+ANSI_RESET);
+                System.out.println(Utilidades.ANSI_UNDERLINE+"No tienes dinero no puedes comprar nada"+Utilidades.ANSI_RESET);
                 System.out.println();
                 System.out.println();
             }

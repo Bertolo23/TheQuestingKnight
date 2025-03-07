@@ -67,10 +67,6 @@ public class ObjetoTienda {
         this.precio = precio;
     }
 
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_YELLOW = "\u001B[33m";
-    private static final String ANSI_UNDERLINE = "\u001B[4m";;
-
     /**
      * Método que recoge los objetos de la tienda y cual quieres comprar
      * @param objeto objeto de clase ObjetoTienda del cúal sacamos la información de cada objeto
@@ -80,7 +76,7 @@ public class ObjetoTienda {
      */
      public boolean objetoTienda(ObjetoTienda objeto, Personaje personaje)throws IOException{
         
-        String seguirCompra = Utilidades.leerStringConTexto("La "+objeto.getNombre()+" tiene un precio de "+ANSI_YELLOW+objeto.getPrecio()+ANSI_RESET+", Seguimos con la compra?(S/N)");
+        String seguirCompra = Utilidades.leerStringConTexto("La "+objeto.getNombre()+" tiene un precio de "+Utilidades.ANSI_YELLOW+objeto.getPrecio()+Utilidades.ANSI_RESET+", Seguimos con la compra?(S/N)").toUpperCase();
         System.out.println();
         System.out.println();
             if (personaje.getDinero()>=objeto.getPrecio()) {
@@ -96,7 +92,7 @@ public class ObjetoTienda {
                     
                 }
             } else {
-                System.out.println("No tienes suficiente " + ANSI_UNDERLINE + "dinero" + ANSI_RESET);
+                System.out.println("No tienes suficiente " + Utilidades.ANSI_UNDERLINE + "dinero" + Utilidades.ANSI_RESET);
                 System.out.println();
                 System.out.println();
                 String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver a la Tienda");
