@@ -3,11 +3,7 @@ package Misiones;
 import java.io.IOException;
 import Interfaz.Menus;
 import Interfaz.Titulos;
-import Personajes.Asesino;
-import Personajes.Luchador;
-import Personajes.Mago;
 import Personajes.Personaje;
-import Personajes.Tanque;
 import util.Utilidades;
 
 /**
@@ -23,24 +19,8 @@ public class TablonMisiones {
          * @throws IOException Si ocurre un error al leer la entrada del usuario.
          */
         public static void tablonMisiones(Personaje personaje)throws IOException{
-            String nombreEstadisticaUnica = "";
-            int valorEstadisticaUnica = 0;
-            if(personaje instanceof Luchador){
-                nombreEstadisticaUnica = "Coraje";
-                valorEstadisticaUnica = ((Luchador) personaje).getCoraje();
-            }
-            if (personaje instanceof Asesino) {
-                nombreEstadisticaUnica = "Sigilo";
-                valorEstadisticaUnica = ((Asesino) personaje).getSigilo();
-            }
-            if (personaje instanceof Tanque) {
-                nombreEstadisticaUnica = "Barrera";
-                valorEstadisticaUnica = ((Tanque) personaje).getBarrera();
-            }
-            if (personaje instanceof Mago) {
-                nombreEstadisticaUnica = "Poder de Habilidad";
-                valorEstadisticaUnica = ((Mago) personaje).getPoderDeHabilidad();
-            }
+            String nombreEstadisticaUnica = Personaje.nombreEstadisticaUnica(personaje);
+            int valorEstadisticaUnica = Personaje.valorEstadisticaUnica(personaje);
             boolean salirTablonMisiones = false;
             
             do {

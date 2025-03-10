@@ -1,5 +1,6 @@
 package Personajes;
 import java.io.IOException;
+import Entrenamiento.Entrenamiento;
 import Interfaz.Menus;
 import Misiones.TablonMisiones;
 import Tienda.Tienda;
@@ -20,7 +21,7 @@ public class AccionesPersonajes {
     public static void accionesLuchador(Luchador luchador, String opcion)throws IOException{
         luchador.introduccionLuchador();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirLuchador = false;
            
             do {
@@ -32,7 +33,7 @@ public class AccionesPersonajes {
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------LUCHADOR/ENTRENAMIENTO-----------------------------------------------------------------------
-                            luchador.entrenamientoLuchador();
+                            Entrenamiento.entrenamientoPersonaje(luchador);
                         break;
                     case 2:// ------------------------------------------------------------------LUCHADOR/TIENDA-----------------------------------------------------------------------
                             Tienda.tiendaDeObjetos(luchador);
@@ -48,8 +49,7 @@ public class AccionesPersonajes {
                         break;
                     default:
                         System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        System.out.println();
-                        System.out.println();
+                        Utilidades.espacios(2);
                         break;
                 }                                   
             } while (salirLuchador==false);
@@ -65,7 +65,7 @@ public class AccionesPersonajes {
     public static void accionesAsesino(Asesino asesino, String opcion)throws IOException{
         asesino.introduccionAsesino();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirAsesino = false;
            
             do {
@@ -77,7 +77,7 @@ public class AccionesPersonajes {
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------ASESINO/ENTRENAMIENTO-----------------------------------------------------------------------
-                            asesino.entrenamientoAsesino();
+                            Entrenamiento.entrenamientoPersonaje(asesino);
                         break;
                     case 2:// ------------------------------------------------------------------ASESINO/TIENDA-----------------------------------------------------------------------
                             Tienda.tiendaDeObjetos(asesino);
@@ -93,8 +93,7 @@ public class AccionesPersonajes {
                         break;
                     default:
                         System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        System.out.println();
-                        System.out.println();
+                        Utilidades.espacios(2);
                         break;
                 }                                   
             } while (salirAsesino==false);
@@ -104,7 +103,7 @@ public class AccionesPersonajes {
     public static void accionesTanque(Tanque tanque, String opcion)throws IOException{
         tanque.introduccionTanque();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirTanque = false;
            
             do {
@@ -116,7 +115,7 @@ public class AccionesPersonajes {
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------TANQUE/ENTRENAMIENTO-----------------------------------------------------------------------
-                            tanque.entrenamientoTanque();
+                            Entrenamiento.entrenamientoPersonaje(tanque);
                         break;
                     case 2:// ------------------------------------------------------------------TANQUE/TIENDA-----------------------------------------------------------------------
                             Tienda.tiendaDeObjetos(tanque);
@@ -132,8 +131,7 @@ public class AccionesPersonajes {
                         break;
                     default:
                         System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        System.out.println();
-                        System.out.println();
+                        Utilidades.espacios(2);
                         break;
                 }                                   
             } while (salirTanque==false);
@@ -143,7 +141,7 @@ public class AccionesPersonajes {
     public static void accionesMago(Mago mago, String opcion)throws IOException{
         mago.introduccionMago();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirMago = false;
            
             do {
@@ -155,7 +153,7 @@ public class AccionesPersonajes {
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------MAGO/ENTRENAMIENTO-----------------------------------------------------------------------
-                            mago.entrenamientoMago();
+                            Entrenamiento.entrenamientoPersonaje(mago);
                         break;
                     case 2:// ------------------------------------------------------------------MAGO/TIENDA-----------------------------------------------------------------------
                             Tienda.tiendaDeObjetos(mago);
@@ -171,8 +169,7 @@ public class AccionesPersonajes {
                         break;
                     default:
                         System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        System.out.println();
-                        System.out.println();
+                        Utilidades.espacios(2);
                         break;
                 }                                   
             } while (salirMago==false);

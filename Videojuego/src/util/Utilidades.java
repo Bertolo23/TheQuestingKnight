@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 /**
- * Clase que recogo métodos útiles que tienen funciones muy usadas que de otra forma repetiria en las clases una y otra vez
+ * Clase en la que recogo métodos útiles, los cuales tienen funciones muy usadas que de otra forma repetiria en las clases una y otra vez
  * @author Iván Bertolo García
  * @version 1.0
  */
@@ -42,7 +42,7 @@ public class Utilidades{
         try {
             entrada = Integer.parseInt(lector.readLine());
         } catch (NumberFormatException e) {
-            System.out.println("Escriba un valor correcto");
+            System.out.println(ANSI_UNDERLINE+"Escriba un valor correcto"+ANSI_RESET);
         }
         
         return entrada;
@@ -55,7 +55,7 @@ public class Utilidades{
         try {
             entrada = Double.parseDouble(lector.readLine());
         } catch (NumberFormatException e) {
-            System.out.println("Escriba un valor correcto");
+            System.out.println(ANSI_UNDERLINE+"Escriba un valor correcto"+ANSI_RESET);
         }
         
         return entrada;
@@ -67,7 +67,7 @@ public class Utilidades{
         try {
             entrada = Double.parseDouble(lector.readLine());
         } catch (NumberFormatException e) {
-            System.out.println("Escriba un valor correcto");
+            System.out.println(ANSI_UNDERLINE+"Escriba un valor correcto"+ANSI_RESET);
         }
         
         return entrada;
@@ -107,7 +107,7 @@ public class Utilidades{
         try {
             entrada = Integer.parseInt(lector.readLine());  
         } catch (NumberFormatException e) {
-            System.out.println("Escriba un valor correcto");
+            System.out.println(ANSI_UNDERLINE+"Escriba un valor correcto"+ANSI_RESET);
         }
         if (entrada<minimo || entrada>maximo) {
             System.out.println("Entrada inválida");
@@ -118,14 +118,11 @@ public class Utilidades{
 
     /**
      * Método para meter espacio entre líneas
+     * @param numeroEspacios numero de espacios a crear en cada caso
      */
-    public static void espacios(){
+    public static void espacios(int numeroEspacios){
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        
+        System.out.println("\n".repeat(numeroEspacios));
     }
 
     /**

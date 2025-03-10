@@ -2,6 +2,7 @@ package Personajes;
 
 import java.io.IOException;
 
+import Entrenamiento.Entrenamiento;
 import Interfaz.Titulos;
 import util.Utilidades;
 
@@ -79,7 +80,7 @@ public class Asesino extends Personaje {
                 "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 2) + Utilidades.ANSI_PURPLE +
                 "║ " + sigilo + " ║" + " ".repeat(margenEntreNumeros - 4) + Utilidades.ANSI_CYAN +
                 "║ " + getSalud() + " ║");
-        Utilidades.espacios();
+        Utilidades.espacios(4);
         System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
@@ -94,7 +95,11 @@ public class Asesino extends Personaje {
         int opcionMejora = 0;
         super.preguntasEntrenamiento();
         System.out.println(Utilidades.ANSI_PURPLE + "║ SIGILO ║" + Utilidades.ANSI_RESET);
-        opcionMejora = Utilidades.leerEntero();
+        try {
+            opcionMejora = Utilidades.leerEntero();
+        } catch (NumberFormatException e) {
+            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
+        }
         System.out.println();
         System.out.println();
         return opcionMejora;
