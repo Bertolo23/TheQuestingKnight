@@ -221,19 +221,6 @@ public abstract class Personaje {
     }
 
     /**
-     * Muestra las opciones disponibles para mejorar las estadísticas del personaje durante el entrenamiento.
-     */
-    public void preguntasEntrenamiento(){
-        int margen = 70;
-        System.out.println(" ".repeat(margen) + Utilidades.ANSI_CYAN + "QUE ESTADÍSTICA QUIERES MEJORAR(1-5)");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        margen = 50;
-        System.out.print(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
-    }
-
-    /**
      * Verifica si el personaje ha subido de nivel y actualiza su nivel si corresponde.
      * Se sube de nivel cada 5 puntos de experiencia acumulados.
      */
@@ -278,6 +265,43 @@ public abstract class Personaje {
             String volverMenuInicio = Utilidades.leerStringConTexto("Pulsa intro para ir al menú de inicio");
         }
         return false;
+    }
+
+    public static String nombreEstadisticaUnica(Personaje personaje){
+            String nombreEstadisticaUnica = "";
+
+            if(personaje instanceof Luchador){
+                nombreEstadisticaUnica = "Coraje";
+            }
+            if (personaje instanceof Asesino) {
+                nombreEstadisticaUnica = "Sigilo";
+            }
+            if (personaje instanceof Tanque) {
+                nombreEstadisticaUnica = "Barrera";
+            }
+            if (personaje instanceof Mago) {
+                nombreEstadisticaUnica = "Poder de Habilidad";
+            }
+            return nombreEstadisticaUnica;
+    }
+
+    public static int valorEstadisticaUnica(Personaje personaje){
+            int valorEstadisticaUnica = 0;
+
+            if(personaje instanceof Luchador){
+                valorEstadisticaUnica = ((Luchador) personaje).getCoraje();
+            }
+            if (personaje instanceof Asesino) {
+                valorEstadisticaUnica = ((Asesino) personaje).getSigilo();
+            }
+            if (personaje instanceof Tanque) {
+                valorEstadisticaUnica = ((Tanque) personaje).getBarrera();
+            }
+            if (personaje instanceof Mago) {
+                valorEstadisticaUnica = ((Mago) personaje).getPoderDeHabilidad();
+            }
+
+            return valorEstadisticaUnica;
     }
 
 
