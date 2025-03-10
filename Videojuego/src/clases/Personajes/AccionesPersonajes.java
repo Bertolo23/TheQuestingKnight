@@ -20,7 +20,7 @@ public class AccionesPersonajes {
     public static void accionesLuchador(Luchador luchador, String opcion)throws IOException{
         luchador.introduccionLuchador();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirLuchador = false;
            
             do {
@@ -65,7 +65,7 @@ public class AccionesPersonajes {
     public static void accionesAsesino(Asesino asesino, String opcion)throws IOException{
         asesino.introduccionAsesino();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirAsesino = false;
            
             do {
@@ -104,7 +104,7 @@ public class AccionesPersonajes {
     public static void accionesTanque(Tanque tanque, String opcion)throws IOException{
         tanque.introduccionTanque();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirTanque = false;
            
             do {
@@ -143,7 +143,7 @@ public class AccionesPersonajes {
     public static void accionesMago(Mago mago, String opcion)throws IOException{
         mago.introduccionMago();
         String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios();
+        Utilidades.espacios(6);
         boolean salirMago = false;
            
             do {

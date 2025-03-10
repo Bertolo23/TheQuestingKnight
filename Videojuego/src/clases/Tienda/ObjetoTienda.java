@@ -79,26 +79,22 @@ public class ObjetoTienda {
         String seguirCompra = Utilidades.leerStringConTexto("La "+objeto.getNombre()+" tiene un precio de "+Utilidades.ANSI_YELLOW+objeto.getPrecio()+Utilidades.ANSI_RESET+", Seguimos con la compra?(S/N)").toUpperCase();
         System.out.println();
         System.out.println();
+        if (seguirCompra.equals("S")) {
             if (personaje.getDinero()>=objeto.getPrecio()) {
-                if (seguirCompra.equals("S")) {
                     System.out.println("Gracias por la compra");
-                    System.out.println();
-                    System.out.println();
+                    Utilidades.espacios(2);
                     return true;
                 } else {
-                    System.out.println("Otra vez será");
-                    System.out.println();
-                    System.out.println();
+                    System.out.println("No tienes suficiente " + Utilidades.ANSI_UNDERLINE + "dinero" + Utilidades.ANSI_RESET);
+                    Utilidades.espacios(2);
                     
                 }
             } else {
-                System.out.println("No tienes suficiente " + Utilidades.ANSI_UNDERLINE + "dinero" + Utilidades.ANSI_RESET);
-                System.out.println();
-                System.out.println();
-                String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver a la Tienda");
-                System.out.println();
-                System.out.println();
+                System.out.println("Otra vez sera");
+                Utilidades.espacios(2);
             }
+            String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver a la Tienda");
+            Utilidades.espacios(4);
             return false;
     }
 }

@@ -79,7 +79,7 @@ public class Mago extends Personaje {
                 "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_PURPLE +
                 "║ " + poderDeHabilidad + " ║" + " ".repeat(margenEntreNumeros - 5) + Utilidades.ANSI_CYAN +
                 "║ " + getSalud() + " ║");
-        Utilidades.espacios();
+        Utilidades.espacios(4);
         System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 

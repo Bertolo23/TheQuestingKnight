@@ -119,12 +119,10 @@ public class Utilidades{
     /**
      * Método para meter espacio entre líneas
      */
-    public static void espacios(){
+    public static void espacios(int numeroEspacios){
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("\n".repeat(numeroEspacios));
+
         
     }
 

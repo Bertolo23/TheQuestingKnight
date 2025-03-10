@@ -79,7 +79,7 @@ public class Tanque extends Personaje {
                 "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 2) + Utilidades.ANSI_PURPLE +
                 "║ " + barrera + " ║" + " ".repeat(margenEntreNumeros - 4) + Utilidades.ANSI_CYAN +
                 "║ " + getSalud() + " ║");
-        Utilidades.espacios();
+        Utilidades.espacios(4);
         System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
