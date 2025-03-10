@@ -97,11 +97,9 @@ public class Mago extends Personaje {
                 "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
                 "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros+1) + Utilidades.ANSI_PURPLE +
                 "║ " + poderDeHabilidad + " ║" + Utilidades.ANSI_RESET);
-        System.out.println();
-        System.out.println();
+        Utilidades.espacios(2);
         String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");
-        System.out.println();
-        System.out.println();
+        Utilidades.espacios(2);
     }
 
 

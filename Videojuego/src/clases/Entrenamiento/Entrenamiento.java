@@ -49,8 +49,7 @@ public class Entrenamiento {
         do {
             System.out.println("Tienes " + personaje.getExperiencia() + " puntos de experiencia");
             eleccionMejora = Utilidades.leerStringConTexto("¿Quieres gastar los puntos (S/N)?").toUpperCase();
-            System.out.println();
-            System.out.println();
+            Utilidades.espacios(2);
             if (eleccionMejora.equals("S")) {
                 personaje.setExperiencia(personaje.getExperiencia() - 1);
                 int opcionMejora = 0;

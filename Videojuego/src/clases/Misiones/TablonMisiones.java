@@ -40,12 +40,9 @@ public class TablonMisiones {
                            if (personaje.getVitalidad()>=8 && personaje.getFuerza()>=8) {
                                 Titulos.imprimirCuadroTextoInicial(mision1.getDescripcion());
                                 String continuarMision = Utilidades.leerStringConTexto("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
-                                System.out.println();
-                                System.out.println();
+                                Utilidades.espacios(2);
                                 if (continuarMision.equals("c")) {
                                     mision1.estructuraMision(mision1, personaje);
-                                }else{
-                                    salirTablonMisiones = true;
                                 }
                            }else{
                                 System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+" y de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET);
@@ -57,12 +54,9 @@ public class TablonMisiones {
                             if (personaje.getVitalidad()>=9 && personaje.getFuerza()>=8 && personaje.getAgilidad()>=7 && valorEstadisticaUnica>=12) {
                                 Titulos.imprimirCuadroTextoInicial(mision2.getDescripcion());                                
                                 String continuarMision = Utilidades.leerStringConTexto("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
-                                System.out.println();
-                                System.out.println();
+                                Utilidades.espacios(2);
                                 if (continuarMision.equals("c")) {
                                     mision2.estructuraMision(mision2, personaje);
-                                }else{
-                                    salirTablonMisiones = true;
                                 }
                             }else{
                                 System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 9 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 7 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 12 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
@@ -73,15 +67,14 @@ public class TablonMisiones {
                             if (personaje.getVitalidad()>=10 && personaje.getFuerza()>=8 && personaje.getAgilidad()>=9 && personaje.getPercepcionMagica()>=5) {
                                 Titulos.imprimirCuadroTextoInicial(mision3.getDescripcion());                                
                                 String continuarMision = Utilidades.leerStringConTexto("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
-                                System.out.println();
-                                System.out.println();
+                                Utilidades.espacios(2);
                                 if (continuarMision.equals("c")) {
                                     int probabilidadFallarMision = (int)(Math.random() * 10)+1;
                                     if (probabilidadFallarMision<=7) {
                                         mision3.estructuraMision(mision3, personaje);
+                                    }else{
+                                        System.out.println("Misión fallada");
                                     }
-                                }else{
-                                    salirTablonMisiones = true;
                                 }
                             }else{
                                 System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 10 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 9 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+"y 5 de "+Utilidades.ANSI_BLUE+"Percepción Mágica "+Utilidades.ANSI_RESET);
@@ -92,12 +85,9 @@ public class TablonMisiones {
                             if (personaje.getVitalidad()>=12 && personaje.getFuerza()>=8 && personaje.getAgilidad()>=15 && valorEstadisticaUnica>=13) {
                                 Titulos.imprimirCuadroTextoInicial(mision4.getDescripcion());                                
                                 String continuarMision = Utilidades.leerStringConTexto("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
-                                System.out.println();
-                                System.out.println();
+                                Utilidades.espacios(2);
                                 if (continuarMision.equals("c")) {
                                     mision4.estructuraMision(mision4, personaje);
-                                }else{
-                                    salirTablonMisiones = true;
                                 }
                             }else{
                                 System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 12 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 15 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 13 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
@@ -110,12 +100,10 @@ public class TablonMisiones {
                         break;
                     default:
                             System.out.println("Escriba una opción válida (1-5)");
-                            System.out.println();
-                            System.out.println();
+                            Utilidades.espacios(2);
                         break;
                 }
-                System.out.println();
-                System.out.println();
+                Utilidades.espacios(2);
             } while (salirTablonMisiones==false);
         
     }

@@ -99,11 +99,9 @@ public class Luchador extends Personaje {
                 "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
                 "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + Utilidades.ANSI_PURPLE +
                 "║ " + coraje + " ║" + Utilidades.ANSI_RESET);
-        System.out.println();
-        System.out.println();
+        Utilidades.espacios(2);
         String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");
-        System.out.println();
-        System.out.println();
+        Utilidades.espacios(2);
     }
 
     /**

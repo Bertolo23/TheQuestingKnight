@@ -183,7 +183,7 @@ public abstract class Personaje {
     }
 
     /**
-     * Método set para dar o actualizar el valor del atributo salud
+     * Método set para dar o actualizar el valor del atributo experiencia
      * @param experiencia coje el valor del parametro int y se lo asigna al atributo salud
      */
     public void setExperiencia(int experiencia) {
@@ -266,6 +266,50 @@ public abstract class Personaje {
         }
         return false;
     }
+
+    public void mostrarSaludYDinero(){
+        int margen = 80;
+        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + salud + Utilidades.ANSI_RESET + "       DINERO  " + Utilidades.ANSI_YELLOW + dinero + Utilidades.ANSI_RESET + "");
+
+    }
+
+    public static int valorEstadisticaUnica(Personaje personaje){
+   
+        int valorEstadisticaUnica = 0;
+        if(personaje instanceof Luchador){
+            valorEstadisticaUnica = ((Luchador) personaje).getCoraje();
+        }
+        if (personaje instanceof Asesino) {
+            valorEstadisticaUnica = ((Asesino) personaje).getSigilo();
+        }
+        if (personaje instanceof Tanque) {
+            valorEstadisticaUnica = ((Tanque) personaje).getBarrera();
+        }
+        if (personaje instanceof Mago) {
+            valorEstadisticaUnica = ((Mago) personaje).getPoderDeHabilidad();
+        }
+
+        return valorEstadisticaUnica;
+}
+
+    public static String nombreEstadisticaUnica(Personaje personaje){
+
+        String nombreEstadisticaUnica = "";
+        if(personaje instanceof Luchador){
+            nombreEstadisticaUnica = "Coraje";
+        }
+        if (personaje instanceof Asesino) {
+            nombreEstadisticaUnica = "Sigilo";
+        }
+        if (personaje instanceof Tanque) {
+            nombreEstadisticaUnica = "Barrera";
+        }
+        if (personaje instanceof Mago) {
+            nombreEstadisticaUnica = "Poder de Habilidad";
+        }
+
+        return nombreEstadisticaUnica;
+}
 
 
     /**

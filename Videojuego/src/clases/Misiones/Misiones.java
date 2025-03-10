@@ -101,8 +101,7 @@ public class Misiones {
         System.out.println("Has ganado "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_YELLOW+mision.getPagaMision()+Utilidades.ANSI_RESET+" de dinero");
         System.out.println();
         String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de misiones");
-        System.out.println();
-        System.out.println();
+        Utilidades.espacios(2);
     }
 
         
