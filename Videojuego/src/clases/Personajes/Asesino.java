@@ -94,11 +94,7 @@ public class Asesino extends Personaje {
         int opcionMejora = 0;
         super.preguntasEntrenamiento();
         System.out.println(Utilidades.ANSI_PURPLE + "║ SIGILO ║" + Utilidades.ANSI_RESET);
-        try {
-            opcionMejora = Utilidades.leerEntero();
-        } catch (NumberFormatException e) {
-            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
-        }
+        opcionMejora = Utilidades.leerEntero();
         System.out.println();
         System.out.println();
         return opcionMejora;

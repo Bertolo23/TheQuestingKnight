@@ -53,7 +53,7 @@ public class TablonMisiones {
                 Misiones mision4 = new Misiones(pagaMision[3], saludPerdida[3], InfoMisiones.textoMision4());
 
                 Titulos.tablonMisiones();
-                opcionMision = Menus.menuMisiones();
+                opcionMision = Menus.menuMisiones(personaje);
                                                 
                 switch (opcionMision) {
                     case 1:// ------------------------------------------------------------------personaje/MISION1-----------------------------------------------------------------------

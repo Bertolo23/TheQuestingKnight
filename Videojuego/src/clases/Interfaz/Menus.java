@@ -33,7 +33,7 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public static int menuTienda() throws IOException {
+    public static int menuTienda(Personaje personaje) throws IOException {
         int comprarObjetos = 0;
         try {
             System.out.println();
@@ -44,6 +44,7 @@ public class Menus {
             System.out.println("5. No comprar Nada");
             System.out.println("¿Qué objeto quieres comprar? (1-5)");
             System.out.println();
+            personaje.mostrarSaludYDinero();
 
             comprarObjetos = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
@@ -74,8 +75,7 @@ public class Menus {
             System.out.println();
             Titulos.imprimirCuadroTexto(textoMenuAcciones);
             System.out.println();
-            margen = 80;
-            System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + personaje.getSalud() + Utilidades.ANSI_RESET + "       DINERO  " + Utilidades.ANSI_YELLOW + personaje.getDinero() + Utilidades.ANSI_RESET + "");
+            personaje.mostrarSaludYDinero();
             System.out.println();
             System.out.println("¿Qué deseas hacer?(1-5)");
             eleccionAccion = Utilidades.leerEntero();
@@ -91,7 +91,7 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public static int menuMisiones() throws IOException {
+    public static int menuMisiones(Personaje personaje) throws IOException {
         int opcionMision = 0;
         try {
             System.out.println();
@@ -101,6 +101,7 @@ public class Menus {
             System.out.println("4. Traer de vuelta al hijo del Duque de tu provincia.");
             System.out.println("5. Volver al Menú.");
             System.out.println();
+            personaje.mostrarSaludYDinero();
             
             opcionMision = Utilidades.leerEntero();
         } catch (NumberFormatException e) {

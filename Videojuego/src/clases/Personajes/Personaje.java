@@ -280,6 +280,12 @@ public abstract class Personaje {
         return false;
     }
 
+    public void mostrarSaludYDinero(){
+        int margen = 80;
+        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + salud + Utilidades.ANSI_RESET + "       DINERO  " + Utilidades.ANSI_YELLOW + dinero + Utilidades.ANSI_RESET + "");
+
+    }
+
 
     /**
      * TO STRING

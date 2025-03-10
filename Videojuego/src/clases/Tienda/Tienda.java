@@ -40,7 +40,7 @@ public class Tienda {
                 do {
                     // Muestra la tienda y obtiene la opción elegida por el usuario
                     Titulos.tituloTienda();
-                    comprarObjetos = Menus.menuTienda();
+                    comprarObjetos = Menus.menuTienda(personaje);
 
                     switch (comprarObjetos) {
                         case 1: // Compra de Pechera
