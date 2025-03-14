@@ -25,11 +25,11 @@ public class AccionesPersonajes {
         boolean salirLuchador = false;
            
             do {
-                salirLuchador = luchador.condiccionesVictoria(salirLuchador);
+                salirLuchador = luchador.condiccionesVictoria();
                 
                     // ------------------------------------------------------------------LUCHADOR/MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(eleccionAccion, luchador);
+                    eleccionAccion = Menus.menuAcciones(luchador);
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------LUCHADOR/ENTRENAMIENTO-----------------------------------------------------------------------
@@ -69,11 +69,11 @@ public class AccionesPersonajes {
         boolean salirAsesino = false;
            
             do {
-                salirAsesino = asesino.condiccionesVictoria(salirAsesino);
+                salirAsesino = asesino.condiccionesVictoria();
                 
                     // ------------------------------------------------------------------ASESINO/MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(eleccionAccion, asesino);
+                    eleccionAccion = Menus.menuAcciones(asesino);
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------ASESINO/ENTRENAMIENTO-----------------------------------------------------------------------
@@ -107,11 +107,11 @@ public class AccionesPersonajes {
         boolean salirTanque = false;
            
             do {
-                salirTanque = tanque.condiccionesVictoria(salirTanque);
+                salirTanque = tanque.condiccionesVictoria();
                 
                     // ------------------------------------------------------------------TANQUE/MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(eleccionAccion, tanque);
+                    eleccionAccion = Menus.menuAcciones(tanque);
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------TANQUE/ENTRENAMIENTO-----------------------------------------------------------------------
@@ -145,11 +145,10 @@ public class AccionesPersonajes {
         boolean salirMago = false;
            
             do {
-                salirMago = mago.condiccionesVictoria(salirMago);
-                
+                salirMago = mago.condiccionesVictoria();
                     // ------------------------------------------------------------------MAGO/MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(eleccionAccion, mago);
+                    eleccionAccion = Menus.menuAcciones(mago);
         
                 switch (eleccionAccion) {
                     case 1:// ------------------------------------------------------------------MAGO/ENTRENAMIENTO-----------------------------------------------------------------------

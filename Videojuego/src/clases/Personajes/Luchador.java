@@ -2,9 +2,6 @@ package Personajes;
 import util.Utilidades;
 import java.io.IOException;
 
-import Entrenamiento.Entrenamiento;
-import Interfaz.Titulos;
-
 /**
  * Clase Luchador la cúal es hija de la clase Personaje
  * @author Iván Bertolo García

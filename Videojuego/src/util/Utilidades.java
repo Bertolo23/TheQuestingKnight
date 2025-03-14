@@ -3,12 +3,6 @@ package util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import Personajes.Asesino;
-import Personajes.Luchador;
-import Personajes.Mago;
-import Personajes.Personaje;
-import Personajes.Tanque;
 /**
  * Clase en la que recogo métodos útiles, los cuales tienen funciones muy usadas que de otra forma repetiria en las clases una y otra vez
  * @author Iván Bertolo García

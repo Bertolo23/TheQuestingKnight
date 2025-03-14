@@ -62,13 +62,13 @@ public class Menus {
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public static int menuAcciones(int eleccionAccion, Personaje personaje) throws IOException {
+    public static int menuAcciones(Personaje personaje) throws IOException {
         Titulos.tituloMenuAcciones();
+        int eleccionAccion = 0;
         String [] textoMenuAcciones = {"Si entrenas, ganas experiencia y la puedes gastar en mejorar tus estadísticas. Cada vez que llegues a 5 o multiplo de 5 subiras un nivel.",
                                         "Si haces misiones, se te pagará, pero necesitarás unas buenas estadísticas y perderás salud.",
                                         "En la tienda se pueden comprar objetos con dinero que te modificarán las estadísticas."};
         int margen = 60;
-        try {
             System.out.print(" ".repeat(margen) + Utilidades.ANSI_BLUE + "║ ENTRENAR ║ ║ TIENDA ║ ║ MISIONES ║ ║ ESTADÍSTICAS ║ ║ SALIR ║"+Utilidades.ANSI_RESET);
             System.out.println();
             System.out.println();
@@ -79,9 +79,6 @@ public class Menus {
             System.out.println();
             System.out.println("¿Qué deseas hacer?(1-5)");
             eleccionAccion = Utilidades.leerEntero();
-        } catch (NumberFormatException e) {
-            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
-        }
         return eleccionAccion;
     }
 
@@ -123,7 +120,7 @@ public class Menus {
         
         do{
             String opcion = "";  
-            opcion = menuPersonaje();// Solo esta disponible el Luchador 
+            opcion = menuPersonaje(); 
              
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 

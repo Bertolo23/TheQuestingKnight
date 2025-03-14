@@ -250,7 +250,7 @@ public abstract class Personaje {
      * @return true si se cumple alguna condición de victoria o muerte o false en caso contrario.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
-    public boolean condiccionesVictoria(boolean salirMenuAcciones) throws IOException {
+    public boolean condiccionesVictoria() throws IOException {
         if (salud <= 0 || dinero >= 250) {
             if (salud <= 0) {
                 System.out.println("Has muerto");
