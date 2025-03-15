@@ -65,16 +65,17 @@ public class Mago extends Personaje {
      * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y poder de habilidad.
      * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
      */
-    public void introduccionMago(){
+    public void introduccionPersonaje(){
 
-        int margenTexto = 50;
         int margenEntreNumeros = 7;
-        super.introduccionPersonaje();
-        System.out.println(Utilidades.ANSI_PURPLE + "║ PODER ║" + Utilidades.ANSI_CYAN + "║ SALUD ║");
-        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margenTexto + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+        int margen = 50;
+        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + getNombre().toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
+        Utilidades.espacios(3);
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen - 2) + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ PODER ║" + Utilidades.ANSI_CYAN + "║ SALUD ║");        
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros-1) + Utilidades.ANSI_YELLOW +
                 "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 5) + Utilidades.ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_PURPLE +
+                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 1) + Utilidades.ANSI_PURPLE +
                 "║ " + poderDeHabilidad + " ║" + " ".repeat(margenEntreNumeros - 5) + Utilidades.ANSI_CYAN +
                 "║ " + getSalud() + " ║");
         Utilidades.espacios(4);

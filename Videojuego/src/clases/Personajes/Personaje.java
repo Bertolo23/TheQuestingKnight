@@ -211,14 +211,7 @@ public abstract class Personaje {
     /**
      * Muestra la introducción del personaje, incluyendo su nombre y sus estadísticas iniciales.
      */
-    public void introduccionPersonaje() {
-        int margen = 50;
-        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + nombre.toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.print(Utilidades.ANSI_GREEN + " ".repeat(margen - 2) + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
-    }
+    public abstract void introduccionPersonaje();
 
     /**
      * Verifica si el personaje ha subido de nivel y actualiza su nivel si corresponde.
