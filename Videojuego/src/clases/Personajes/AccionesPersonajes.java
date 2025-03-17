@@ -15,11 +15,11 @@ public class AccionesPersonajes {
     /**
      * Método que recoge todas las acciones de la clase luchador
      * @param luchador
-     * @param opcion
      * @throws IOException
      */
-    public static void accionesLuchador(Luchador luchador, String opcion)throws IOException{
+    public static void accionesLuchador(Luchador luchador)throws IOException{
         luchador.introduccionPersonaje();
+        String opcion ="";
         String continuar = Utilidades.continuar(opcion);
         Utilidades.espacios(6);
         boolean salirLuchador = false;
@@ -59,11 +59,11 @@ public class AccionesPersonajes {
     /**
      * Método que recoge todas las acciones de la clase Asesino
      * @param luchador
-     * @param opcion
      * @throws IOException
      */
-    public static void accionesAsesino(Asesino asesino, String opcion)throws IOException{
+    public static void accionesAsesino(Asesino asesino)throws IOException{
         asesino.introduccionPersonaje();
+        String opcion ="";
         String continuar = Utilidades.continuar(opcion);
         Utilidades.espacios(6);
         boolean salirAsesino = false;
@@ -100,8 +100,9 @@ public class AccionesPersonajes {
             salirAsesino = true;
     }
 
-    public static void accionesTanque(Tanque tanque, String opcion)throws IOException{
+    public static void accionesTanque(Tanque tanque)throws IOException{
         tanque.introduccionPersonaje();
+        String opcion ="";
         String continuar = Utilidades.continuar(opcion);
         Utilidades.espacios(6);
         boolean salirTanque = false;
@@ -138,8 +139,9 @@ public class AccionesPersonajes {
             salirTanque = true;
     }
 
-    public static void accionesMago(Mago mago, String opcion)throws IOException{
+    public static void accionesMago(Mago mago)throws IOException{
         mago.introduccionPersonaje();
+        String opcion ="";
         String continuar = Utilidades.continuar(opcion);
         Utilidades.espacios(6);
         boolean salirMago = false;
