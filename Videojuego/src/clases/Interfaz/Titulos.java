@@ -134,6 +134,7 @@ public class Titulos {
 
     }
 
+    // Título del Resumen de la partida.
     public static void tituloResumenPartida(){
         int margen = 40;
         System.out.println(Utilidades.ANSI_PURPLE+  " ".repeat(margen) +"  ____  _____ ____  _   _ __  __ _____ _   _   ____  _____   ____   _    ____ _____ ___ ____    _    \r\n" + //
