@@ -131,7 +131,7 @@ public class Menus {
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesLuchador(luchador, opcion);
+                                AccionesPersonajes.accionesLuchador(luchador);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
                                 partida.setNombrePersonaje(luchador.getNombre());
                                 salir = true;
@@ -139,21 +139,21 @@ public class Menus {
                         
                         case "a":
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesAsesino(asesino, opcion);
+                                AccionesPersonajes.accionesAsesino(asesino);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
                                 partida.setNombrePersonaje(asesino.getNombre());
                                 salir = true;
                         break;
                         case "t":
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesTanque(tanque, opcion);
+                                AccionesPersonajes.accionesTanque(tanque);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
                                 partida.setNombrePersonaje(tanque.getNombre());
                                 salir = true;
                         break;
                         case "m":
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesMago(mago, opcion);
+                                AccionesPersonajes.accionesMago(mago);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
                                 partida.setNombrePersonaje(mago.getNombre());
                                 salir = true;
@@ -171,11 +171,9 @@ public class Menus {
     
         }while(salir==false);
         partida.setFechaFinal(LocalDateTime.now());
-        System.out.println("Saliendo del programa");
-        System.out.println();
+        Utilidades.espacios(3);
+        Titulos.tituloResumenPartida();
+        Utilidades.espacios(3);
         System.out.println(partida.toString());
-        //for(int i = 0;i<partida.getEstadisticas().length;i++){
-          //  System.out.println(partida.getEstadisticas()[i]);
-        //}
     }
 }
