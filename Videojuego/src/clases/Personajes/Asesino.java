@@ -1,9 +1,5 @@
 package Personajes;
-
 import java.io.IOException;
-
-import Entrenamiento.Entrenamiento;
-import Interfaz.Titulos;
 import util.Utilidades;
 
 /**

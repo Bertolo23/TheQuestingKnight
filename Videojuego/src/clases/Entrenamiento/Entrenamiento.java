@@ -1,7 +1,5 @@
 package Entrenamiento;
-
 import java.io.IOException;
-
 import Interfaz.Titulos;
 import Personajes.*;
 import util.Utilidades;

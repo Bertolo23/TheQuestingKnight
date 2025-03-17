@@ -1,5 +1,4 @@
 package Misiones;
-
 import util.Utilidades;
 import java.io.IOException;
 import Personajes.Personaje;

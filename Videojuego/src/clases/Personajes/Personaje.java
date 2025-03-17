@@ -1,8 +1,5 @@
 package Personajes;
-
 import java.io.IOException;
-
-import Interfaz.Menus;
 import Interfaz.Titulos;
 import util.Utilidades;
 
@@ -261,15 +258,24 @@ public abstract class Personaje {
         }
         return false;
     }
-
+    /**
+     * Muestra la salud y el dinero actual del personaje en la partida.
+     * Se formatea la salida para que se vea correctamente en la interfaz.
+     */
     public void mostrarSaludYDinero(){
         int margen = 80;
-        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + salud + Utilidades.ANSI_RESET + "       DINERO  " + Utilidades.ANSI_YELLOW + dinero + Utilidades.ANSI_RESET + "");
-
+        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + salud + Utilidades.ANSI_RESET 
+                + "       DINERO  " + Utilidades.ANSI_YELLOW + dinero + Utilidades.ANSI_RESET);
     }
 
+    /**
+     * Obtiene el valor de la estadística única de un personaje en función de su clase específica.
+     * Cada clase de personaje tiene una estadística única que la distingue de las demás.
+     * 
+     * @param personaje Objeto de tipo Personaje cuya estadística única se desea obtener.
+     * @return El valor de la estadística única correspondiente a la clase del personaje.
+     */
     public static int valorEstadisticaUnica(Personaje personaje){
-   
         int valorEstadisticaUnica = 0;
         if(personaje instanceof Luchador){
             valorEstadisticaUnica = ((Luchador) personaje).getCoraje();
@@ -283,12 +289,17 @@ public abstract class Personaje {
         if (personaje instanceof Mago) {
             valorEstadisticaUnica = ((Mago) personaje).getPoderDeHabilidad();
         }
-
         return valorEstadisticaUnica;
-}
+    }
 
+    /**
+     * Obtiene el nombre de la estadística única de un personaje en función de su clase específica.
+     * Cada clase de personaje tiene una estadística única que la distingue de las demás.
+     * 
+     * @param personaje Objeto de tipo Personaje cuya estadística única se desea conocer.
+     * @return El nombre de la estadística única correspondiente a la clase del personaje.
+     */
     public static String nombreEstadisticaUnica(Personaje personaje){
-
         String nombreEstadisticaUnica = "";
         if(personaje instanceof Luchador){
             nombreEstadisticaUnica = "Coraje";
@@ -302,21 +313,28 @@ public abstract class Personaje {
         if (personaje instanceof Mago) {
             nombreEstadisticaUnica = "Poder de Habilidad";
         }
-
         return nombreEstadisticaUnica;
-}
+    }
 
+    /**
+     * Extrae las estadísticas principales y el nivel del personaje y las almacena en un array.
+     * El array resultante contiene los valores en el siguiente orden:
+     * vitalidad, fuerza, agilidad, percepción mágica, estadística única, nivel.
+     * 
+     * @param personaje Objeto de tipo Personaje del cual se extraerán las estadísticas.
+     * @return Un array de enteros que contiene las estadísticas principales y el nivel del personaje.
+     */
     public static int[] sacarEstadisticasYNivel(Personaje personaje){
-        int [] estadisticas = new int[Utilidades.NUMERO_ESTADISTICAS];
+        int[] estadisticas = new int[Utilidades.NUMERO_ESTADISTICAS];
         estadisticas[0] = personaje.getVitalidad();
         estadisticas[1] = personaje.getFuerza();
         estadisticas[2] = personaje.getAgilidad();
         estadisticas[3] = personaje.getPercepcionMagica();
         estadisticas[4] = valorEstadisticaUnica(personaje);
         estadisticas[5] = personaje.getNivel();
-
         return estadisticas;
     }
+
 
 
     /**
