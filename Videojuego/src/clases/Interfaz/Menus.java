@@ -1,6 +1,11 @@
 package Interfaz;
 import util.Utilidades;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
+import Partida.Partida;
 import Personajes.*;
 
 /**
@@ -115,6 +120,7 @@ public class Menus {
     public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;
         String continuarDescripcion = " ";
+        Partida partida = new Partida(null, null, null, null);
         Titulos.tituloInicio();
         Utilidades.continuar(continuarDescripcion);
         
@@ -124,20 +130,33 @@ public class Menus {
              
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesLuchador(luchador, opcion);
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
+                                partida.setNombrePersonaje(luchador.getNombre());
+                                salir = true;
                         break;
                         
                         case "a":
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesAsesino(asesino, opcion);
-
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
+                                partida.setNombrePersonaje(asesino.getNombre());
+                                salir = true;
                         break;
                         case "t":
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesTanque(tanque, opcion);
-
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
+                                partida.setNombrePersonaje(tanque.getNombre());
+                                salir = true;
                         break;
                         case "m":
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesMago(mago, opcion);
-
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
+                                partida.setNombrePersonaje(mago.getNombre());
+                                salir = true;
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
                             salir = true;
@@ -151,6 +170,12 @@ public class Menus {
                 } 
     
         }while(salir==false);
+        partida.setFechaFinal(LocalDateTime.now());
         System.out.println("Saliendo del programa");
+        System.out.println();
+        System.out.println(partida.toString());
+        //for(int i = 0;i<partida.getEstadisticas().length;i++){
+          //  System.out.println(partida.getEstadisticas()[i]);
+        //}
     }
 }

@@ -21,8 +21,9 @@ public class Utilidades{
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
     public static final String ANSI_BOLD = "\u001B[1m";
+    public static final int NUMERO_ESTADISTICAS = 6;
 
-     static BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 
      public static int leerEnteroConTexto(String texto)throws IOException{
         int entrada = 0;

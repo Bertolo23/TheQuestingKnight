@@ -1,6 +1,8 @@
 package Personajes;
 
 import java.io.IOException;
+
+import Interfaz.Menus;
 import Interfaz.Titulos;
 import util.Utilidades;
 
@@ -303,6 +305,18 @@ public abstract class Personaje {
 
         return nombreEstadisticaUnica;
 }
+
+    public static int[] sacarEstadisticasYNivel(Personaje personaje){
+        int [] estadisticas = new int[Utilidades.NUMERO_ESTADISTICAS];
+        estadisticas[0] = personaje.getVitalidad();
+        estadisticas[1] = personaje.getFuerza();
+        estadisticas[2] = personaje.getAgilidad();
+        estadisticas[3] = personaje.getPercepcionMagica();
+        estadisticas[4] = valorEstadisticaUnica(personaje);
+        estadisticas[5] = personaje.getNivel();
+
+        return estadisticas;
+    }
 
 
     /**
