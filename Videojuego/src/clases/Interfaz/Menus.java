@@ -1,4 +1,4 @@
-package Interfaz;
+package clases.Interfaz;
 import util.Utilidades;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -123,9 +123,9 @@ public class Menus {
         Partida partida = new Partida(null, null, null, null);
         Titulos.tituloInicio();
         Utilidades.continuar(continuarDescripcion);
+        String opcion = ""; 
         
         do{
-            String opcion = "";  
             opcion = menuPersonaje(); 
              
                 switch (opcion) {
@@ -170,10 +170,15 @@ public class Menus {
                 } 
     
         }while(salir==false);
-        partida.setFechaFinal(LocalDateTime.now());
-        Utilidades.espacios(3);
-        Titulos.tituloResumenPartida();
-        Utilidades.espacios(3);
-        System.out.println(partida.toString());
+        if (opcion.equals("s")) {
+            System.out.println("Hasta Luego");
+        }else{
+            partida.setFechaFinal(LocalDateTime.now());
+            Utilidades.espacios(3);
+            Titulos.tituloResumenPartida();
+            Utilidades.espacios(3);
+            System.out.println(partida.toString());
+        }
+        
     }
 }

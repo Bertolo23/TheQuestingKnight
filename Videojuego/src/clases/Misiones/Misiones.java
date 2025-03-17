@@ -1,4 +1,4 @@
-package Misiones;
+package clases.Misiones;
 import util.Utilidades;
 import java.io.IOException;
 import Personajes.Personaje;

@@ -1,4 +1,4 @@
-package Tienda;
+package clases.Tienda;
 import java.io.IOException;
 import Personajes.Personaje;
 import util.Utilidades;

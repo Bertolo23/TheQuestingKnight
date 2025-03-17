@@ -1,4 +1,4 @@
-package Misiones;
+package clases.Misiones;
 import java.io.IOException;
 import Interfaz.Menus;
 import Interfaz.Titulos;

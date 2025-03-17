@@ -1,4 +1,4 @@
-package Entrenamiento;
+package clases.Entrenamiento;
 import java.io.IOException;
 import Interfaz.Titulos;
 import Personajes.*;

@@ -1,4 +1,4 @@
-package Personajes;
+package clases.Personajes;
 import util.Utilidades;
 import java.io.IOException;
 

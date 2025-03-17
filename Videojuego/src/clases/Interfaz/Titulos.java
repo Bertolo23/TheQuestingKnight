@@ -1,4 +1,4 @@
-package Interfaz;
+package clases.Interfaz;
 
 import util.Utilidades;
 

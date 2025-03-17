@@ -1,4 +1,4 @@
-package Tienda;
+package clases.Tienda;
 import java.io.IOException;
 import Interfaz.Menus;
 import Interfaz.Titulos;

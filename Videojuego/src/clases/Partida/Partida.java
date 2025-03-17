@@ -1,4 +1,4 @@
-package Partida;
+package clases.Partida;
 import util.Utilidades;
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package Personajes;
+package clases.Personajes;
 import java.io.IOException;
 import Entrenamiento.Entrenamiento;
 import Interfaz.Menus;
