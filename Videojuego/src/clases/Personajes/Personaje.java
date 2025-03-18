@@ -1,6 +1,6 @@
 package clases.Personajes;
 import java.io.IOException;
-import Interfaz.Titulos;
+import clases.Interfaz.Titulos;
 import util.Utilidades;
 
 

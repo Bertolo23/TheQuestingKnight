@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
-import Partida.Partida;
-import Personajes.*;
+import clases.Partida.Partida;
+import clases.Personajes.*;
 
 /**
  * Clase que gestiona los diferentes menús del juego.

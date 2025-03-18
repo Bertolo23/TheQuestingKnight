@@ -1,7 +1,7 @@
 
 import java.io.IOException;
-import Interfaz.Menus;
-import Personajes.*;
+import clases.Interfaz.Menus;
+import clases.Personajes.*;
 
 /**
  * Clase Principal donde recojo todos los métodos y hago la estructura del juego

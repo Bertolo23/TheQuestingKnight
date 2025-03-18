@@ -1,6 +1,11 @@
 package clases.Tienda;
 import java.io.IOException;
-import Personajes.Personaje;
+
+import clases.Personajes.Asesino;
+import clases.Personajes.Luchador;
+import clases.Personajes.Mago;
+import clases.Personajes.Personaje;
+import clases.Personajes.Tanque;
 import util.Utilidades;
 
 
@@ -27,6 +32,7 @@ public class ObjetoTienda {
     public ObjetoTienda(String nombre, int precio) {
         this.nombre = nombre;
         this.precio = precio;
+
     }
 
     /**
@@ -65,6 +71,7 @@ public class ObjetoTienda {
         this.precio = precio;
     }
 
+
     /**
      * Método que recoge los objetos de la tienda y cual quieres comprar
      * @param objeto objeto de clase ObjetoTienda del cúal sacamos la información de cada objeto
@@ -93,4 +100,5 @@ public class ObjetoTienda {
         Utilidades.espacios(2);
         return false;
     }
+
 }

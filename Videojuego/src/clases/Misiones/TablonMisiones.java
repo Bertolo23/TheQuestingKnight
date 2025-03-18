@@ -1,8 +1,11 @@
 package clases.Misiones;
 import java.io.IOException;
-import Interfaz.Menus;
-import Interfaz.Titulos;
-import Personajes.Personaje;
+import java.util.ArrayList;
+
+import clases.Interfaz.Menus;
+import clases.Interfaz.Titulos;
+import clases.Personajes.Personaje;
+import clases.Tienda.*;
 import util.Utilidades;
 
 /**
@@ -21,15 +24,19 @@ public class TablonMisiones {
             String nombreEstadisticaUnica = Personaje.nombreEstadisticaUnica(personaje);
             int valorEstadisticaUnica = Personaje.valorEstadisticaUnica(personaje);
             boolean salirTablonMisiones = false;
-            
+            ArrayList<ObjetoTienda> listaObjetos = new ArrayList<>();
             do {
                 int opcionMision = 0;
                 int[]pagaMision = InfoMisiones.pagaMision();
                 double[]saludPerdida = InfoMisiones.saludPerdidaMision();
-                Misiones mision1 = new Misiones(pagaMision[0], saludPerdida[0], InfoMisiones.textoMision1());
-                Misiones mision2 = new Misiones(pagaMision[1], saludPerdida[1], InfoMisiones.textoMision2());
-                Misiones mision3 = new Misiones(pagaMision[2], saludPerdida[2], InfoMisiones.textoMision3());
-                Misiones mision4 = new Misiones(pagaMision[3], saludPerdida[3], InfoMisiones.textoMision4());
+                Misiones mision1 = new Misiones(pagaMision[0], saludPerdida[0], InfoMisiones.textoMision1(),null);
+                listaObjetos.add(Tienda.objeto1);
+                Misiones mision2 = new Misiones(pagaMision[1], saludPerdida[1], InfoMisiones.textoMision2(), listaObjetos);
+                listaObjetos.add(Tienda.objeto2);
+                Misiones mision3 = new Misiones(pagaMision[2], saludPerdida[2], InfoMisiones.textoMision3(), listaObjetos);
+                listaObjetos.add(Tienda.objeto3);
+                listaObjetos.add(Tienda.objeto4);
+                Misiones mision4 = new Misiones(pagaMision[3], saludPerdida[3], InfoMisiones.textoMision4(), listaObjetos);
 
                 Titulos.tablonMisiones();
                 opcionMision = Menus.menuMisiones(personaje);
@@ -51,12 +58,20 @@ public class TablonMisiones {
                         break;
                     case 2:// ------------------------------------------------------------------personaje/MISION2-----------------------------------------------------------------------
                             if (personaje.getVitalidad()>=9 && personaje.getFuerza()>=8 && personaje.getAgilidad()>=7 && valorEstadisticaUnica>=12) {
-                                Titulos.imprimirCuadroTextoInicial(mision2.getDescripcion());                                
-                                String continuarMision = Utilidades.leerStringConTexto("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
-                                Utilidades.espacios(2);
-                                if (continuarMision.equals("c")) {
-                                    mision2.estructuraMision(mision2, personaje);
+                                if (mision2.getObjetoRequerido()!= null) {
+                                    System.out.println("No puedes hacer la misión, necesitas el/los objeto/s:");
+                                    for (ObjetoTienda objetoTienda : mision2.getObjetoRequerido()) {
+                                         System.out.println(objetoTienda.getNombre());
+                                    }
+                                }else{
+                                    Titulos.imprimirCuadroTextoInicial(mision2.getDescripcion());                                
+                                    String continuarMision = Utilidades.leerStringConTexto("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
+                                    Utilidades.espacios(2);
+                                    if (continuarMision.equals("c")) {
+                                        mision2.estructuraMision(mision2, personaje);
+                                    }
                                 }
+                                    
                             }else{
                                 System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 9 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 7 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 12 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
                                 System.out.println();

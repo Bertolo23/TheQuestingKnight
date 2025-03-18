@@ -1,9 +1,9 @@
 package clases.Personajes;
 import java.io.IOException;
-import Entrenamiento.Entrenamiento;
-import Interfaz.Menus;
-import Misiones.TablonMisiones;
-import Tienda.Tienda;
+import clases.Entrenamiento.Entrenamiento;
+import clases.Interfaz.Menus;
+import clases.Misiones.TablonMisiones;
+import clases.Tienda.Tienda;
 import util.Utilidades;
 /**
  * Clase que recoge las acciones de cada personaje en un swicth

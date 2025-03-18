@@ -1,7 +1,7 @@
 package clases.Entrenamiento;
 import java.io.IOException;
-import Interfaz.Titulos;
-import Personajes.*;
+import clases.Interfaz.Titulos;
+import clases.Personajes.*;
 import util.Utilidades;
 
 public class Entrenamiento {
