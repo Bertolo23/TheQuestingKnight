@@ -18,7 +18,6 @@ public class Misiones {
     private int pagaMision; // Representa la cantidad de dinero que el personaje recibe al completar la misión
     private double saludPerdida; // Indica la cantidad de salud que el personaje pierde al realizar la misión
     private String[] descripcion; // Almacena la descripción de la misión en un array de Strings
-    private ArrayList<ObjetoTienda> objetoRequerido;
     /**
      * CONSTRUCTOR
      */
@@ -29,11 +28,10 @@ public class Misiones {
      * @param saludPerdida cantidad de salud que se pierde al realizar la misión
      * @param descripcion descripción de la misión
      */
-    public Misiones(int pagaMision, double saludPerdida, String[] descripcion, ArrayList<ObjetoTienda> objetoRequerido) {
+    public Misiones(int pagaMision, double saludPerdida, String[] descripcion) {
         this.pagaMision = pagaMision;
         this.saludPerdida = saludPerdida;
         this.descripcion = descripcion;
-        this.objetoRequerido = objetoRequerido;
     }
 
     /**
@@ -86,22 +84,6 @@ public class Misiones {
      */
     public void setDescripcion(String[] descripcion) {
         this.descripcion = descripcion;
-    }
-
-    /**
-     * Método get que retorna la descripción de la misión
-     * @return array de Strings con la descripción de la misión
-     */
-    public ArrayList<ObjetoTienda> getObjetoRequerido() {
-        return objetoRequerido;
-    }
-
-    /**
-     * Método set para actualizar la descripción de la misión
-     * @param objetoRequerido nuevo array de Strings con la descripción de la misión
-     */
-    public void setObjetoRequerido(ArrayList<ObjetoTienda> objetoRequerido) {
-        this.objetoRequerido = objetoRequerido;
     }
 
     /**

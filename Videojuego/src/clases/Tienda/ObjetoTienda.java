@@ -1,13 +1,7 @@
 package clases.Tienda;
 import java.io.IOException;
-
-import clases.Personajes.Asesino;
-import clases.Personajes.Luchador;
-import clases.Personajes.Mago;
 import clases.Personajes.Personaje;
-import clases.Personajes.Tanque;
 import util.Utilidades;
-
 
 /**
  * Clase que representa un objeto disponible en la tienda del juego
@@ -19,7 +13,7 @@ public class ObjetoTienda {
      */
     private String nombre; // Nombre del objeto en la tienda
     private int precio; // Precio del objeto en la tienda
-
+    private boolean objetoComprado;
     /**
      * CONSTRUCTOR
      */
@@ -29,10 +23,10 @@ public class ObjetoTienda {
      * @param nombre nombre del objeto
      * @param precio precio del objeto en la tienda
      */
-    public ObjetoTienda(String nombre, int precio) {
+    public ObjetoTienda(String nombre, int precio, boolean objetoComprado) {
         this.nombre = nombre;
         this.precio = precio;
-
+        this.objetoComprado = objetoComprado;
     }
 
     /**
@@ -71,6 +65,21 @@ public class ObjetoTienda {
         this.precio = precio;
     }
 
+    /**
+     * Método get que retorna el precio del objeto
+     * @return precio del objeto en la tienda
+     */
+    public boolean getObjetoComprado() {
+        return objetoComprado;
+    }
+
+    /**
+     * Método set para actualizar el precio del objeto
+     * @param precio nuevo precio del objeto en la tienda
+     */
+    public void setObjetoComprado(boolean objetoComprado) {
+        this.objetoComprado = objetoComprado;
+    }
 
     /**
      * Método que recoge los objetos de la tienda y cual quieres comprar

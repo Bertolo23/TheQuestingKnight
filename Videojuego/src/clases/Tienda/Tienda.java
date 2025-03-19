@@ -1,5 +1,7 @@
 package clases.Tienda;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import clases.Interfaz.Menus;
 import clases.Interfaz.Titulos;
 import clases.Personajes.Personaje;
@@ -9,10 +11,10 @@ import util.Utilidades;
  */
 public class Tienda {
 
-    public static ObjetoTienda objeto1 = new ObjetoTienda("Pechera", 40);
-    public static ObjetoTienda objeto2 = new ObjetoTienda("Mandoble", 55);
-    public static ObjetoTienda objeto3 = new ObjetoTienda("Báculo", 60);
-    public static ObjetoTienda objeto4 = new ObjetoTienda("Manto", 70);
+    static ObjetoTienda objeto1 = new ObjetoTienda("Pechera", 40, false);
+    static ObjetoTienda objeto2 = new ObjetoTienda("Mandoble", 55, false);
+    static ObjetoTienda objeto3 = new ObjetoTienda("Báculo", 60, false);
+    static ObjetoTienda objeto4 = new ObjetoTienda("Manto", 70, false);
     /**
      * Permite al personaje comprar objetos en la tienda, afectando sus estadísticas y reduciendo su dinero.
      * Se presentan diferentes opciones de compra con sus respectivos efectos en las características del personaje.
@@ -52,7 +54,7 @@ public class Tienda {
                                 personaje.setVitalidad(personaje.getVitalidad() + 4);
                                 personaje.setAgilidad(personaje.getAgilidad() - 2);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto1.getNombre());
-                                
+                                objeto1.setObjetoComprado(true);
                             }
                             break;
                         case 2: // Compra de Mandoble
@@ -63,6 +65,7 @@ public class Tienda {
                                 personaje.setAgilidad(personaje.getAgilidad() - 1);
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() - 2);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto2.getNombre());
+                                objeto2.setObjetoComprado(true);
                             }
                             break;
                         case 3: // Compra de Báculo
@@ -72,6 +75,7 @@ public class Tienda {
                                 personaje.setFuerza(personaje.getFuerza() - 3);
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 7);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto3.getNombre());
+                                objeto3.setObjetoComprado(true);
                             }
                             break;
                         case 4: // Compra de Manto
@@ -82,6 +86,7 @@ public class Tienda {
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 2);
                                 personaje.setVitalidad(personaje.getVitalidad() - 4);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto4.getNombre());
+                                objeto4.setObjetoComprado(true);
                             }
                             break;
                         case 5: // Salir de la tienda
@@ -104,5 +109,14 @@ public class Tienda {
                 System.out.println();
                 System.out.println();
             }
+    }
+
+    public static ArrayList<ObjetoTienda> arrayObjetosTienda(){
+        ArrayList<ObjetoTienda> listaObjetos = new ArrayList<>();
+        listaObjetos.add(objeto1);
+        listaObjetos.add(objeto2);
+        listaObjetos.add(objeto3);
+        listaObjetos.add(objeto4);
+        return listaObjetos;
     }
 }

@@ -316,6 +316,23 @@ public abstract class Personaje {
         return nombreEstadisticaUnica;
     }
 
+    public void mejoraEstadisticaUnica(Personaje personaje, int cantidadMejorar){
+
+        if(personaje instanceof Luchador){
+            ((Luchador) personaje).setCoraje(((Luchador)personaje).getCoraje()+cantidadMejorar);
+        }
+        if (personaje instanceof Asesino) {
+            ((Asesino) personaje).setSigilo(((Asesino)personaje).getSigilo()+cantidadMejorar);
+        }
+        if (personaje instanceof Tanque) {
+            ((Tanque) personaje).setBarrera(((Tanque)personaje).getBarrera()+cantidadMejorar);
+        }
+        if (personaje instanceof Mago) {
+            ((Mago) personaje).setPoderDeHabilidad(((Mago)personaje).getPoderDeHabilidad()+cantidadMejorar);
+        }
+
+    }
+
     /**
      * Extrae las estadísticas principales y el nivel del personaje y las almacena en un array.
      * El array resultante contiene los valores en el siguiente orden:

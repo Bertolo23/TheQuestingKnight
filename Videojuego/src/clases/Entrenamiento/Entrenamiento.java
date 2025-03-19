@@ -37,7 +37,6 @@ public class Entrenamiento {
      */
     public static void entrenamientoPersonaje(Personaje personaje) throws IOException {
         String nombreEstadisticaUnica = Personaje.nombreEstadisticaUnica(personaje);
-        int valorEstadisticaUnica = Personaje.valorEstadisticaUnica(personaje);
         Titulos.tituloEntrenamiento();
         personaje.setExperiencia(personaje.getExperiencia() + 1);
         personaje.subirNivel();
@@ -73,7 +72,8 @@ public class Entrenamiento {
                             System.out.println("Percepción Mágica: " + Utilidades.ANSI_BLUE + personaje.getPercepcionMagica() + Utilidades.ANSI_RESET);
                             break;
                         case 5: // Aumentar Coraje
-                            valorEstadisticaUnica++;
+                            personaje.mejoraEstadisticaUnica(personaje, 1);
+                            int valorEstadisticaUnica = Personaje.valorEstadisticaUnica(personaje);
                             System.out.println(nombreEstadisticaUnica+": " + Utilidades.ANSI_PURPLE + valorEstadisticaUnica + Utilidades.ANSI_RESET);
                             break;
                         default:
