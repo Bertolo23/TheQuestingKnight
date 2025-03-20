@@ -14,8 +14,8 @@ public class AccionesPersonajes {
 
     /**
      * Método que recoge todas las acciones de la clase luchador
-     * @param luchador
-     * @throws IOException
+     * @param luchador objeto necesario para poder acceder a sus métodos
+     * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
     public static void accionesLuchador(Luchador luchador)throws IOException{
         luchador.introduccionPersonaje();
@@ -58,8 +58,8 @@ public class AccionesPersonajes {
 
     /**
      * Método que recoge todas las acciones de la clase Asesino
-     * @param luchador
-     * @throws IOException
+     * @param asesino objeto necesario para poder acceder a sus métodos
+     * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
     public static void accionesAsesino(Asesino asesino)throws IOException{
         asesino.introduccionPersonaje();
@@ -99,7 +99,11 @@ public class AccionesPersonajes {
             } while (salirAsesino==false);
             salirAsesino = true;
     }
-
+    /**
+     * Método que recoge todas las acciones de la clase tanque
+     * @param tanque objeto necesario para poder acceder a sus métodos
+     * @throws IOException Si ocurre un error al leer la entrada del usuario.
+     */
     public static void accionesTanque(Tanque tanque)throws IOException{
         tanque.introduccionPersonaje();
         String opcion ="";
@@ -138,7 +142,11 @@ public class AccionesPersonajes {
             } while (salirTanque==false);
             salirTanque = true;
     }
-
+    /**
+     * Método que recoge todas las acciones de la clase Mago
+     * @param mago objeto necesario para poder acceder a sus métodos
+     * @throws IOException Si ocurre un error al leer la entrada del usuario.
+     */
     public static void accionesMago(Mago mago)throws IOException{
         mago.introduccionPersonaje();
         String opcion ="";

@@ -5,6 +5,8 @@ import util.Utilidades;
 
 /**
  * Clase que representa un objeto disponible en la tienda del juego
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class ObjetoTienda {
     

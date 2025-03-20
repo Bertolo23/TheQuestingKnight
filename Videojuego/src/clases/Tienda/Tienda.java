@@ -8,6 +8,8 @@ import clases.Personajes.Personaje;
 import util.Utilidades;
 /**
  * Clase que se encarga de Tener la Tienda que sera igual para todos los personajes
+ * @author Iván Bertolo García
+ * @version 2.0
  */
 public class Tienda {
 
@@ -107,6 +109,10 @@ public class Tienda {
             }
     }
 
+    /**
+     * Metodo que se encarga de recoger los objetos de objetoTienda previamente creados en un ArrayList que se podra exportar a otras clases
+     * @return Un ArrayList con los objetos necesarios
+     */
     public static ArrayList<ObjetoTienda> arrayObjetosTienda(){
         ArrayList<ObjetoTienda> listaObjetos = new ArrayList<>();
         listaObjetos.add(objeto1);

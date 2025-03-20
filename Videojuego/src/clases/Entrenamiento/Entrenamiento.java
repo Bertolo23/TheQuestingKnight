@@ -3,7 +3,11 @@ import java.io.IOException;
 import clases.Interfaz.Titulos;
 import clases.Personajes.*;
 import util.Utilidades;
-
+/**
+ * Clase que recoge la gestión de la acción de entrenamiento de cada personaje
+ * @author Iván Bertolo García
+ * @version 2.0
+ */
 public class Entrenamiento {
     
     /**

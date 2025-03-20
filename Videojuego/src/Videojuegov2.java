@@ -4,7 +4,7 @@ import clases.Interfaz.Menus;
 import clases.Personajes.*;
 
 /**
- * Clase Principal donde recojo todos los métodos y hago la estructura del juego
+ * Clase Principal donde ejecuto el juego
  * @author Iván Bertolo García
  * @version 2.0
  */

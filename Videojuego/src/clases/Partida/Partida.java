@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
  * Clase que representa una partida en el videojuego. 
  * Contiene información sobre el inicio, el personaje utilizado, sus estadísticas y la finalización de la partida.
  * @version 1.0
+ * @author IBG
  */
 public class Partida {
     

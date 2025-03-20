@@ -61,8 +61,6 @@ public class Menus {
     /**
      * Muestra el menú de acciones donde el jugador puede elegir qué hacer en el juego.
      * 
-     * @param eleccionAccion Variable que almacena la elección del jugador.
-     * @param titulos Objeto para mostrar los títulos de los menús.
      * @param personaje Objeto del personaje para mostrar su estado actual.
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
@@ -113,9 +111,12 @@ public class Menus {
     }
 
     /**
-     * Método que establece el menu principal del programa
+     * Método que gestiona la eleccion del personaje y sus acciones
      * @param luchador objeto luchador necesario para las acciones de luchador
-     * @throws IOException si ocurre un error al leer la entrada del usuario.
+     * @param asesino objeto asesino necesario para las acciones de asesino
+     * @param tanque objeto tanque necesario para las acciones de tanque
+     * @param mago objeto mago necesario para las acciones de mago
+     * @throws IOException
      */
     public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;

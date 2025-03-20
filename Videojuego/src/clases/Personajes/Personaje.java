@@ -316,6 +316,11 @@ public abstract class Personaje {
         return nombreEstadisticaUnica;
     }
 
+    /**
+     * Metodo que te permite mejorar la estadistica unica de cada personaje
+     * @param personaje objeto necesario para poder obtener la estadistica y mejorarla
+     * @param cantidadMejorar cantidad de puntos a mejorar
+     */
     public void mejoraEstadisticaUnica(Personaje personaje, int cantidadMejorar){
 
         if(personaje instanceof Luchador){

@@ -12,8 +12,9 @@ public class Titulos {
     /**
      * El uso del método repeat funciona escribiendo primero en formato String lo que quieres repetir, en mi caso un espacio " "
      * y como parametro las veces que lo quieres repetir, en mi caso una variable int que le doy un valor específico.
+     * 
+     * @param texto necesario para poder crear el cuadro alrededor del mismo texto
      */
-
      public static void imprimirCuadroTexto(String[] texto) {
         int ancho = 0;
         int margen = 30;
