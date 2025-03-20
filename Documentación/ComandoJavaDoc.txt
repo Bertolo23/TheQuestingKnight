@@ -1,0 +1,1 @@
+ javadoc -d .\Documentación\ -version -author -use .\Videojuego\src\clases\Entrenamiento\*java .\Videojuego\src\clases\Interfaz\*.java .\Videojuego\src\clases\Misiones\*java .\Videojuego\src\clases\Partida\*java .\Videojuego\src\clases\Personajes\*.java .\Videojuego\src\clases\Tienda\*.java  .\Videojuego\src\util\*.java .\Videojuego\src\*.java

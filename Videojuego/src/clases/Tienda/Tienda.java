@@ -11,6 +11,7 @@ import util.Utilidades;
  */
 public class Tienda {
 
+    // Creación de objetos disponibles en la tienda
     static ObjetoTienda objeto1 = new ObjetoTienda("Pechera", 40, false);
     static ObjetoTienda objeto2 = new ObjetoTienda("Mandoble", 55, false);
     static ObjetoTienda objeto3 = new ObjetoTienda("Báculo", 60, false);
@@ -25,10 +26,6 @@ public class Tienda {
      * @throws IOException Si ocurre un error en la lectura de la entrada del usuario.
      */
     public static void tiendaDeObjetos(Personaje personaje) throws IOException {
-
-        // Creación de objetos disponibles en la tienda
-        
-        
 
         // Verifica si el personaje tiene dinero para comprar
         if (personaje.getDinero() > 0) {
@@ -91,8 +88,7 @@ public class Tienda {
                             break;
                         case 5: // Salir de la tienda
                             dejarDeComprar = true;
-                            System.out.println();
-                            System.out.println();
+                            Utilidades.espacios(2);
                             break;
                         default:
                             System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + Utilidades.ANSI_RESET);

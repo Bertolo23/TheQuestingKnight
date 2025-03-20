@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"clases.Entrenamiento"},{"l":"clases.Interfaz"},{"l":"clases.Misiones"},{"l":"clases.Partida"},{"l":"clases.Personajes"},{"l":"clases.Tienda"},{"l":"util"}];updateSearchResults();
