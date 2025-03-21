@@ -120,20 +120,6 @@ public class Partida {
         return "a las " + hora + ":" + minutos + ":" + segundos + " el " + dia + "/" + mes + "/" + año;
     }
 
-    public static ArrayList<Partida> creacionArrayPartidas(){
-        ArrayList<Partida> partidas = new ArrayList<>();
-        Partida partidaLuchador = new Partida(null, null, null, null);
-        Partida partidaAsesino = new Partida(null, null, null, null);
-        Partida partidaTanque = new Partida(null, null, null, null);
-        Partida partidaMago = new Partida(null, null, null, null);
-        partidas.add(partidaLuchador);
-        partidas.add(partidaAsesino);
-        partidas.add(partidaTanque);
-        partidas.add(partidaMago);
-
-        return partidas;
-    }
-
     /**
      * Representación en cadena de la información de la partida.
      * @return Una cadena con la fecha de inicio, el nombre del personaje, las estadísticas y la fecha de finalización.

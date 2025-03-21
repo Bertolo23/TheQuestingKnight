@@ -122,7 +122,8 @@ public class Menus {
     public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;
         String continuarDescripcion = " ";
-        ArrayList<Partida> partidas = Partida.creacionArrayPartidas();
+        ArrayList<Partida> partidas = new ArrayList<>();
+        Partida partida = new Partida(null, null, null, null);
         Titulos.tituloInicio();
         Utilidades.continuar(continuarDescripcion);
         String opcion = ""; 
@@ -132,29 +133,34 @@ public class Menus {
              
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
-                                partidas.get(0).setFechaInicio(LocalDateTime.now());
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesLuchador(luchador);
-                                partidas.get(0).setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
-                                partidas.get(0).setNombrePersonaje(luchador.getNombre());
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
+                                partida.setNombrePersonaje(luchador.getNombre());
+                                partidas.add(partida);
                         break;
                         
                         case "a":
-                                partidas.get(1).setFechaInicio(LocalDateTime.now());
+                                
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesAsesino(asesino);
-                                partidas.get(1).setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
-                                partidas.get(1).setNombrePersonaje(asesino.getNombre());
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
+                                partida.setNombrePersonaje(asesino.getNombre());
+                                partidas.add(partida);
                         break;
                         case "t":
-                                partidas.get(2).setFechaInicio(LocalDateTime.now());
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesTanque(tanque);
-                                partidas.get(2).setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
-                                partidas.get(2).setNombrePersonaje(tanque.getNombre());
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
+                                partida.setNombrePersonaje(tanque.getNombre());
+                                partidas.add(partida);
                         break;
                         case "m":
-                                partidas.get(3).setFechaInicio(LocalDateTime.now());
+                                partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesMago(mago);
-                                partidas.get(3).setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
-                                partidas.get(3).setNombrePersonaje(mago.getNombre());
+                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
+                                partida.setNombrePersonaje(mago.getNombre());
+                                partidas.add(partida);
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
                             salir = true;
@@ -165,21 +171,20 @@ public class Menus {
                             Utilidades.espacios(2);
                         break;
                 } 
-    
         }while(salir==false);
-        for(Partida partida: partidas){
-            partida.setFechaFinal(LocalDateTime.now());
+        for(Partida cadaPartida: partidas){
+            cadaPartida.setFechaFinal(LocalDateTime.now());
         }
         Utilidades.espacios(3);
         Titulos.tituloResumenPartida();
         Utilidades.espacios(3);
         int i = 0;
-        for (Partida partida : partidas) {
-            if (partida.getNombrePersonaje() != null){
+        for (Partida cadaPartida2 : partidas) {
+            if (cadaPartida2.getNombrePersonaje() != null){
                 i++;
                 System.out.println(" ".repeat(15)+"PARTIDA  "+i);
                 Utilidades.espacios(1);
-                System.out.println(partida.toString());
+                System.out.println(cadaPartida2.toString());
                 Utilidades.espacios(1);
                 System.out.println("---------------------------------------------");
                 Utilidades.espacios(1);  
