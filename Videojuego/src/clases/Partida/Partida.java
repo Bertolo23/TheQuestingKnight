@@ -1,6 +1,7 @@
 package clases.Partida;
 import util.Utilidades;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * Clase que representa una partida en el videojuego. 
@@ -117,6 +118,20 @@ public class Partida {
         int minutos = tiempo.getMinute();
         int segundos = tiempo.getSecond();
         return "a las " + hora + ":" + minutos + ":" + segundos + " el " + dia + "/" + mes + "/" + año;
+    }
+
+    public static ArrayList<Partida> creacionArrayPartidas(){
+        ArrayList<Partida> partidas = new ArrayList<>();
+        Partida partidaLuchador = new Partida(null, null, null, null);
+        Partida partidaAsesino = new Partida(null, null, null, null);
+        Partida partidaTanque = new Partida(null, null, null, null);
+        Partida partidaMago = new Partida(null, null, null, null);
+        partidas.add(partidaLuchador);
+        partidas.add(partidaAsesino);
+        partidas.add(partidaTanque);
+        partidas.add(partidaMago);
+
+        return partidas;
     }
 
     /**
