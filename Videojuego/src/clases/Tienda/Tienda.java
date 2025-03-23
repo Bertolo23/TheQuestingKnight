@@ -22,8 +22,6 @@ public class Tienda {
      * Permite al personaje comprar objetos en la tienda, afectando sus estadísticas y reduciendo su dinero.
      * Se presentan diferentes opciones de compra con sus respectivos efectos en las características del personaje.
      * 
-     * @param titulo    Objeto Titulos utilizado para mostrar encabezados en la tienda.
-     * @param menu      Objeto Menus utilizado para mostrar el menú de la tienda.
      * @param personaje Objeto Personaje que realiza las compras y cuyos atributos pueden verse afectados.
      * @throws IOException Si ocurre un error en la lectura de la entrada del usuario.
      */
@@ -32,7 +30,6 @@ public class Tienda {
         // Verifica si el personaje tiene dinero para comprar
         if (personaje.getDinero() > 0) {
             boolean salirTienda = false;
-            boolean objetoComprado = false;
             int comprarObjetos = 0;
 
             do {
@@ -47,8 +44,7 @@ public class Tienda {
 
                     switch (comprarObjetos) {
                         case 1: // Compra de Pechera
-                            objetoComprado = objeto1.objetoTienda(objeto1, personaje);
-                            if (objetoComprado) {
+                            if (objeto1.gestionCompra(objeto1, personaje)  == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
                                 personaje.setVitalidad(personaje.getVitalidad() + 4);
                                 personaje.setAgilidad(personaje.getAgilidad() - 2);
@@ -57,8 +53,7 @@ public class Tienda {
                             }
                             break;
                         case 2: // Compra de Mandoble
-                            objetoComprado = objeto2.objetoTienda(objeto2, personaje);
-                            if (objetoComprado) {
+                            if (objeto2.gestionCompra(objeto2, personaje) == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto2.getPrecio());
                                 personaje.setFuerza(personaje.getFuerza() + 5);
                                 personaje.setAgilidad(personaje.getAgilidad() - 1);
@@ -68,8 +63,7 @@ public class Tienda {
                             }
                             break;
                         case 3: // Compra de Báculo
-                            objetoComprado = objeto3.objetoTienda(objeto3, personaje);
-                            if (objetoComprado) {
+                            if (objeto3.gestionCompra(objeto3, personaje) == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto3.getPrecio());
                                 personaje.setFuerza(personaje.getFuerza() - 3);
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 7);
@@ -78,8 +72,7 @@ public class Tienda {
                             }
                             break;
                         case 4: // Compra de Manto
-                            objetoComprado = objeto4.objetoTienda(objeto4, personaje);
-                            if (objetoComprado) {
+                            if (objeto4.gestionCompra(objeto4, personaje) == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto4.getPrecio());
                                 personaje.setAgilidad(personaje.getAgilidad() + 5);
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 2);

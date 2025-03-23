@@ -3,9 +3,6 @@ import util.Utilidades;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-
 import clases.Partida.Partida;
 import clases.Personajes.*;
 
@@ -41,7 +38,6 @@ public class Menus {
      */
     public static int menuTienda(Personaje personaje) throws IOException {
         int comprarObjetos = 0;
-        try {
             System.out.println();
             System.out.println("1. Pechera de Placas(+ " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad - " + Utilidades.ANSI_YELLOW + "2 " + Utilidades.ANSI_RESET + "Agilidad )");
             System.out.println("2. Mandoble de Acero de Damasco(+ " + Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
@@ -53,9 +49,6 @@ public class Menus {
             personaje.mostrarSaludYDinero();
 
             comprarObjetos = Utilidades.leerEntero();
-        } catch (NumberFormatException e) {
-            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba un carácter válido" + Utilidades.ANSI_RESET);
-        }
         return comprarObjetos;
     }
 
@@ -70,8 +63,8 @@ public class Menus {
         Titulos.tituloMenuAcciones();
         int eleccionAccion = 0;
         String [] textoMenuAcciones = {"Si entrenas, ganas experiencia y la puedes gastar en mejorar tus estadísticas. Cada vez que llegues a 5 o multiplo de 5 subiras un nivel.",
-                                        "Si haces misiones, se te pagará, pero necesitarás unas buenas estadísticas y perderás salud.",
-                                        "En la tienda se pueden comprar objetos con dinero que te modificarán las estadísticas."};
+                                        "Si haces misiones, se te pagará y y perderás salud, pero habrá requisitos para realizarlas.",
+                                        "En la tienda se pueden comprar objetos con dinero que te modificarán las estadísticas y daran acceso a misiones."};
         int margen = 60;
             System.out.print(" ".repeat(margen) + Utilidades.ANSI_BLUE + "║ ENTRENAR ║ ║ TIENDA ║ ║ MISIONES ║ ║ ESTADÍSTICAS ║ ║ SALIR ║"+Utilidades.ANSI_RESET);
             System.out.println();
@@ -123,43 +116,46 @@ public class Menus {
         boolean salir = false;
         String continuarDescripcion = " ";
         ArrayList<Partida> partidas = new ArrayList<>();
-        Partida partida = new Partida(null, null, null, null);
         Titulos.tituloInicio();
         Utilidades.continuar(continuarDescripcion);
         String opcion = ""; 
         
         do{
             opcion = menuPersonaje(); 
-             
+            Partida partida = new Partida(null, null, null, null);
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesLuchador(luchador);
+                                AccionesPersonajes.accionesPersonaje(luchador);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
                                 partida.setNombrePersonaje(luchador.getNombre());
+                                partida.setFechaFinal(LocalDateTime.now());
                                 partidas.add(partida);
                         break;
                         
                         case "a":
                                 
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesAsesino(asesino);
+                                AccionesPersonajes.accionesPersonaje(asesino);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
                                 partida.setNombrePersonaje(asesino.getNombre());
+                                partida.setFechaFinal(LocalDateTime.now());
                                 partidas.add(partida);
                         break;
                         case "t":
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesTanque(tanque);
+                                AccionesPersonajes.accionesPersonaje(tanque);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
                                 partida.setNombrePersonaje(tanque.getNombre());
+                                partida.setFechaFinal(LocalDateTime.now());
                                 partidas.add(partida);
                         break;
                         case "m":
                                 partida.setFechaInicio(LocalDateTime.now());
-                                AccionesPersonajes.accionesMago(mago);
+                                AccionesPersonajes.accionesPersonaje(mago);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
                                 partida.setNombrePersonaje(mago.getNombre());
+                                partida.setFechaFinal(LocalDateTime.now());
                                 partidas.add(partida);
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
@@ -170,26 +166,26 @@ public class Menus {
                             System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una inicial de personaje por favor"+Utilidades.ANSI_RESET);
                             Utilidades.espacios(2);
                         break;
-                } 
+                }
+            Utilidades.espacios(3);         
         }while(salir==false);
-        for(Partida cadaPartida: partidas){
-            cadaPartida.setFechaFinal(LocalDateTime.now());
+        if (partidas.isEmpty()) {
+            System.out.println("Hasta Luego.");
+        }else{
+            Titulos.tituloResumenPartida();
+            Utilidades.espacios(3);
+            int i = 0;
+            for (Partida cadaPartida : partidas) {
+                if (cadaPartida.getNombrePersonaje() != null){
+                    i++;
+                    System.out.println(" ".repeat(15)+"PARTIDA  "+i);
+                    Utilidades.espacios(1);
+                    System.out.println(cadaPartida.toString());
+                    Utilidades.espacios(1);
+                    System.out.println("---------------------------------------------");
+                    Utilidades.espacios(1);  
+                }
+            }  
         }
-        Utilidades.espacios(3);
-        Titulos.tituloResumenPartida();
-        Utilidades.espacios(3);
-        int i = 0;
-        for (Partida cadaPartida2 : partidas) {
-            if (cadaPartida2.getNombrePersonaje() != null){
-                i++;
-                System.out.println(" ".repeat(15)+"PARTIDA  "+i);
-                Utilidades.espacios(1);
-                System.out.println(cadaPartida2.toString());
-                Utilidades.espacios(1);
-                System.out.println("---------------------------------------------");
-                Utilidades.espacios(1);  
-            }
-        }  
-
     }
 }

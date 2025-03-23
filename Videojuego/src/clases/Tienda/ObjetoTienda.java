@@ -90,7 +90,7 @@ public class ObjetoTienda {
      * @return falso si no tiene dinero o no quiere comprar el objeto y true si lo compra
      * @throws IOException para poder leer con BFReader
      */
-     public boolean objetoTienda(ObjetoTienda objeto, Personaje personaje)throws IOException{
+     public boolean gestionCompra(ObjetoTienda objeto, Personaje personaje)throws IOException{
         
         String seguirCompra = Utilidades.leerStringConTexto("La "+objeto.getNombre()+" tiene un precio de "+Utilidades.ANSI_YELLOW+objeto.getPrecio()+Utilidades.ANSI_RESET+", Seguimos con la compra?(S/N)").toUpperCase();
         Utilidades.espacios(2);

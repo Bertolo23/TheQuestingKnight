@@ -13,177 +13,46 @@ import util.Utilidades;
 public class AccionesPersonajes {
 
     /**
-     * Método que recoge todas las acciones de la clase luchador
-     * @param luchador objeto necesario para poder acceder a sus métodos
+     * Método que recoge todas las acciones de la clase personaje
+     * @param personaje objeto necesario para poder acceder a sus métodos
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
-    public static void accionesLuchador(Luchador luchador)throws IOException{
-        luchador.introduccionPersonaje();
+    public static void accionesPersonaje(Personaje personaje)throws IOException{
+        personaje.introduccionPersonaje(personaje);
         String opcion ="";
         String continuar = Utilidades.continuar(opcion);
         Utilidades.espacios(6);
-        boolean salirLuchador = false;
+        boolean salir = false;
            
             do {
-                salirLuchador = luchador.condiccionesVictoria();
+                salir = personaje.condiccionesVictoria();
                 
-                    // ------------------------------------------------------------------LUCHADOR/MENU ACCIONES-----------------------------------------------------------------------
+                    // ------------------------------------------------------------------Personaje/MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(luchador);
+                    eleccionAccion = Menus.menuAcciones(personaje);
         
                 switch (eleccionAccion) {
-                    case 1:// ------------------------------------------------------------------LUCHADOR/ENTRENAMIENTO-----------------------------------------------------------------------
-                            Entrenamiento.entrenamientoPersonaje(luchador);
+                    case 1:// ------------------------------------------------------------------Personaje/ENTRENAMIENTO-----------------------------------------------------------------------
+                            Entrenamiento.entrenamientoPersonaje(personaje);
                         break;
-                    case 2:// ------------------------------------------------------------------LUCHADOR/TIENDA-----------------------------------------------------------------------
-                            Tienda.tiendaDeObjetos(luchador);
+                    case 2:// ------------------------------------------------------------------Personaje/TIENDA-----------------------------------------------------------------------
+                            Tienda.tiendaDeObjetos(personaje);
                         break;
-                    case 3:// ------------------------------------------------------------------LUCHADOR/MISIONES-----------------------------------------------------------------------
-                            TablonMisiones.tablonMisiones(luchador);
+                    case 3:// ------------------------------------------------------------------Personaje/MISIONES-----------------------------------------------------------------------
+                            TablonMisiones.tablonMisiones(personaje);
                         break;
-                    case 4:// ------------------------------------------------------------------LUCHADOR/STATS-----------------------------------------------------------------------
-                            luchador.enseñarEstadisticasLuchador();
+                    case 4:// ------------------------------------------------------------------Personaje/STATS-----------------------------------------------------------------------
+                            personaje.enseñarEstadisticas(personaje);
                         break;
-                    case 5:// ------------------------------------------------------------------LUCHADOR/SALIR-----------------------------------------------------------------------
-                            salirLuchador=true;
+                    case 5:// ------------------------------------------------------------------Personaje/SALIR-----------------------------------------------------------------------
+                            salir=true;
                         break;
                     default:
                         System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
                         Utilidades.espacios(2);
                         break;
                 }                                   
-            } while (salirLuchador==false);
-            salirLuchador = true;
+            } while (salir==false);
+            salir = true;
     }
-
-    /**
-     * Método que recoge todas las acciones de la clase Asesino
-     * @param asesino objeto necesario para poder acceder a sus métodos
-     * @throws IOException Si ocurre un error al leer la entrada del usuario.
-     */
-    public static void accionesAsesino(Asesino asesino)throws IOException{
-        asesino.introduccionPersonaje();
-        String opcion ="";
-        String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios(6);
-        boolean salirAsesino = false;
-           
-            do {
-                salirAsesino = asesino.condiccionesVictoria();
-                
-                    // ------------------------------------------------------------------ASESINO/MENU ACCIONES-----------------------------------------------------------------------
-                    int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(asesino);
-        
-                switch (eleccionAccion) {
-                    case 1:// ------------------------------------------------------------------ASESINO/ENTRENAMIENTO-----------------------------------------------------------------------
-                            Entrenamiento.entrenamientoPersonaje(asesino);
-                        break;
-                    case 2:// ------------------------------------------------------------------ASESINO/TIENDA-----------------------------------------------------------------------
-                            Tienda.tiendaDeObjetos(asesino);
-                        break;
-                    case 3:// ------------------------------------------------------------------ASESINO/MISIONES-----------------------------------------------------------------------
-                            TablonMisiones.tablonMisiones(asesino);
-                        break;
-                    case 4:// ------------------------------------------------------------------ASESINO/STATS-----------------------------------------------------------------------
-                            asesino.enseñarEstadisticasAsesino();
-                        break;
-                    case 5:// ------------------------------------------------------------------ASESINO/SALIR-----------------------------------------------------------------------
-                    salirAsesino=true;
-                        break;
-                    default:
-                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        Utilidades.espacios(2);
-                        break;
-                }                                   
-            } while (salirAsesino==false);
-            salirAsesino = true;
-    }
-    /**
-     * Método que recoge todas las acciones de la clase tanque
-     * @param tanque objeto necesario para poder acceder a sus métodos
-     * @throws IOException Si ocurre un error al leer la entrada del usuario.
-     */
-    public static void accionesTanque(Tanque tanque)throws IOException{
-        tanque.introduccionPersonaje();
-        String opcion ="";
-        String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios(6);
-        boolean salirTanque = false;
-           
-            do {
-                salirTanque = tanque.condiccionesVictoria();
-                
-                    // ------------------------------------------------------------------TANQUE/MENU ACCIONES-----------------------------------------------------------------------
-                    int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(tanque);
-        
-                switch (eleccionAccion) {
-                    case 1:// ------------------------------------------------------------------TANQUE/ENTRENAMIENTO-----------------------------------------------------------------------
-                            Entrenamiento.entrenamientoPersonaje(tanque);
-                        break;
-                    case 2:// ------------------------------------------------------------------TANQUE/TIENDA-----------------------------------------------------------------------
-                            Tienda.tiendaDeObjetos(tanque);
-                        break;
-                    case 3:// ------------------------------------------------------------------TANQUE/MISIONES-----------------------------------------------------------------------
-                            TablonMisiones.tablonMisiones(tanque);
-                        break;
-                    case 4:// ------------------------------------------------------------------TANQUE/STATS-----------------------------------------------------------------------
-                            tanque.enseñarEstadisticasTanque();
-                        break;
-                    case 5:// ------------------------------------------------------------------TANQUE/SALIR-----------------------------------------------------------------------
-                    salirTanque=true;
-                        break;
-                    default:
-                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        Utilidades.espacios(2);
-                        break;
-                }                                   
-            } while (salirTanque==false);
-            salirTanque = true;
-    }
-    /**
-     * Método que recoge todas las acciones de la clase Mago
-     * @param mago objeto necesario para poder acceder a sus métodos
-     * @throws IOException Si ocurre un error al leer la entrada del usuario.
-     */
-    public static void accionesMago(Mago mago)throws IOException{
-        mago.introduccionPersonaje();
-        String opcion ="";
-        String continuar = Utilidades.continuar(opcion);
-        Utilidades.espacios(6);
-        boolean salirMago = false;
-           
-            do {
-                salirMago = mago.condiccionesVictoria();
-                    // ------------------------------------------------------------------MAGO/MENU ACCIONES-----------------------------------------------------------------------
-                    int eleccionAccion = 0;
-                    eleccionAccion = Menus.menuAcciones(mago);
-        
-                switch (eleccionAccion) {
-                    case 1:// ------------------------------------------------------------------MAGO/ENTRENAMIENTO-----------------------------------------------------------------------
-                            Entrenamiento.entrenamientoPersonaje(mago);
-                        break;
-                    case 2:// ------------------------------------------------------------------MAGO/TIENDA-----------------------------------------------------------------------
-                            Tienda.tiendaDeObjetos(mago);
-                        break;
-                    case 3:// ------------------------------------------------------------------MAGO/MISIONES-----------------------------------------------------------------------
-                            TablonMisiones.tablonMisiones(mago);
-                        break;
-                    case 4:// ------------------------------------------------------------------MAGO/STATS-----------------------------------------------------------------------
-                            mago.enseñarEstadisticasMago();
-                        break;
-                    case 5:// ------------------------------------------------------------------MAGO/SALIR-----------------------------------------------------------------------
-                    salirMago=true;
-                        break;
-                    default:
-                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        Utilidades.espacios(2);
-                        break;
-                }                                   
-            } while (salirMago==false);
-            salirMago = true;
-    }
-
-
 }

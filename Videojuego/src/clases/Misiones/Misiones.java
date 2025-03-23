@@ -1,9 +1,7 @@
 package clases.Misiones;
 import util.Utilidades;
 import java.io.IOException;
-import java.util.ArrayList;
 import clases.Personajes.Personaje;
-import clases.Tienda.ObjetoTienda;
 
 /**
  * Clase que representa la estructura de como van a ser las misiones que los personajes pueden completar

@@ -1,6 +1,4 @@
 package clases.Personajes;
-import java.io.IOException;
-import util.Utilidades;
 
 /**
  * Clase Asesino la cúal es hija de la clase Personaje
@@ -58,51 +56,6 @@ public class Asesino extends Personaje {
     public void setSigilo(int sigilo) {
         this.sigilo = sigilo;
     }
-
-    /**
-     * Método que muestra la introducción del personaje Asesino, presentando sus estadísticas principales.
-     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y sigilo.
-     * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
-     */
-    public void introduccionPersonaje(){
-
-        int margenEntreNumeros = 7;
-        int margen = 50;
-        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + getNombre().toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
-        Utilidades.espacios(3);
-        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen - 2) + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ SIGILO ║" + Utilidades.ANSI_CYAN + "║ SALUD ║");        
-        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 7) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
-                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 5) + Utilidades.ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 2) + Utilidades.ANSI_PURPLE +
-                "║ " + sigilo + " ║" + " ".repeat(margenEntreNumeros - 4) + Utilidades.ANSI_CYAN +
-                "║ " + getSalud() + " ║");
-        Utilidades.espacios(4);
-        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
-    }
-
-
-    /**
-     * Método que muestra las estadísticas actuales del Asesino.
-     * Primero cogiendo el método generico de Personaje y completandolo aquí
-     * 
-     * @throws IOException Si ocurre un error en la lectura de la entrada.
-     */
-    public void enseñarEstadisticasAsesino() throws IOException {
-        int margenTexto = 50;
-        int margenEntreNumeros = 7;
-        super.enseñarEstadisticas();
-        System.out.println(Utilidades.ANSI_PURPLE + "║ SIGILO ║" + Utilidades.ANSI_RESET);
-        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margenTexto + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
-                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
-                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
-                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + Utilidades.ANSI_PURPLE +
-                "║ " + sigilo + " ║" + Utilidades.ANSI_RESET);
-        Utilidades.espacios(2);
-        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");
-        Utilidades.espacios(2);
-    }
-
 
     /**
      * TO STRING

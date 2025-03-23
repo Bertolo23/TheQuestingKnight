@@ -1,7 +1,6 @@
 package clases.Partida;
 import util.Utilidades;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 /**
  * Clase que representa una partida en el videojuego. 

@@ -205,12 +205,19 @@ public abstract class Personaje {
         this.nivel = nivel;
     }
 
-
-
     /**
-     * Muestra la introducción del personaje, incluyendo su nombre y sus estadísticas iniciales.
+     * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
+     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y coraje.
+     * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
      */
-    public abstract void introduccionPersonaje();
+    public void introduccionPersonaje(Personaje personaje) {
+        int margen = 50;
+        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + this.nombre.toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
+        Utilidades.espacios(3);
+        mostrarEstadisticas(personaje);
+        Utilidades.espacios(2);
+        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
+    }
 
     /**
      * Verifica si el personaje ha subido de nivel y actualiza su nivel si corresponde.
@@ -227,18 +234,35 @@ public abstract class Personaje {
     /**
      * Muestra las estadísticas actuales del personaje.
      */
-    public void enseñarEstadisticas(){
+    public void enseñarEstadisticas(Personaje personaje) throws IOException {
         Titulos.tituloEstadisticas();
-        System.out.println();
-        System.out.println();
+        mostrarEstadisticas(personaje);
+        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");
+        Utilidades.espacios(2);
+    }
+
+    /**
+     * Método que muestra todas la estadísticas completas de cada tipo de personaje, incluida la única
+     * @param personaje objeto personaje para saber que estadística única va a ser
+     */
+    public void mostrarEstadisticas(Personaje personaje){
+        int valorEstadisticaUnica = valorEstadisticaUnica(personaje);
+        String nombreEstadisticaUnica = nombreEstadisticaUnica(personaje).toUpperCase();
+        int margenEntreNumeros = 7;
         int margen = 50;
-        System.out.print(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║");
+        Utilidades.espacios(2);
+        System.out.println(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ "+nombreEstadisticaUnica+" ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 8) + "║ " + getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+                "║ " + getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
+                "║ " + getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + Utilidades.ANSI_PURPLE +
+                "║ " + valorEstadisticaUnica + " ║" + Utilidades.ANSI_RESET);
+        Utilidades.espacios(2);
     }
 
     /**
      * Comprueba si se cumplen las condiciones de victoria o de muerte y, en caso afirmativo, termina la partida.
      * 
-     * @param salirMenuAcciones Booleano que indica si el jugador desea salir del menú de acciones.
      * @return true si se cumple alguna condición de victoria o muerte o false en caso contrario.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
@@ -356,9 +380,7 @@ public abstract class Personaje {
         estadisticas[5] = personaje.getNivel();
         return estadisticas;
     }
-
-
-
+    
     /**
      * TO STRING
      */
