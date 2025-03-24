@@ -129,34 +129,26 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(luchador);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
                                 partida.setNombrePersonaje(luchador.getNombre());
-                                partida.setFechaFinal(LocalDateTime.now());
-                                partidas.add(partida);
                         break;
                         
-                        case "a":
+                        case "a":// ------------------------------------------------------------------ASESONO----------------------------------------------------------------------- 
                                 
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(asesino);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
                                 partida.setNombrePersonaje(asesino.getNombre());
-                                partida.setFechaFinal(LocalDateTime.now());
-                                partidas.add(partida);
                         break;
-                        case "t":
+                        case "t":// ------------------------------------------------------------------TANQUE----------------------------------------------------------------------- 
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(tanque);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
                                 partida.setNombrePersonaje(tanque.getNombre());
-                                partida.setFechaFinal(LocalDateTime.now());
-                                partidas.add(partida);
                         break;
-                        case "m":
+                        case "m":// ------------------------------------------------------------------MAGO----------------------------------------------------------------------- 
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(mago);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
                                 partida.setNombrePersonaje(mago.getNombre());
-                                partida.setFechaFinal(LocalDateTime.now());
-                                partidas.add(partida);
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
                             salir = true;
@@ -167,6 +159,8 @@ public class Menus {
                             Utilidades.espacios(2);
                         break;
                 }
+            partida.setFechaFinal(LocalDateTime.now());
+            partidas.add(partida);
             Utilidades.espacios(3);         
         }while(salir==false);
         if (partidas.isEmpty()) {
