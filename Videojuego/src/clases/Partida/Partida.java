@@ -109,7 +109,7 @@ public class Partida {
      * @param tiempo Un objeto LocalDateTime con la fecha y hora a formatear.
      * @return Una cadena con la fecha y hora formateadas en el formato "HH:MM:SS el DD/MM/YYYY".
      */
-    public String horaYFechaCompleta(LocalDateTime tiempo){
+    private String horaYFechaCompleta(LocalDateTime tiempo){
         int año = tiempo.getYear();
         int mes = tiempo.getMonthValue();
         int dia = tiempo.getDayOfMonth();
