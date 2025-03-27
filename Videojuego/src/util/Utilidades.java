@@ -1,6 +1,7 @@
 package util;
 
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 /**
@@ -151,5 +152,15 @@ public class Utilidades{
     public static String continuar(String continuar) throws IOException {
         continuar = Utilidades.leerStringConTexto("Pulse intro para continuar");
         return continuar;
+    }
+
+    public static void llevarInfoAFichero(String ruta, String contenido){
+        try {
+            FileWriter escritor = new FileWriter(ruta, true);
+            escritor.write(contenido);
+            escritor.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

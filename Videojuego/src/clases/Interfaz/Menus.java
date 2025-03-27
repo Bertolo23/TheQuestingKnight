@@ -1,5 +1,7 @@
 package clases.Interfaz;
 import util.Utilidades;
+
+import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,9 +23,9 @@ public class Menus {
      */
     public static String menuPersonaje() throws IOException {
         int margen = 55;
-        System.out.println(Utilidades.ANSI_RED + " ".repeat(margen) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL (o 's' para salir)" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_RED + " ".repeat(margen-15) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL ('p' para el Historial de Partidas o 's' para salir)" + Utilidades.ANSI_RESET);
         System.out.println();
-        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen + 5) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ SALIR ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ PARTIDAS ║║ SALIR ║" + Utilidades.ANSI_RESET);
         System.out.println();
         
         String entrada = Utilidades.leerString();
@@ -132,7 +134,6 @@ public class Menus {
                         break;
                         
                         case "a":// ------------------------------------------------------------------ASESONO----------------------------------------------------------------------- 
-                                
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(asesino);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
@@ -150,10 +151,14 @@ public class Menus {
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
                                 partida.setNombrePersonaje(mago.getNombre());
                         break;
-                        case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
-                            salir = true;
+                        case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
+                                String rutaPartidas = "TheKingv2_IvanBertolo/Videojuego/src/HistorialPartidas.txt";
+                                FileReader fr = new FileReader(rutaPartidas);
+                            
                         break;
-                  
+                        case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
+                                salir = true;
+                        break;
                     default:
                             System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una inicial de personaje por favor"+Utilidades.ANSI_RESET);
                             Utilidades.espacios(2);
@@ -166,20 +171,17 @@ public class Menus {
         if (partidas.isEmpty()) {
             System.out.println("Hasta Luego.");
         }else{
+            String rutaPartidas = "TheKingv2_IvanBertolo/Videojuego/src/HistorialPartidas.txt";
             Titulos.tituloResumenPartida();
             Utilidades.espacios(3);
             int i = 0;
             for (Partida cadaPartida : partidas) {
                 if (cadaPartida.getNombrePersonaje() != null){
                     i++;
-                    System.out.println(" ".repeat(15)+"PARTIDA  "+i);
-                    Utilidades.espacios(1);
-                    System.out.println(cadaPartida.toString());
-                    Utilidades.espacios(1);
-                    System.out.println("---------------------------------------------");
-                    Utilidades.espacios(1);  
+                    Utilidades.llevarInfoAFichero(rutaPartidas," ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
                 }
             }  
         }
+
     }
 }

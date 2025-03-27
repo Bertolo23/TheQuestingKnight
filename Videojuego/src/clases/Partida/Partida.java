@@ -126,14 +126,16 @@ public class Partida {
     @Override
     public String toString() {
         return "Partida empezada " + horaYFechaCompleta(fechaInicio) + 
-               "\nCon el personaje " + Utilidades.ANSI_UNDERLINE + nombrePersonaje + Utilidades.ANSI_RESET + 
+               "\nCon el personaje " + nombrePersonaje + 
                "\nLas estadísticas y el nivel finales fueron: " +
-               Utilidades.ANSI_GREEN + estadisticas[0] + " " + 
-               Utilidades.ANSI_RED + estadisticas[1] + " " + 
-               Utilidades.ANSI_YELLOW + estadisticas[2] + " " + 
-               Utilidades.ANSI_BLUE + estadisticas[3] + " " + 
-               Utilidades.ANSI_PURPLE + estadisticas[4] + " " + 
-               Utilidades.ANSI_RESET + estadisticas[5] + 
+               estadisticas[0] + " " + 
+               estadisticas[1] + " " + 
+               estadisticas[2] + " " + 
+               estadisticas[3] + " " + 
+               estadisticas[4] + " " + 
+               estadisticas[5] + 
                "\nY la partida terminó " + horaYFechaCompleta(fechaFinal);
     }
+
+    
 }
