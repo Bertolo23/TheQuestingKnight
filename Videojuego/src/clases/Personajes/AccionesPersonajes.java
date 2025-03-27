@@ -2,6 +2,7 @@ package clases.Personajes;
 import java.io.IOException;
 import clases.Entrenamiento.Entrenamiento;
 import clases.Interfaz.Menus;
+import clases.Interfaz.Titulos;
 import clases.Misiones.TablonMisiones;
 import clases.Tienda.Tienda;
 import util.Utilidades;
@@ -25,34 +26,45 @@ public class AccionesPersonajes {
         boolean salir = false;
            
             do {
-                salir = personaje.condiccionesVictoria();
-                
+                if (personaje.condiccionesVictoria() == true) {
+                    salir = personaje.condiccionesVictoria();
+                    if (personaje.getSalud() <= 0) {
+                        Titulos.calavera();
+                        Titulos.GameOver();
+                    }
+                    if (personaje.getDinero() >= 250) {
+                        Titulos.corona();
+                        Titulos.tituloVictoria();
+                    }
+                    Utilidades.espacios(3);
+                    String volverMenuInicio = Utilidades.leerStringConTexto("Pulsa intro para ir al menú de inicio");
+                }else{
                     // -----------------------------------------------------------------MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
                     eleccionAccion = Menus.menuAcciones(personaje);
         
-                switch (eleccionAccion) {
-                    case 1:// -----------------------------------------------------------------ENTRENAMIENTO-----------------------------------------------------------------------
-                            Entrenamiento.entrenamientoPersonaje(personaje);
-                        break;
-                    case 2:// -----------------------------------------------------------------TIENDA-----------------------------------------------------------------------
-                            Tienda.tiendaDeObjetos(personaje);
-                        break;
-                    case 3:// -----------------------------------------------------------------MISIONES-----------------------------------------------------------------------
-                            TablonMisiones.tablonMisiones(personaje);
-                        break;
-                    case 4:// -----------------------------------------------------------------STATS-----------------------------------------------------------------------
-                            personaje.enseñarEstadisticas(personaje);
-                        break;
-                    case 5:// -----------------------------------------------------------------SALIR-----------------------------------------------------------------------
-                            salir=true;
-                        break;
-                    default:
-                        System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
-                        Utilidades.espacios(2);
-                        break;
+                    switch (eleccionAccion) {
+                        case 1:// -----------------------------------------------------------------ENTRENAMIENTO-----------------------------------------------------------------------
+                                Entrenamiento.entrenamientoPersonaje(personaje);
+                            break;
+                        case 2:// -----------------------------------------------------------------TIENDA-----------------------------------------------------------------------
+                                Tienda.tiendaDeObjetos(personaje);
+                            break;
+                        case 3:// -----------------------------------------------------------------MISIONES-----------------------------------------------------------------------
+                                TablonMisiones.tablonMisiones(personaje);
+                            break;
+                        case 4:// -----------------------------------------------------------------STATS-----------------------------------------------------------------------
+                                personaje.enseñarEstadisticas(personaje);
+                            break;
+                        case 5:// -----------------------------------------------------------------SALIR-----------------------------------------------------------------------
+                                salir=true;
+                            break;
+                        default:
+                            System.out.println(Utilidades.ANSI_UNDERLINE+"Escriba una opción válida(1-5)"+Utilidades.ANSI_RESET);
+                            Utilidades.espacios(2);
+                            break;
+                    }   
                 }                                   
             } while (salir==false);
-            salir = true;
     }
 }

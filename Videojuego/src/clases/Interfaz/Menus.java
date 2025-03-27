@@ -131,6 +131,7 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(luchador);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
                                 partida.setNombrePersonaje(luchador.getNombre());
+                                luchador.reseteoEstadisticas(luchador);
                         break;
                         
                         case "a":// ------------------------------------------------------------------ASESONO----------------------------------------------------------------------- 
@@ -138,22 +139,26 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(asesino);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
                                 partida.setNombrePersonaje(asesino.getNombre());
+                                asesino.reseteoEstadisticas(asesino);
                         break;
                         case "t":// ------------------------------------------------------------------TANQUE----------------------------------------------------------------------- 
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(tanque);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
                                 partida.setNombrePersonaje(tanque.getNombre());
+                                tanque.reseteoEstadisticas(tanque);
                         break;
                         case "m":// ------------------------------------------------------------------MAGO----------------------------------------------------------------------- 
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(mago);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
                                 partida.setNombrePersonaje(mago.getNombre());
+                                mago.reseteoEstadisticas(mago);
                         break;
                         case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
-                                String rutaPartidas = "TheKingv2_IvanBertolo/Videojuego/src/HistorialPartidas.txt";
-                                FileReader fr = new FileReader(rutaPartidas);
+                                String rutaPartidas = "Videojuego/src/HistorialPartidas.txt";
+                                Titulos.tituloHistorialPartidas();
+                                Utilidades.TraerInfoFichero(rutaPartidas);
                             
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
@@ -166,21 +171,24 @@ public class Menus {
                 }
             partida.setFechaFinal(LocalDateTime.now());
             partidas.add(partida);
-            Utilidades.espacios(3);         
+            Utilidades.espacios(3);
+
         }while(salir==false);
         if (partidas.isEmpty()) {
             System.out.println("Hasta Luego.");
         }else{
-            String rutaPartidas = "TheKingv2_IvanBertolo/Videojuego/src/HistorialPartidas.txt";
-            Titulos.tituloResumenPartida();
-            Utilidades.espacios(3);
+            String rutaPartidas = "Videojuego/src/HistorialPartidas.txt";
             int i = 0;
+            Titulos.tituloResumenPartida();
+            Utilidades.llevarInfoAFichero(rutaPartidas," ".repeat(15)+"PARTIDA\n\n"+"=".repeat(50)+"\n\n");
             for (Partida cadaPartida : partidas) {
                 if (cadaPartida.getNombrePersonaje() != null){
                     i++;
-                    Utilidades.llevarInfoAFichero(rutaPartidas," ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
+                    System.out.println(" ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");
+                    Utilidades.llevarInfoAFichero(rutaPartidas," ".repeat(12)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
                 }
-            }  
+            } 
+            Utilidades.llevarInfoAFichero(rutaPartidas,"\n\n"+"=".repeat(50)+"\n\n"); 
         }
 
     }

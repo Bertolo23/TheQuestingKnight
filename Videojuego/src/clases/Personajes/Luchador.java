@@ -56,6 +56,7 @@ public class Luchador extends Personaje {
     public void setCoraje(int coraje) {
         this.coraje = coraje;
     }
+    
 
     /**
      * TO STRING

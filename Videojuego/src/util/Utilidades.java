@@ -1,6 +1,7 @@
 package util;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -161,6 +162,20 @@ public class Utilidades{
             escritor.close();
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+
+    public static void TraerInfoFichero(String ruta){
+        String cad;
+        try {
+            FileReader fr = new FileReader(ruta);
+            BufferedReader br = new BufferedReader(fr);
+            while ((cad = br.readLine()) != null) {
+                System.out.println(cad);
+            }
+            br.close();
+        } catch (IOException ioe) {
+            System.out.println(ioe);
         }
     }
 }

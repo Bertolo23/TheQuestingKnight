@@ -1,48 +1,132 @@
-               PARTIDA  1
+               PARTIDAS
 
-Partida empezada a las 9:22:48 el 27/3/2025
+==================================================
+
+            GAME  1
+
+Partida empezada a las 12:12:35 el 27/3/2025
 Con el personaje [4mLuchador[0m
-Las estadÃ­sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminÃ³ a las 9:23:0 el 27/3/2025
+Las estadísticas y el nivel finales fueron: [32m10 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 12:12:58 el 27/3/2025
 
 ---------------------------------------------
-               PARTIDA  2
+            GAME  2
 
-Partida empezada a las 9:23:2 el 27/3/2025
+Partida empezada a las 12:12:59 el 27/3/2025
 Con el personaje [4mAsesino[0m
-Las estadÃ­sticas y el nivel finales fueron: [32m5 [31m6 [33m8 [34m3 [35m9 [0m1
-Y la partida terminÃ³ a las 9:23:8 el 27/3/2025
+Las estadísticas y el nivel finales fueron: [32m5 [31m6 [33m9 [34m3 [35m9 [0m1
+Y la partida terminó a las 12:13:7 el 27/3/2025
 
 ---------------------------------------------
-               PARTIDA  3
+            GAME  3
 
-Partida empezada a las 9:23:10 el 27/3/2025
+Partida empezada a las 12:13:9 el 27/3/2025
 Con el personaje [4mLuchador[0m
-Las estadÃ­sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminÃ³ a las 9:23:12 el 27/3/2025
+Las estadísticas y el nivel finales fueron: [32m10 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 12:13:14 el 27/3/2025
 
 ---------------------------------------------
-               PARTIDA  4
+            GAME  4
 
-Partida empezada a las 9:23:16 el 27/3/2025
+Partida empezada a las 12:13:17 el 27/3/2025
 Con el personaje [4mTanque[0m
-Las estadÃ­sticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m0 [35m7 [0m1
-Y la partida terminÃ³ a las 9:23:18 el 27/3/2025
+Las estadísticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m0 [35m7 [0m1
+Y la partida terminó a las 12:13:19 el 27/3/2025
 
 ---------------------------------------------
-               PARTIDA  1
 
-Partida empezada a las 9:31:9 el 27/3/2025
+
+==================================================               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 14:14:11 el 27/3/2025
 Con el personaje [4mLuchador[0m
-Las estadÃ­sticas y el nivel finales fueron: 9 8 7 2 12 1
-Y la partida terminÃ³ a las 9:31:13 el 27/3/2025
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 14:14:27 el 27/3/2025
 
 ---------------------------------------------
-               PARTIDA  2
 
-Partida empezada a las 9:31:20 el 27/3/2025
-Con el personaje [4mAsesino[0m
-Las estadÃ­sticas y el nivel finales fueron: 5 6 8 3 9 1
-Y la partida terminÃ³ a las 9:31:22 el 27/3/2025
+
+==================================================               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 15:2:17 el 27/3/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 15:2:20 el 27/3/2025
 
 ---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 15:3:44 el 27/3/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 15:3:51 el 27/3/2025
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 15:41:17 el 27/3/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 15:41:57 el 27/3/2025
+
+---------------------------------------------
+            GAME  2
+
+Partida empezada a las 15:42:1 el 27/3/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 15:42:7 el 27/3/2025
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 15:46:1 el 27/3/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m10 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 15:46:11 el 27/3/2025
+
+---------------------------------------------
+            GAME  2
+
+Partida empezada a las 15:46:15 el 27/3/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 15:46:17 el 27/3/2025
+
+---------------------------------------------
+
+
+==================================================
+

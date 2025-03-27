@@ -216,6 +216,8 @@ public abstract class Personaje {
         Utilidades.espacios(3);
         mostrarEstadisticas(personaje);
         Utilidades.espacios(2);
+        mostrarSaludYDinero();
+        Utilidades.espacios(2);
         System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
@@ -268,17 +270,7 @@ public abstract class Personaje {
      */
     public boolean condiccionesVictoria() throws IOException {
         if (salud <= 0 || dinero >= 250) {
-            if (salud <= 0) {
-                System.out.println("Has muerto");
-                System.out.println();
-                return true;
-            }
-            if (dinero >= 250) {
-                System.out.println("LO HAS CONSEGUIDO, ERES EL REY");
-                System.out.println();
-                return true;
-            }
-            String volverMenuInicio = Utilidades.leerStringConTexto("Pulsa intro para ir al menú de inicio");
+            return true;
         }
         return false;
     }
@@ -379,6 +371,49 @@ public abstract class Personaje {
         estadisticas[4] = valorEstadisticaUnica(personaje);
         estadisticas[5] = personaje.getNivel();
         return estadisticas;
+    }
+        /**
+     * Restaura las estadísticas de un personaje a sus valores iniciales según su clase específica.
+     * Se restablecen atributos generales como dinero, experiencia, nivel y salud, 
+     * además de los atributos específicos según si el personaje es un Luchador, Asesino, Tanque o Mago.
+     * 
+     * @param personaje El personaje cuya estadística será restablecida a los valores predeterminados.
+     *                  Se determina su clase específica y se asignan los valores correspondientes.
+     */
+    public void reseteoEstadisticas(Personaje personaje) {
+        personaje.setDinero(ConstantesPersonaje.DINERO);
+        personaje.setExperiencia(ConstantesPersonaje.EXPERIENCIA);
+        personaje.setNivel(ConstantesPersonaje.NIVEL);
+        personaje.setSalud(ConstantesPersonaje.SALUD);
+
+        if (personaje instanceof Luchador) {
+            personaje.setVitalidad(ConstantesPersonaje.LUCHADOR_VITALIDAD);
+            personaje.setFuerza(ConstantesPersonaje.LUCHADOR_FUERZA);
+            personaje.setAgilidad(ConstantesPersonaje.LUCHADOR_AGILIDAD);
+            personaje.setPercepcionMagica(ConstantesPersonaje.LUCHADOR_PERCEPCION_MAGICA);
+            ((Luchador) personaje).setCoraje(ConstantesPersonaje.LUCHADOR_ESTADISTICA_ESPECIAL);
+        }
+        if (personaje instanceof Asesino) {
+            personaje.setVitalidad(ConstantesPersonaje.ASESINO_VITALIDAD);
+            personaje.setFuerza(ConstantesPersonaje.ASESINO_FUERZA);
+            personaje.setAgilidad(ConstantesPersonaje.ASESINO_AGILIDAD);
+            personaje.setPercepcionMagica(ConstantesPersonaje.ASESINO_PERCEPCION_MAGICA);
+            ((Asesino) personaje).setSigilo(ConstantesPersonaje.ASESINO_ESTADISTICA_ESPECIAL);
+        }
+        if (personaje instanceof Tanque) {
+            personaje.setVitalidad(ConstantesPersonaje.TANQUE_VITALIDAD);
+            personaje.setFuerza(ConstantesPersonaje.TANQUE_FUERZA);
+            personaje.setAgilidad(ConstantesPersonaje.TANQUE_AGILIDAD);
+            personaje.setPercepcionMagica(ConstantesPersonaje.TANQUE_PERCEPCION_MAGICA);
+            ((Tanque) personaje).setBarrera(ConstantesPersonaje.TANQUE_ESTADISTICA_ESPECIAL);
+        }
+        if (personaje instanceof Mago) {
+            personaje.setVitalidad(ConstantesPersonaje.MAGO_VITALIDAD);
+            personaje.setFuerza(ConstantesPersonaje.MAGO_FUERZA);
+            personaje.setAgilidad(ConstantesPersonaje.MAGO_AGILIDAD);
+            personaje.setPercepcionMagica(ConstantesPersonaje.MAGO_PERCEPCION_MAGICA);
+            ((Mago) personaje).setPoderDeHabilidad(ConstantesPersonaje.MAGO_ESTADISTICA_ESPECIAL);
+        }
     }
     
     /**
