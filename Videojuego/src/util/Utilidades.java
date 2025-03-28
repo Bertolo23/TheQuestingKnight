@@ -24,6 +24,7 @@ public class Utilidades{
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
     public static final String ANSI_BOLD = "\u001B[1m";
+    public static final String FONDO_GREY = "\033[47m";
     
     /** Número de estadísticas utilizadas en el juego incluyendo el nivel */
     public static final int NUMERO_ESTADISTICAS = 6;
@@ -165,7 +166,7 @@ public class Utilidades{
         }
     }
 
-    public static void TraerInfoFichero(String ruta){
+    public static void traerInfoFichero(String ruta){
         String cad;
         try {
             FileReader fr = new FileReader(ruta);

@@ -1,7 +1,5 @@
 package clases.Interfaz;
 import util.Utilidades;
-
-import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -119,6 +117,8 @@ public class Menus {
         String continuarDescripcion = " ";
         ArrayList<Partida> partidas = new ArrayList<>();
         Titulos.tituloInicio();
+        Titulos.espada();
+        Titulos.armadura();
         Utilidades.continuar(continuarDescripcion);
         String opcion = ""; 
         
@@ -158,7 +158,7 @@ public class Menus {
                         case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
                                 String rutaPartidas = "Videojuego/src/HistorialPartidas.txt";
                                 Titulos.tituloHistorialPartidas();
-                                Utilidades.TraerInfoFichero(rutaPartidas);
+                                Utilidades.traerInfoFichero(rutaPartidas);
                             
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
@@ -174,7 +174,7 @@ public class Menus {
             Utilidades.espacios(3);
 
         }while(salir==false);
-        if (partidas.isEmpty()) {
+        if (partidas.get(0).getNombrePersonaje() == null) {
             System.out.println("Hasta Luego.");
         }else{
             String rutaPartidas = "Videojuego/src/HistorialPartidas.txt";
