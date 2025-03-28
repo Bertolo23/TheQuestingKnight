@@ -14,9 +14,9 @@ import util.Utilidades;
 public class Tienda {
 
     // Creación de objetos disponibles en la tienda
-    static ObjetoTienda objeto1 = new ObjetoTienda("Pechera", 40, false);
-    static ObjetoTienda objeto2 = new ObjetoTienda("Mandoble", 55, false);
-    static ObjetoTienda objeto3 = new ObjetoTienda("Báculo", 60, false);
+    static ObjetoTienda objeto1 = new ObjetoTienda("Espada Encantada", 40, false);
+    static ObjetoTienda objeto2 = new ObjetoTienda("Armadura de Placas", 55, false);
+    static ObjetoTienda objeto3 = new ObjetoTienda("Yegua de Guerra", 60, false);
     static ObjetoTienda objeto4 = new ObjetoTienda("Manto", 70, false);
     /**
      * Permite al personaje comprar objetos en la tienda, afectando sus estadísticas y reduciendo su dinero.
@@ -43,21 +43,22 @@ public class Tienda {
                     comprarObjetos = Menus.menuTienda(personaje);
 
                     switch (comprarObjetos) {
-                        case 1: // Compra de Pechera
-                            if (objeto1.gestionCompra(objeto1, personaje)  == true) {
-                                personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
+                        case 1: // Compra de Espada Encantada
+                        if (objeto1.gestionCompra(objeto1, personaje) == true) {
+                            personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
+                            personaje.setFuerza(personaje.getFuerza() + 5);
+                            personaje.setAgilidad(personaje.getAgilidad() - 1);
+                            personaje.setPercepcionMagica(personaje.getPercepcionMagica() - 2);
+                            System.out.println("Ahora tienes equipado el objeto "+objeto1.getNombre());
+                            objeto1.setObjetoComprado(true);
+                        }
+                            break;
+                        case 2: // Armadura de Placas
+                            
+                            if (objeto2.gestionCompra(objeto2, personaje)  == true) {
+                                personaje.setDinero(personaje.getDinero() - objeto2.getPrecio());
                                 personaje.setVitalidad(personaje.getVitalidad() + 4);
                                 personaje.setAgilidad(personaje.getAgilidad() - 2);
-                                System.out.println("Ahora tienes equipado el objeto "+objeto1.getNombre());
-                                objeto1.setObjetoComprado(true);
-                            }
-                            break;
-                        case 2: // Compra de Mandoble
-                            if (objeto2.gestionCompra(objeto2, personaje) == true) {
-                                personaje.setDinero(personaje.getDinero() - objeto2.getPrecio());
-                                personaje.setFuerza(personaje.getFuerza() + 5);
-                                personaje.setAgilidad(personaje.getAgilidad() - 1);
-                                personaje.setPercepcionMagica(personaje.getPercepcionMagica() - 2);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto2.getNombre());
                                 objeto2.setObjetoComprado(true);
                             }

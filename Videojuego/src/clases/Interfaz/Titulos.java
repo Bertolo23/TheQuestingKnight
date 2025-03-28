@@ -83,17 +83,19 @@ public class Titulos {
 
    // Título del Juego más una breve descripción.
     public static void tituloInicio(){
-        int margen = 60;
-        System.out.println(Utilidades.ANSI_YELLOW+ " ".repeat(margen) +" _____  _   _  _____   _   __ _____  _   _  _____ \r\n" + //
-                                        " ".repeat(margen) +"|_   _|| | | ||  ___| | | / /|_   _|| \\ | ||  __ \\\r\n" + //
-                                        " ".repeat(margen) +"  | |  | |_| || |__   | |/ /   | |  |  \\| || |  \\/\r\n" + //
-                                        " ".repeat(margen) +"  | |  |  _  ||  __|  |    \\   | |  | . ` || | __ \r\n" + //
-                                        " ".repeat(margen) +"  | |  | | | || |___  | |\\  \\ _| |_ | |\\  || |_\\ \\\r\n" + //
-                                        " ".repeat(margen) +"  \\_/  \\_| |_/\\____/  \\_| \\_/ \\___/ \\_| \\_/ \\____/\r\n" + //
-                                        Utilidades.ANSI_RESET);
+        int margen = 30;
+        System.out.println(
+     Utilidades.ANSI_YELLOW+" ".repeat(margen) + "  _______ _    _ ______    ____  _    _ ______  _____ _______ _____ _   _  _____    _  ___   _ _____ _____ _    _ _______ \r\n" + //
+                            " ".repeat(margen) + " |__   __| |  | |  ____|  / __ \\| |  | |  ____|/ ____|__   __|_   _| \\ | |/ ____|  | |/ / \\ | |_   _/ ____| |  | |__   __|\r\n" + //
+                            " ".repeat(margen) + "    | |  | |__| | |__    | |  | | |  | | |__  | (___    | |    | | |  \\| | |  __   |  '/|  \\| | | || |  __| |__| |  | |   \r\n" + //
+                            " ".repeat(margen) + "    | |  |  __  |  __|   | |  | | |  | |  __|  \\___ \\   | |    | | | . ` | | |_ |  |  < | . ` | | || | |_ |  __  |  | |   \r\n" + //
+                            " ".repeat(margen) + "    | |  | |  | | |____  | |__| | |__| | |____ ____) |  | |   _| |_| |\\  | |__| |  | . \\| |\\  |_| || |__| | |  | |  | |   \r\n" + //
+                            " ".repeat(margen) + "    |_|  |_|  |_|______|  \\___\\_\\\\____/|______|_____/   |_|  |_____|_| \\_|\\_____|  |_|\\_\\_| \\_|_____\\_____|_|  |_|  |_|   \r\n" + //
+                            " ".repeat(margen) + "                                                                                                                         \r\n" + //
+                            " ".repeat(margen) + "                                                                                                                         ");
         String[]texto ={"En este Juego podrás elegir un personaje único que tendra unas estadísticas propias junto con misiones personalizadas.",
                         "También tendrás la capacidad de entrenar o comprar objetos en la tienda para mejorar tus estadísticas.",
-                        "El objetivo es convertirse en rey o morir intentandolo. Suerte!!"
+                        "El objetivo es convertirse en caballero o morir intentandolo. Suerte!!"
                         };
                         imprimirCuadroTextoInicial(texto);
 
@@ -154,55 +156,58 @@ public class Titulos {
                                                     " ".repeat(margen) +"                                                                                                           "+Utilidades.ANSI_RESET);
     }
 
-    public static void corona(){
-
-        String corona []= {"    .     . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .           \r\n" + //
-                        "  .   .           .       .       .       .   .:tXS%:     .       .       .       .        .  . .  .\r\n" + //
-                        "    .   . .  . .     . .     . .     . .      %      X .     . .     . .     . .     . .  .         \r\n" + //
-                        "  .         .    .       .       .       .  .;  8 8 8 8  .  .    .       .       .          . .  .  \r\n" + //
-                        "     . .  .    .   . .     . .     . .     . 8 8  8  8X        .   . .     . .     . .  .       .  .\r\n" + //
-                        "  .          .         . .     . .     . .   X  8     S . .  .         . .     . .     .  . .       \r\n" + //
-                        "    .  . . .    . .  .   .;;:      .         .88 8  88:  .      . .  . .;:.. .     .          .  .  \r\n" + //
-                        "  .   . .     .        :@     @.     . .  . ...  88    .   .  .      :@    8%   .    .  . . .  .   .\r\n" + //
-                        "    .;@@8t.  .   . . . %  8 8 8 . .             :@SX.    .       . . @ 8 8  X..    .   . .tSX8;  .  \r\n" + //
-                        "  . 8   X 8;           8 8   88     .  . .  .   8% 8       .  .      S  8 8 t   .    .  .8   @ 8    \r\n" + //
-                        "      8  8 8. .  .  .  :8S@ 8S;...             ;@%S%S:. .       .    :SS  88% .   .    .t 8 8   8.  \r\n" + //
-                        "  .:X  8  X8   .       .:. 8@.   .  .  .  .  ..; S S@..  .  .     .   .@88;S    .    .  t  8 8@X  . \r\n" + //
-                        "    t888888; .    . .   ..:% @    .     .     .@S @ S% .     .  .   . t 8;.. .    .     ;8@888X.    \r\n" + //
-                        " .  .;   XX8@   .     .  ..; St .   .     .  .S X @ X @  . .         % X: .    .   .  ..@88  .:  .  \r\n" + //
-                        "   . .    8StS.   .        t8% 8   .  .     .; @ 8 8 @@:      .  . .t @X:  .     .    ;  8;. ..    .\r\n" + //
-                        "     .   :;@S X8.   . . .  .8SS%X       . . :  8  8 8 X8:. .      .%  88.    . .    :@  %S.  ..  .  \r\n" + //
-                        " .   .   ..t8@S  S:       . 8tX X8; . .   .%  .      8 @8;   . . ;@ 8  8:..      .;8  8Xt    .      \r\n" + //
-                        "   .        S @ 8 S8. .    :8X 8  X8:   ..X 8:S..S .X 8S @8.   .8  8.. 8% . .  ..@% 8S 8  .   . . . \r\n" + //
-                        "     .   . .:8@     88; .  S 8S8    X888XX  ::S 8  X .S 8 @8S88X 8.::: 8S.   .;@8%8   t;:.  .  .    \r\n" + //
-                        " .    .    .::88@S  %  @@8X 8X8X @8 8  8%@ .8 ..88..X..:X  8S@S8 .;@.X  88@88@ @S8  @;. . .      .  \r\n" + //
-                        "   .   .  .  :S  .@..:S 8 8X8 ..@ 88 .8 8@ @.;8S @S :88S :8 8X8 ;8.:X.;@ 8 8S8X8 88 @8.     . .    .\r\n" + //
-                        "     .   .  . tS @.88 8@ .@ 88 8 :X 8  :8 8.8  8X8 :8X  @S :8 .8S ;@.88 .8 8X8 88X :S    .      .   \r\n" + //
-                        " .      .     .X8 8X 8  8S.8X8@8@S  X88@@ X 88 @8@ 8  @S.88X  8@ 8 .8S8@S ;8 @8 ::8@      .  .   .  \r\n" + //
-                        "   .  .    . .  @  :8 8% 88 .8 8:;8S.8@8X@:8.:@8@ @8@S.88X8.8S 8 8888@ .@;8 .@ 8@X.:       .   .    \r\n" + //
-                        "         .    .:S@@X :X 8S888X.88:;888888888@8X88@88@8@8@8X888888X88X 8X;;@;8 ;@.;8S   . .        . \r\n" + //
-                        " . .  .     .  .;8@ 8X:88@.888@8@SX888888@8X8@S8888888888@8X888X888888888@88 8@;8XS        . .  .   \r\n" + //
-                        "        .       :%8 8X888@:8X8X8888888888888.t;t:.:;; 88@8888888@8@8@888 88@8.8888@.  .  .          \r\n" + //
-                        "  . .     .  .   ;8@8@X88@88888@8 8:@:@88.t@88%..  :%88X88.88SXS8;8888 8 8@88SX88 .    .    . .  .  \r\n" + //
-                        "      .       .  .;88888X88S888@ 8888@88.@8@8@@888888888@8888 88@X88@;8X88@88888::  .     .       . \r\n" + //
-                        "  .  .  .  .   .  :%X 8888888 8@8 88XX 8X8 S;8 8 8 8 8 8;88.S X8888.88:8@88888888 :   .  .   . .    \r\n" + //
-                        "          .      . @@8X8@8X@@X8@XX@8888@8X8 888888888888@8S888888@@X@XS8888S8.88@ : .      .     .  \r\n" + //
-                        "  . .  .    . .    ;t8 8S8 8.88.888@::     :;; ;:t;; :.%       :S888S8 8S8 8S88 :  .   .      .     \r\n" + //
-                        "      .   .     . . @88888t : S.... .             .             .:. :..  :8888@8: "};
-
-        for (int i = 0; i < corona.length; i++) {
-                corona[i] = corona[i].replace('.', ' ');
-                System.out.println(" ".repeat(30)+Utilidades.ANSI_YELLOW+corona[i]+Utilidades.ANSI_RESET);
-        }
+    public static void nombramiento(){
+        int margen = 40;
+        System.out.println(Utilidades.ANSI_CYAN+
+                        " ".repeat(margen) +"                                                                o .,<>., o\r\n" + Utilidades.ANSI_YELLOW+
+                        " ".repeat(margen) +"                                                                |\\/\\/\\/\\/|\r\n" + //
+                        " ".repeat(margen) +"                                                                '========'\r\n" + Utilidades.ANSI_PURPLE+
+                        " ".repeat(margen) +"                                                                (_ SSSSSSs\r\n" + //
+                        " ".repeat(margen) +"                                                                )a'`SSSSSs\r\n" + //
+                        " ".repeat(margen) +"                                                               /_   SSSSSS\r\n" + //
+                        " ".repeat(margen) +"                                                               .=## SSSSS\r\n" + //
+                        " ".repeat(margen) +"                                                               .####  SSSSs\r\n" + //
+                        " ".repeat(margen) +"                                                               ###::::SSSSS\r\n" + //
+                        " ".repeat(margen) +"                                                              .;:::\"\"\"\"SSS\r\n" + //
+                        " ".repeat(margen) +"                                                             .:;:'  . .  \\\\\r\n" + //
+                        " ".repeat(margen) +"                                                            .::/  '     .'|\r\n" + //
+                        " ".repeat(margen) +"                                                           .::( .         |\r\n" + //
+                        " ".repeat(margen) +"                                                           :::)           \\\r\n" + //
+                        " ".repeat(margen) +"                                                           /\\(            /\r\n" + //
+                        " ".repeat(margen) +"                                                          /)            ( |\r\n" + //
+                        " ".repeat(margen) +"                                                        .'  \\  .       ./ /\r\n" + //
+                        " ".repeat(margen) +"                                                     _-'    |\\  .        |\r\n" + //
+                        " ".repeat(margen) +"                                   _..--..   .  /\"---\\      | ` |      . |\r\n" + //
+                        " ".repeat(margen) +"           -=====================,' _     \\=(*#(7.#####()   |  `/_..   , (\r\n" + //
+                        " ".repeat(margen) +"                       _.-''``';'-''-) ,.  \\ '  '+/// |   .'/   \\  ``-.) \\\r\n" + //
+                        " ".repeat(margen) +"                     ,'  _.-  ((    `-'  `._\\    `` \\_/_.'  )    /`-._  ) |\r\n" + //
+                        " ".repeat(margen) +"                   ,'\\ ,'  _.'.`:-.    \\.-'                 /   <_L   )\"  |\r\n" + //
+                        " ".repeat(margen) +"                 _/   `._,' ,')`;  `-'`'                    |     L  /    /\r\n" + //
+                        " ".repeat(margen) +"                / `.   ,' ,|_/ / \\                          (    <_-'     \\\r\n" + //
+                        " ".repeat(margen) +"                \\ / `./  '  / /,' \\                        /|`         `. |\r\n" + //
+                        " ".repeat(margen) +"                )\\   /`._   ,'`._.-\\                       |)            \\'\r\n" + //
+                        " ".repeat(margen) +"               /  `.'    )-'.-,' )__)                      |\\            `|\r\n" + //
+                        " ".repeat(margen) +"              : /`. `.._(--.`':`':/ \\                      ) \\             \\\r\n" + //
+                        " ".repeat(margen) +"              |::::\\     ,'/::;-))  /                      ( )`.            |\r\n" + //
+                        " ".repeat(margen) +"              ||:::::  . .::':  :`-(                       |/    .          |\r\n" + //
+                        " ".repeat(margen) +"              ||::::|  . :|  |==[]=:                       .        -       \\\r\n" + //
+                        " ".repeat(margen) +"              |||:::|  : ||  :  |  |                      /\\           `     |\r\n" + //
+                        " ".repeat(margen) +"  ___ ___     '|;:::|  | |'   \\=[]=|                     /  \\                \\\r\n" + //
+                        " ".repeat(margen) +" |   /_  ||``|||:::::  | ;    | |  |                     \\_.'\\_               `-.\r\n" + //
+                        " ".repeat(margen) +" :   \\_``[]--[]|::::'\\_;'     )-'..`._                 .-'\\``:: ` .              \\\r\n" + //
+                        " ".repeat(margen) +"  \\___.>`''-.||:.__,'         |_______`>              <_____:::.         . . \\  _/\r\n" + //
+                        " ".repeat(margen) +"                                                            `+ : :......   '''"+Utilidades.ANSI_RESET);
     }
 
     public static void tituloVictoria(){
-        int margen = 40;
-        System.out.println(Utilidades.ANSI_YELLOW+  " ".repeat(margen) + "  _____ _   _ _   _  ___  ____      _    ____  _   _ _____ _   _    _      _____ ____  _____ ____    _____ _       ____  _______   __\r\n" + //
-                                                    " ".repeat(margen) + " | ____| \\ | | | | |/ _ \\|  _ \\    / \\  | __ )| | | | ____| \\ | |  / \\    | ____|  _ \\| ____/ ___|  | ____| |     |  _ \\| ____\\ \\ / /\r\n" + //
-                                                    " ".repeat(margen) + " |  _| |  \\| | |_| | | | | |_) |  / _ \\ |  _ \\| | | |  _| |  \\| | / _ \\   |  _| | |_) |  _| \\___ \\  |  _| | |     | |_) |  _|  \\ V / \r\n" + //
-                                                    " ".repeat(margen) + " | |___| |\\  |  _  | |_| |  _ <  / ___ \\| |_) | |_| | |___| |\\  |/ ___ \\  | |___|  _ <| |___ ___) | | |___| |___  |  _ <| |___  | |  \r\n" + //
-                                                    " ".repeat(margen) + " |_____|_| \\_|_| |_|\\___/|_| \\_\\/_/   \\_\\____/ \\___/|_____|_| \\_/_/   \\_\\ |_____|_| \\_\\_____|____/  |_____|_____| |_| \\_\\_____| |_|  \r\n" +Utilidades.ANSI_RESET);
+        int margen = 45;
+        System.out.println(Utilidades.ANSI_BLUE+" ".repeat(margen)  +"██╗  ██╗ █████╗ ███████╗     ██████╗  █████╗ ███╗   ██╗ █████╗ ██████╗  ██████╗ ██╗\r\n" + //
+                                                  " ".repeat(margen)+"██║  ██║██╔══██╗██╔════╝    ██╔════╝ ██╔══██╗████╗  ██║██╔══██╗██╔══██╗██╔═══██╗██║\r\n" + //
+                                                  " ".repeat(margen)+"███████║███████║███████╗    ██║  ███╗███████║██╔██╗ ██║███████║██║  ██║██║   ██║██║\r\n" + //
+                                                  " ".repeat(margen)+"██╔══██║██╔══██║╚════██║    ██║   ██║██╔══██║██║╚██╗██║██╔══██║██║  ██║██║   ██║╚═╝\r\n" + //
+                                                  " ".repeat(margen)+"██║  ██║██║  ██║███████║    ╚██████╔╝██║  ██║██║ ╚████║██║  ██║██████╔╝╚██████╔╝██╗\r\n" + //
+                                                  " ".repeat(margen)+"╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝\r\n" +Utilidades.ANSI_RESET+ //
+                                                  " ".repeat(margen)+"                                                                                   ");
     
     }
 
@@ -241,14 +246,13 @@ public class Titulos {
     }
 
     public static void espada(){
-        int margen = 50;
+        int margen = 56;
         System.out.println(
-" ".repeat(margen+27)+"MANDOBLE\n" +
                         " ".repeat(margen)+"                               (            \r\n" + //
                         " ".repeat(margen)+"                             '    }      \r\n" + //
                         " ".repeat(margen)+"                            (   '      \r\n" + //
                         " ".repeat(margen)+"                           '     (   \r\n" + //
-                        " ".repeat(margen)+"                            ) |    ) \r\n" + //
+                        " ".repeat(margen)+"                            )     ) \r\n" + //
                         " ".repeat(margen)+"                          '  /|\\    `\r\n" + //
                         " ".repeat(margen)+"                         )  / | \\  ` )   \r\n" + //
                         " ".repeat(margen)+"                        {   | | |  {   \r\n" + //
@@ -272,33 +276,91 @@ public class Titulos {
                         " ".repeat(margen)+"                             |-|\r\n" + //
                         " ".repeat(margen)+"                             |-|\r\n" + //
                         " ".repeat(margen)+"                            ,'-'.\r\n" + //
-                        " ".repeat(margen)+"                            '---'\n\n\n");
+                        " ".repeat(margen)+"                            '---'");
+        Utilidades.espacios(3);
 
     }
 
-    public static void armadura(){
-        int margen = 60;
-                System.out.println(
-" ".repeat(margen+16)+"ARMADURA\n" +" ".repeat(margen+4)+"              .--.\r\n" + //
-                                " ".repeat(margen)+"                 /.--.\\\r\n" + //
-                                " ".repeat(margen)+"                 |====|\r\n" + //
-                                " ".repeat(margen)+"                 |`::`|\r\n" + //
-                                " ".repeat(margen)+"             .-;`\\..../`;_.-^-._\r\n" + //
-                                " ".repeat(margen)+"            /  |...::..|`   :   `|\r\n" + //
-                                " ".repeat(margen)+"           |   /'''::''|   .:.   |\r\n" + //
-                                " ".repeat(margen)+"           ;--'\\   ::  |..:::::..|\r\n" + //
-                                " ".repeat(margen)+"           <__> >._::_.| ':::::' |\r\n" + //
-                                " ".repeat(margen)+"           |  |/   ^^  |   ':'   |\r\n" + //
-                                " ".repeat(margen)+"           \\::/|       \\    :    /\r\n" + //
-                                " ".repeat(margen)+"           |||\\|        \\   :   /\r\n" + //
-                                " ".repeat(margen)+"           ''' |___/\\___|`-.:.-`\r\n" + //
-                                " ".repeat(margen)+"                \\_ || _/    `\r\n" + //
-                                " ".repeat(margen)+"                <_ >< _>\r\n" + //
-                                " ".repeat(margen)+"                |  ||  |\r\n" + //
-                                " ".repeat(margen)+"                |  ||  |\r\n" + //
-                                " ".repeat(margen)+"               _\\.:||:./_\r\n" + //
-                               " ".repeat(margen)+ "              /____/\\____\\");
+    public static void armadura() {
+        int margen = 71;
+        System.out.println(
+            " ".repeat(margen) + "             .--.\n" +
+            " ".repeat(margen) + "            /.--.\\\n" +
+            " ".repeat(margen) + "            |====|\n" +
+            " ".repeat(margen) + "            |`::`|\n" +
+            " ".repeat(margen) + "        .-;`\\..../`;-.\n" +
+            " ".repeat(margen) + "       /  |...::...|  \\\n" +
+            " ".repeat(margen) + "      |   /'''::'''\\   |\n" +
+            " ".repeat(margen) + "      ;--'\\   ::   /--; \n" +
+            " ".repeat(margen) + "      <__>,>._::_.<,<__>\n" +
+            " ".repeat(margen) + "      |  |/   ^^   \\|  |\n" +
+            " ".repeat(margen) + "      \\::/|        |\\::/\n" +
+            " ".repeat(margen) + "      |||\\|        |/|||\n" +
+            " ".repeat(margen) + "      ''' |___/\\___| '''\n" +
+            " ".repeat(margen) + "           \\_ || _/\n" +
+            " ".repeat(margen) + "           <_ >< _>\n" +
+            " ".repeat(margen) + "           |  ||  |\n" +
+            " ".repeat(margen) + "           |  ||  |\n" +
+            " ".repeat(margen) + "          _\\.:||:./_\n" +
+            " ".repeat(margen) + "         /____/\\____\\"
+        );
+        Utilidades.espacios(3);
     }
+    
+
+    public static void caballo() {
+        int margen = 62; // Puedes ajustar este valor según necesites
+        System.out.println( 
+            " ".repeat(margen) + "                           ___________ _\r\n" + //
+            " ".repeat(margen) + "                      __/   .::::.-'-(/-/)\r\n" + //
+            " ".repeat(margen) + "                    _/:  .::::.-' .-'\\/\\_`,\r\n" + //
+            " ".repeat(margen) + "                   /:  .::::./   -._-.  d\\|\r\n" + //
+            " ".repeat(margen) + "                    /: (\"\"\"\"/    '.  (__/||\r\n" + //
+            " ".repeat(margen) + "                     \\::).-'  -._  \\/ \\\\/\\|\r\n" + //
+            " ".repeat(margen) + "             __ _ .-'`)/  '-'. . '. |  (i_O\r\n" + //
+            " ".repeat(margen) + "         .-'      \\       -'      '\\|\r\n" + //
+            " ".repeat(margen) + "    _ _./      .-'|       '.  (    \\\\\r\n" + //
+            " ".repeat(margen) + " .-'   :      '_  \\         '-'\\  /|/\r\n" + //
+            " ".repeat(margen) + "/      )\\_      '- )_________.-|_/^\\\r\n" + //
+            " ".repeat(margen) + "(   .-'   )-._-:  /        \\(/\\'-._ `.\r\n" + //
+            " ".repeat(margen) + " (   )  _//_/|:  /          `\\()   `\\_\\\r\n" + //
+            " ".repeat(margen) + "  ( (   \\()^_/)_/             )/      \\\\\r\n" + //
+            " ".repeat(margen) + "   )     \\\\ \\(_)             //        )\\\r\n" + //
+            " ".repeat(margen) + "         _o\\ \\\\\\            (o_       |__\\\r\n" + //
+            " ".repeat(margen) + "         \\ /  \\\\\\__          )_\\\r\n" + //
+            " ".repeat(margen) + "               ^)__\\"
+        );
+        Utilidades.espacios(3);
+    }
+
+    public static void escudo() {
+        int margen = 72;
+        System.out.println( 
+            " ".repeat(margen) + " _________________________ \n" + 
+            " ".repeat(margen) + "|<><><>     |  |    <><><>|\n" + 
+            " ".repeat(margen) + "|<>         |  |        <>|\n" + 
+            " ".repeat(margen) + "|           |  |          |\n" + 
+            " ".repeat(margen) + "|  (______ <\\-/> ______)  |\n" + 
+            " ".repeat(margen) + "|  /_.-=-.\\| \" |/.-=-._\\  | \n" + 
+            " ".repeat(margen) + "|   /_    \\(o_o)/    _\\   |\n" + 
+            " ".repeat(margen) + "|    /_  /\\/ ^ \\/\\  _\\    |\n" + 
+            " ".repeat(margen) + "|      \\/ | / \\ | \\/      |\n" + 
+            " ".repeat(margen) + "|_______ /((( )))\\ _______|\n" + 
+            " ".repeat(margen) + "|      __\\ \\___/ /__      |\n" + 
+            " ".repeat(margen) + "|--- (((---'   '---))) ---|\n" + 
+            " ".repeat(margen) + "|           |  |          |\n" + 
+            " ".repeat(margen) + "|           |  |          |\n" + 
+            " ".repeat(margen) + ":           |  |          :     \n" + 
+            " ".repeat(margen) + " \\<>        |  |       <>/      \n" + 
+            " ".repeat(margen) + "  \\<>       |  |      <>/       \n" + 
+            " ".repeat(margen) + "   \\<>      |  |     <>/       \n" + 
+            " ".repeat(margen) + "    `\\<>    |  |   <>/'         \n" + 
+            " ".repeat(margen) + "      `\\<>  |  |  <>/'         \n" + 
+            " ".repeat(margen) + "        `\\<>|  |<>/'         \n" + 
+            " ".repeat(margen) + "          `-.  .-`           \n" + 
+            " ".repeat(margen) + "            '--' "
+        );
+        Utilidades.espacios(3);
+    }
+    
 }
-
-

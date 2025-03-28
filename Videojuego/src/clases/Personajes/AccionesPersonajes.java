@@ -33,7 +33,7 @@ public class AccionesPersonajes {
                         Titulos.GameOver();
                     }
                     if (personaje.getDinero() >= 250) {
-                        Titulos.corona();
+                        Titulos.nombramiento();
                         Titulos.tituloVictoria();
                     }
                     Utilidades.espacios(3);
