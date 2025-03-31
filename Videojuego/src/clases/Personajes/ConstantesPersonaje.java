@@ -4,8 +4,8 @@ public class ConstantesPersonaje {
     
 
     // Constantes Generales
-    public static final int DINERO = 0;
-    public static final double SALUD = 5.0;
+    public static final int DINERO = 240;
+    public static final double SALUD = 0.1;
     public static final int EXPERIENCIA = 0;
     public static final int NIVEL = 1;
 
@@ -15,7 +15,7 @@ public class ConstantesPersonaje {
      public static final int LUCHADOR_FUERZA = 8;
      public static final int LUCHADOR_AGILIDAD = 7;
      public static final int LUCHADOR_PERCEPCION_MAGICA = 2;
-     public static final int LUCHADOR_ESTADISTICA_ESPECIAL = 12; // Resistencia física
+     public static final int LUCHADOR_ESTADISTICA_ESPECIAL = 12; 
  
      // Constantes para Asesino
      public static final String ASESINO_NOMBRE = "Asesino";
@@ -23,7 +23,7 @@ public class ConstantesPersonaje {
      public static final int ASESINO_FUERZA = 6;
      public static final int ASESINO_AGILIDAD = 8;
      public static final int ASESINO_PERCEPCION_MAGICA = 3;
-     public static final int ASESINO_ESTADISTICA_ESPECIAL = 9; // Probabilidad de crítico
+     public static final int ASESINO_ESTADISTICA_ESPECIAL = 9; 
  
      // Constantes para Tanque
      public static final String TANQUE_NOMBRE = "Tanque";
@@ -31,7 +31,7 @@ public class ConstantesPersonaje {
      public static final int TANQUE_FUERZA = 7;
      public static final int TANQUE_AGILIDAD = 3;
      public static final int TANQUE_PERCEPCION_MAGICA = 0;
-     public static final int TANQUE_ESTADISTICA_ESPECIAL = 7; // Armadura extra
+     public static final int TANQUE_ESTADISTICA_ESPECIAL = 7; 
  
      // Constantes para Mago
      public static final String MAGO_NOMBRE = "Mago";
@@ -39,7 +39,7 @@ public class ConstantesPersonaje {
      public static final int MAGO_FUERZA = 3;
      public static final int MAGO_AGILIDAD = 5;
      public static final int MAGO_PERCEPCION_MAGICA = 10;
-     public static final int MAGO_ESTADISTICA_ESPECIAL = 10; // Poder mágico extra
+     public static final int MAGO_ESTADISTICA_ESPECIAL = 10; 
 
      public static Luchador luchador = new Luchador(LUCHADOR_NOMBRE, DINERO, LUCHADOR_VITALIDAD, LUCHADOR_FUERZA, LUCHADOR_AGILIDAD, LUCHADOR_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, LUCHADOR_ESTADISTICA_ESPECIAL);
      public static Asesino asesino = new Asesino(ASESINO_NOMBRE, DINERO, ASESINO_VITALIDAD, ASESINO_FUERZA, ASESINO_AGILIDAD, ASESINO_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, ASESINO_ESTADISTICA_ESPECIAL);

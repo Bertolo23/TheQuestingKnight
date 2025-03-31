@@ -31,8 +31,7 @@ public class AccionesPersonajes {
                     if (personaje.getSalud() <= 0) {
                         Titulos.calavera();
                         Titulos.GameOver();
-                    }
-                    if (personaje.getDinero() >= 250) {
+                    }else{
                         Titulos.nombramiento();
                         Titulos.tituloVictoria();
                     }

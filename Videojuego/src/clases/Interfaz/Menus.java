@@ -38,18 +38,8 @@ public class Menus {
      */
     public static int menuTienda(Personaje personaje) throws IOException {
         int comprarObjetos = 0;
-        int margen = 0;
-        
-        System.out.println(" ".repeat(margen)+"1. ESPADA" +"( + "+Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
-        Titulos.espada();
-        System.out.println(" ".repeat(margen)+"2. ARMADURA"+"( + "+Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad - " + Utilidades.ANSI_YELLOW + "2 " + Utilidades.ANSI_RESET + "Agilidad )");
-        Titulos.armadura();
-        System.out.println(" ".repeat(margen) + "3. CABALLO" +"( + "+Utilidades.ANSI_BLUE + "7" + Utilidades.ANSI_RESET + " Percepción Mágica - " + Utilidades.ANSI_RED + "3" + Utilidades.ANSI_RESET + " Fuerza )");
-        Titulos.caballo();
-        System.out.println(" ".repeat(margen) + "4. ESCUDO" +"( + "+Utilidades.ANSI_YELLOW + "5" + Utilidades.ANSI_RESET + " Agilidad - " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad + " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
-        Titulos.escudo();
-        
-        System.out.println(" ".repeat(margen)+"5. No comprar Nada");
+        int margen = 67;
+        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ ESPADA ║║ ARMADURA ║║ CABALLO ║║ ESCUDO ║║ VOLVER ║" + Utilidades.ANSI_RESET);
         System.out.println("¿Qué objeto quieres comprar? (1-5)");
         System.out.println();
         personaje.mostrarSaludYDinero();

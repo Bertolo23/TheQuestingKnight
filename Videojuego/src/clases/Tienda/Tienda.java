@@ -44,6 +44,8 @@ public class Tienda {
 
                     switch (comprarObjetos) {
                         case 1: // Compra de Espada Encantada
+                        System.out.println(objeto1.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
+                        Titulos.espada();
                         if (objeto1.gestionCompra(objeto1, personaje) == true) {
                             personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
                             personaje.setFuerza(personaje.getFuerza() + 5);
@@ -54,7 +56,8 @@ public class Tienda {
                         }
                             break;
                         case 2: // Armadura de Placas
-                            
+                            System.out.println(objeto2.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad - " + Utilidades.ANSI_YELLOW + "2 " + Utilidades.ANSI_RESET + "Agilidad )");
+                            Titulos.armadura();
                             if (objeto2.gestionCompra(objeto2, personaje)  == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto2.getPrecio());
                                 personaje.setVitalidad(personaje.getVitalidad() + 4);
@@ -64,6 +67,8 @@ public class Tienda {
                             }
                             break;
                         case 3: // Compra de Báculo
+                            System.out.println(objeto3.getNombre().toUpperCase()+"( + "+Utilidades.ANSI_BLUE + "7" + Utilidades.ANSI_RESET + " Percepción Mágica - " + Utilidades.ANSI_RED + "3" + Utilidades.ANSI_RESET + " Fuerza )");
+                            Titulos.caballo();
                             if (objeto3.gestionCompra(objeto3, personaje) == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto3.getPrecio());
                                 personaje.setFuerza(personaje.getFuerza() - 3);
@@ -73,6 +78,8 @@ public class Tienda {
                             }
                             break;
                         case 4: // Compra de Manto
+                            System.out.println(objeto4.getNombre().toUpperCase()+"( + "+Utilidades.ANSI_YELLOW + "5" + Utilidades.ANSI_RESET + " Agilidad - " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad + " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
+                            Titulos.escudo();
                             if (objeto4.gestionCompra(objeto4, personaje) == true) {
                                 personaje.setDinero(personaje.getDinero() - objeto4.getPrecio());
                                 personaje.setAgilidad(personaje.getAgilidad() + 5);
