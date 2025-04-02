@@ -1,5 +1,7 @@
 package clases.Interfaz;
 import util.Utilidades;
+
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ public class Menus {
         System.out.println();
         
         String entrada = Utilidades.leerString();
-        return entrada.toLowerCase();
+        return entrada;
     }
 
     /**
@@ -110,14 +112,15 @@ public class Menus {
      */
     public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;
-        String continuarDescripcion = " ";
         ArrayList<Partida> partidas = new ArrayList<>();
+        ConstantesPersonaje.inPutSerializacionPersonajes();
+        File file = new File("Videojuego/src/HistorialPartidas.txt");
         Titulos.tituloInicio();
-        Utilidades.continuar(continuarDescripcion);
+        Utilidades.continuar();
         String opcion = ""; 
         
         do{
-            opcion = menuPersonaje(); 
+            opcion = menuPersonaje().toLowerCase(); 
             Partida partida = new Partida(null, null, null, null);
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
@@ -150,9 +153,8 @@ public class Menus {
                                 mago.reseteoEstadisticas(mago);
                         break;
                         case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
-                                String rutaPartidas = "Videojuego/src/HistorialPartidas.txt";
                                 Titulos.tituloHistorialPartidas();
-                                Utilidades.traerInfoFichero(rutaPartidas);
+                                Utilidades.traerInfoFichero(file);
                             
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
@@ -170,19 +172,9 @@ public class Menus {
         }while(salir==false);
         if (partidas.get(0).getNombrePersonaje() == null) {
             System.out.println("Hasta Luego.");
-        }else{
-            String rutaPartidas = "Videojuego/src/HistorialPartidas.txt";
-            int i = 0;
-            Titulos.tituloResumenPartida();
-            Utilidades.llevarInfoAFichero(rutaPartidas," ".repeat(15)+"PARTIDA\n\n"+"=".repeat(50)+"\n\n");
-            for (Partida cadaPartida : partidas) {
-                if (cadaPartida.getNombrePersonaje() != null){
-                    i++;
-                    System.out.println(" ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");
-                    Utilidades.llevarInfoAFichero(rutaPartidas," ".repeat(12)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
-                }
-            } 
-            Utilidades.llevarInfoAFichero(rutaPartidas,"\n\n"+"=".repeat(50)+"\n\n"); 
+        }else{   
+            Partida.mostrarPartida(partidas);
+            Partida.exportarAFichero(partidas, file);
         }
 
     }

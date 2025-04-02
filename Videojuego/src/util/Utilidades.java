@@ -1,6 +1,7 @@
 package util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -151,14 +152,15 @@ public class Utilidades{
      * @return La cadena ingresada por el usuario.
      * @throws IOException Si ocurre un error en la entrada.
      */
-    public static String continuar(String continuar) throws IOException {
+    public static String continuar() throws IOException {
+        String continuar;
         continuar = Utilidades.leerStringConTexto("Pulse intro para continuar");
         return continuar;
     }
 
-    public static void llevarInfoAFichero(String ruta, String contenido){
+    public static void llevarInfoAFichero(File file, String contenido){
         try {
-            FileWriter escritor = new FileWriter(ruta, true);
+            FileWriter escritor = new FileWriter(file, true);
             escritor.write(contenido);
             escritor.close();
         } catch (Exception e) {
@@ -166,10 +168,10 @@ public class Utilidades{
         }
     }
 
-    public static void traerInfoFichero(String ruta){
+    public static void traerInfoFichero(File file){
         String cad;
         try {
-            FileReader fr = new FileReader(ruta);
+            FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             while ((cad = br.readLine()) != null) {
                 System.out.println(cad);

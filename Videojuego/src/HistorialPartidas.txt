@@ -1,0 +1,64 @@
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 9:53:45 el 1/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m8 [34m2 [35m12 [0m1
+Y la partida terminó a las 9:53:51 el 1/4/2025
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 10:5:44 el 1/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m8 [34m2 [35m12 [0m1
+Y la partida terminó a las 10:5:48 el 1/4/2025
+
+---------------------------------------------
+            GAME  2
+
+Partida empezada a las 10:5:51 el 1/4/2025
+Con el personaje [4mTanque[0m
+Las estadísticas y el nivel finales fueron: [32m10 [31m8 [33m3 [34m0 [35m7 [0m1
+Y la partida terminó a las 10:6:3 el 1/4/2025
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 10:16:5 el 1/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Y la partida terminó a las 10:16:11 el 1/4/2025
+
+---------------------------------------------
+            GAME  2
+
+Partida empezada a las 10:16:14 el 1/4/2025
+Con el personaje [4mAsesino[0m
+Las estadísticas y el nivel finales fueron: [32m14 [31m13 [33m7 [34m3 [35m12 [0m2
+Y la partida terminó a las 10:20:38 el 1/4/2025
+
+---------------------------------------------
+
+
+==================================================
+

@@ -1,11 +1,20 @@
 package clases.Personajes;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Arrays;
+
 public class ConstantesPersonaje {
     
 
     // Constantes Generales
-    public static final int DINERO = 240;
-    public static final double SALUD = 0.1;
+    public static final int DINERO = 0;
+    public static final double SALUD = 5.0;
     public static final int EXPERIENCIA = 0;
     public static final int NIVEL = 1;
 
@@ -45,6 +54,51 @@ public class ConstantesPersonaje {
      public static Asesino asesino = new Asesino(ASESINO_NOMBRE, DINERO, ASESINO_VITALIDAD, ASESINO_FUERZA, ASESINO_AGILIDAD, ASESINO_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, ASESINO_ESTADISTICA_ESPECIAL);
      public static Tanque tanque = new Tanque(TANQUE_NOMBRE, DINERO, TANQUE_VITALIDAD, TANQUE_FUERZA, TANQUE_AGILIDAD, TANQUE_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, TANQUE_ESTADISTICA_ESPECIAL);
      public static Mago mago = new Mago(MAGO_NOMBRE, DINERO, MAGO_VITALIDAD, MAGO_FUERZA, MAGO_AGILIDAD, MAGO_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, MAGO_ESTADISTICA_ESPECIAL);
+    
+    public static void outPutSerializacionPersonajes(){
+        Personaje [] tiposPersonaje = {luchador,asesino,tanque,mago};
+        try{
+            File file = new File("Videojuego/src/PersonajesSerializados.dat");
+            FileOutputStream fo = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fo);
+
+            oos.writeObject(tiposPersonaje);
+            fo.close();
+        }catch(IOException e){
+            System.out.println(e);
+        }
+    }
+
+    public static Personaje [] inPutSerializacionPersonajes(){
+        Personaje [] tiposPersonajeAlmacenado = new Personaje[4];
+        ObjectInputStream ois = null;
+        try{
+            File file = new File("Videojuego/src/PersonajesSerializados.dat");
+            ois = new ObjectInputStream(new FileInputStream(file));
+            boolean hayObjetos = true;
+            while (hayObjetos) {
+                try {
+                    tiposPersonajeAlmacenado = (Personaje []) ois.readObject();
+                    System.out.println("Objeto guardado "+Arrays.toString(tiposPersonajeAlmacenado));
+                } catch (EOFException e) {
+                    hayObjetos = false;
+                }
+                
+            } 
+        }catch(IOException e){
+            System.out.println(e);
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+            try {
+                ois.close();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+            
+        }
+        return tiposPersonajeAlmacenado;
+    }
 
 
 }

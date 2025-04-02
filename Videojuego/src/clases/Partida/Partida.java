@@ -1,6 +1,11 @@
 package clases.Partida;
 import util.Utilidades;
+
+import java.io.File;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import clases.Interfaz.Titulos;
 
 /**
  * Clase que representa una partida en el videojuego. 
@@ -117,6 +122,31 @@ public class Partida {
         int minutos = tiempo.getMinute();
         int segundos = tiempo.getSecond();
         return "a las " + hora + ":" + minutos + ":" + segundos + " el " + dia + "/" + mes + "/" + año;
+    }
+
+    public static void exportarAFichero(ArrayList<Partida> partidas, File file){
+
+        int i = 0;
+        Utilidades.llevarInfoAFichero(file," ".repeat(15)+"PARTIDA\n\n"+"=".repeat(50)+"\n\n");
+        for (Partida cadaPartida : partidas) {
+            if (cadaPartida.getNombrePersonaje() != null){
+                i++;
+                Utilidades.llevarInfoAFichero(file," ".repeat(12)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
+            }
+        } 
+        Utilidades.llevarInfoAFichero(file,"\n\n"+"=".repeat(50)+"\n\n");
+    }
+
+    public static void mostrarPartida(ArrayList<Partida> partidas){
+
+        int i = 0;
+        Titulos.tituloResumenPartida();
+        for (Partida cadaPartida : partidas) {
+            if (cadaPartida.getNombrePersonaje() != null){
+                i++;
+                System.out.println(" ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
+            }
+        } 
     }
 
     /**

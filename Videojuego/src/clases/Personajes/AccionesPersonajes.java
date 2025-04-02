@@ -20,8 +20,7 @@ public class AccionesPersonajes {
      */
     public static void accionesPersonaje(Personaje personaje)throws IOException{
         personaje.introduccionPersonaje(personaje);
-        String opcion ="";
-        String continuar = Utilidades.continuar(opcion);
+        Utilidades.continuar();
         Utilidades.espacios(6);
         boolean salir = false;
            

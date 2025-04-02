@@ -76,7 +76,7 @@ public class InfoMisiones {
      */
     public static int[] pagaMision() {
         int[] pagaMision = new int[4]; 
-        pagaMision[0] = (int)(Math.random() * (15 - 10 + 1)) + 10;
+        pagaMision[0] = (int)(Math.random() * (45 - 20 + 1)) + 10;
         pagaMision[1] = (int)(Math.random() * (50 - 30 + 1)) + 30;
         pagaMision[2] = (int)(Math.random() * (35 - 20 + 1)) + 20;
         pagaMision[3] = (int)(Math.random() * (80 - 40 + 1)) + 20;

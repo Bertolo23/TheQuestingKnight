@@ -1,5 +1,6 @@
 package clases.Personajes;
 import java.io.IOException;
+import java.io.Serializable;
 import clases.Interfaz.Titulos;
 import util.Utilidades;
 
@@ -9,7 +10,7 @@ import util.Utilidades;
  * @author Iván Bertolo García
  * @version 2.0
  */
-public abstract class Personaje {
+public abstract class Personaje implements Serializable {
     
     /**
      * ATRIBUTOS DE LA CLASE PERSONAJE
