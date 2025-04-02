@@ -416,14 +416,16 @@ public abstract class Personaje implements Serializable {
             ((Mago) personaje).setPoderDeHabilidad(ConstantesPersonaje.MAGO_ESTADISTICA_ESPECIAL);
         }
     }
-    
+
     /**
      * TO STRING
      */
+
     @Override
     public String toString() {
-        return "Personaje vitalidad= " + vitalidad + ", fuerza= " + fuerza + ", agilidad=" + agilidad
-                + ", percepcionMagica= " + percepcionMagica + ", salud= " + salud;
+        return "Personaje [nombre=" + nombre + ", dinero=" + dinero + ", vitalidad=" + vitalidad + ", fuerza="
+                + fuerza + ", agilidad=" + agilidad + ", percepcionMagica=" + percepcionMagica + ", salud=" + salud
+                + ", experiencia=" + experiencia + ", nivel=" + nivel + "]";
     }
-  
+     
 }

@@ -63,6 +63,7 @@ public class ConstantesPersonaje {
             ObjectOutputStream oos = new ObjectOutputStream(fo);
 
             oos.writeObject(tiposPersonaje);
+            oos.close();
             fo.close();
         }catch(IOException e){
             System.out.println(e);
@@ -83,19 +84,19 @@ public class ConstantesPersonaje {
                 } catch (EOFException e) {
                     hayObjetos = false;
                 }
-                
             } 
-        }catch(IOException e){
-            System.out.println(e);
-        }catch(Exception e){
-            System.out.println(e);
-        }finally{
+        }catch(EOFException e){
+            System.out.println("Fin del archivo alcanzado.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al leer el archivo: " + e);
+        } finally {
             try {
-                ois.close();
+                if (ois != null){
+                    ois.close();
+                }
             } catch (IOException e) {
                 System.out.println(e);
             }
-            
         }
         return tiposPersonajeAlmacenado;
     }
