@@ -1,0 +1,33 @@
+package BBDD;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+
+import clases.Partida.Partida;
+import clases.Personajes.Personaje;
+
+public class CRUD {
+    
+        public static void insertarPartidaSQL(Partida partida){
+            String sentencia = "INSERT INTO Partidas (id_Personaje, FechaInicio, FechaFinal, Duracion, Vitalidad, Fuerza, Agilidad, PercepcionMagica, EstadisticaEspecial, Nivel) Values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+            
+            try (Connection conexion = ConexionBBDD.gConnection();
+                 PreparedStatement statement = conexion.prepareStatement(sentencia)) {
+                
+                statement.setInt(1, Personaje.idPersonaje(partida.getPersonaje()));
+                statement.setString(2, partida.horaYFechaCompleta(partida.getFechaInicio()));
+                statement.setString(3, partida.horaYFechaCompleta(partida.getFechaFinal()));
+                statement.setString(4, partida.duracionPartida(partida.getDuracion()));
+                for(int i = 0;i<partida.getEstadisticas().length;i++){
+                    statement.setInt(i+5, partida.getEstadisticas()[i]);
+                }
+
+                int filas = statement.executeUpdate();
+
+                System.out.println("Insertado con exito, filas: "+filas);
+            } catch (SQLException e) {
+                System.out.println("error "+ e.getMessage());
+            }
+        }
+}

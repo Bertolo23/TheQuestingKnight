@@ -2,10 +2,12 @@ package clases.Partida;
 import util.Utilidades;
 
 import java.io.File;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import clases.Interfaz.Titulos;
+import clases.Personajes.Personaje;
 
 /**
  * Clase que representa una partida en el videojuego. 
@@ -19,9 +21,10 @@ public class Partida {
      * ATRIBUTOS DE LA CLASE PARTIDA
      */
     private LocalDateTime fechaInicio; // Fecha y hora de inicio de la partida.
-    private String nombrePersonaje; // Nombre del personaje con el que se juega la partida.
+    private Personaje personaje; // Nombre del personaje con el que se juega la partida.
     private int[] estadisticas; // Estadísticas finales del personaje al terminar la partida.
     private LocalDateTime fechaFinal; // Fecha y hora de finalización de la partida.
+    private Duration duracion;
 
     /**
      * CONSTRUCTORES
@@ -34,11 +37,12 @@ public class Partida {
      * @param estadisticas Array de enteros que almacena las estadísticas finales del personaje.
      * @param fechaFinal Fecha y hora en que finaliza la partida.
      */
-    public Partida(LocalDateTime fechaInicio, String nombrePersonaje, int[] estadisticas, LocalDateTime fechaFinal) {
+    public Partida(LocalDateTime fechaInicio, Personaje personaje, int[] estadisticas, LocalDateTime fechaFinal, Duration duracion) {
         this.fechaInicio = fechaInicio;
-        this.nombrePersonaje = nombrePersonaje;
+        this.personaje = personaje;
         this.estadisticas = estadisticas;
         this.fechaFinal = fechaFinal;
+        this.duracion = duracion;
     }
 
     /**
@@ -78,19 +82,19 @@ public class Partida {
     }
 
     /**
-     * Obtiene el nombre del personaje con el que se jugó la partida.
-     * @return El nombre del personaje.
+     * Obtiene el tipo de personaje con el que se jugó la partida.
+     * @return El tipo de personaje.
      */
-    public String getNombrePersonaje() {
-        return nombrePersonaje;
+    public Personaje getPersonaje() {
+        return personaje;
     }
 
     /**
-     * Establece el nombre del personaje con el que se jugará la partida.
-     * @param nombrePersonaje El nombre del personaje.
+     * Establece el tipo de personaje con el que se jugará la partida.
+     * @param personaje El tipo de personaje.
      */
-    public void setNombrePersonaje(String nombrePersonaje) {
-        this.nombrePersonaje = nombrePersonaje;
+    public void setPersonaje(Personaje personaje) {
+        this.personaje = personaje;
     }
 
     /**
@@ -109,19 +113,35 @@ public class Partida {
         this.fechaFinal = fechaFinal;
     }
 
+    public Duration getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(Duration duracion) {
+        this.duracion = duracion;
+    }
+
     /**
      * Método que formatea una fecha y hora en una cadena legible.
      * @param tiempo Un objeto LocalDateTime con la fecha y hora a formatear.
      * @return Una cadena con la fecha y hora formateadas en el formato "HH:MM:SS el DD/MM/YYYY".
      */
-    private String horaYFechaCompleta(LocalDateTime tiempo){
+    public String horaYFechaCompleta(LocalDateTime tiempo){
         int año = tiempo.getYear();
         int mes = tiempo.getMonthValue();
         int dia = tiempo.getDayOfMonth();
         int hora = tiempo.getHour();
         int minutos = tiempo.getMinute();
         int segundos = tiempo.getSecond();
-        return "a las " + hora + ":" + minutos + ":" + segundos + " el " + dia + "/" + mes + "/" + año;
+        return hora + ":" + minutos + ":" + segundos + " el " + dia + "/" + mes + "/" + año;
+    }
+
+    public String duracionPartida(Duration duracion){
+        long hora = duracion.toHours();
+        long minutos = duracion.toMinutes();
+        long segundos = duracion.toSeconds();
+
+        return hora + ":" + minutos + ":" + segundos;
     }
 
     public static void exportarAFichero(ArrayList<Partida> partidas, File file){
@@ -129,7 +149,7 @@ public class Partida {
         int i = 0;
         Utilidades.llevarInfoAFichero(file," ".repeat(15)+"PARTIDA\n\n"+"=".repeat(50)+"\n\n");
         for (Partida cadaPartida : partidas) {
-            if (cadaPartida.getNombrePersonaje() != null){
+            if (cadaPartida.getPersonaje() != null){
                 i++;
                 Utilidades.llevarInfoAFichero(file," ".repeat(12)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
             }
@@ -142,7 +162,7 @@ public class Partida {
         int i = 0;
         Titulos.tituloResumenPartida();
         for (Partida cadaPartida : partidas) {
-            if (cadaPartida.getNombrePersonaje() != null){
+            if (cadaPartida.getPersonaje() != null){
                 i++;
                 System.out.println(" ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
             }
@@ -155,8 +175,8 @@ public class Partida {
      */
     @Override
     public String toString() {
-        return "Partida empezada " + horaYFechaCompleta(fechaInicio) + 
-        "\nCon el personaje " + Utilidades.ANSI_UNDERLINE + nombrePersonaje + Utilidades.ANSI_RESET + 
+        return "Partida empezada a las " + horaYFechaCompleta(fechaInicio) + 
+        "\nCon el personaje " + Utilidades.ANSI_UNDERLINE + personaje.getNombre() + Utilidades.ANSI_RESET + 
         "\nLas estadísticas y el nivel finales fueron: " +
         Utilidades.ANSI_GREEN + estadisticas[0] + " " + 
         Utilidades.ANSI_RED + estadisticas[1] + " " + 
@@ -164,7 +184,8 @@ public class Partida {
         Utilidades.ANSI_BLUE + estadisticas[3] + " " + 
         Utilidades.ANSI_PURPLE + estadisticas[4] + " " + 
         Utilidades.ANSI_RESET + estadisticas[5] + 
-        "\nY la partida terminó " + horaYFechaCompleta(fechaFinal);
+        "\nY la partida terminó a las " + horaYFechaCompleta(fechaFinal)+
+        "\nTeniendo una duración de "+duracionPartida(duracion);
     }
 
     

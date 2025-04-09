@@ -3,8 +3,12 @@ import util.Utilidades;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
+import BBDD.CRUD;
 import clases.Partida.Partida;
 import clases.Personajes.*;
 
@@ -113,6 +117,9 @@ public class Menus {
     public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;
         ArrayList<Partida> partidas = new ArrayList<>();
+        Instant inicioPartida = null;;
+        Instant finPartida;
+        Duration duracionPartida;
         ConstantesPersonaje.inPutSerializacionPersonajes();
         File file = new File("Videojuego/src/HistorialPartidas.txt");
         Titulos.tituloInicio();
@@ -121,35 +128,39 @@ public class Menus {
         
         do{
             opcion = menuPersonaje().toLowerCase(); 
-            Partida partida = new Partida(null, null, null, null);
+            Partida partida = new Partida(null, null, null, null, null);
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
+                                inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(luchador);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
-                                partida.setNombrePersonaje(luchador.getNombre());
+                                partida.setPersonaje(luchador);
                                 luchador.reseteoEstadisticas(luchador);
                         break;
                         
                         case "a":// ------------------------------------------------------------------ASESONO----------------------------------------------------------------------- 
+                                inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(asesino);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
-                                partida.setNombrePersonaje(asesino.getNombre());
+                                partida.setPersonaje(asesino);
                                 asesino.reseteoEstadisticas(asesino);
                         break;
                         case "t":// ------------------------------------------------------------------TANQUE----------------------------------------------------------------------- 
+                                inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(tanque);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
-                                partida.setNombrePersonaje(tanque.getNombre());
+                                partida.setPersonaje(tanque);
                                 tanque.reseteoEstadisticas(tanque);
                         break;
                         case "m":// ------------------------------------------------------------------MAGO----------------------------------------------------------------------- 
+                                inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(mago);
                                 partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
-                                partida.setNombrePersonaje(mago.getNombre());
+                                partida.setPersonaje(mago);
                                 mago.reseteoEstadisticas(mago);
                         break;
                         case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
@@ -165,17 +176,22 @@ public class Menus {
                             Utilidades.espacios(2);
                         break;
                 }
+            finPartida = Instant.now();
+            partida.setDuracion(Duration.between(inicioPartida, finPartida));
             partida.setFechaFinal(LocalDateTime.now());
             partidas.add(partida);
             Utilidades.espacios(3);
 
         }while(salir==false);
-        if (partidas.get(0).getNombrePersonaje() == null) {
-            System.out.println("Hasta Luego.");
-        }else{   
-            Partida.mostrarPartida(partidas);
-            Partida.exportarAFichero(partidas, file);
+        Partida.mostrarPartida(partidas);
+        Partida.exportarAFichero(partidas, file);
+        for (Partida cadaPartida : partidas) {
+            if (cadaPartida.getPersonaje() != null) {
+                CRUD.insertarPartidaSQL(cadaPartida);
+                
+            }else{
+                System.out.println("Hasta Luego.");
+            }
         }
-
     }
 }

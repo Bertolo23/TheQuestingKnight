@@ -333,6 +333,23 @@ public abstract class Personaje implements Serializable {
         return nombreEstadisticaUnica;
     }
 
+    public static int idPersonaje(Personaje personaje){
+        int id = 0;
+        if(personaje instanceof Luchador){
+            id = 1;
+        }
+        if (personaje instanceof Asesino) {
+            id = 2;
+        }
+        if (personaje instanceof Tanque) {
+            id = 3;
+        }
+        if (personaje instanceof Mago) {
+            id = 4;
+        }
+        return id;
+    }
+
     /**
      * Metodo que te permite mejorar la estadistica unica de cada personaje
      * @param personaje objeto necesario para poder obtener la estadistica y mejorarla
