@@ -1,6 +1,8 @@
 package clases.Misiones;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import clases.Estadísticas.GestionEstadisticas;
 import clases.Interfaz.Menus;
 import clases.Interfaz.Titulos;
 import clases.Personajes.Personaje;
@@ -21,8 +23,8 @@ public class TablonMisiones {
          */
         public static void tablonMisiones(Personaje personaje)throws IOException{
             ArrayList<ObjetoTienda> listaObjetos = Tienda.arrayObjetosTienda();
-            String nombreEstadisticaUnica = Personaje.nombreEstadisticaUnica(personaje);
-            int valorEstadisticaUnica = Personaje.valorEstadisticaUnica(personaje);
+            String nombreEstadisticaUnica = GestionEstadisticas.nombreEstadisticaUnica(personaje);
+            int valorEstadisticaUnica = GestionEstadisticas.valorEstadisticaUnica(personaje);
             boolean salirTablonMisiones = false;
             do {
                 if(personaje.condiccionesVictoria() == true){

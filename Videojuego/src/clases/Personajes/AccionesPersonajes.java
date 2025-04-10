@@ -1,6 +1,7 @@
 package clases.Personajes;
 import java.io.IOException;
 import clases.Entrenamiento.Entrenamiento;
+import clases.Estadísticas.GestionEstadisticas;
 import clases.Interfaz.Menus;
 import clases.Interfaz.Titulos;
 import clases.Misiones.TablonMisiones;
@@ -52,7 +53,7 @@ public class AccionesPersonajes {
                                 TablonMisiones.tablonMisiones(personaje);
                             break;
                         case 4:// -----------------------------------------------------------------STATS-----------------------------------------------------------------------
-                                personaje.enseñarEstadisticas(personaje);
+                                GestionEstadisticas.enseñarEstadisticas(personaje);
                             break;
                         case 5:// -----------------------------------------------------------------SALIR-----------------------------------------------------------------------
                                 salir=true;

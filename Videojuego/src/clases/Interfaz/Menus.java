@@ -9,6 +9,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import BBDD.CRUD;
+import FicherosYSerializacion.GestionFicheros;
+import clases.Estadísticas.GestionEstadisticas;
 import clases.Partida.Partida;
 import clases.Personajes.*;
 
@@ -48,7 +50,7 @@ public class Menus {
         System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ ESPADA ║║ ARMADURA ║║ CABALLO ║║ ESCUDO ║║ VOLVER ║" + Utilidades.ANSI_RESET);
         System.out.println("¿Qué objeto quieres comprar? (1-5)");
         System.out.println();
-        personaje.mostrarSaludYDinero();
+        GestionEstadisticas.mostrarSaludYDinero(personaje);
         comprarObjetos = Utilidades.leerEntero();
 
         return comprarObjetos;
@@ -74,7 +76,7 @@ public class Menus {
             System.out.println();
             Titulos.imprimirCuadroTexto(textoMenuAcciones);
             System.out.println();
-            personaje.mostrarSaludYDinero();
+            GestionEstadisticas.mostrarSaludYDinero(personaje);
             System.out.println();
             System.out.println("¿Qué deseas hacer?(1-5)");
             eleccionAccion = Utilidades.leerEntero();
@@ -97,7 +99,7 @@ public class Menus {
             System.out.println("4. Traer de vuelta al hijo del Duque de tu provincia.");
             System.out.println("5. Volver al Menú.");
             System.out.println();
-            personaje.mostrarSaludYDinero();
+            GestionEstadisticas.mostrarSaludYDinero(personaje);
             
             opcionMision = Utilidades.leerEntero();
         } catch (NumberFormatException e) {
@@ -119,9 +121,8 @@ public class Menus {
         ArrayList<Partida> partidas = new ArrayList<>();
         Instant inicioPartida = null;;
         Instant finPartida;
-        Duration duracionPartida;
-        ConstantesPersonaje.inPutSerializacionPersonajes();
-        File file = new File("Videojuego/src/HistorialPartidas.txt");
+        GestionFicheros.inPutSerializacionPersonajes();
+        File file = new File("Videojuego/src/FicherosYSerializacion/HistorialPartidas.txt");
         Titulos.tituloInicio();
         Utilidades.continuar();
         String opcion = ""; 
@@ -134,39 +135,38 @@ public class Menus {
                                 inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(luchador);
-                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(luchador));
+                                partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(luchador));
                                 partida.setPersonaje(luchador);
-                                luchador.reseteoEstadisticas(luchador);
+                                GestionEstadisticas.reseteoEstadisticas(luchador);
                         break;
                         
                         case "a":// ------------------------------------------------------------------ASESONO----------------------------------------------------------------------- 
                                 inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(asesino);
-                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(asesino));
+                                partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(asesino));
                                 partida.setPersonaje(asesino);
-                                asesino.reseteoEstadisticas(asesino);
+                                GestionEstadisticas.reseteoEstadisticas(asesino);
                         break;
                         case "t":// ------------------------------------------------------------------TANQUE----------------------------------------------------------------------- 
                                 inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(tanque);
-                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(tanque));
+                                partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(tanque));
                                 partida.setPersonaje(tanque);
-                                tanque.reseteoEstadisticas(tanque);
+                                GestionEstadisticas.reseteoEstadisticas(tanque);
                         break;
                         case "m":// ------------------------------------------------------------------MAGO----------------------------------------------------------------------- 
                                 inicioPartida = Instant.now();
                                 partida.setFechaInicio(LocalDateTime.now());
                                 AccionesPersonajes.accionesPersonaje(mago);
-                                partida.setEstadisticas(Personaje.sacarEstadisticasYNivel(mago));
+                                partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(mago));
                                 partida.setPersonaje(mago);
-                                mago.reseteoEstadisticas(mago);
+                                GestionEstadisticas.reseteoEstadisticas(mago);
                         break;
                         case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
                                 Titulos.tituloHistorialPartidas();
-                                Utilidades.traerInfoFichero(file);
-                            
+                                GestionFicheros.traerInfoFichero(file);
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
                                 salir = true;
@@ -177,7 +177,9 @@ public class Menus {
                         break;
                 }
             finPartida = Instant.now();
-            partida.setDuracion(Duration.between(inicioPartida, finPartida));
+            if (inicioPartida!=null && finPartida!=null) {
+                partida.setDuracion(Duration.between(inicioPartida, finPartida));
+            }
             partida.setFechaFinal(LocalDateTime.now());
             partidas.add(partida);
             Utilidades.espacios(3);
@@ -189,8 +191,6 @@ public class Menus {
             if (cadaPartida.getPersonaje() != null) {
                 CRUD.insertarPartidaSQL(cadaPartida);
                 
-            }else{
-                System.out.println("Hasta Luego.");
             }
         }
     }

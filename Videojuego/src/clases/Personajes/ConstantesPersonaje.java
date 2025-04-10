@@ -54,52 +54,5 @@ public class ConstantesPersonaje {
      public static Asesino asesino = new Asesino(ASESINO_NOMBRE, DINERO, ASESINO_VITALIDAD, ASESINO_FUERZA, ASESINO_AGILIDAD, ASESINO_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, ASESINO_ESTADISTICA_ESPECIAL);
      public static Tanque tanque = new Tanque(TANQUE_NOMBRE, DINERO, TANQUE_VITALIDAD, TANQUE_FUERZA, TANQUE_AGILIDAD, TANQUE_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, TANQUE_ESTADISTICA_ESPECIAL);
      public static Mago mago = new Mago(MAGO_NOMBRE, DINERO, MAGO_VITALIDAD, MAGO_FUERZA, MAGO_AGILIDAD, MAGO_PERCEPCION_MAGICA, SALUD, EXPERIENCIA, NIVEL, MAGO_ESTADISTICA_ESPECIAL);
-    
-    public static void outPutSerializacionPersonajes(){
-        Personaje [] tiposPersonaje = {luchador,asesino,tanque,mago};
-        try{
-            File file = new File("Videojuego/src/PersonajesSerializados.dat");
-            FileOutputStream fo = new FileOutputStream(file);
-            ObjectOutputStream oos = new ObjectOutputStream(fo);
-
-            oos.writeObject(tiposPersonaje);
-            oos.close();
-            fo.close();
-        }catch(IOException e){
-            System.out.println(e);
-        }
-    }
-
-    public static Personaje [] inPutSerializacionPersonajes(){
-        Personaje [] tiposPersonajeAlmacenado = new Personaje[4];
-        ObjectInputStream ois = null;
-        try{
-            File file = new File("Videojuego/src/PersonajesSerializados.dat");
-            ois = new ObjectInputStream(new FileInputStream(file));
-            boolean hayObjetos = true;
-            while (hayObjetos) {
-                try {
-                    tiposPersonajeAlmacenado = (Personaje []) ois.readObject();
-                    System.out.println("Objeto guardado "+Arrays.toString(tiposPersonajeAlmacenado));
-                } catch (EOFException e) {
-                    hayObjetos = false;
-                }
-            } 
-        }catch(EOFException e){
-            System.out.println("Fin del archivo alcanzado.");
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error al leer el archivo: " + e);
-        } finally {
-            try {
-                if (ois != null){
-                    ois.close();
-                }
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        }
-        return tiposPersonajeAlmacenado;
-    }
-
 
 }

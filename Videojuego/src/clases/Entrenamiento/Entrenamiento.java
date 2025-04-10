@@ -1,5 +1,7 @@
 package clases.Entrenamiento;
 import java.io.IOException;
+
+import clases.Estadísticas.GestionEstadisticas;
 import clases.Interfaz.Titulos;
 import clases.Personajes.*;
 import util.Utilidades;
@@ -18,7 +20,7 @@ public class Entrenamiento {
      */
     public static int preguntasEntrenamiento(Personaje personaje)throws IOException{
         int opcionMejora = 0;
-        String nombreEstadisticaUnica = Personaje.nombreEstadisticaUnica(personaje).toUpperCase();
+        String nombreEstadisticaUnica = GestionEstadisticas.nombreEstadisticaUnica(personaje).toUpperCase();
         
         int margen = 70;
         System.out.println(" ".repeat(margen) + Utilidades.ANSI_CYAN + "QUE ESTADÍSTICA QUIERES MEJORAR(1-5)");
@@ -40,7 +42,7 @@ public class Entrenamiento {
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
     public static void entrenamientoPersonaje(Personaje personaje) throws IOException {
-        String nombreEstadisticaUnica = Personaje.nombreEstadisticaUnica(personaje);
+        String nombreEstadisticaUnica = GestionEstadisticas.nombreEstadisticaUnica(personaje);
         Titulos.tituloEntrenamiento();
         personaje.setExperiencia(personaje.getExperiencia() + 1);
         personaje.subirNivel();
@@ -76,8 +78,8 @@ public class Entrenamiento {
                             System.out.println("Percepción Mágica: " + Utilidades.ANSI_BLUE + personaje.getPercepcionMagica() + Utilidades.ANSI_RESET);
                             break;
                         case 5: // Aumentar Coraje
-                            personaje.mejoraEstadisticaUnica(personaje, 1);
-                            int valorEstadisticaUnica = Personaje.valorEstadisticaUnica(personaje);
+                            GestionEstadisticas.mejoraEstadisticaUnica(personaje, 1);
+                            int valorEstadisticaUnica = GestionEstadisticas.valorEstadisticaUnica(personaje);
                             System.out.println(nombreEstadisticaUnica+": " + Utilidades.ANSI_PURPLE + valorEstadisticaUnica + Utilidades.ANSI_RESET);
                             break;
                         default:

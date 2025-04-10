@@ -2,7 +2,6 @@ package BBDD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 
 import clases.Partida.Partida;
 import clases.Personajes.Personaje;
@@ -10,7 +9,7 @@ import clases.Personajes.Personaje;
 public class CRUD {
     
         public static void insertarPartidaSQL(Partida partida){
-            String sentencia = "INSERT INTO Partidas (id_Personaje, FechaInicio, FechaFinal, Duracion, Vitalidad, Fuerza, Agilidad, PercepcionMagica, EstadisticaEspecial, Nivel) Values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+            String sentencia = "INSERT INTO Partidas (id_Personaje, FechaYHoraInicio, FechaYHoraFinal, Duracion, Vitalidad, Fuerza, Agilidad, PercepcionMagica, EstadisticaEspecial, Nivel) Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             try (Connection conexion = ConexionBBDD.gConnection();
                  PreparedStatement statement = conexion.prepareStatement(sentencia)) {
@@ -24,10 +23,13 @@ public class CRUD {
                 }
 
                 int filas = statement.executeUpdate();
-
-                System.out.println("Insertado con exito, filas: "+filas);
+                if (filas>0) {
+                    System.out.println("Partida insertada a la BBDD con exito");
+                }
             } catch (SQLException e) {
                 System.out.println("error "+ e.getMessage());
             }
         }
+
+        
 }
