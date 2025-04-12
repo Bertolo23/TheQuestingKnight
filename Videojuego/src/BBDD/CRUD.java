@@ -1,20 +1,19 @@
-package BBDD;
+package bbdd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import clases.Partida.Partida;
-import clases.Personajes.Personaje;
+import clases.partida.Partida;
 
 public class CRUD {
     
         public static void insertarPartidaSQL(Partida partida){
-            String sentencia = "INSERT INTO Partidas (id_Personaje, FechaYHoraInicio, FechaYHoraFinal, Duracion, Vitalidad, Fuerza, Agilidad, PercepcionMagica, EstadisticaEspecial, Nivel) Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sentencia = "INSERT INTO Partidas (id_Personaje, FechaYHoraInicio, FechaYHoraFinal, Duracion, Vitalidad, Fuerza, Agilidad, PercepcionMagica, EstadisticaEspecial, Nivel) Select  (Select id From tipopersonaje where tipoPersonaje = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?";
             
             try (Connection conexion = ConexionBBDD.gConnection();
                  PreparedStatement statement = conexion.prepareStatement(sentencia)) {
                 
-                statement.setInt(1, Personaje.idPersonaje(partida.getPersonaje()));
+                statement.setString(1, partida.getPersonaje().getNombre());
                 statement.setString(2, partida.horaYFechaCompleta(partida.getFechaInicio()));
                 statement.setString(3, partida.horaYFechaCompleta(partida.getFechaFinal()));
                 statement.setString(4, partida.duracionPartida(partida.getDuracion()));

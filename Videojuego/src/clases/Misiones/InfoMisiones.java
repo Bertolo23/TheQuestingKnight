@@ -1,4 +1,4 @@
-package clases.Misiones;
+package clases.misiones;
 
 /**
  * Clase que almacena la información de las misiones disponibles para el personaje

@@ -1,56 +1,26 @@
-package clases.Estadísticas;
+package clases.estadísticas;
 
 import java.io.IOException;
 
-import clases.Interfaz.Titulos;
-import clases.Personajes.Asesino;
-import clases.Personajes.ConstantesPersonaje;
-import clases.Personajes.Luchador;
-import clases.Personajes.Mago;
-import clases.Personajes.Personaje;
-import clases.Personajes.Tanque;
+import clases.interfaz.Titulos;
+import clases.personajes.Asesino;
+import clases.personajes.ConstantesPersonaje;
+import clases.personajes.Luchador;
+import clases.personajes.Mago;
+import clases.personajes.Personaje;
+import clases.personajes.Tanque;
 import util.Utilidades;
 
 public class GestionEstadisticas {
     
-        /**
+    /**
      * Muestra las estadísticas actuales del personaje.
      */
     public static void enseñarEstadisticas(Personaje personaje) throws IOException {
         Titulos.tituloEstadisticas();
         mostrarEstadisticas(personaje);
-        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de acciones");
+        String vueltaAMenu = Utilidades.leerString("Pulsa intro para volver al menú de acciones");
         Utilidades.espacios(2);
-    }
-
-    /**
-     * Método que muestra todas la estadísticas completas de cada tipo de personaje, incluida la única
-     * @param personaje objeto personaje para saber que estadística única va a ser
-     */
-    public static void mostrarEstadisticas(Personaje personaje){
-        int valorEstadisticaUnica = valorEstadisticaUnica(personaje);
-        String nombreEstadisticaUnica = nombreEstadisticaUnica(personaje).toUpperCase();
-        int margenEntreNumeros = 7;
-        int margen = 50;
-        Utilidades.espacios(2);
-        System.out.println(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ "+nombreEstadisticaUnica+" ║" + Utilidades.ANSI_RESET);
-        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 8) + "║ " + personaje.getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
-                "║ " + personaje.getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
-                "║ " + personaje.getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
-                "║ " + personaje.getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + Utilidades.ANSI_PURPLE +
-                "║ " + valorEstadisticaUnica + " ║" + Utilidades.ANSI_RESET);
-        Utilidades.espacios(2);
-    }
-
-    
-    /**
-     * Muestra la salud y el dinero actual del personaje en la partida.
-     * Se formatea la salida para que se vea correctamente en la interfaz.
-     */
-    public static void mostrarSaludYDinero(Personaje personaje){
-        int margen = 80;
-        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + personaje.getSalud() + Utilidades.ANSI_RESET 
-                + "       DINERO  " + Utilidades.ANSI_YELLOW + personaje.getDinero() + Utilidades.ANSI_RESET);
     }
 
     /**
@@ -100,6 +70,54 @@ public class GestionEstadisticas {
         }
         return nombreEstadisticaUnica;
     }
+
+    /**
+     * Método que muestra todas la estadísticas completas de cada tipo de personaje, incluida la única
+     * @param personaje objeto personaje para saber que estadística única va a ser
+     */
+    public static void mostrarEstadisticas(Personaje personaje){
+        int valorEstadisticaUnica = valorEstadisticaUnica(personaje);
+        String nombreEstadisticaUnica = nombreEstadisticaUnica(personaje).toUpperCase();
+        int margenEntreNumeros = 7;
+        int margen = 50;
+        Utilidades.espacios(2);
+        System.out.println(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ "+nombreEstadisticaUnica+" ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 8) + "║ " + personaje.getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
+                "║ " + personaje.getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
+                "║ " + personaje.getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
+                "║ " + personaje.getPercepcionMagica() + " ║" + " ".repeat(margenEntreNumeros + 3) + Utilidades.ANSI_PURPLE +
+                "║ " + valorEstadisticaUnica + " ║" + Utilidades.ANSI_RESET);
+        Utilidades.espacios(2);
+    }
+
+    
+    /**
+     * Muestra la salud y el dinero actual del personaje en la partida.
+     * Se formatea la salida para que se vea correctamente en la interfaz.
+     */
+    public static void mostrarSaludYDinero(Personaje personaje){
+        int margen = 80;
+        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + personaje.getSalud() + Utilidades.ANSI_RESET 
+                + "       DINERO  " + Utilidades.ANSI_YELLOW + personaje.getDinero() + Utilidades.ANSI_RESET);
+    }
+
+    /**
+     * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
+     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y coraje.
+     * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
+     */
+    public static void introduccionPersonaje(Personaje personaje) {
+        int margen = 50;
+        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + personaje.getNombre().toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
+        Utilidades.espacios(3);
+        GestionEstadisticas.mostrarEstadisticas(personaje);
+        Utilidades.espacios(2);
+        GestionEstadisticas.mostrarSaludYDinero(personaje);
+        Utilidades.espacios(2);
+        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
+    }
+
+    
 
 
     /**
@@ -155,6 +173,7 @@ public class GestionEstadisticas {
         personaje.setExperiencia(ConstantesPersonaje.EXPERIENCIA);
         personaje.setNivel(ConstantesPersonaje.NIVEL);
         personaje.setSalud(ConstantesPersonaje.SALUD);
+        personaje.setInventario(ConstantesPersonaje.INVENTARIO);
 
         if (personaje instanceof Luchador) {
             personaje.setVitalidad(ConstantesPersonaje.LUCHADOR_VITALIDAD);

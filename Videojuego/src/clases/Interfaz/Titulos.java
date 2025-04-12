@@ -1,4 +1,4 @@
-package clases.Interfaz;
+package clases.interfaz;
 import util.Utilidades;
 
 /**
@@ -14,38 +14,14 @@ public class Titulos {
      * 
      * @param texto necesario para poder crear el cuadro alrededor del mismo texto
      */
-     public static void imprimirCuadroTexto(String[] texto) {
+     public static void imprimirCuadroTexto(String[] texto, int margen, String formato) {
         int ancho = 0;
-        int margen = 30;
         for (String linea : texto) {
             if (linea.length() > ancho) {
                 ancho = linea.length();
             }
         }
-
-        System.out.println(" ".repeat(margen)+ Utilidades.ANSI_BOLD+"╔" + "═".repeat(ancho + 2) + "╗"); // Imprimir la parte superior del cuadro
-
-        for (String linea : texto) {
-            System.out.println(" ".repeat(margen) +"║ " + linea + " ".repeat(ancho - linea.length()) + " ║");  // Imprimir el texto dentro del cuadro
-        }
-
-        System.out.println(" ".repeat(margen) +"╚" + "═".repeat(ancho + 2) + "╝"+Utilidades.ANSI_RESET);  // Imprimir la parte inferior del cuadro
-    }
-
-    /**
-     * Método para encuadrar textos de arrays de Strings.
-     * @param texto Array de String que va a ser encuadrado.
-     */
-    public static void imprimirCuadroTextoInicial(String[] texto) {
-        int ancho = 0;
-        int margen = 30;
-        for (String linea : texto) {
-            if (linea.length() > ancho) {
-                ancho = linea.length();
-            }
-        }
-
-        System.out.println(" ".repeat(margen) +Utilidades.ANSI_YELLOW+"╔" + "═".repeat(ancho + 2) + "╗"); // Imprimir la parte superior del cuadro
+        System.out.println(" ".repeat(margen)+ formato+"╔" + "═".repeat(ancho + 2) + "╗"); // Imprimir la parte superior del cuadro
 
         for (String linea : texto) {
             System.out.println(" ".repeat(margen) +"║ " + linea + " ".repeat(ancho - linea.length()) + " ║");  // Imprimir el texto dentro del cuadro
@@ -97,14 +73,14 @@ public class Titulos {
                         "También tendrás la capacidad de entrenar o comprar objetos en la tienda para mejorar tus estadísticas.",
                         "El objetivo es convertirse en caballero o morir intentandolo. Suerte!!"
                         };
-                        imprimirCuadroTextoInicial(texto);
+                        imprimirCuadroTexto(texto, 30, Utilidades.ANSI_YELLOW);
 
     }
 
     // Título de la tienda.
     public static void tituloTienda(){
 
-        int margen = 70;
+        int margen = 75;
         System.out.println(Utilidades.ANSI_PURPLE+" ".repeat(margen) +"  _____ ___ _____ _   _ ____    _    \r\n" + //
                                        " ".repeat(margen) +" |_   _|_ _| ____| \\ | |  _ \\  / \\   \r\n" + //
                                        " ".repeat(margen) +"   | |  | ||  _| |  \\| | | | |/ _ \\  \r\n" + //
@@ -156,6 +132,15 @@ public class Titulos {
                                                     " ".repeat(margen) +"                                                                                                           "+Utilidades.ANSI_RESET);
     }
 
+    public static void tituloInventario(){
+        int margen = 63;
+        System.out.println(Utilidades.ANSI_PURPLE+  " ".repeat(margen) +"  ___ _   ___     _______ _   _ _____  _    ____  ___ ___  \r\n" + //
+                                                    " ".repeat(margen) +" |_ _| \\ | \\ \\   / / ____| \\ | |_   _|/ \\  |  _ \\|_ _/ _ \\ \r\n" + //
+                                                    " ".repeat(margen) +"  | ||  \\| |\\ \\ / /|  _| |  \\| | | | / _ \\ | |_) || | | | |\r\n" + //
+                                                    " ".repeat(margen) +"  | || |\\  | \\ V / | |___| |\\  | | |/ ___ \\|  _ < | | |_| |\r\n" + //
+                                                    " ".repeat(margen) +" |___|_| \\_|  \\_/  |_____|_| \\_| |_/_/   \\_\\_| \\_\\___\\___/ \r\n" + //
+                                                    " ".repeat(margen) +"                                                           "+ Utilidades.ANSI_RESET);
+    }
     public static void nombramiento(){
         int margen = 40;
         System.out.println(Utilidades.ANSI_CYAN+
@@ -363,4 +348,18 @@ public class Titulos {
         Utilidades.espacios(3);
     }
     
+    public static void enfrentamiento(){
+
+        System.out.print("            *_\r\n" + //
+                                "     ^       | ~~\\                     /\r\n" + //
+                                "     |       |  ./               ,~~  /\r\n" + //
+                                "     |  (*)  |~~              _<=)  _/_\r\n" + //
+                                "     | _<\">_ |             /I\\.=\"==.{>\r\n" + //
+                                "    _|_ \\ / \\0             \\I/-\\T/-'\r\n" + //
+                                "     0'\\ ^ /\\/                 /_\\\r\n" + //
+                                "       /   \\ |                // \\\\\r\n" + //
+                                "      /__^__\\|               //   \\\\_ \r\n" + //
+                                "       || ||  |             _I      /\r\n" + //
+                                "      _|| ||_ |\r\n");
+    }
 }

@@ -29,4 +29,4 @@ Insert into TipoPersonaje (tipoPersonaje) values ('Asesino');
 Insert into TipoPersonaje (tipoPersonaje) values ('Tanque');
 Insert into TipoPersonaje (tipoPersonaje) values ('Mago');
 select * from TipoPersonaje;
-select * from Partidas;
+6

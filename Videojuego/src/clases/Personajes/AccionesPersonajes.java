@@ -1,11 +1,11 @@
-package clases.Personajes;
+package clases.personajes;
 import java.io.IOException;
-import clases.Entrenamiento.Entrenamiento;
-import clases.Estadísticas.GestionEstadisticas;
-import clases.Interfaz.Menus;
-import clases.Interfaz.Titulos;
-import clases.Misiones.TablonMisiones;
-import clases.Tienda.Tienda;
+
+import clases.estadísticas.GestionEstadisticas;
+import clases.interfaz.*;
+import clases.misiones.TablonMisiones;
+import clases.tienda.Tienda;
+import clases.entrenamiento.Entrenamiento;
 import util.Utilidades;
 /**
  * Clase que recoge las acciones de cada personaje en un swicth
@@ -20,14 +20,14 @@ public class AccionesPersonajes {
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
     public static void accionesPersonaje(Personaje personaje)throws IOException{
-        personaje.introduccionPersonaje(personaje);
-        Utilidades.continuar();
+        GestionEstadisticas.introduccionPersonaje(personaje);
+        Utilidades.continuar("continuar");
         Utilidades.espacios(6);
         boolean salir = false;
            
             do {
                 if (personaje.condiccionesVictoria() == true) {
-                    salir = personaje.condiccionesVictoria();
+                    salir = true;
                     if (personaje.getSalud() <= 0) {
                         Titulos.calavera();
                         Titulos.GameOver();
@@ -36,7 +36,7 @@ public class AccionesPersonajes {
                         Titulos.tituloVictoria();
                     }
                     Utilidades.espacios(3);
-                    String volverMenuInicio = Utilidades.leerStringConTexto("Pulsa intro para ir al menú de inicio");
+                    String volverMenuInicio = Utilidades.leerString("Pulsa intro para ir al menú de inicio");
                 }else{
                     // -----------------------------------------------------------------MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;
@@ -55,7 +55,10 @@ public class AccionesPersonajes {
                         case 4:// -----------------------------------------------------------------STATS-----------------------------------------------------------------------
                                 GestionEstadisticas.enseñarEstadisticas(personaje);
                             break;
-                        case 5:// -----------------------------------------------------------------SALIR-----------------------------------------------------------------------
+                        case 5:// -----------------------------------------------------------------STATS-----------------------------------------------------------------------
+                                personaje.mostrarInventario();
+                        break;
+                        case 6:// -----------------------------------------------------------------SALIR-----------------------------------------------------------------------
                                 salir=true;
                             break;
                         default:

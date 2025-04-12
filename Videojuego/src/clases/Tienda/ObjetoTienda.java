@@ -1,6 +1,7 @@
-package clases.Tienda;
+package clases.tienda;
 import java.io.IOException;
-import clases.Personajes.Personaje;
+
+import clases.personajes.Personaje;
 import util.Utilidades;
 
 /**
@@ -15,7 +16,6 @@ public class ObjetoTienda {
      */
     private String nombre; // Nombre del objeto en la tienda
     private int precio; // Precio del objeto en la tienda
-    private boolean objetoComprado;
     /**
      * CONSTRUCTOR
      */
@@ -25,10 +25,9 @@ public class ObjetoTienda {
      * @param nombre nombre del objeto
      * @param precio precio del objeto en la tienda
      */
-    public ObjetoTienda(String nombre, int precio, boolean objetoComprado) {
+    public ObjetoTienda(String nombre, int precio) {
         this.nombre = nombre;
         this.precio = precio;
-        this.objetoComprado = objetoComprado;
     }
 
     /**
@@ -67,21 +66,6 @@ public class ObjetoTienda {
         this.precio = precio;
     }
 
-    /**
-     * Método get que retorna el precio del objeto
-     * @return precio del objeto en la tienda
-     */
-    public boolean getObjetoComprado() {
-        return objetoComprado;
-    }
-
-    /**
-     * Método set para actualizar el precio del objeto
-     * @param precio nuevo precio del objeto en la tienda
-     */
-    public void setObjetoComprado(boolean objetoComprado) {
-        this.objetoComprado = objetoComprado;
-    }
 
     /**
      * Método que recoge los objetos de la tienda y cual quieres comprar
@@ -92,7 +76,7 @@ public class ObjetoTienda {
      */
      public boolean gestionCompra(ObjetoTienda objeto, Personaje personaje)throws IOException{
         
-        String seguirCompra = Utilidades.leerStringConTexto("La "+objeto.getNombre()+" tiene un precio de "+Utilidades.ANSI_YELLOW+objeto.getPrecio()+Utilidades.ANSI_RESET+", Seguimos con la compra?(S/N)").toUpperCase();
+        String seguirCompra = Utilidades.leerString("La "+objeto.getNombre()+" tiene un precio de "+Utilidades.ANSI_YELLOW+objeto.getPrecio()+Utilidades.ANSI_RESET+", Seguimos con la compra?(S/N)").toUpperCase();
         Utilidades.espacios(2);
         if (seguirCompra.equals("S")) {
             if (personaje.getDinero()>=objeto.getPrecio()){
@@ -107,7 +91,7 @@ public class ObjetoTienda {
             System.out.println("Otra vez será");
             Utilidades.espacios(2);
         }
-        String volverMenu = Utilidades.leerStringConTexto("Pulsa intro para volver a la Tienda");
+        String volverMenu = Utilidades.leerString("Pulsa intro para volver a la Tienda");
         Utilidades.espacios(2);
         return false;
     }

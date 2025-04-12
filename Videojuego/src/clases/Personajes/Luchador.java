@@ -1,4 +1,8 @@
-package clases.Personajes;
+package clases.personajes;
+
+import java.util.ArrayList;
+
+import clases.tienda.ObjetoTienda;
 
 /**
  * Clase Luchador la cúal es hija de la clase Personaje
@@ -26,15 +30,9 @@ public class Luchador extends Personaje {
      * @param coraje atributo único de la clase Luchador
      */
     public Luchador(String nombre, int dinero, int vitalidad, int fuerza, int agilidad, int percepcionMagica,
-            double salud, int experiencia, int nivel, int coraje) {
-        super(nombre, dinero, vitalidad, fuerza, agilidad, percepcionMagica, salud, experiencia, nivel);
+            double salud, int experiencia, int nivel, int coraje, ArrayList<ObjetoTienda> inventario) {
+        super(nombre, dinero, vitalidad, fuerza, agilidad, percepcionMagica, salud, experiencia, nivel, inventario);
         this.coraje = coraje;
-    }
-
-    /**
-     * Constructor vacío para poder inicializarlo con los métodos set y get en la main
-     */
-    public Luchador() {
     }
 
     /**

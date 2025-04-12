@@ -1,4 +1,4 @@
-package FicherosYSerializacion;
+package ficheros;
 
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -12,8 +12,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
-import clases.Personajes.ConstantesPersonaje;
-import clases.Personajes.Personaje;
+import clases.personajes.ConstantesPersonaje;
+import clases.personajes.Personaje;
 
 public class GestionFicheros {
     
@@ -45,7 +45,7 @@ public class GestionFicheros {
         Personaje [] tiposPersonajeAlmacenado = new Personaje[4];
         ObjectInputStream ois = null;
         try{
-            File file = new File("Videojuego/src/FicherosYSerializacion/PersonajesSerializados.dat");
+            File file = new File("Videojuego/src/ficheros/PersonajesSerializados.dat");
             ois = new ObjectInputStream(new FileInputStream(file));
             boolean hayObjetos = true;
             while (hayObjetos) {
@@ -75,7 +75,7 @@ public class GestionFicheros {
     public static void outPutSerializacionPersonajes(){
         Personaje [] tiposPersonaje = {ConstantesPersonaje.luchador,ConstantesPersonaje.asesino,ConstantesPersonaje.tanque,ConstantesPersonaje.mago};
         try{
-            File file = new File("Videojuego/src/FicherosYSerializacion/PersonajesSerializados.dat");
+            File file = new File("Videojuego/src/ficheros/PersonajesSerializados.dat");
             FileOutputStream fo = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(fo);
 

@@ -1,7 +1,11 @@
-package clases.Misiones;
+package clases.misiones;
 import util.Utilidades;
 import java.io.IOException;
-import clases.Personajes.Personaje;
+import java.util.ArrayList;
+
+import clases.personajes.Enemigo;
+import clases.personajes.Personaje;
+import clases.tienda.ObjetoTienda;
 
 /**
  * Clase que representa la estructura de como van a ser las misiones que los personajes pueden completar
@@ -90,15 +94,15 @@ public class Misiones {
      * @param personaje objeto de la clase Personaje que realizará la misión
      * @throws IOException si hay un error en la entrada del usuario
      */
-    public void estructuraMision(Misiones mision, Personaje personaje)throws IOException{
+    public void estructuraMision(Misiones mision, Personaje personaje, Enemigo enemigo, ArrayList<ObjetoTienda> listaObjetos)throws IOException{
 
-        personaje.setSalud(personaje.getSalud()-mision.getSaludPerdida());
+        mision.setSaludPerdida(Pelea.pelea(personaje, enemigo, listaObjetos));
         personaje.setDinero(personaje.getDinero()+mision.getPagaMision());
         System.out.println("Misión terminada");
         System.out.println("Has perdido "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_CYAN+mision.getSaludPerdida()+Utilidades.ANSI_RESET+" de salud");
         System.out.println("Has ganado "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_YELLOW+mision.getPagaMision()+Utilidades.ANSI_RESET+" de dinero");
         System.out.println();
-        String vueltaAMenu = Utilidades.leerStringConTexto("Pulsa intro para volver al menú de misiones");
+        String vueltaAMenu = Utilidades.leerString("Pulsa intro para volver al menú de misiones");
         Utilidades.espacios(2);
     }
 

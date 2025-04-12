@@ -1,4 +1,8 @@
-package clases.Personajes;
+package clases.personajes;
+
+import java.util.ArrayList;
+
+import clases.tienda.ObjetoTienda;
 
 /**
  * Clase Asesino la cúal es hija de la clase Personaje
@@ -26,15 +30,9 @@ public class Asesino extends Personaje {
      * @param sigilo atributo único de la clase Asesino
      */
     public Asesino(String nombre, int dinero, int vitalidad, int fuerza, int agilidad, int percepcionMagica,
-            double salud, int experiencia, int nivel, int sigilo) {
-        super(nombre, dinero, vitalidad, fuerza, agilidad, percepcionMagica, salud, experiencia, nivel);
+            double salud, int experiencia, int nivel, int sigilo, ArrayList<ObjetoTienda> inventario) {
+        super(nombre, dinero, vitalidad, fuerza, agilidad, percepcionMagica, salud, experiencia, nivel, inventario);
         this.sigilo = sigilo;
-    }
-
-    /**
-     * Constructor vacío para poder inicializarlo con los métodos set y get en la main
-     */
-    public Asesino() {
     }
 
     /**

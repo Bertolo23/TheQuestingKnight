@@ -1,4 +1,4 @@
-package clases.Interfaz;
+package clases.interfaz;
 import util.Utilidades;
 
 import java.io.File;
@@ -8,11 +8,11 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import BBDD.CRUD;
-import FicherosYSerializacion.GestionFicheros;
-import clases.Estadísticas.GestionEstadisticas;
-import clases.Partida.Partida;
-import clases.Personajes.*;
+import bbdd.CRUD;
+import ficheros.GestionFicheros;
+import clases.partida.Partida;
+import clases.personajes.*;
+import clases.estadísticas.GestionEstadisticas;
 
 /**
  * Clase que gestiona los diferentes menús del juego.
@@ -46,7 +46,7 @@ public class Menus {
      */
     public static int menuTienda(Personaje personaje) throws IOException {
         int comprarObjetos = 0;
-        int margen = 67;
+        int margen = 70;
         System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ ESPADA ║║ ARMADURA ║║ CABALLO ║║ ESCUDO ║║ VOLVER ║" + Utilidades.ANSI_RESET);
         System.out.println("¿Qué objeto quieres comprar? (1-5)");
         System.out.println();
@@ -69,16 +69,16 @@ public class Menus {
         String [] textoMenuAcciones = {"Si entrenas, ganas experiencia y la puedes gastar en mejorar tus estadísticas. Cada vez que llegues a 5 o multiplo de 5 subiras un nivel.",
                                         "Si haces misiones, se te pagará y y perderás salud, pero habrá requisitos para realizarlas.",
                                         "En la tienda se pueden comprar objetos con dinero que te modificarán las estadísticas y daran acceso a misiones."};
-        int margen = 60;
-            System.out.print(" ".repeat(margen) + Utilidades.ANSI_BLUE + "║ ENTRENAR ║ ║ TIENDA ║ ║ MISIONES ║ ║ ESTADÍSTICAS ║ ║ SALIR ║"+Utilidades.ANSI_RESET);
+        int margen = 55;
+            System.out.print(" ".repeat(margen) + Utilidades.ANSI_BLUE + "║ ENTRENAR ║ ║ TIENDA ║ ║ MISIONES ║ ║ ESTADÍSTICAS ║ ║ INVENTARIO ║ ║ SALIR ║"+Utilidades.ANSI_RESET);
             System.out.println();
             System.out.println();
             System.out.println();
-            Titulos.imprimirCuadroTexto(textoMenuAcciones);
+            Titulos.imprimirCuadroTexto(textoMenuAcciones, 30, Utilidades.ANSI_BOLD);
             System.out.println();
             GestionEstadisticas.mostrarSaludYDinero(personaje);
             System.out.println();
-            System.out.println("¿Qué deseas hacer?(1-5)");
+            System.out.println("¿Qué deseas hacer?(1-6)");
             eleccionAccion = Utilidades.leerEntero();
         return eleccionAccion;
     }
@@ -121,14 +121,13 @@ public class Menus {
         ArrayList<Partida> partidas = new ArrayList<>();
         Instant inicioPartida = null;;
         Instant finPartida;
-        GestionFicheros.inPutSerializacionPersonajes();
-        File file = new File("Videojuego/src/FicherosYSerializacion/HistorialPartidas.txt");
+        //GestionFicheros.inPutSerializacionPersonajes();
+        File file = new File("Videojuego/src/ficheros/HistorialPartidas.txt");
         Titulos.tituloInicio();
-        Utilidades.continuar();
-        String opcion = ""; 
+        Utilidades.continuar("continuar");
         
         do{
-            opcion = menuPersonaje().toLowerCase(); 
+            String opcion = menuPersonaje().toLowerCase(); 
             Partida partida = new Partida(null, null, null, null, null);
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
@@ -177,20 +176,22 @@ public class Menus {
                         break;
                 }
             finPartida = Instant.now();
-            if (inicioPartida!=null && finPartida!=null) {
+            if (inicioPartida!=null) {
                 partida.setDuracion(Duration.between(inicioPartida, finPartida));
             }
             partida.setFechaFinal(LocalDateTime.now());
             partidas.add(partida);
             Utilidades.espacios(3);
-
         }while(salir==false);
-        Partida.mostrarPartida(partidas);
-        Partida.exportarAFichero(partidas, file);
+        if (partidas.get(0).getPersonaje() != null) {
+            Partida.mostrarPartida(partidas);
+            Partida.exportarAFichero(partidas, file);
+        }
         for (Partida cadaPartida : partidas) {
             if (cadaPartida.getPersonaje() != null) {
                 CRUD.insertarPartidaSQL(cadaPartida);
-                
+            }else{
+                System.out.println("Hasta Luego");
             }
         }
     }

@@ -1,10 +1,10 @@
-package clases.Tienda;
+package clases.tienda;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import clases.Interfaz.Menus;
-import clases.Interfaz.Titulos;
-import clases.Personajes.Personaje;
+import clases.personajes.Personaje;
+import clases.interfaz.Menus;
+import clases.interfaz.Titulos;
 import util.Utilidades;
 /**
  * Clase que se encarga de Tener la Tienda que sera igual para todos los personajes
@@ -14,10 +14,10 @@ import util.Utilidades;
 public class Tienda {
 
     // Creación de objetos disponibles en la tienda
-    static ObjetoTienda objeto1 = new ObjetoTienda("Espada Encantada", 40, false);
-    static ObjetoTienda objeto2 = new ObjetoTienda("Armadura de Placas", 55, false);
-    static ObjetoTienda objeto3 = new ObjetoTienda("Yegua de Guerra", 60, false);
-    static ObjetoTienda objeto4 = new ObjetoTienda("Manto", 70, false);
+    static ObjetoTienda objeto1 = new ObjetoTienda("Espada Encantada", 40);
+    static ObjetoTienda objeto2 = new ObjetoTienda("Armadura de Placas", 55);
+    static ObjetoTienda objeto3 = new ObjetoTienda("Yegua de Guerra", 60);
+    static ObjetoTienda objeto4 = new ObjetoTienda("Escudo Antimágia", 70);
     /**
      * Permite al personaje comprar objetos en la tienda, afectando sus estadísticas y reduciendo su dinero.
      * Se presentan diferentes opciones de compra con sus respectivos efectos en las características del personaje.
@@ -33,8 +33,7 @@ public class Tienda {
             int comprarObjetos = 0;
 
             do {
-                System.out.println();
-                System.out.println();
+                Utilidades.espacios(2);
                 boolean dejarDeComprar = false;
 
                 do {
@@ -44,18 +43,30 @@ public class Tienda {
 
                     switch (comprarObjetos) {
                         case 1: // Compra de Espada Encantada
-                        System.out.println(objeto1.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
-                        Titulos.espada();
-                        if (objeto1.gestionCompra(objeto1, personaje) == true) {
-                            personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
-                            personaje.setFuerza(personaje.getFuerza() + 5);
-                            personaje.setAgilidad(personaje.getAgilidad() - 1);
-                            personaje.setPercepcionMagica(personaje.getPercepcionMagica() - 2);
-                            System.out.println("Ahora tienes equipado el objeto "+objeto1.getNombre());
-                            objeto1.setObjetoComprado(true);
+                        if (personaje.getInventario().contains(objeto1)) {
+                            System.out.println("Ya tienes el objeto");
+                            Utilidades.espacios(1);
+                            Utilidades.continuar("volver a la tienda");
+                        }else{
+                            System.out.println(objeto1.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
+                            Titulos.espada();
+                            if (objeto1.gestionCompra(objeto1, personaje) == true) {
+                                personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
+                                personaje.setFuerza(personaje.getFuerza() + 5);
+                                personaje.setAgilidad(personaje.getAgilidad() - 1);
+                                personaje.setPercepcionMagica(personaje.getPercepcionMagica() - 2);
+                                System.out.println("Ahora tienes equipado el objeto "+objeto1.getNombre());
+                                personaje.getInventario().add(objeto1);
+                            }
                         }
+                       
                             break;
                         case 2: // Armadura de Placas
+                        if (personaje.getInventario().contains(objeto2)) {
+                            System.out.println("Ya tienes el objeto");
+                            Utilidades.espacios(1);
+                            Utilidades.continuar("volver a la tienda");
+                        }else{
                             System.out.println(objeto2.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad - " + Utilidades.ANSI_YELLOW + "2 " + Utilidades.ANSI_RESET + "Agilidad )");
                             Titulos.armadura();
                             if (objeto2.gestionCompra(objeto2, personaje)  == true) {
@@ -63,10 +74,17 @@ public class Tienda {
                                 personaje.setVitalidad(personaje.getVitalidad() + 4);
                                 personaje.setAgilidad(personaje.getAgilidad() - 2);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto2.getNombre());
-                                objeto2.setObjetoComprado(true);
+                                personaje.getInventario().add(objeto2);
                             }
+                        }
+                            
                             break;
                         case 3: // Compra de Báculo
+                        if (personaje.getInventario().contains(objeto3)) {
+                            System.out.println("Ya tienes el objeto");
+                            Utilidades.espacios(1);
+                            Utilidades.continuar("volver a la tienda");
+                        }else{
                             System.out.println(objeto3.getNombre().toUpperCase()+"( + "+Utilidades.ANSI_BLUE + "7" + Utilidades.ANSI_RESET + " Percepción Mágica - " + Utilidades.ANSI_RED + "3" + Utilidades.ANSI_RESET + " Fuerza )");
                             Titulos.caballo();
                             if (objeto3.gestionCompra(objeto3, personaje) == true) {
@@ -74,10 +92,16 @@ public class Tienda {
                                 personaje.setFuerza(personaje.getFuerza() - 3);
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 7);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto3.getNombre());
-                                objeto3.setObjetoComprado(true);
+                                personaje.getInventario().add(objeto3);
                             }
+                        }
                             break;
                         case 4: // Compra de Manto
+                        if (personaje.getInventario().contains(objeto4)) {
+                            System.out.println("Ya tienes el objeto");
+                            Utilidades.espacios(1);
+                            Utilidades.continuar("volver a la tienda");
+                        }else{
                             System.out.println(objeto4.getNombre().toUpperCase()+"( + "+Utilidades.ANSI_YELLOW + "5" + Utilidades.ANSI_RESET + " Agilidad - " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad + " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
                             Titulos.escudo();
                             if (objeto4.gestionCompra(objeto4, personaje) == true) {
@@ -86,8 +110,9 @@ public class Tienda {
                                 personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 2);
                                 personaje.setVitalidad(personaje.getVitalidad() - 4);
                                 System.out.println("Ahora tienes equipado el objeto "+objeto4.getNombre());
-                                objeto4.setObjetoComprado(true);
+                                personaje.getInventario().add(objeto4);
                             }
+                        }
                             break;
                         case 5: // Salir de la tienda
                             dejarDeComprar = true;

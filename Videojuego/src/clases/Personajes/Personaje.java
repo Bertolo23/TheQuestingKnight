@@ -1,9 +1,10 @@
-package clases.Personajes;
+package clases.personajes;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 
-import clases.Estadísticas.GestionEstadisticas;
-import clases.Interfaz.Titulos;
+import clases.tienda.ObjetoTienda;
+import clases.interfaz.Titulos;
 import util.Utilidades;
 
 
@@ -26,6 +27,7 @@ public abstract class Personaje implements Serializable {
     private double salud;// referencia la salud de cada personaje
     private int experiencia; // referencia la experiencia de cada personaje
     private int nivel; // referencia el nivel de cada personaje
+    private ArrayList<ObjetoTienda> inventario;
 
     /**
      * CONSTRUCTORES
@@ -42,7 +44,7 @@ public abstract class Personaje implements Serializable {
      * @param nivel atributo nivel que se exportara a las demas clases que se extienden de Personaje mediante super()
      */
     public Personaje(String nombre, int dinero, int vitalidad, int fuerza, int agilidad, int percepcionMagica,
-            double salud, int experiencia, int nivel) {
+            double salud, int experiencia, int nivel, ArrayList<ObjetoTienda> inventario) {
         this.nombre = nombre;
         this.dinero = dinero;
         this.vitalidad = vitalidad;
@@ -52,12 +54,25 @@ public abstract class Personaje implements Serializable {
         this.salud = salud;
         this.experiencia = experiencia;
         this.nivel = nivel;
+        this.inventario = inventario;
     }
 
     /**
-     * Constructor vacío para poder inicializarlo con los métodos set y get en la main
+     * Constructor para los enemigos a los cuales te enfrentaras en las misiones
+     * @param nombre
+     * @param vitalidad
+     * @param fuerza
+     * @param agilidad
+     * @param salud
+     * @param nivel
      */
-    public Personaje() {
+    public Personaje(String nombre, int vitalidad, int fuerza, int agilidad, double salud, int nivel) {
+        this.nombre = nombre;
+        this.vitalidad = vitalidad;
+        this.fuerza = fuerza;
+        this.agilidad = agilidad;
+        this.salud = salud;
+        this.nivel = nivel;
     }
     
     /**
@@ -208,20 +223,12 @@ public abstract class Personaje implements Serializable {
         this.nivel = nivel;
     }
 
-    /**
-     * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
-     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y coraje.
-     * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
-     */
-    public void introduccionPersonaje(Personaje personaje) {
-        int margen = 50;
-        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + this.nombre.toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
-        Utilidades.espacios(3);
-        GestionEstadisticas.mostrarEstadisticas(personaje);
-        Utilidades.espacios(2);
-        GestionEstadisticas.mostrarSaludYDinero(personaje);
-        Utilidades.espacios(2);
-        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
+    public ArrayList<ObjetoTienda> getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(ArrayList<ObjetoTienda> inventario) {
+        this.inventario = inventario;
     }
 
     /**
@@ -242,28 +249,31 @@ public abstract class Personaje implements Serializable {
      * @return true si se cumple alguna condición de victoria o muerte o false en caso contrario.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
-    public boolean condiccionesVictoria() throws IOException {
+    public boolean condiccionesVictoria(){
         if (salud <= 0 || dinero >= 250) {
             return true;
         }
         return false;
     }
 
-    public static int idPersonaje(Personaje personaje){
-        int id = 0;
-        if(personaje instanceof Luchador){
-            id = 1;
+    public void mostrarInventario()throws IOException{
+        Utilidades.espacios(3);
+        Titulos.tituloInventario();
+        Utilidades.espacios(2);
+        if (inventario.isEmpty()) {
+            System.out.println(Utilidades.ANSI_UNDERLINE+"El Inventario esta vacío"+Utilidades.ANSI_RESET);
+        }else{
+            int  i = 0;
+            String [] texto = new String[inventario.size()];
+            for (ObjetoTienda objeto : inventario) {
+               texto[i] = "Objeto "+(i+1)+" : "+objeto.getNombre().toUpperCase();
+                i++;
+            }
+            Titulos.imprimirCuadroTexto(texto, 75, Utilidades.ANSI_BLUE);
         }
-        if (personaje instanceof Asesino) {
-            id = 2;
-        }
-        if (personaje instanceof Tanque) {
-            id = 3;
-        }
-        if (personaje instanceof Mago) {
-            id = 4;
-        }
-        return id;
+        Utilidades.espacios(2);
+        Utilidades.continuar("volver al menu de acciones");
+        Utilidades.espacios(2);
     }
 
     /**
@@ -276,5 +286,5 @@ public abstract class Personaje implements Serializable {
                 + fuerza + ", agilidad=" + agilidad + ", percepcionMagica=" + percepcionMagica + ", salud=" + salud
                 + ", experiencia=" + experiencia + ", nivel=" + nivel + "]";
     }
-     
+
 }

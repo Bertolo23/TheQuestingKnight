@@ -1,4 +1,4 @@
-package clases.Partida;
+package clases.partida;
 import util.Utilidades;
 
 import java.io.File;
@@ -6,9 +6,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import FicherosYSerializacion.GestionFicheros;
-import clases.Interfaz.Titulos;
-import clases.Personajes.Personaje;
+import ficheros.GestionFicheros;
+import clases.personajes.Personaje;
+import clases.interfaz.Titulos;
 
 /**
  * Clase que representa una partida en el videojuego. 

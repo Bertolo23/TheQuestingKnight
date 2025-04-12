@@ -36,7 +36,7 @@ public class Utilidades{
      * @return El número entero ingresado por el usuario.
      * @throws IOException Si ocurre un error en la entrada.
      */
-    public static int leerEnteroConTexto(String texto) throws IOException {
+    public static int leerEntero(String texto) throws IOException {
         int entrada = 0;
         System.out.println(texto);
         try {
@@ -68,7 +68,7 @@ public class Utilidades{
      * @return El número decimal ingresado por el usuario.
      * @throws IOException Si ocurre un error en la entrada.
      */
-    public static double leerDoubleConTexto(String texto) throws IOException {
+    public static double leerDouble(String texto) throws IOException {
         double entrada = 0;
         System.out.println(texto);
         try {
@@ -100,7 +100,7 @@ public class Utilidades{
      * @return La cadena de texto ingresada por el usuario.
      * @throws IOException Si ocurre un error en la entrada.
      */
-    public static String leerStringConTexto(String texto) throws IOException {
+    public static String leerString(String texto) throws IOException {
         System.out.println(texto);
         return lector.readLine();
     }
@@ -149,9 +149,9 @@ public class Utilidades{
      * @return La cadena ingresada por el usuario.
      * @throws IOException Si ocurre un error en la entrada.
      */
-    public static String continuar() throws IOException {
+    public static String continuar(String texto) throws IOException {
         String continuar;
-        continuar = Utilidades.leerStringConTexto("Pulse intro para continuar");
+        continuar = Utilidades.leerString("Pulse intro para "+texto);
         return continuar;
     }
 

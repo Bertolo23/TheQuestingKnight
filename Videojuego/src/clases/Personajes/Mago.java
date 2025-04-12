@@ -1,4 +1,8 @@
-package clases.Personajes;
+package clases.personajes;
+
+import java.util.ArrayList;
+
+import clases.tienda.ObjetoTienda;
 
 /**
  * Clase Mago la cúal es hija de la clase Personaje
@@ -26,15 +30,9 @@ public class Mago extends Personaje {
      * @param poderDeHabilidad atributo único de la clase Mago
      */
     public Mago(String nombre, int dinero, int vitalidad, int fuerza, int agilidad, int percepcionMagica, double salud,
-            int experiencia, int nivel, int poderDeHabilidad) {
-        super(nombre, dinero, vitalidad, fuerza, agilidad, percepcionMagica, salud, experiencia, nivel);
+            int experiencia, int nivel, int poderDeHabilidad, ArrayList<ObjetoTienda> inventario) {
+        super(nombre, dinero, vitalidad, fuerza, agilidad, percepcionMagica, salud, experiencia, nivel, inventario);
         this.poderDeHabilidad = poderDeHabilidad;
-    }
-
-    /**
-     * Constructor vacío para poder inicializarlo con los métodos set y get en la main
-     */
-    public Mago() {
     }
 
     /**

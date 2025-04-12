@@ -1,9 +1,9 @@
-package clases.Entrenamiento;
+package clases.entrenamiento;
 import java.io.IOException;
 
-import clases.Estadísticas.GestionEstadisticas;
-import clases.Interfaz.Titulos;
-import clases.Personajes.*;
+import clases.estadísticas.GestionEstadisticas;
+import clases.interfaz.Titulos;
+import clases.personajes.*;
 import util.Utilidades;
 /**
  * Clase que recoge la gestión de la acción de entrenamiento de cada personaje
@@ -51,7 +51,7 @@ public class Entrenamiento {
 
         do {
             System.out.println("Tienes " + personaje.getExperiencia() + " puntos de experiencia");
-            eleccionMejora = Utilidades.leerStringConTexto("¿Quieres gastar los puntos (S/N)?").toUpperCase();
+            eleccionMejora = Utilidades.leerString("¿Quieres gastar los puntos (S/N)?").toUpperCase();
             Utilidades.espacios(2);
             if (eleccionMejora.equals("S")) {
                 personaje.setExperiencia(personaje.getExperiencia() - 1);
