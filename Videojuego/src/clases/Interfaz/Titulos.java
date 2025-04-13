@@ -230,9 +230,9 @@ public class Titulos {
                             System.out.println(" ".repeat(margen) +"                                                    ░                       "+Utilidades.ANSI_RESET);
     }
 
-    public static void espada(){
+    public static String espada(){
         int margen = 56;
-        System.out.println(
+        String espada =
                         " ".repeat(margen)+"                               (            \r\n" + //
                         " ".repeat(margen)+"                             '    }      \r\n" + //
                         " ".repeat(margen)+"                            (   '      \r\n" + //
@@ -261,14 +261,14 @@ public class Titulos {
                         " ".repeat(margen)+"                             |-|\r\n" + //
                         " ".repeat(margen)+"                             |-|\r\n" + //
                         " ".repeat(margen)+"                            ,'-'.\r\n" + //
-                        " ".repeat(margen)+"                            '---'");
-        Utilidades.espacios(3);
+                        " ".repeat(margen)+"                            '---'";
+        return espada;
 
     }
 
-    public static void armadura() {
+    public static String armadura() {
         int margen = 71;
-        System.out.println(
+        String armadura =
             " ".repeat(margen) + "             .--.\n" +
             " ".repeat(margen) + "            /.--.\\\n" +
             " ".repeat(margen) + "            |====|\n" +
@@ -287,15 +287,14 @@ public class Titulos {
             " ".repeat(margen) + "           |  ||  |\n" +
             " ".repeat(margen) + "           |  ||  |\n" +
             " ".repeat(margen) + "          _\\.:||:./_\n" +
-            " ".repeat(margen) + "         /____/\\____\\"
-        );
-        Utilidades.espacios(3);
+            " ".repeat(margen) + "         /____/\\____\\";
+        return armadura;
     }
     
 
-    public static void caballo() {
+    public static String caballo() {
         int margen = 62; // Puedes ajustar este valor según necesites
-        System.out.println( 
+       String caballo =  
             " ".repeat(margen) + "                           ___________ _\r\n" + //
             " ".repeat(margen) + "                      __/   .::::.-'-(/-/)\r\n" + //
             " ".repeat(margen) + "                    _/:  .::::.-' .-'\\/\\_`,\r\n" + //
@@ -313,14 +312,13 @@ public class Titulos {
             " ".repeat(margen) + "   )     \\\\ \\(_)             //        )\\\r\n" + //
             " ".repeat(margen) + "         _o\\ \\\\\\            (o_       |__\\\r\n" + //
             " ".repeat(margen) + "         \\ /  \\\\\\__          )_\\\r\n" + //
-            " ".repeat(margen) + "               ^)__\\"
-        );
-        Utilidades.espacios(3);
+            " ".repeat(margen) + "               ^)__\\";
+            return caballo;
     }
 
-    public static void escudo() {
+    public static String escudo() {
         int margen = 72;
-        System.out.println( 
+        String escudo =  
             " ".repeat(margen) + " _________________________ \n" + 
             " ".repeat(margen) + "|<><><>     |  |    <><><>|\n" + 
             " ".repeat(margen) + "|<>         |  |        <>|\n" + 
@@ -343,9 +341,8 @@ public class Titulos {
             " ".repeat(margen) + "      `\\<>  |  |  <>/'         \n" + 
             " ".repeat(margen) + "        `\\<>|  |<>/'         \n" + 
             " ".repeat(margen) + "          `-.  .-`           \n" + 
-            " ".repeat(margen) + "            '--' "
-        );
-        Utilidades.espacios(3);
+            " ".repeat(margen) + "            '--' ";
+        return escudo;
     }
     
     public static void enfrentamiento(){

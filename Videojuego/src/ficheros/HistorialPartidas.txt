@@ -4,61 +4,12 @@
 
             GAME  1
 
-Partida empezada a las 10:32:53 el 10/4/2025
-Con el personaje [4mLuchador[0m
-Las estadÃ­sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminÃ³ a las 10:32:55 el 10/4/2025
-Teniendo una duraciÃ³n de 0:0:2
-
----------------------------------------------
-
-
-==================================================
-
-               PARTIDA
-
-==================================================
-
-            GAME  1
-
-Partida empezada a las 10:33:52 el 10/4/2025
-Con el personaje [4mLuchador[0m
-Las estadÃ­sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminÃ³ a las 10:33:53 el 10/4/2025
-Teniendo una duraciÃ³n de 0:0:1
-
----------------------------------------------
-
-
-==================================================
-
-               PARTIDA
-
-==================================================
-
-
-
-==================================================
-
-               PARTIDA
-
-==================================================
-
-
-
-==================================================
-
-               PARTIDA
-
-==================================================
-
-            GAME  1
-
-Partida empezada a las 12:33:19 el 10/4/2025
+Partida empezada a las 17:32:24 el 13/4/2025
 Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminó a las 12:33:24 el 10/4/2025
-Teniendo una duración de 0:0:5
+Los objetos comprados fueron: Espada Encantada
+Y la partida terminó a las 17:32:37 el 13/4/2025
+Teniendo una duración de 0:0:12
 
 ---------------------------------------------
 
@@ -71,11 +22,12 @@ Teniendo una duración de 0:0:5
 
             GAME  1
 
-Partida empezada a las 13:19:37 el 10/4/2025
+Partida empezada a las 17:38:15 el 13/4/2025
 Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminó a las 13:19:39 el 10/4/2025
-Teniendo una duración de 0:0:1
+Compraste 3 objetos fueron: [clases.tienda.ObjetoTienda@4d591d15, clases.tienda.ObjetoTienda@65ae6ba4, clases.tienda.ObjetoTienda@48cf768c]
+Y la partida terminó a las 17:38:26 el 13/4/2025
+Teniendo una duración de 0:0:11
 
 ---------------------------------------------
 
@@ -88,11 +40,12 @@ Teniendo una duración de 0:0:1
 
             GAME  1
 
-Partida empezada a las 13:22:43 el 10/4/2025
+Partida empezada a las 17:43:15 el 13/4/2025
 Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminó a las 13:22:44 el 10/4/2025
-Teniendo una duración de 0:0:1
+Compraste 3 objetos fueron: [clases.tienda.ObjetoTienda@470e2030, clases.tienda.ObjetoTienda@3fb4f649, clases.tienda.ObjetoTienda@33833882]
+Y la partida terminó a las 17:43:21 el 13/4/2025
+Teniendo una duración de 0:0:6
 
 ---------------------------------------------
 
@@ -105,11 +58,12 @@ Teniendo una duración de 0:0:1
 
             GAME  1
 
-Partida empezada a las 14:55:31 el 12/4/2025
+Partida empezada a las 17:45:36 el 13/4/2025
 Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminó a las 14:55:33 el 12/4/2025
-Teniendo una duración de 0:0:2
+Compraste 3 objetos fueron: [Espada Encantada, Armadura de Placas, Yegua de Guerra]
+Y la partida terminó a las 17:45:43 el 13/4/2025
+Teniendo una duración de 0:0:6
 
 ---------------------------------------------
 
@@ -122,11 +76,12 @@ Teniendo una duración de 0:0:2
 
             GAME  1
 
-Partida empezada a las 14:56:41 el 12/4/2025
+Partida empezada a las 20:39:3 el 13/4/2025
 Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminó a las 14:56:42 el 12/4/2025
-Teniendo una duración de 0:0:1
+Compraste 3 objetos fueron: [Espada Encantada, Armadura de Placas, Escudo Antimágia]
+Y la partida terminó a las 20:39:28 el 13/4/2025
+Teniendo una duración de 0:0:25
 
 ---------------------------------------------
 
@@ -139,11 +94,228 @@ Teniendo una duración de 0:0:1
 
             GAME  1
 
-Partida empezada a las 1:41:55 el 13/4/2025
+Partida empezada a las 20:42:43 el 13/4/2025
 Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
-Y la partida terminó a las 1:42:16 el 13/4/2025
-Teniendo una duración de 0:0:21
+Compraste 3 objetos fueron: [Espada Encantada, Armadura de Placas, Escudo Antimágia]
+Y la partida terminó a las 20:42:52 el 13/4/2025
+Teniendo una duración de 0:0:8
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 20:46:39 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 3 objetos fueron: [Espada Encantada, Armadura de Placas, Escudo Antimágia]
+Y la partida terminó a las 20:46:45 el 13/4/2025
+Teniendo una duración de 0:0:6
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 20:50:27 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 4 objetos fueron: [Espada Encantada, Armadura de Placas, Yegua de Guerra, Escudo Antimágia]
+Y la partida terminó a las 20:51:34 el 13/4/2025
+Teniendo una duración de 0:1:67
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 20:52:39 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m9 [33m7 [34m2 [35m12 [0m1
+Compraste 4 objetos fueron: [Espada Encantada, Armadura de Placas, Yegua de Guerra, Escudo Antimágia]
+Y la partida terminó a las 20:53:30 el 13/4/2025
+Teniendo una duración de 0:0:51
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 20:55:45 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 20:55:54 el 13/4/2025
+Teniendo una duración de 0:0:8
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:7:37 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 2 objetos fueron: [Espada Encantada, Armadura de Placas]
+Y la partida terminó a las 21:8:1 el 13/4/2025
+Teniendo una duración de 0:0:24
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:8:31 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 2 objetos fueron: [Espada Encantada, Armadura de Placas]
+Y la partida terminó a las 21:8:38 el 13/4/2025
+Teniendo una duración de 0:0:7
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:9:28 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 2 objetos fueron: [Espada Encantada, Armadura de Placas]
+Y la partida terminó a las 21:9:36 el 13/4/2025
+Teniendo una duración de 0:0:8
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:13:53 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 3 objetos fueron: [Espada Encantada, Armadura de Placas, Yegua de Guerra]
+Y la partida terminó a las 21:14:2 el 13/4/2025
+Teniendo una duración de 0:0:9
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:16:6 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 1 objetos fueron: [Espada Encantada]
+Y la partida terminó a las 21:16:17 el 13/4/2025
+Teniendo una duración de 0:0:10
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:17:27 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 1 objetos fueron: [Espada Encantada]
+Y la partida terminó a las 21:17:32 el 13/4/2025
+Teniendo una duración de 0:0:4
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:19:1 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 1 objetos fueron: [Espada Encantada]
+Y la partida terminó a las 21:19:31 el 13/4/2025
+Teniendo una duración de 0:0:30
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 21:20:25 el 13/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 2 objetos fueron: [Espada Encantada, Armadura de Placas]
+Y la partida terminó a las 21:20:37 el 13/4/2025
+Teniendo una duración de 0:0:12
 
 ---------------------------------------------
 

@@ -1,7 +1,6 @@
 package clases.tienda;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import clases.personajes.Personaje;
 import clases.interfaz.Menus;
 import clases.interfaz.Titulos;
@@ -30,7 +29,7 @@ public class Tienda {
         // Verifica si el personaje tiene dinero para comprar
         if (personaje.getDinero() > 0) {
             boolean salirTienda = false;
-            int comprarObjetos = 0;
+            int opcionTienda = 0;
 
             do {
                 Utilidades.espacios(2);
@@ -39,80 +38,20 @@ public class Tienda {
                 do {
                     // Muestra la tienda y obtiene la opción elegida por el usuario
                     Titulos.tituloTienda();
-                    comprarObjetos = Menus.menuTienda(personaje);
+                    opcionTienda = Menus.menuTienda(personaje);
 
-                    switch (comprarObjetos) {
+                    switch (opcionTienda) {
                         case 1: // Compra de Espada Encantada
-                        if (personaje.getInventario().contains(objeto1)) {
-                            System.out.println("Ya tienes el objeto");
-                            Utilidades.espacios(1);
-                            Utilidades.continuar("volver a la tienda");
-                        }else{
-                            System.out.println(objeto1.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_RED + "5" + Utilidades.ANSI_RESET + " Fuerza - " + Utilidades.ANSI_YELLOW + "1 " + Utilidades.ANSI_RESET + "Agilidad - " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
-                            Titulos.espada();
-                            if (objeto1.gestionCompra(objeto1, personaje) == true) {
-                                personaje.setDinero(personaje.getDinero() - objeto1.getPrecio());
-                                personaje.setFuerza(personaje.getFuerza() + 5);
-                                personaje.setAgilidad(personaje.getAgilidad() - 1);
-                                personaje.setPercepcionMagica(personaje.getPercepcionMagica() - 2);
-                                System.out.println("Ahora tienes equipado el objeto "+objeto1.getNombre());
-                                personaje.getInventario().add(objeto1);
-                            }
-                        }
-                       
+                            ObjetoTienda.gestionCompra(personaje, objeto1, Titulos.espada());
                             break;
                         case 2: // Armadura de Placas
-                        if (personaje.getInventario().contains(objeto2)) {
-                            System.out.println("Ya tienes el objeto");
-                            Utilidades.espacios(1);
-                            Utilidades.continuar("volver a la tienda");
-                        }else{
-                            System.out.println(objeto2.getNombre().toUpperCase() +"( + "+Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad - " + Utilidades.ANSI_YELLOW + "2 " + Utilidades.ANSI_RESET + "Agilidad )");
-                            Titulos.armadura();
-                            if (objeto2.gestionCompra(objeto2, personaje)  == true) {
-                                personaje.setDinero(personaje.getDinero() - objeto2.getPrecio());
-                                personaje.setVitalidad(personaje.getVitalidad() + 4);
-                                personaje.setAgilidad(personaje.getAgilidad() - 2);
-                                System.out.println("Ahora tienes equipado el objeto "+objeto2.getNombre());
-                                personaje.getInventario().add(objeto2);
-                            }
-                        }
-                            
+                            ObjetoTienda.gestionCompra(personaje, objeto2, Titulos.armadura());
                             break;
                         case 3: // Compra de Báculo
-                        if (personaje.getInventario().contains(objeto3)) {
-                            System.out.println("Ya tienes el objeto");
-                            Utilidades.espacios(1);
-                            Utilidades.continuar("volver a la tienda");
-                        }else{
-                            System.out.println(objeto3.getNombre().toUpperCase()+"( + "+Utilidades.ANSI_BLUE + "7" + Utilidades.ANSI_RESET + " Percepción Mágica - " + Utilidades.ANSI_RED + "3" + Utilidades.ANSI_RESET + " Fuerza )");
-                            Titulos.caballo();
-                            if (objeto3.gestionCompra(objeto3, personaje) == true) {
-                                personaje.setDinero(personaje.getDinero() - objeto3.getPrecio());
-                                personaje.setFuerza(personaje.getFuerza() - 3);
-                                personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 7);
-                                System.out.println("Ahora tienes equipado el objeto "+objeto3.getNombre());
-                                personaje.getInventario().add(objeto3);
-                            }
-                        }
+                            ObjetoTienda.gestionCompra(personaje, objeto3, Titulos.caballo());
                             break;
                         case 4: // Compra de Manto
-                        if (personaje.getInventario().contains(objeto4)) {
-                            System.out.println("Ya tienes el objeto");
-                            Utilidades.espacios(1);
-                            Utilidades.continuar("volver a la tienda");
-                        }else{
-                            System.out.println(objeto4.getNombre().toUpperCase()+"( + "+Utilidades.ANSI_YELLOW + "5" + Utilidades.ANSI_RESET + " Agilidad - " + Utilidades.ANSI_GREEN + "4" + Utilidades.ANSI_RESET + " Vitalidad + " + Utilidades.ANSI_BLUE + "2" + Utilidades.ANSI_RESET + " Percepción Mágica)");
-                            Titulos.escudo();
-                            if (objeto4.gestionCompra(objeto4, personaje) == true) {
-                                personaje.setDinero(personaje.getDinero() - objeto4.getPrecio());
-                                personaje.setAgilidad(personaje.getAgilidad() + 5);
-                                personaje.setPercepcionMagica(personaje.getPercepcionMagica() + 2);
-                                personaje.setVitalidad(personaje.getVitalidad() - 4);
-                                System.out.println("Ahora tienes equipado el objeto "+objeto4.getNombre());
-                                personaje.getInventario().add(objeto4);
-                            }
-                        }
+                            ObjetoTienda.gestionCompra(personaje, objeto4, Titulos.escudo());
                             break;
                         case 5: // Salir de la tienda
                             dejarDeComprar = true;
@@ -128,11 +67,11 @@ public class Tienda {
                 salirTienda = true;
             } while (!salirTienda);  
 
-            }else{
-                System.out.println(Utilidades.ANSI_UNDERLINE+"No tienes dinero no puedes comprar nada"+Utilidades.ANSI_RESET);
-                System.out.println();
-                System.out.println();
-            }
+        }else{
+            System.out.println(Utilidades.ANSI_UNDERLINE+"No tienes dinero no puedes comprar nada"+Utilidades.ANSI_RESET);
+            System.out.println();
+            System.out.println();
+        }
     }
 
     /**

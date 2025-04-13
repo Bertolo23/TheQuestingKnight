@@ -3,12 +3,12 @@ package clases.personajes;
 public class Enemigo extends Personaje {
     
         private String tipo;
-        private int estamina;
+        private int fatiga;
 
-        public Enemigo(String nombre, int vitalidad, int fuerza, int agilidad, double salud, int nivel, String tipo, int estamina) {
+        public Enemigo(String nombre, int vitalidad, int fuerza, int agilidad, double salud, int nivel, String tipo, int fatiga) {
             super(nombre, vitalidad, fuerza, agilidad, salud, nivel);
             this.tipo = tipo;
-            this.estamina = estamina;
+            this.fatiga = fatiga;
         }
 
         public String getTipo() {
@@ -19,12 +19,12 @@ public class Enemigo extends Personaje {
             this.tipo = tipo;
         }
 
-        public int getEstamina() {
-            return estamina;
+        public int getFatiga() {
+            return fatiga;
         }
 
-        public void setEstamina(int estamina) {
-            this.estamina = estamina;
+        public void setFatiga(int fatiga) {
+            this.fatiga = fatiga;
         }
 
         @Override

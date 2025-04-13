@@ -5,6 +5,7 @@ import java.io.IOException;
 import clases.interfaz.Titulos;
 import clases.personajes.Asesino;
 import clases.personajes.ConstantesPersonaje;
+import clases.personajes.Enemigo;
 import clases.personajes.Luchador;
 import clases.personajes.Mago;
 import clases.personajes.Personaje;
@@ -97,7 +98,7 @@ public class GestionEstadisticas {
      */
     public static void mostrarSaludYDinero(Personaje personaje){
         int margen = 80;
-        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + personaje.getSalud() + Utilidades.ANSI_RESET 
+        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + (double) Math.round(personaje.getSalud() * 100.0) / 100 + Utilidades.ANSI_RESET 
                 + "       DINERO  " + Utilidades.ANSI_YELLOW + personaje.getDinero() + Utilidades.ANSI_RESET);
     }
 
@@ -202,6 +203,39 @@ public class GestionEstadisticas {
             personaje.setAgilidad(ConstantesPersonaje.MAGO_AGILIDAD);
             personaje.setPercepcionMagica(ConstantesPersonaje.MAGO_PERCEPCION_MAGICA);
             ((Mago) personaje).setPoderDeHabilidad(ConstantesPersonaje.MAGO_ESTADISTICA_ESPECIAL);
+        }
+    }
+
+    public static void reseteoEstadisticasEnemigo(Enemigo enemigo) {
+        enemigo.setFatiga(ConstantesPersonaje.ENEMIGO_FATIGA);
+        
+        if (enemigo.getTipo().equals("Campesino")) {
+            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO1_VITALIDAD);
+            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO1_FUERZA);
+            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO1_AGILIDAD);
+            enemigo.setSalud(ConstantesPersonaje.ENEMIGO1_SALUD);
+            enemigo.setNivel(ConstantesPersonaje.ENEMIGO1_NIVEL);
+        }
+        if (enemigo.getTipo().equals("Caballero")) {
+            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO2_VITALIDAD);
+            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO2_FUERZA);
+            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO2_AGILIDAD);
+            enemigo.setSalud(ConstantesPersonaje.ENEMIGO2_SALUD);
+            enemigo.setNivel(ConstantesPersonaje.ENEMIGO2_NIVEL);
+        }
+        if (enemigo.getTipo().equals("Bandido")) {
+            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO3_VITALIDAD);
+            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO3_FUERZA);
+            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO3_AGILIDAD);
+            enemigo.setSalud(ConstantesPersonaje.ENEMIGO3_SALUD);
+            enemigo.setNivel(ConstantesPersonaje.ENEMIGO3_NIVEL);
+        }
+        if (enemigo.getTipo().equals("Mercenario")) {
+            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO4_VITALIDAD);
+            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO4_FUERZA);
+            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO4_AGILIDAD);
+            enemigo.setSalud(ConstantesPersonaje.ENEMIGO4_SALUD);
+            enemigo.setNivel(ConstantesPersonaje.ENEMIGO4_NIVEL);
         }
     }
 }

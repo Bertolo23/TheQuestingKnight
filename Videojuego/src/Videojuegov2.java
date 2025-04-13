@@ -1,10 +1,7 @@
 
 import java.io.IOException;
-
 import clases.interfaz.Menus;
-import clases.interfaz.Titulos;
 import clases.personajes.*;
-import util.Utilidades;
 
 /**
  * Clase Principal donde ejecuto el juego

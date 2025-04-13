@@ -99,7 +99,7 @@ public class Misiones {
         mision.setSaludPerdida(Pelea.pelea(personaje, enemigo, listaObjetos));
         personaje.setDinero(personaje.getDinero()+mision.getPagaMision());
         System.out.println("Misión terminada");
-        System.out.println("Has perdido "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_CYAN+mision.getSaludPerdida()+Utilidades.ANSI_RESET+" de salud");
+        System.out.println("Has perdido "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_CYAN+(double) Math.round(mision.getSaludPerdida() * 100.0) / 100+Utilidades.ANSI_RESET+" de salud");
         System.out.println("Has ganado "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_YELLOW+mision.getPagaMision()+Utilidades.ANSI_RESET+" de dinero");
         System.out.println();
         String vueltaAMenu = Utilidades.leerString("Pulsa intro para volver al menú de misiones");

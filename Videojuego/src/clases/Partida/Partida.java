@@ -5,9 +5,11 @@ import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import ficheros.GestionFicheros;
 import clases.personajes.Personaje;
+import clases.tienda.ObjetoTienda;
 import clases.interfaz.Titulos;
 
 /**
@@ -170,6 +172,15 @@ public class Partida {
         } 
     }
 
+    private static String mostrarInventarioPartida(Personaje personaje){
+        String[] arrayNombresObjetos = new String[personaje.getInventario().size()];
+
+        for (int i = 0;i<personaje.getInventario().size();i++){
+            arrayNombresObjetos[i] = personaje.getInventario().get(i).getNombre();
+        }
+        return Arrays.toString(arrayNombresObjetos);
+    }
+
     /**
      * Representación en cadena de la información de la partida.
      * @return Una cadena con la fecha de inicio, el nombre del personaje, las estadísticas y la fecha de finalización.
@@ -185,6 +196,7 @@ public class Partida {
         Utilidades.ANSI_BLUE + estadisticas[3] + " " + 
         Utilidades.ANSI_PURPLE + estadisticas[4] + " " + 
         Utilidades.ANSI_RESET + estadisticas[5] + 
+        "\nCompraste "+personaje.getInventario().size()+" objetos fueron: "+mostrarInventarioPartida(personaje)+
         "\nY la partida terminó a las " + horaYFechaCompleta(fechaFinal)+
         "\nTeniendo una duración de "+duracionPartida(duracion);
     }

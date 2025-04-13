@@ -1,6 +1,5 @@
 package clases.tienda;
 import java.io.IOException;
-
 import clases.personajes.Personaje;
 import util.Utilidades;
 
@@ -74,7 +73,7 @@ public class ObjetoTienda {
      * @return falso si no tiene dinero o no quiere comprar el objeto y true si lo compra
      * @throws IOException para poder leer con BFReader
      */
-     public boolean gestionCompra(ObjetoTienda objeto, Personaje personaje)throws IOException{
+     public boolean comprobacionCompra(ObjetoTienda objeto, Personaje personaje)throws IOException{
         
         String seguirCompra = Utilidades.leerString("La "+objeto.getNombre()+" tiene un precio de "+Utilidades.ANSI_YELLOW+objeto.getPrecio()+Utilidades.ANSI_RESET+", Seguimos con la compra?(S/N)").toUpperCase();
         Utilidades.espacios(2);
@@ -94,6 +93,23 @@ public class ObjetoTienda {
         String volverMenu = Utilidades.leerString("Pulsa intro para volver a la Tienda");
         Utilidades.espacios(2);
         return false;
+    }
+
+    public static void gestionCompra(Personaje personaje, ObjetoTienda objetoTienda, String ascci)throws IOException{
+
+        if (personaje.getInventario().contains(objetoTienda)) {
+            System.out.println("Ya tienes el objeto");
+            Utilidades.espacios(1);
+            Utilidades.continuar("volver a la tienda");
+        }else{
+            System.out.println(objetoTienda.getNombre().toUpperCase());
+            System.out.println(ascci);
+            if (objetoTienda.comprobacionCompra(objetoTienda, personaje) == true) {
+                personaje.setDinero(personaje.getDinero() - objetoTienda.getPrecio());
+                System.out.println("Ahora tienes equipado el objeto "+objetoTienda.getNombre());
+                personaje.getInventario().add(objetoTienda);
+            }
+        }        
     }
 
 }
