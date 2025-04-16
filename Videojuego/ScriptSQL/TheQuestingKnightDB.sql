@@ -18,7 +18,9 @@ FechaYHoraInicio varchar(50),
 FechaYHoraFinal varchar(50),
 Duracion varchar(50),
 Victoria varchar(10),
-constraint FK_idPersonaje foreign key (id_Personaje) references TipoPersonaje(id)
+constraint FK_idPersonaje foreign key (id_Personaje) references TipoPersonaje(id) on delete set null,
+constraint FK_idEstadisticas foreign key (id_Estadisticas) references Estadisticas(id) on delete set null,
+constraint FK_idInventario foreign key (id_Inventario) references InventariObjetos(id) on delete set null
 );
 
 drop table if exists InventariObjetos;

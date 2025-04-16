@@ -28,6 +28,7 @@ public class Partida {
     private int[] estadisticas; // Estadísticas finales del personaje al terminar la partida.
     private LocalDateTime fechaFinal; // Fecha y hora de finalización de la partida.
     private Duration duracion;
+    private Boolean victoria;
 
     /**
      * CONSTRUCTORES
@@ -40,12 +41,13 @@ public class Partida {
      * @param estadisticas Array de enteros que almacena las estadísticas finales del personaje.
      * @param fechaFinal Fecha y hora en que finaliza la partida.
      */
-    public Partida(LocalDateTime fechaInicio, Personaje personaje, int[] estadisticas, LocalDateTime fechaFinal, Duration duracion) {
+    public Partida(LocalDateTime fechaInicio, Personaje personaje, int[] estadisticas, LocalDateTime fechaFinal, Duration duracion, Boolean victoria) {
         this.fechaInicio = fechaInicio;
         this.personaje = personaje;
         this.estadisticas = estadisticas;
         this.fechaFinal = fechaFinal;
         this.duracion = duracion;
+        this.victoria = victoria;
     }
 
     /**
@@ -122,6 +124,14 @@ public class Partida {
 
     public void setDuracion(Duration duracion) {
         this.duracion = duracion;
+    }
+
+    public Boolean getVictoria() {
+        return victoria;
+    }
+
+    public void setVictoria(Boolean victoria) {
+        this.victoria = victoria;
     }
 
     /**

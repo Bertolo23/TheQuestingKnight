@@ -1,11 +1,14 @@
 package bbdd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Arrays;
 
 import clases.partida.Partida;
 import clases.tienda.ObjetoTienda;
+import util.Utilidades;
 
 public class CRUD {
 
@@ -15,13 +18,12 @@ public class CRUD {
         
         try (Connection conexion = ConexionBBDD.gConnection();
              PreparedStatement statement = conexion.prepareStatement(sentencia)) {
-            
-            
-            for(int i = 0;i<partida.getEstadisticas().length;i++){
-                statement.setInt(i+1, partida.getEstadisticas()[i]);
-            }
+                
+                for(int i = 0;i<partida.getEstadisticas().length;i++){
+                    statement.setInt(i+1, partida.getEstadisticas()[i]);
+                }
 
-            statement.executeUpdate();
+                statement.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println("error "+ e.getMessage());
@@ -33,23 +35,24 @@ public class CRUD {
         
         try (Connection conexion = ConexionBBDD.gConnection();
              PreparedStatement statement = conexion.prepareStatement(sentencia)) {
-            String [] arrayNombresObjetos = new String[4];
-            int i = 0;
-            for (ObjetoTienda objetoTienda : partida.getPersonaje().getInventario()) {
-                arrayNombresObjetos[i] = objetoTienda.getNombre();
-                i++;
-            }
-            System.out.println(Arrays.toString(arrayNombresObjetos));
-            for(int j = 0;j<arrayNombresObjetos.length;j++){
 
-                if (arrayNombresObjetos[j] == null) {
-                    statement.setString(j+1, null);
-                }else{
-                    statement.setString(j+1, arrayNombresObjetos[j]);
+                String [] arrayNombresObjetos = new String[4];
+                int i = 0;
+                for (ObjetoTienda objetoTienda : partida.getPersonaje().getInventario()) {
+                    arrayNombresObjetos[i] = objetoTienda.getNombre();
+                    i++;
                 }
-            }
 
-            statement.executeUpdate();
+                for(int j = 0;j<arrayNombresObjetos.length;j++){
+
+                    if (arrayNombresObjetos[j] == null) {
+                        statement.setString(j+1, null);
+                    }else{
+                        statement.setString(j+1, arrayNombresObjetos[j]);
+                    }
+                }
+
+                statement.executeUpdate();
             
         } catch (SQLException e) {
             System.out.println("error "+ e.getMessage());
@@ -63,19 +66,48 @@ public class CRUD {
         
         try (Connection conexion = ConexionBBDD.gConnection();
              PreparedStatement statement = conexion.prepareStatement(sentencia)) {
-            
-            statement.setString(1, partida.getPersonaje().getNombre());
-            statement.setString(2, partida.horaYFechaCompleta(partida.getFechaInicio()));
-            statement.setString(3, partida.horaYFechaCompleta(partida.getFechaFinal()));
-            statement.setString(4, partida.duracionPartida(partida.getDuracion()));
-            statement.setBoolean(5, partida.getPersonaje().condiccionesVictoria());
+                
+                statement.setString(1, partida.getPersonaje().getNombre());
+                statement.setString(2, partida.horaYFechaCompleta(partida.getFechaInicio()));
+                statement.setString(3, partida.horaYFechaCompleta(partida.getFechaFinal()));
+                statement.setString(4, partida.duracionPartida(partida.getDuracion()));
+                statement.setBoolean(5, partida.getVictoria());
 
-            int filas = statement.executeUpdate();
-            if (filas>0) {
-                System.out.println("Partida insertada a la BBDD con exito");
-            }
+                int filas = statement.executeUpdate();
+                if (filas>0) {
+                    System.out.println("Partida insertada a la BBDD con exito");
+                }
         } catch (SQLException e) {
             System.out.println("error "+ e.getMessage());
+        }
+    }
+
+    public static void selectPartidas(Partida partida){
+        String sentencia = "Select * From Partidas";
+
+        try (Connection conexion = ConexionBBDD.gConnection();
+            Statement statement = conexion.prepareStatement(sentencia);
+            ResultSet resultado = statement.executeQuery(sentencia);) {
+
+            System.out.printf(" %-10s| %-12s| %-15s| %-13s| %-22s| %-22s| %-8s| %-8s|\n", "Id Partida", "Id Personaje", "Id Estadísticas", "Id Inventario", "Fecha Inicio", "Fecha Final", "Duración", "Victoria");
+            while (resultado.next()) {
+                int idPartida = resultado.getInt("id");
+                int idPersonaje = resultado.getInt("id_Personaje");
+                int idEstadisticas = resultado.getInt("id_Estadisticas");
+                int idInventario = resultado.getInt("id_Inventario");
+                String fechaYHoraInicio = resultado.getString("FechaYHoraInicio");
+                String fechaYHoraFinal = resultado.getString("FechaYHoraFinal");
+                String duracion = resultado.getString("Duracion");
+                Boolean victoria = resultado.getBoolean("Victoria");
+
+                
+                System.out.println("_".repeat(126));
+                System.out.printf(" %-10d| %-12d| %-15d| %-13d| %-22s| %-22s| %-8s| %-8b|\n", idPartida, idPersonaje,idEstadisticas , idInventario, fechaYHoraInicio, fechaYHoraFinal, duracion, victoria);
+
+            }
+
+        } catch (SQLException e) {
+        System.out.println("error "+ e.getMessage());
         }
     }
 

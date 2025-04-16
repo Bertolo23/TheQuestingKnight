@@ -322,3 +322,93 @@ Teniendo una duración de 0:0:12
 
 ==================================================
 
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 13:55:20 el 16/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m8 [34m2 [35m12 [0m1
+Compraste 3 objetos fueron: [Espada Encantada, Armadura de Placas, Yegua de Guerra]
+Y la partida terminó a las 13:55:34 el 16/4/2025
+Teniendo una duración de 0:0:14
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 14:51:45 el 16/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 14:51:46 el 16/4/2025
+Teniendo una duración de 0:0:1
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 14:55:33 el 16/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 14:55:35 el 16/4/2025
+Teniendo una duración de 0:0:1
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 14:55:50 el 16/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m9 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 14:56:18 el 16/4/2025
+Teniendo una duración de 0:0:27
+
+---------------------------------------------
+
+
+==================================================
+
+               PARTIDA
+
+==================================================
+
+            GAME  1
+
+Partida empezada a las 15:0:28 el 16/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 15:0:47 el 16/4/2025
+Teniendo una duración de 0:0:18
+
+---------------------------------------------
+
+
+==================================================
+

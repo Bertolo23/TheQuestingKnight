@@ -31,7 +31,7 @@ public class Menus {
         int margen = 55;
         System.out.println(Utilidades.ANSI_RED + " ".repeat(margen-15) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL ('p' para el Historial de Partidas o 's' para salir)" + Utilidades.ANSI_RESET);
         System.out.println();
-        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ PARTIDAS ║║ SALIR ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ HISTORIAL ║║ SALIR ║" + Utilidades.ANSI_RESET);
         System.out.println();
         
         String entrada = Utilidades.leerString();
@@ -128,7 +128,7 @@ public class Menus {
         
         do{
             String opcion = menuPersonaje().toLowerCase(); 
-            Partida partida = new Partida(null, null, null, null, null);
+            Partida partida = new Partida(null, null, null, null, null, false);
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
                                 inicioPartida = Instant.now();
@@ -136,6 +136,7 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(luchador);
                                 partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(luchador));
                                 partida.setPersonaje(luchador);
+                                partida.setVictoria(luchador.condiccionesVictoria());
                                 GestionEstadisticas.reseteoEstadisticas(luchador);
                         break;
                         
@@ -145,6 +146,7 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(asesino);
                                 partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(asesino));
                                 partida.setPersonaje(asesino);
+                                partida.setVictoria(asesino.condiccionesVictoria());
                                 GestionEstadisticas.reseteoEstadisticas(asesino);
                         break;
                         case "t":// ------------------------------------------------------------------TANQUE----------------------------------------------------------------------- 
@@ -153,6 +155,7 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(tanque);
                                 partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(tanque));
                                 partida.setPersonaje(tanque);
+                                partida.setVictoria(tanque.condiccionesVictoria());
                                 GestionEstadisticas.reseteoEstadisticas(tanque);
                         break;
                         case "m":// ------------------------------------------------------------------MAGO----------------------------------------------------------------------- 
@@ -161,11 +164,19 @@ public class Menus {
                                 AccionesPersonajes.accionesPersonaje(mago);
                                 partida.setEstadisticas(GestionEstadisticas.sacarEstadisticasYNivel(mago));
                                 partida.setPersonaje(mago);
+                                partida.setVictoria(mago.condiccionesVictoria());
                                 GestionEstadisticas.reseteoEstadisticas(mago);
                         break;
-                        case "p":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
-                                Titulos.tituloHistorialPartidas();
-                                GestionFicheros.traerInfoFichero(file);
+                        case "h":// ------------------------------------------------------------------PARTIDAS-----------------------------------------------------------------------
+                                int opcionHistorial = Utilidades.leerEntero("Quiere ver el historial desde la BBDD o desde el .txt?(1-2)");
+                                if (opcionHistorial == 1) {
+                                    Titulos.tituloHistorialPartidas();
+                                    CRUD.selectPartidas(partida);
+                                }else if (opcionHistorial == 2) {
+                                    Titulos.tituloHistorialPartidas();
+                                    GestionFicheros.traerInfoFichero(file);
+                                }
+                                
                         break;
                         case "s":// ------------------------------------------------------------------SALIDA-----------------------------------------------------------------------
                                 salir = true;
@@ -183,7 +194,8 @@ public class Menus {
             partidas.add(partida);
             Utilidades.espacios(3);
         }while(salir==false);
-        if (partidas.get(0).getPersonaje() != null) {
+
+        if (!partidas.isEmpty()) {
             Partida.mostrarPartida(partidas);
             Partida.exportarAFichero(partidas, file);
         }
