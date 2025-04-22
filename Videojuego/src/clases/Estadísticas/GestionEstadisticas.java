@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import clases.interfaz.Titulos;
 import clases.personajes.Asesino;
-import clases.personajes.ConstantesPersonaje;
+import clases.personajes.CreacionPersonajes;
 import clases.personajes.Enemigo;
 import clases.personajes.Luchador;
 import clases.personajes.Mago;
@@ -80,7 +80,7 @@ public class GestionEstadisticas {
         int valorEstadisticaUnica = valorEstadisticaUnica(personaje);
         String nombreEstadisticaUnica = nombreEstadisticaUnica(personaje).toUpperCase();
         int margenEntreNumeros = 7;
-        int margen = 50;
+        int margen = 55;
         Utilidades.espacios(2);
         System.out.println(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ "+nombreEstadisticaUnica+" ║" + Utilidades.ANSI_RESET);
         System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 8) + "║ " + personaje.getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
@@ -108,13 +108,27 @@ public class GestionEstadisticas {
      * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
      */
     public static void introduccionPersonaje(Personaje personaje) {
-        int margen = 50;
-        System.out.println(" ".repeat(margen - 2) + Utilidades.ANSI_CYAN + "                    HAS ELEGIDO " + Utilidades.ANSI_UNDERLINE + personaje.getNombre().toUpperCase() + Utilidades.ANSI_RESET + Utilidades.ANSI_CYAN + " TUS ESTADÍSTICAS SON");
-        Utilidades.espacios(3);
+        String tituloPersonaje = "";
+        if(personaje instanceof Luchador){
+            tituloPersonaje = Titulos.tituloLuchador();
+        }
+        if (personaje instanceof Asesino) {
+            tituloPersonaje = Titulos.tituloAsesino();
+        }
+        if (personaje instanceof Tanque) {
+            tituloPersonaje = Titulos.tituloTanque();
+        }
+        if (personaje instanceof Mago) {
+            tituloPersonaje = Titulos.tituloMago();       
+        }
+        int margen = 74;
+        System.out.println(tituloPersonaje);
+        Utilidades.espacios(1);
+        System.out.println(" ".repeat(margen) +Utilidades.ANSI_CYAN+" TUS ESTADÍSTICAS INICIALES SON");
         GestionEstadisticas.mostrarEstadisticas(personaje);
-        Utilidades.espacios(2);
+        Utilidades.espacios(1);
         GestionEstadisticas.mostrarSaludYDinero(personaje);
-        Utilidades.espacios(2);
+        Utilidades.espacios(1);
         System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
@@ -170,72 +184,72 @@ public class GestionEstadisticas {
      *                  Se determina su clase específica y se asignan los valores correspondientes.
      */
     public static void reseteoEstadisticas(Personaje personaje) {
-        personaje.setDinero(ConstantesPersonaje.DINERO);
-        personaje.setExperiencia(ConstantesPersonaje.EXPERIENCIA);
-        personaje.setNivel(ConstantesPersonaje.NIVEL);
-        personaje.setSalud(ConstantesPersonaje.SALUD);
-        personaje.setInventario(ConstantesPersonaje.INVENTARIO);
+        personaje.setDinero(CreacionPersonajes.DINERO);
+        personaje.setExperiencia(CreacionPersonajes.EXPERIENCIA);
+        personaje.setNivel(CreacionPersonajes.NIVEL);
+        personaje.setSalud(CreacionPersonajes.SALUD);
+        personaje.setInventario(CreacionPersonajes.INVENTARIO);
 
         if (personaje instanceof Luchador) {
-            personaje.setVitalidad(ConstantesPersonaje.LUCHADOR_VITALIDAD);
-            personaje.setFuerza(ConstantesPersonaje.LUCHADOR_FUERZA);
-            personaje.setAgilidad(ConstantesPersonaje.LUCHADOR_AGILIDAD);
-            personaje.setPercepcionMagica(ConstantesPersonaje.LUCHADOR_PERCEPCION_MAGICA);
-            ((Luchador) personaje).setCoraje(ConstantesPersonaje.LUCHADOR_ESTADISTICA_ESPECIAL);
+            personaje.setVitalidad(CreacionPersonajes.LUCHADOR_VITALIDAD);
+            personaje.setFuerza(CreacionPersonajes.LUCHADOR_FUERZA);
+            personaje.setAgilidad(CreacionPersonajes.LUCHADOR_AGILIDAD);
+            personaje.setPercepcionMagica(CreacionPersonajes.LUCHADOR_PERCEPCION_MAGICA);
+            ((Luchador) personaje).setCoraje(CreacionPersonajes.LUCHADOR_ESTADISTICA_ESPECIAL);
         }
         if (personaje instanceof Asesino) {
-            personaje.setVitalidad(ConstantesPersonaje.ASESINO_VITALIDAD);
-            personaje.setFuerza(ConstantesPersonaje.ASESINO_FUERZA);
-            personaje.setAgilidad(ConstantesPersonaje.ASESINO_AGILIDAD);
-            personaje.setPercepcionMagica(ConstantesPersonaje.ASESINO_PERCEPCION_MAGICA);
-            ((Asesino) personaje).setSigilo(ConstantesPersonaje.ASESINO_ESTADISTICA_ESPECIAL);
+            personaje.setVitalidad(CreacionPersonajes.ASESINO_VITALIDAD);
+            personaje.setFuerza(CreacionPersonajes.ASESINO_FUERZA);
+            personaje.setAgilidad(CreacionPersonajes.ASESINO_AGILIDAD);
+            personaje.setPercepcionMagica(CreacionPersonajes.ASESINO_PERCEPCION_MAGICA);
+            ((Asesino) personaje).setSigilo(CreacionPersonajes.ASESINO_ESTADISTICA_ESPECIAL);
         }
         if (personaje instanceof Tanque) {
-            personaje.setVitalidad(ConstantesPersonaje.TANQUE_VITALIDAD);
-            personaje.setFuerza(ConstantesPersonaje.TANQUE_FUERZA);
-            personaje.setAgilidad(ConstantesPersonaje.TANQUE_AGILIDAD);
-            personaje.setPercepcionMagica(ConstantesPersonaje.TANQUE_PERCEPCION_MAGICA);
-            ((Tanque) personaje).setBarrera(ConstantesPersonaje.TANQUE_ESTADISTICA_ESPECIAL);
+            personaje.setVitalidad(CreacionPersonajes.TANQUE_VITALIDAD);
+            personaje.setFuerza(CreacionPersonajes.TANQUE_FUERZA);
+            personaje.setAgilidad(CreacionPersonajes.TANQUE_AGILIDAD);
+            personaje.setPercepcionMagica(CreacionPersonajes.TANQUE_PERCEPCION_MAGICA);
+            ((Tanque) personaje).setBarrera(CreacionPersonajes.TANQUE_ESTADISTICA_ESPECIAL);
         }
         if (personaje instanceof Mago) {
-            personaje.setVitalidad(ConstantesPersonaje.MAGO_VITALIDAD);
-            personaje.setFuerza(ConstantesPersonaje.MAGO_FUERZA);
-            personaje.setAgilidad(ConstantesPersonaje.MAGO_AGILIDAD);
-            personaje.setPercepcionMagica(ConstantesPersonaje.MAGO_PERCEPCION_MAGICA);
-            ((Mago) personaje).setPoderDeHabilidad(ConstantesPersonaje.MAGO_ESTADISTICA_ESPECIAL);
+            personaje.setVitalidad(CreacionPersonajes.MAGO_VITALIDAD);
+            personaje.setFuerza(CreacionPersonajes.MAGO_FUERZA);
+            personaje.setAgilidad(CreacionPersonajes.MAGO_AGILIDAD);
+            personaje.setPercepcionMagica(CreacionPersonajes.MAGO_PERCEPCION_MAGICA);
+            ((Mago) personaje).setPoderDeHabilidad(CreacionPersonajes.MAGO_ESTADISTICA_ESPECIAL);
         }
     }
 
     public static void reseteoEstadisticasEnemigo(Enemigo enemigo) {
-        enemigo.setFatiga(ConstantesPersonaje.ENEMIGO_FATIGA);
+        enemigo.setFatiga(CreacionPersonajes.ENEMIGO_FATIGA);
         
         if (enemigo.getTipo().equals("Campesino")) {
-            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO1_VITALIDAD);
-            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO1_FUERZA);
-            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO1_AGILIDAD);
-            enemigo.setSalud(ConstantesPersonaje.ENEMIGO1_SALUD);
-            enemigo.setNivel(ConstantesPersonaje.ENEMIGO1_NIVEL);
+            enemigo.setVitalidad(CreacionPersonajes.ENEMIGO1_VITALIDAD);
+            enemigo.setFuerza(CreacionPersonajes.ENEMIGO1_FUERZA);
+            enemigo.setAgilidad(CreacionPersonajes.ENEMIGO1_AGILIDAD);
+            enemigo.setSalud(CreacionPersonajes.ENEMIGO1_SALUD);
+            enemigo.setNivel(CreacionPersonajes.ENEMIGO1_NIVEL);
         }
         if (enemigo.getTipo().equals("Caballero")) {
-            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO2_VITALIDAD);
-            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO2_FUERZA);
-            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO2_AGILIDAD);
-            enemigo.setSalud(ConstantesPersonaje.ENEMIGO2_SALUD);
-            enemigo.setNivel(ConstantesPersonaje.ENEMIGO2_NIVEL);
+            enemigo.setVitalidad(CreacionPersonajes.ENEMIGO2_VITALIDAD);
+            enemigo.setFuerza(CreacionPersonajes.ENEMIGO2_FUERZA);
+            enemigo.setAgilidad(CreacionPersonajes.ENEMIGO2_AGILIDAD);
+            enemigo.setSalud(CreacionPersonajes.ENEMIGO2_SALUD);
+            enemigo.setNivel(CreacionPersonajes.ENEMIGO2_NIVEL);
         }
         if (enemigo.getTipo().equals("Bandido")) {
-            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO3_VITALIDAD);
-            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO3_FUERZA);
-            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO3_AGILIDAD);
-            enemigo.setSalud(ConstantesPersonaje.ENEMIGO3_SALUD);
-            enemigo.setNivel(ConstantesPersonaje.ENEMIGO3_NIVEL);
+            enemigo.setVitalidad(CreacionPersonajes.ENEMIGO3_VITALIDAD);
+            enemigo.setFuerza(CreacionPersonajes.ENEMIGO3_FUERZA);
+            enemigo.setAgilidad(CreacionPersonajes.ENEMIGO3_AGILIDAD);
+            enemigo.setSalud(CreacionPersonajes.ENEMIGO3_SALUD);
+            enemigo.setNivel(CreacionPersonajes.ENEMIGO3_NIVEL);
         }
         if (enemigo.getTipo().equals("Mercenario")) {
-            enemigo.setVitalidad(ConstantesPersonaje.ENEMIGO4_VITALIDAD);
-            enemigo.setFuerza(ConstantesPersonaje.ENEMIGO4_FUERZA);
-            enemigo.setAgilidad(ConstantesPersonaje.ENEMIGO4_AGILIDAD);
-            enemigo.setSalud(ConstantesPersonaje.ENEMIGO4_SALUD);
-            enemigo.setNivel(ConstantesPersonaje.ENEMIGO4_NIVEL);
+            enemigo.setVitalidad(CreacionPersonajes.ENEMIGO4_VITALIDAD);
+            enemigo.setFuerza(CreacionPersonajes.ENEMIGO4_FUERZA);
+            enemigo.setAgilidad(CreacionPersonajes.ENEMIGO4_AGILIDAD);
+            enemigo.setSalud(CreacionPersonajes.ENEMIGO4_SALUD);
+            enemigo.setNivel(CreacionPersonajes.ENEMIGO4_NIVEL);
         }
     }
 }

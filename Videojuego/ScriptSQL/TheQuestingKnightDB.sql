@@ -8,6 +8,26 @@ id int auto_increment primary key,
 tipoPersonaje enum ('Luchador', 'Asesino', 'Tanque', 'Mago')
 );
 
+drop table if exists Estadisticas;
+create table if not exists Estadisticas(
+id int auto_increment primary key,
+Vitalidad int,
+Fuerza int,
+Agilidad int,
+PercepcionMagica int,
+EstadisticaEspecial int,
+Nivel int
+);
+
+drop table if exists InventariObjetos;
+create table if not exists InventariObjetos(
+id int auto_increment primary key,
+Objeto_1 varchar(40) default null,
+Objeto_2 varchar(40) default null,
+Objeto_3 varchar(40) default null,
+Objeto_4 varchar(40) default null
+);
+
 drop table if exists Partidas;
 create table if not exists Partidas(
 id int auto_increment primary key,
@@ -23,25 +43,8 @@ constraint FK_idEstadisticas foreign key (id_Estadisticas) references Estadistic
 constraint FK_idInventario foreign key (id_Inventario) references InventariObjetos(id) on delete set null
 );
 
-drop table if exists InventariObjetos;
-create table if not exists InventariObjetos(
-id int auto_increment primary key,
-Objeto_1 varchar(40) default null,
-Objeto_2 varchar(40) default null,
-Objeto_3 varchar(40) default null,
-Objeto_4 varchar(40) default null
-);
 
-drop table if exists Estadisticas;
-create table if not exists Estadisticas(
-id int auto_increment primary key,
-Vitalidad int,
-Fuerza int,
-Agilidad int,
-PercepcionMagica int,
-EstadisticaEspecial int,
-Nivel int
-);
+
 
 Insert into TipoPersonaje (tipoPersonaje) values ('Luchador');
 Insert into TipoPersonaje (tipoPersonaje) values ('Asesino');

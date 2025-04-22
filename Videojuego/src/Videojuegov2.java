@@ -15,10 +15,10 @@ public class Videojuegov2 {
         /**
          * Instanción de todos los objetos necesarios
          */
-        Luchador luchador = ConstantesPersonaje.luchador;
-        Asesino asesino = ConstantesPersonaje.asesino;
-        Tanque tanque = ConstantesPersonaje.tanque;
-        Mago mago = ConstantesPersonaje.mago;
+        Luchador luchador = CreacionPersonajes.luchador;
+        Asesino asesino = CreacionPersonajes.asesino;
+        Tanque tanque = CreacionPersonajes.tanque;
+        Mago mago = CreacionPersonajes.mago;
 
         Menus.menuPrincipal(luchador, asesino, tanque, mago);  
     } 

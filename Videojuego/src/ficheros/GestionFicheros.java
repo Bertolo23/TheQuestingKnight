@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
-import clases.personajes.ConstantesPersonaje;
+import clases.personajes.CreacionPersonajes;
 import clases.personajes.Personaje;
 
 public class GestionFicheros {
@@ -73,7 +73,7 @@ public class GestionFicheros {
     }
 
     public static void outPutSerializacionPersonajes(){
-        Personaje [] tiposPersonaje = {ConstantesPersonaje.luchador,ConstantesPersonaje.asesino,ConstantesPersonaje.tanque,ConstantesPersonaje.mago};
+        Personaje [] tiposPersonaje = {CreacionPersonajes.luchador,CreacionPersonajes.asesino,CreacionPersonajes.tanque,CreacionPersonajes.mago};
         try{
             File file = new File("Videojuego/src/ficheros/PersonajesSerializados.dat");
             FileOutputStream fo = new FileOutputStream(file);
