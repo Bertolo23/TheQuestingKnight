@@ -151,20 +151,20 @@ public class Partida {
 
     public String duracionPartida(Duration duracion){
         long hora = duracion.toHours();
-        long minutos = duracion.toMinutes();
-        long segundos = duracion.toSeconds();
+        long minutos = duracion.toMinutes() % 60;
+        long segundos = duracion.getSeconds() % 60;
 
-        return hora + ":" + minutos + ":" + segundos;
+        return String.format("%02d:%02d:%02d", hora, minutos, segundos);
     }
 
     public static void exportarAFichero(ArrayList<Partida> partidas, File file){
 
         int i = 0;
-        GestionFicheros.llevarInfoAFichero(file," ".repeat(15)+"PARTIDA\n\n"+"=".repeat(50)+"\n\n");
+        GestionFicheros.llevarInfoAFichero(file," ".repeat(15)+"SESIÓN\n\n"+"=".repeat(50)+"\n\n");
         for (Partida cadaPartida : partidas) {
             if (cadaPartida.getPersonaje() != null){
                 i++;
-                GestionFicheros.llevarInfoAFichero(file," ".repeat(12)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
+                GestionFicheros.llevarInfoAFichero(file," ".repeat(12)+"PARTIDA  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
             }
         } 
         GestionFicheros.llevarInfoAFichero(file,"\n\n"+"=".repeat(50)+"\n\n");
@@ -177,7 +177,7 @@ public class Partida {
         for (Partida cadaPartida : partidas) {
             if (cadaPartida.getPersonaje() != null){
                 i++;
-                System.out.println(" ".repeat(15)+"GAME  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
+                System.out.println(" ".repeat(15)+"PARTIDA  "+i+"\n\n"+ cadaPartida.toString()+"\n\n"+"-".repeat(45)+"\n");  
             }
         } 
     }

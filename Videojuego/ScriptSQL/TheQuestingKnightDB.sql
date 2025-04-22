@@ -50,6 +50,7 @@ constraint FK_idInventario foreign key (id_Inventario) references InventariObjet
 );
 
 
+
 Insert into TipoPersonaje (tipoPersonaje) values ('Luchador');
 Insert into TipoPersonaje (tipoPersonaje) values ('Asesino');
 Insert into TipoPersonaje (tipoPersonaje) values ('Tanque');

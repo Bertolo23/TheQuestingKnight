@@ -28,10 +28,10 @@ public class Menus {
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
     public static String menuPersonaje() throws IOException {
-        int margen = 55;
-        System.out.println(Utilidades.ANSI_RED + " ".repeat(margen-15) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL ('p' para el Historial de Partidas o 's' para salir)" + Utilidades.ANSI_RESET);
+        int margen = 50;
+        System.out.println(Utilidades.ANSI_RED + " ".repeat(margen-5) + "ELIJA SU PERSONAJE ESCRIBIENDO LA INICIAL ('p' para el Historial de Partidas o 's' para salir)" + Utilidades.ANSI_RESET);
         System.out.println();
-        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen -2) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ HISTORIAL ║║ SALIR ║" + Utilidades.ANSI_RESET);
+        System.out.println(Utilidades.ANSI_BLUE + " ".repeat(margen+10) + "║ LUCHADOR ║║ ASESINO ║║ TANQUE ║║ MAGO ║║ HISTORIAL ║║ SALIR ║" + Utilidades.ANSI_RESET);
         System.out.println();
         
         String entrada = Utilidades.leerString();

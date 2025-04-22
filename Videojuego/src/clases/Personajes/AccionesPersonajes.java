@@ -26,14 +26,14 @@ public class AccionesPersonajes {
         boolean salir = false;
            
             do {
-                if (personaje.condiccionesVictoria() == true) {
+                if (personaje.condiccionesFinalizacion() == true) {
                     salir = true;
-                    if (personaje.getSalud() <= 0) {
-                        Titulos.calavera();
-                        Titulos.GameOver();
-                    }else{
+                    if (personaje.condiccionesVictoria() == true) {
                         Titulos.nombramiento();
                         Titulos.tituloVictoria();
+                    }else{
+                        Titulos.calavera();
+                        Titulos.GameOver();
                     }
                     Utilidades.espacios(3);
                     String volverMenuInicio = Utilidades.leerString("Pulsa intro para ir al menú de inicio");

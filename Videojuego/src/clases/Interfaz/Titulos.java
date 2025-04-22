@@ -77,6 +77,51 @@ public class Titulos {
 
     }
 
+    public static String tituloLuchador(){
+
+        int margen = 65;
+        String luchador = Utilidades.ANSI_PURPLE+" ".repeat(margen+2) +"_    _   _  ____ _   _    _    ____   ___  ____  \r\n" + //
+                                               " ".repeat(margen) +" | |  | | | |/ ___| | | |  / \\  |  _ \\ / _ \\|  _ \\ \r\n" + //
+                                               " ".repeat(margen) +" | |  | | | | |   | |_| | / _ \\ | | | | | | | |_) |\r\n" + //
+                                               " ".repeat(margen) +" | |__| |_| | |___|  _  |/ ___ \\| |_| | |_| |  _ < \r\n" + //
+                                               " ".repeat(margen) +" |_____\\___/ \\____|_| |_/_/   \\_\\____/ \\___/|_| \\_\\\r\n" + //
+                                               " ".repeat(margen) +"                                                   ";
+        return luchador;
+    }
+
+    public static String tituloAsesino() {
+        int margen = 50;
+        String asesino = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "     _    ____  _____ ____ ___ _   _  ___  \r\n" +
+                                               " ".repeat(margen) + "    / \\  / ___|| ____/ ___|_ _| \\ | |/ _ \\ \r\n" +
+                                               " ".repeat(margen) + "   / _ \\ \\___ \\|  _| \\___ \\| ||  \\| | | | |\r\n" +
+                                               " ".repeat(margen) + "  / ___ \\ ___) | |___ ___) | || |\\  | |_| |\r\n" +
+                                               " ".repeat(margen) + " /_/   \\_\\____/|_____|____/___|_| \\_|\\___/ \r\n" +
+                                               " ".repeat(margen) + "                                          ";
+        return asesino;
+    }
+
+    public static String tituloTanque() {
+        int margen = 50;
+        String tanque = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "  _____  _    _   _  ___  _   _ _____ \r\n" +
+                                               " ".repeat(margen) + " |_   _|/ \\  | \\ | |/ _ \\| | | | ____|\r\n" +
+                                               " ".repeat(margen) + "   | | / _ \\ |  \\| | | | | | | |  _|  \r\n" +
+                                               " ".repeat(margen) + "   | |/ ___ \\| |\\  | |_| | |_| | |___ \r\n" +
+                                               " ".repeat(margen) + "   |_/_/   \\_\\_| \\_|\\__\\_\\\\___/|_____|\r\n" +
+                                               " ".repeat(margen) + "                                      ";
+        return tanque;
+    }
+
+    public static String tituloMago() {
+        int margen = 50;
+        String mago = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "  __  __    _    ____  ___  \r\n" +
+                                               " ".repeat(margen) + " |  \\/  |  / \\  / ___|/ _ \\ \r\n" +
+                                               " ".repeat(margen) + " | |\\/| | / _ \\| |  _| | | |\r\n" +
+                                               " ".repeat(margen) + " | |  | |/ ___ \\ |_| | |_| |\r\n" +
+                                               " ".repeat(margen) + " |_|  |_/_/   \\_\\____|\\___/ \r\n" +
+                                               " ".repeat(margen) + "                            ";
+        return mago;
+    }
+    
     // Título de la tienda.
     public static void tituloTienda(){
 

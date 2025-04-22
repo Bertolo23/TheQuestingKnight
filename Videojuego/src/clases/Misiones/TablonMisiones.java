@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import clases.interfaz.*;
-import clases.personajes.ConstantesPersonaje;
+import clases.personajes.CreacionPersonajes;
 import clases.personajes.Personaje;
 import clases.tienda.*;
 import clases.estadísticas.GestionEstadisticas;
@@ -27,7 +27,7 @@ public class TablonMisiones {
             int valorEstadisticaUnica = GestionEstadisticas.valorEstadisticaUnica(personaje);
             boolean salirTablonMisiones = false;
             do {
-                if(personaje.condiccionesVictoria() == true){
+                if(personaje.condiccionesFinalizacion() == true){
                     salirTablonMisiones = true;
                 }else{
                     int opcionMision = 0;
@@ -48,7 +48,7 @@ public class TablonMisiones {
                                     String continuarMision = Utilidades.leerString("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
                                     Utilidades.espacios(2);
                                     if (continuarMision.equals("c")) {
-                                        mision1.estructuraMision(mision1, personaje, ConstantesPersonaje.enemigo1, listaObjetos);
+                                        mision1.estructuraMision(mision1, personaje, CreacionPersonajes.enemigo1, listaObjetos);
                                     }
                                }else{
                                     System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+" y de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET);
@@ -63,7 +63,7 @@ public class TablonMisiones {
                                         String continuarMision = Utilidades.leerString("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
                                         Utilidades.espacios(2);
                                         if (continuarMision.equals("c")) {
-                                            mision2.estructuraMision(mision2, personaje, ConstantesPersonaje.enemigo2, listaObjetos);
+                                            mision2.estructuraMision(mision2, personaje, CreacionPersonajes.enemigo2, listaObjetos);
                                         }
                                     }else{
                                         System.out.println("No puede empezar la misión, necesita los objetos:\n"+listaObjetos.get(0).getNombre()+"\n"+listaObjetos.get(1).getNombre());
@@ -82,7 +82,7 @@ public class TablonMisiones {
                                         if (continuarMision.equals("c")) {
                                             int probabilidadFallarMision = (int)(Math.random() * 10)+1;
                                             if (probabilidadFallarMision<=7) {
-                                                mision3.estructuraMision(mision3, personaje, ConstantesPersonaje.enemigo3, listaObjetos);
+                                                mision3.estructuraMision(mision3, personaje, CreacionPersonajes.enemigo3, listaObjetos);
                                             }else{
                                                 System.out.println("Misión fallada");
                                             }
@@ -102,7 +102,7 @@ public class TablonMisiones {
                                         String continuarMision = Utilidades.leerString("Pulsa 'c' e intro para seguir con la mision u otra tecla para volver al menu de misiones");
                                         Utilidades.espacios(2);
                                         if (continuarMision.equals("c")) {
-                                            mision4.estructuraMision(mision4, personaje, ConstantesPersonaje.enemigo4, listaObjetos);
+                                            mision4.estructuraMision(mision4, personaje, CreacionPersonajes.enemigo4, listaObjetos);
                                         }
                                     }else{
                                         System.out.println("No puede empezar la misión, necesita los objetos:\n"+listaObjetos.get(1).getNombre()+"\n"+listaObjetos.get(3).getNombre());
