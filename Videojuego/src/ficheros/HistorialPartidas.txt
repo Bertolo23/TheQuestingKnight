@@ -466,3 +466,57 @@ Teniendo una duración de 0:4:282
 
 ==================================================
 
+               SESIÓN
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 12:11:30 el 22/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 12:11:36 el 22/4/2025
+Teniendo una duración de 00:00:06
+
+---------------------------------------------
+
+
+==================================================
+
+               SESIÓN
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 12:19:15 el 22/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 12:19:27 el 22/4/2025
+Teniendo una duración de 00:00:12
+
+---------------------------------------------
+
+
+==================================================
+
+               SESIÓN
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 12:20:53 el 22/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Y la partida terminó a las 12:21:9 el 22/4/2025
+Teniendo una duración de 00:00:15
+
+---------------------------------------------
+
+
+==================================================
+

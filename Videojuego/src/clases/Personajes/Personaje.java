@@ -249,8 +249,15 @@ public abstract class Personaje implements Serializable {
      * @return true si se cumple alguna condición de victoria o muerte o false en caso contrario.
      * @throws IOException Si ocurre un error en la lectura de la entrada.
      */
-    public boolean condiccionesVictoria(){
+    public boolean condiccionesFinalizacion(){
         if (salud <= 0 || dinero >= 250) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean condiccionesVictoria(){
+        if (dinero >= 250) {
             return true;
         }
         return false;

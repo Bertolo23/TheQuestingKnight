@@ -27,7 +27,7 @@ public class TablonMisiones {
             int valorEstadisticaUnica = GestionEstadisticas.valorEstadisticaUnica(personaje);
             boolean salirTablonMisiones = false;
             do {
-                if(personaje.condiccionesVictoria() == true){
+                if(personaje.condiccionesFinalizacion() == true){
                     salirTablonMisiones = true;
                 }else{
                     int opcionMision = 0;

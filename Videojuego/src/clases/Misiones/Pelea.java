@@ -56,7 +56,7 @@ public class Pelea {
                 }else{
                     System.out.println("\nEscriba una opción correcta(1 | 2)");
                 }
-                if (personaje.condiccionesVictoria() == true || enemigo.getSalud()<=0) {
+                if (personaje.condiccionesFinalizacion() == true || enemigo.getSalud()<=0) {
                     if (enemigo.getSalud()<=0) {
                         System.out.println("\nHas matado al enemigo");
                     }

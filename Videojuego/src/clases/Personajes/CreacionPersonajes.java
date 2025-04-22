@@ -8,8 +8,8 @@ public class CreacionPersonajes {
     
 
     // Constantes Generales
-    public static final int DINERO = 0;
-    public static final double SALUD = 5.0;
+    public static final int DINERO = 200;
+    public static final double SALUD = 5;
     public static final int EXPERIENCIA = 0;
     public static final int NIVEL = 1;
     public static final ArrayList<ObjetoTienda> INVENTARIO = new ArrayList<>();

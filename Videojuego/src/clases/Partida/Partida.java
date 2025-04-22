@@ -151,10 +151,10 @@ public class Partida {
 
     public String duracionPartida(Duration duracion){
         long hora = duracion.toHours();
-        long minutos = duracion.toMinutes();
-        long segundos = duracion.toSeconds();
+        long minutos = duracion.toMinutes() % 60;
+        long segundos = duracion.getSeconds() % 60;
 
-        return hora + ":" + minutos + ":" + segundos;
+        return String.format("%02d:%02d:%02d", hora, minutos, segundos);
     }
 
     public static void exportarAFichero(ArrayList<Partida> partidas, File file){
