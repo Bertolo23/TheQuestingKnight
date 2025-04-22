@@ -4,16 +4,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
 
 import clases.partida.Partida;
 import clases.tienda.ObjetoTienda;
-import util.Utilidades;
 
 public class CRUD {
 
 
-    public static void insertarEstadisticas(Partida partida){
+    private static void insertarEstadisticas(Partida partida){
         String sentencia = "INSERT INTO Estadisticas (Vitalidad, Fuerza, Agilidad, PercepcionMagica, EstadisticaEspecial, Nivel) Values  (?, ?, ?, ?, ?, ?)";
         
         try (Connection conexion = ConexionBBDD.gConnection();
@@ -30,8 +28,8 @@ public class CRUD {
         }
     }
     
-    public static void insertarObjetosTienda(Partida partida){
-        String sentencia = "INSERT INTO InventariObjetos (Objeto_1, Objeto_2, Objeto_3, Objeto_4) Values  (?, ?, ?, ?)";
+    private static void insertarObjetosTienda(Partida partida){
+        String sentencia = "INSERT INTO InventariObjetos (Objeto_1, Objeto_2, Objeto_3, Objeto_4) SELECT  (Select id From Objetos where Nombre = ?), (Select id From Objetos where Nombre = ?), (Select id From Objetos where Nombre = ?), (Select id From Objetos where Nombre = ?)";
         
         try (Connection conexion = ConexionBBDD.gConnection();
              PreparedStatement statement = conexion.prepareStatement(sentencia)) {
@@ -82,7 +80,7 @@ public class CRUD {
         }
     }
 
-    public static void selectPartidas(Partida partida){
+    public static void selectPartidas(){
         String sentencia = "Select * From Partidas";
 
         try (Connection conexion = ConexionBBDD.gConnection();
@@ -103,6 +101,33 @@ public class CRUD {
                 
                 System.out.println("_".repeat(126));
                 System.out.printf(" %-10d| %-12d| %-15d| %-13d| %-22s| %-22s| %-8s| %-8b|\n", idPartida, idPersonaje,idEstadisticas , idInventario, fechaYHoraInicio, fechaYHoraFinal, duracion, victoria);
+
+            }
+
+        } catch (SQLException e) {
+        System.out.println("error "+ e.getMessage());
+        }
+    }
+
+    public static void selectEstadisticas(int id){
+        String sentencia = "Select * From Estadisticas Where id = "+id;
+
+        try (Connection conexion = ConexionBBDD.gConnection();
+            Statement statement = conexion.prepareStatement(sentencia)) {
+            ResultSet resultado = statement.executeQuery(sentencia);
+
+            System.out.printf(" %-9s| %-6s| %-8s| %-16s| %-19s| %-5s|\n", "Vitalidad", "Fuerza", "Agilidad", "PercepcionMagica", "EstadisticaEspecial", "Nivel");
+            while (resultado.next()) {
+                int Vitalidad = resultado.getInt("Vitalidad");
+                int Fuerza = resultado.getInt("Fuerza");
+                int Agilidad = resultado.getInt("Agilidad");
+                int PercepcionMagica = resultado.getInt("PercepcionMagica");
+                int EstadisticaEspecial = resultado.getInt("EstadisticaEspecial");
+                int Nivel = resultado.getInt("Nivel");
+
+                
+                System.out.println("_".repeat(70));
+                System.out.printf(" %-9d| %-6d| %-8d| %-16d| %-19d| %-5d|\n", Vitalidad, Fuerza, Agilidad , PercepcionMagica, EstadisticaEspecial, Nivel);
 
             }
 

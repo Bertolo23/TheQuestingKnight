@@ -171,7 +171,12 @@ public class Menus {
                                 int opcionHistorial = Utilidades.leerEntero("Quiere ver el historial desde la BBDD o desde el .txt?(1-2)");
                                 if (opcionHistorial == 1) {
                                     Titulos.tituloHistorialPartidas();
-                                    CRUD.selectPartidas(partida);
+                                    CRUD.selectPartidas();
+                                    String opcionEstadisticas = Utilidades.leerString("Quiere ver las estadisticas de una partida en especifico?(s/n)");
+                                    if (opcionEstadisticas.equalsIgnoreCase("s") ) {
+                                        int idEstadisticas = Utilidades.leerEntero("Escriba el id de la partida");
+                                        CRUD.selectEstadisticas(idEstadisticas); 
+                                    }
                                 }else if (opcionHistorial == 2) {
                                     Titulos.tituloHistorialPartidas();
                                     GestionFicheros.traerInfoFichero(file);
@@ -195,7 +200,7 @@ public class Menus {
             Utilidades.espacios(3);
         }while(salir==false);
 
-        if (!partidas.isEmpty()) {
+        if (partidas.get(0).getPersonaje() != null) {
             Partida.mostrarPartida(partidas);
             Partida.exportarAFichero(partidas, file);
         }

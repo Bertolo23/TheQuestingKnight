@@ -16,7 +16,7 @@ public class Tienda {
     static ObjetoTienda objeto1 = new ObjetoTienda("Espada Encantada", 40);
     static ObjetoTienda objeto2 = new ObjetoTienda("Armadura de Placas", 55);
     static ObjetoTienda objeto3 = new ObjetoTienda("Yegua de Guerra", 60);
-    static ObjetoTienda objeto4 = new ObjetoTienda("Escudo Antimágia", 70);
+    static ObjetoTienda objeto4 = new ObjetoTienda("Escudo Antimagia", 70);
     /**
      * Permite al personaje comprar objetos en la tienda, afectando sus estadísticas y reduciendo su dinero.
      * Se presentan diferentes opciones de compra con sus respectivos efectos en las características del personaje.
