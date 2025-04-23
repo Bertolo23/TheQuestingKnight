@@ -172,10 +172,13 @@ public class Menus {
                                 if (opcionHistorial == 1) {
                                     Titulos.tituloHistorialPartidas();
                                     CRUD.selectPartidas();
-                                    String opcionEstadisticas = Utilidades.leerString("Quiere ver las estadisticas de una partida en especifico?(s/n)");
+                                    String opcionEstadisticas = Utilidades.leerString("Quiere ver las estadisticas, inventario y tipos de Objetos de una partida en especifico?(s/n)");
                                     if (opcionEstadisticas.equalsIgnoreCase("s") ) {
                                         int idEstadisticas = Utilidades.leerEntero("Escriba el id de la partida");
-                                        CRUD.selectEstadisticas(idEstadisticas); 
+                                        Utilidades.espacios(2);
+                                        CRUD.selectEstadisticas(idEstadisticas);
+                                        Utilidades.espacios(2);
+                                        CRUD.selectInventario(idEstadisticas);
                                     }
                                 }else if (opcionHistorial == 2) {
                                     Titulos.tituloHistorialPartidas();

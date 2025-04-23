@@ -31,12 +31,11 @@ public class TablonMisiones {
                     salirTablonMisiones = true;
                 }else{
                     int opcionMision = 0;
-                    int[]pagaMision = InfoMisiones.pagaMision();
-                    double[]saludPerdida = InfoMisiones.saludPerdidaMision();
-                    Misiones mision1 = new Misiones(pagaMision[0], saludPerdida[0], InfoMisiones.textoMision1());
-                    Misiones mision2 = new Misiones(pagaMision[1], saludPerdida[1], InfoMisiones.textoMision2());
-                    Misiones mision3 = new Misiones(pagaMision[2], saludPerdida[2], InfoMisiones.textoMision3());
-                    Misiones mision4 = new Misiones(pagaMision[3], saludPerdida[3], InfoMisiones.textoMision4());
+                    ArrayList<Integer> pagaMision = InfoMisiones.pagaMision();
+                    Misiones mision1 = new Misiones((int) pagaMision.get(0), 0, InfoMisiones.textoMision1());
+                    Misiones mision2 = new Misiones((int) pagaMision.get(1), 0, InfoMisiones.textoMision2());
+                    Misiones mision3 = new Misiones((int) pagaMision.get(2), 0, InfoMisiones.textoMision3());
+                    Misiones mision4 = new Misiones((int) pagaMision.get(3), 0, InfoMisiones.textoMision4());
     
                     Titulos.tablonMisiones();
                     opcionMision = Menus.menuMisiones(personaje);

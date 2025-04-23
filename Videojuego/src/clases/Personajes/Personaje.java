@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import clases.tienda.ObjetoTienda;
+import clases.estadísticas.GestionEstadisticas;
 import clases.interfaz.Titulos;
 import util.Utilidades;
 
@@ -281,6 +282,36 @@ public abstract class Personaje implements Serializable {
         Utilidades.espacios(2);
         Utilidades.continuar("volver al menu de acciones");
         Utilidades.espacios(2);
+    }
+
+    /**
+     * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
+     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y coraje.
+     * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
+     */
+    public void introduccionPersonaje(Personaje personaje) {
+        String tituloPersonaje = "";
+        if(personaje instanceof Luchador){
+            tituloPersonaje = Titulos.tituloLuchador();
+        }
+        if (personaje instanceof Asesino) {
+            tituloPersonaje = Titulos.tituloAsesino();
+        }
+        if (personaje instanceof Tanque) {
+            tituloPersonaje = Titulos.tituloTanque();
+        }
+        if (personaje instanceof Mago) {
+            tituloPersonaje = Titulos.tituloMago();       
+        }
+        int margen = 74;
+        System.out.println(tituloPersonaje);
+        Utilidades.espacios(1);
+        System.out.println(" ".repeat(margen) +Utilidades.ANSI_CYAN+" TUS ESTADÍSTICAS INICIALES SON");
+        GestionEstadisticas.mostrarEstadisticas(personaje);
+        Utilidades.espacios(1);
+        GestionEstadisticas.mostrarSaludYDinero(personaje);
+        Utilidades.espacios(1);
+        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
     }
 
     /**

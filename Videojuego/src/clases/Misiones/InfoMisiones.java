@@ -1,5 +1,7 @@
 package clases.misiones;
 
+import java.util.ArrayList;
+
 /**
  * Clase que almacena la información de las misiones disponibles para el personaje
  * @author Iván Bertolo García
@@ -58,28 +60,16 @@ public class InfoMisiones {
     }
 
     /**
-     * Método que genera y retorna la cantidad de salud perdida en cada misión del luchador.
-     * @return array de valores double que representan la salud perdida en cada misión
-     */
-    public static double[] saludPerdidaMision() {
-        double[] saludPerdida = new double[4];
-        saludPerdida[0] = Math.round((0.25 + (Math.random() * (0.75 - 0.25))) * 10) / 10.0;
-        saludPerdida[1] = Math.round((0.25 + (Math.random() * (1.5 - 0.5))) * 10) / 10.0;
-        saludPerdida[2] = Math.round((0.25 + (Math.random() * (1 - 0.3))) * 10) / 10.0;
-        saludPerdida[3] = Math.round((0.25 + (Math.random() * (1.75 - 0.75))) * 10) / 10.0;
-        return saludPerdida;
-    }
-
-    /**
      * Método que genera y retorna la paga de cada misión del luchador.
      * @return array de valores enteros que representan la paga en dinero de cada misión
      */
-    public static int[] pagaMision() {
-        int[] pagaMision = new int[4]; 
-        pagaMision[0] = (int)(Math.random() * (45 - 20 + 1)) + 10;
-        pagaMision[1] = (int)(Math.random() * (50 - 30 + 1)) + 30;
-        pagaMision[2] = (int)(Math.random() * (35 - 20 + 1)) + 20;
-        pagaMision[3] = (int)(Math.random() * (80 - 40 + 1)) + 20;
-        return pagaMision;
+    public static ArrayList<Integer> pagaMision() {
+        ArrayList<Integer> listaPagaMisiones = new ArrayList<>(); 
+        listaPagaMisiones.add((int)(Math.random() * (45 - 20 + 1)) + 10);
+        listaPagaMisiones.add((int)(Math.random() * (50 - 30 + 1)) + 30);
+        listaPagaMisiones.add((int)(Math.random() * (35 - 20 + 1)) + 20);
+        listaPagaMisiones.add((int)(Math.random() * (80 - 40 + 1)) + 20);
+
+        return listaPagaMisiones;
     }
 }

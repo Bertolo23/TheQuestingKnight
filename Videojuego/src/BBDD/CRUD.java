@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 import clases.partida.Partida;
 import clases.tienda.ObjetoTienda;
+import util.Utilidades;
 
 public class CRUD {
 
@@ -126,8 +127,56 @@ public class CRUD {
                 int Nivel = resultado.getInt("Nivel");
 
                 
-                System.out.println("_".repeat(70));
+                System.out.println("_".repeat(75));
                 System.out.printf(" %-9d| %-6d| %-8d| %-16d| %-19d| %-5d|\n", Vitalidad, Fuerza, Agilidad , PercepcionMagica, EstadisticaEspecial, Nivel);
+
+            }
+
+        } catch (SQLException e) {
+        System.out.println("error "+ e.getMessage());
+        }
+    }
+
+    public static void selectInventario(int id){
+        String sentencia = "Select * From InventariObjetos Where id = "+id;
+
+        try (Connection conexion = ConexionBBDD.gConnection();
+            Statement statement = conexion.prepareStatement(sentencia)) {
+            ResultSet resultado = statement.executeQuery(sentencia);
+
+            System.out.printf(" %-7s| %-7s| %-7s| %-7s|\n", "Objeto1", "Objeto2", "Objeto3", "Objeto4");
+            while (resultado.next()) {
+                int Objeto1 = resultado.getInt("Objeto_1");
+                int Objeto2 = resultado.getInt("Objeto_2");
+                int Objeto3 = resultado.getInt("Objeto_3");
+                int Objeto4 = resultado.getInt("Objeto_4");
+
+                System.out.println("_".repeat(36));
+                System.out.printf(" %-7d| %-7d| %-7d| %-7d|\n", Objeto1, Objeto2, Objeto3 , Objeto4);
+
+            }
+            Utilidades.espacios(1);
+            selectObjetos();
+
+        } catch (SQLException e) {
+        System.out.println("error "+ e.getMessage());
+        }
+    }
+
+    private static void selectObjetos(){
+        String sentencia = "Select * From Objetos";
+
+        try (Connection conexion = ConexionBBDD.gConnection();
+            Statement statement = conexion.prepareStatement(sentencia)) {
+            ResultSet resultado = statement.executeQuery(sentencia);
+
+            System.out.printf(" %-2s| %-21s|\n", "id", "Nombre");
+            while (resultado.next()) {
+                int id = resultado.getInt("id");
+                String Nombre = resultado.getString("Nombre");
+
+                System.out.println("_".repeat(27));
+                System.out.printf(" %-2d| %-21s|\n", id, Nombre);
 
             }
 

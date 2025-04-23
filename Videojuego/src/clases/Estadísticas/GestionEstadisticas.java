@@ -103,39 +103,6 @@ public class GestionEstadisticas {
     }
 
     /**
-     * Método que muestra la introducción del personaje Luchador, presentando sus estadísticas principales.
-     * Muestra información en pantalla sobre la vitalidad, fuerza, agilidad, percepción mágica y coraje.
-     * Coje mediante super() la introducción de personaje de la clase Persona que se completa en este método 
-     */
-    public static void introduccionPersonaje(Personaje personaje) {
-        String tituloPersonaje = "";
-        if(personaje instanceof Luchador){
-            tituloPersonaje = Titulos.tituloLuchador();
-        }
-        if (personaje instanceof Asesino) {
-            tituloPersonaje = Titulos.tituloAsesino();
-        }
-        if (personaje instanceof Tanque) {
-            tituloPersonaje = Titulos.tituloTanque();
-        }
-        if (personaje instanceof Mago) {
-            tituloPersonaje = Titulos.tituloMago();       
-        }
-        int margen = 74;
-        System.out.println(tituloPersonaje);
-        Utilidades.espacios(1);
-        System.out.println(" ".repeat(margen) +Utilidades.ANSI_CYAN+" TUS ESTADÍSTICAS INICIALES SON");
-        GestionEstadisticas.mostrarEstadisticas(personaje);
-        Utilidades.espacios(1);
-        GestionEstadisticas.mostrarSaludYDinero(personaje);
-        Utilidades.espacios(1);
-        System.out.println(Utilidades.ANSI_RED_BACKGROUND + "La salud del personaje no se podrá aumentar" + Utilidades.ANSI_RESET);
-    }
-
-    
-
-
-    /**
      * Metodo que te permite mejorar la estadistica unica de cada personaje
      * @param personaje objeto necesario para poder obtener la estadistica y mejorarla
      * @param cantidadMejorar cantidad de puntos a mejorar

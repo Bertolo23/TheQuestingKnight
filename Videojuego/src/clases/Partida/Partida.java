@@ -160,7 +160,7 @@ public class Partida {
     public static void exportarAFichero(ArrayList<Partida> partidas, File file){
 
         int i = 0;
-        GestionFicheros.llevarInfoAFichero(file," ".repeat(15)+"SESIÓN\n\n"+"=".repeat(50)+"\n\n");
+        GestionFicheros.llevarInfoAFichero(file," ".repeat(10)+"SESIÓN DE PARTIDAS\n\n"+"=".repeat(50)+"\n\n");
         for (Partida cadaPartida : partidas) {
             if (cadaPartida.getPersonaje() != null){
                 i++;
@@ -207,7 +207,8 @@ public class Partida {
         Utilidades.ANSI_PURPLE + estadisticas[4] + " " + 
         Utilidades.ANSI_RESET + estadisticas[5] + 
         "\nCompraste "+personaje.getInventario().size()+" objetos fueron: "+mostrarInventarioPartida(personaje)+
-        "\nY la partida terminó a las " + horaYFechaCompleta(fechaFinal)+
+        "\nConcluyo con una victoria: "+victoria+
+        "\nTerminó a las " + horaYFechaCompleta(fechaFinal)+
         "\nTeniendo una duración de "+duracionPartida(duracion);
     }
 

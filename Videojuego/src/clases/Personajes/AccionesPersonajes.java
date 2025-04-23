@@ -20,7 +20,7 @@ public class AccionesPersonajes {
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */
     public static void accionesPersonaje(Personaje personaje)throws IOException{
-        GestionEstadisticas.introduccionPersonaje(personaje);
+        personaje.introduccionPersonaje(personaje);
         Utilidades.continuar("continuar");
         Utilidades.espacios(6);
         boolean salir = false;
