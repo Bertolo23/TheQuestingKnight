@@ -737,3 +737,22 @@ Teniendo una duración de 00:07:45
 
 ==================================================
 
+          SESIÓN DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 13:14:36 el 25/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 13:16:5 el 25/4/2025
+Teniendo una duración de 00:01:28
+
+---------------------------------------------
+
+
+==================================================
+
