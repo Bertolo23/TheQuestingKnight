@@ -1,4 +1,4 @@
-# THE KING es un juego que el objetivo es convertirse en Rey (llegar a 250 de dinero) sin morir en el camino
+# THE QUESTING KNIGHT es un juego que el objetivo es convertirse en Rey (llegar a 250 de dinero) sin morir en el camino
 
 ## JUGABILIDAD
 
