@@ -104,7 +104,7 @@ public class Misiones {
         System.out.println("Has perdido "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_CYAN+(double) Math.round(mision.getSaludPerdida() * 100.0) / 100+Utilidades.ANSI_RESET+" de salud");
         System.out.println("Has ganado "+Utilidades.ANSI_UNDERLINE+Utilidades.ANSI_YELLOW+mision.getPagaMision()+Utilidades.ANSI_RESET+" de dinero");
         System.out.println();
-        String vueltaAMenu = Utilidades.leerString("Pulsa intro para volver al menú de misiones");
+        Utilidades.leerString("Pulsa intro para volver al menú de misiones");
         Utilidades.espacios(2);
     }
 

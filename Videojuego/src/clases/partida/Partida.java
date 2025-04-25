@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 import ficheros.GestionFicheros;
 import clases.personajes.Personaje;
-import clases.tienda.ObjetoTienda;
 import clases.interfaz.Titulos;
 
 /**
@@ -51,6 +50,10 @@ public class Partida {
         this.fechaFinal = fechaFinal;
         this.duracion = duracion;
         this.victoria = victoria;
+    }
+
+    public Partida(){
+
     }
 
     /**

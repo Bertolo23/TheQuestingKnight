@@ -92,7 +92,7 @@ public class ObjetoTienda {
             System.out.println("Otra vez será");
             Utilidades.espacios(2);
         }
-        String volverMenu = Utilidades.leerString("Pulsa intro para volver a la Tienda");
+        Utilidades.leerString("Pulsa intro para volver a la Tienda");
         Utilidades.espacios(2);
         return false;
     }

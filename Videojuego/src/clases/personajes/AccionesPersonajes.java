@@ -36,7 +36,7 @@ public class AccionesPersonajes {
                         Titulos.GameOver();
                     }
                     Utilidades.espacios(3);
-                    String volverMenuInicio = Utilidades.leerString("Pulsa intro para ir al menú de inicio");
+                    Utilidades.leerString("Pulsa intro para ir al menú de inicio");
                 }else{
                     // -----------------------------------------------------------------MENU ACCIONES-----------------------------------------------------------------------
                     int eleccionAccion = 0;

@@ -26,7 +26,7 @@ public class GestionEstadisticas {
     public static void enseñarEstadisticas(Personaje personaje) throws IOException {
         Titulos.tituloEstadisticas();
         mostrarEstadisticas(personaje);
-        String vueltaAMenu = Utilidades.leerString("Pulsa intro para volver al menú de acciones");
+        Utilidades.leerString("Pulsa intro para volver al menú de acciones");
         Utilidades.espacios(2);
     }
 

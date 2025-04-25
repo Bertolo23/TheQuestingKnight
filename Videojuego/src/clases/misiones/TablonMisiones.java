@@ -52,7 +52,7 @@ public class TablonMisiones {
                                }else{
                                     System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+" y de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET);
                                     System.out.println();
-                                    String volverMenu = Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");
+                                    Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");
                                } 
                             break;
                         case 2:// ------------------------------------------------------------------personaje/MISION2-----------------------------------------------------------------------
@@ -70,7 +70,7 @@ public class TablonMisiones {
                                 }else{
                                     System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 9 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 7 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 12 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
                                     System.out.println();
-                                    String volverMenu = Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");                            } 
+                                    Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");                            } 
                             break;
                         case 3:// ------------------------------------------------------------------personaje/MISION3-----------------------------------------------------------------------
                                 if (personaje.getVitalidad()>=10 && personaje.getFuerza()>=8 && personaje.getAgilidad()>=9 && personaje.getPercepcionMagica()>=5) {
@@ -92,7 +92,7 @@ public class TablonMisiones {
                                 }else{
                                     System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 10 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 9 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+"y 5 de "+Utilidades.ANSI_BLUE+"Percepción Mágica "+Utilidades.ANSI_RESET);
                                     System.out.println();
-                                    String volverMenu = Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");                            } 
+                                    Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");                            } 
                             break;
                         case 4:// ------------------------------------------------------------------personaje/MISION4-----------------------------------------------------------------------
                                 if (personaje.getVitalidad()>=12 && personaje.getFuerza()>=8 && personaje.getAgilidad()>=15 && valorEstadisticaUnica>=13) {
@@ -109,7 +109,7 @@ public class TablonMisiones {
                                 }else{
                                     System.out.println(Utilidades.ANSI_UNDERLINE+"No puede cumplir esta misión"+Utilidades.ANSI_RESET+" ya que necesitaría 12 de "+Utilidades.ANSI_GREEN+"vitalidad"+Utilidades.ANSI_RESET+", 8 de "+Utilidades.ANSI_RED+"fuerza"+Utilidades.ANSI_RESET+", 15 de "+Utilidades.ANSI_YELLOW+"Agilidad "+Utilidades.ANSI_RESET+" y 13 de "+Utilidades.ANSI_PURPLE+nombreEstadisticaUnica+Utilidades.ANSI_RESET);
                                     System.out.println();
-                                    String volverMenu = Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");
+                                    Utilidades.leerString("Pulsa intro para volver al Tablón de Misiones");
                                 }
                             break;
                         case 5:

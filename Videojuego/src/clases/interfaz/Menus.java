@@ -120,7 +120,7 @@ public class Menus {
     public static void menuPrincipal(Luchador luchador, Asesino asesino, Tanque tanque, Mago mago)throws IOException{
         boolean salir = false;
         ArrayList<Partida> partidas = new ArrayList<>();
-        Instant inicioPartida = null;;
+        Instant inicioPartida = null;
         Instant finPartida;
         //GestionFicheros.inPutSerializacionPersonajes();
         File file = new File("Videojuego/src/ficheros/HistorialPartidas.txt");
@@ -129,7 +129,7 @@ public class Menus {
         
         do{
             String opcion = menuPersonaje().toLowerCase(); 
-            Partida partida = new Partida(null, null, null, null, null, false);
+            Partida partida = new Partida();
                 switch (opcion) {
                     case "l":// ------------------------------------------------------------------LUCHADOR----------------------------------------------------------------------- 
                                 inicioPartida = Instant.now();
@@ -198,11 +198,11 @@ public class Menus {
             finPartida = Instant.now();
             if (inicioPartida!=null) {
                 partida.setDuracion(Duration.between(inicioPartida, finPartida));
+                partida.setFechaFinal(LocalDateTime.now());
+                partidas.add(partida);
             }
-            partida.setFechaFinal(LocalDateTime.now());
-            partidas.add(partida);
             Utilidades.espacios(3);
-        }while(salir==false);
+        }while(!salir);
 
         if (partidas.get(0).getPersonaje() != null) {
             Partida.mostrarPartida(partidas);

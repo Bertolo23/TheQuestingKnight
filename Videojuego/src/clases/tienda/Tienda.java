@@ -33,38 +33,31 @@ public class Tienda {
 
             do {
                 Utilidades.espacios(2);
-                boolean dejarDeComprar = false;
+                Titulos.tituloTienda();
+                opcionTienda = Menus.menuTienda(personaje);
 
-                do {
-                    // Muestra la tienda y obtiene la opción elegida por el usuario
-                    Titulos.tituloTienda();
-                    opcionTienda = Menus.menuTienda(personaje);
+                switch (opcionTienda) {
+                    case 1: // Compra de Espada Encantada
+                        ObjetoTienda.gestionCompra(personaje, objeto1, Titulos.espada());
+                        break;
+                    case 2: // Armadura de Placas
+                        ObjetoTienda.gestionCompra(personaje, objeto2, Titulos.armadura());
+                        break;
+                    case 3: // Compra de Báculo
+                        ObjetoTienda.gestionCompra(personaje, objeto3, Titulos.caballo());
+                        break;
+                    case 4: // Compra de Manto
+                        ObjetoTienda.gestionCompra(personaje, objeto4, Titulos.escudo());
+                        break;
+                    case 5: // Salir de la tienda
+                        salirTienda = true;
+                        Utilidades.espacios(2);
+                        break;
+                    default:
+                        System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + Utilidades.ANSI_RESET);
+                        break;
+                }
 
-                    switch (opcionTienda) {
-                        case 1: // Compra de Espada Encantada
-                            ObjetoTienda.gestionCompra(personaje, objeto1, Titulos.espada());
-                            break;
-                        case 2: // Armadura de Placas
-                            ObjetoTienda.gestionCompra(personaje, objeto2, Titulos.armadura());
-                            break;
-                        case 3: // Compra de Báculo
-                            ObjetoTienda.gestionCompra(personaje, objeto3, Titulos.caballo());
-                            break;
-                        case 4: // Compra de Manto
-                            ObjetoTienda.gestionCompra(personaje, objeto4, Titulos.escudo());
-                            break;
-                        case 5: // Salir de la tienda
-                            dejarDeComprar = true;
-                            Utilidades.espacios(2);
-                            break;
-                        default:
-                            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + Utilidades.ANSI_RESET);
-                            break;
-                    }
-
-                } while (!dejarDeComprar);
-
-                salirTienda = true;
             } while (!salirTienda);  
 
         }else{
