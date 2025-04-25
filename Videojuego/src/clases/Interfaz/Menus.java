@@ -41,6 +41,7 @@ public class Menus {
     /**
      * Muestra el menú de la tienda y recoge la opción seleccionada.
      * 
+     * @param peronaje objeto necesario para poder saber la salud y dinero del peronaje mientras se compra 
      * @return La opción elegida por el jugador.
      * @throws IOException Si ocurre un error al leer la entrada del usuario.
      */

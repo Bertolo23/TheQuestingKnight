@@ -12,10 +12,16 @@ import clases.personajes.Personaje;
 import clases.personajes.Tanque;
 import util.Utilidades;
 
+/**
+ * Clase encargada de gestionar y manipular las estadísticas de los personajes y enemigos.
+ */
 public class GestionEstadisticas {
-    
+
     /**
-     * Muestra las estadísticas actuales del personaje.
+     * Muestra las estadísticas actuales del personaje y espera a que el usuario presione Enter para continuar.
+     *
+     * @param personaje Objeto de tipo Personaje cuyas estadísticas se desean mostrar.
+     * @throws IOException si ocurre un error durante la entrada del usuario.
      */
     public static void enseñarEstadisticas(Personaje personaje) throws IOException {
         Titulos.tituloEstadisticas();
@@ -27,13 +33,13 @@ public class GestionEstadisticas {
     /**
      * Obtiene el valor de la estadística única de un personaje en función de su clase específica.
      * Cada clase de personaje tiene una estadística única que la distingue de las demás.
-     * 
+     *
      * @param personaje Objeto de tipo Personaje cuya estadística única se desea obtener.
      * @return El valor de la estadística única correspondiente a la clase del personaje.
      */
-    public static int valorEstadisticaUnica(Personaje personaje){
+    public static int valorEstadisticaUnica(Personaje personaje) {
         int valorEstadisticaUnica = 0;
-        if(personaje instanceof Luchador){
+        if (personaje instanceof Luchador) {
             valorEstadisticaUnica = ((Luchador) personaje).getCoraje();
         }
         if (personaje instanceof Asesino) {
@@ -49,15 +55,14 @@ public class GestionEstadisticas {
     }
 
     /**
-     * Obtiene el nombre de la estadística única de un personaje en función de su clase específica.
-     * Cada clase de personaje tiene una estadística única que la distingue de las demás.
-     * 
+     * Obtiene el nombre de la estadística única de un personaje según su clase.
+     *
      * @param personaje Objeto de tipo Personaje cuya estadística única se desea conocer.
-     * @return El nombre de la estadística única correspondiente a la clase del personaje.
+     * @return El nombre de la estadística única del personaje.
      */
-    public static String nombreEstadisticaUnica(Personaje personaje){
+    public static String nombreEstadisticaUnica(Personaje personaje) {
         String nombreEstadisticaUnica = "";
-        if(personaje instanceof Luchador){
+        if (personaje instanceof Luchador) {
             nombreEstadisticaUnica = "Coraje";
         }
         if (personaje instanceof Asesino) {
@@ -73,16 +78,17 @@ public class GestionEstadisticas {
     }
 
     /**
-     * Método que muestra todas la estadísticas completas de cada tipo de personaje, incluida la única
-     * @param personaje objeto personaje para saber que estadística única va a ser
+     * Muestra en consola todas las estadísticas del personaje, incluidas las estadísticas únicas.
+     *
+     * @param personaje Objeto de tipo Personaje del cual se mostrarán las estadísticas.
      */
-    public static void mostrarEstadisticas(Personaje personaje){
+    public static void mostrarEstadisticas(Personaje personaje) {
         int valorEstadisticaUnica = valorEstadisticaUnica(personaje);
         String nombreEstadisticaUnica = nombreEstadisticaUnica(personaje).toUpperCase();
         int margenEntreNumeros = 7;
         int margen = 55;
         Utilidades.espacios(2);
-        System.out.println(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║"+Utilidades.ANSI_PURPLE + "║ "+nombreEstadisticaUnica+" ║" + Utilidades.ANSI_RESET);
+        System.out.println(" ".repeat(margen) + Utilidades.ANSI_GREEN + "     ║ VITALIDAD ║" + Utilidades.ANSI_RED + "║ FUERZA ║" + Utilidades.ANSI_YELLOW + "║ AGILIDAD ║" + Utilidades.ANSI_BLUE + "║ PERCEPCIÓN MÁGICA ║" + Utilidades.ANSI_PURPLE + "║ " + nombreEstadisticaUnica + " ║" + Utilidades.ANSI_RESET);
         System.out.println(Utilidades.ANSI_GREEN + " ".repeat(margen + 8) + "║ " + personaje.getVitalidad() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_RED +
                 "║ " + personaje.getFuerza() + " ║" + " ".repeat(margenEntreNumeros) + Utilidades.ANSI_YELLOW +
                 "║ " + personaje.getAgilidad() + " ║" + " ".repeat(margenEntreNumeros + 4) + Utilidades.ANSI_BLUE +
@@ -91,48 +97,45 @@ public class GestionEstadisticas {
         Utilidades.espacios(2);
     }
 
-    
     /**
-     * Muestra la salud y el dinero actual del personaje en la partida.
-     * Se formatea la salida para que se vea correctamente en la interfaz.
+     * Muestra en consola la salud y el dinero actuales del personaje.
+     *
+     * @param personaje Objeto de tipo Personaje del cual se mostrarán los valores.
      */
-    public static void mostrarSaludYDinero(Personaje personaje){
+    public static void mostrarSaludYDinero(Personaje personaje) {
         int margen = 80;
-        System.out.println(" ".repeat(margen) +"SALUD  " + Utilidades.ANSI_CYAN + (double) Math.round(personaje.getSalud() * 100.0) / 100 + Utilidades.ANSI_RESET 
+        System.out.println(" ".repeat(margen) + "SALUD  " + Utilidades.ANSI_CYAN + (double) Math.round(personaje.getSalud() * 100.0) / 100 + Utilidades.ANSI_RESET
                 + "       DINERO  " + Utilidades.ANSI_YELLOW + personaje.getDinero() + Utilidades.ANSI_RESET);
     }
 
     /**
-     * Metodo que te permite mejorar la estadistica unica de cada personaje
-     * @param personaje objeto necesario para poder obtener la estadistica y mejorarla
-     * @param cantidadMejorar cantidad de puntos a mejorar
+     * Mejora la estadística única del personaje en una cantidad específica.
+     *
+     * @param personaje        Objeto de tipo Personaje al que se le mejorará la estadística.
+     * @param cantidadMejorar  Cantidad en la que se incrementará dicha estadística.
      */
-    public static void mejoraEstadisticaUnica(Personaje personaje, int cantidadMejorar){
-
-        if(personaje instanceof Luchador){
-            ((Luchador) personaje).setCoraje(((Luchador)personaje).getCoraje()+cantidadMejorar);
+    public static void mejoraEstadisticaUnica(Personaje personaje, int cantidadMejorar) {
+        if (personaje instanceof Luchador) {
+            ((Luchador) personaje).setCoraje(((Luchador) personaje).getCoraje() + cantidadMejorar);
         }
         if (personaje instanceof Asesino) {
-            ((Asesino) personaje).setSigilo(((Asesino)personaje).getSigilo()+cantidadMejorar);
+            ((Asesino) personaje).setSigilo(((Asesino) personaje).getSigilo() + cantidadMejorar);
         }
         if (personaje instanceof Tanque) {
-            ((Tanque) personaje).setBarrera(((Tanque)personaje).getBarrera()+cantidadMejorar);
+            ((Tanque) personaje).setBarrera(((Tanque) personaje).getBarrera() + cantidadMejorar);
         }
         if (personaje instanceof Mago) {
-            ((Mago) personaje).setPoderDeHabilidad(((Mago)personaje).getPoderDeHabilidad()+cantidadMejorar);
+            ((Mago) personaje).setPoderDeHabilidad(((Mago) personaje).getPoderDeHabilidad() + cantidadMejorar);
         }
-
     }
 
     /**
-     * Extrae las estadísticas principales y el nivel del personaje y las almacena en un array.
-     * El array resultante contiene los valores en el siguiente orden:
-     * vitalidad, fuerza, agilidad, percepción mágica, estadística única, nivel.
-     * 
-     * @param personaje Objeto de tipo Personaje del cual se extraerán las estadísticas.
-     * @return Un array de enteros que contiene las estadísticas principales y el nivel del personaje.
+     * Extrae las estadísticas principales y el nivel del personaje y las devuelve como un array.
+     *
+     * @param personaje Objeto de tipo Personaje.
+     * @return Array de enteros con vitalidad, fuerza, agilidad, percepción mágica, estadística única y nivel.
      */
-    public static int[] sacarEstadisticasYNivel(Personaje personaje){
+    public static int[] sacarEstadisticasYNivel(Personaje personaje) {
         int[] estadisticas = new int[Utilidades.NUMERO_ESTADISTICAS];
         estadisticas[0] = personaje.getVitalidad();
         estadisticas[1] = personaje.getFuerza();
@@ -142,13 +145,11 @@ public class GestionEstadisticas {
         estadisticas[5] = personaje.getNivel();
         return estadisticas;
     }
-        /**
-     * Restaura las estadísticas de un personaje a sus valores iniciales según su clase específica.
-     * Se restablecen atributos generales como dinero, experiencia, nivel y salud, 
-     * además de los atributos específicos según si el personaje es un Luchador, Asesino, Tanque o Mago.
-     * 
-     * @param personaje El personaje cuya estadística será restablecida a los valores predeterminados.
-     *                  Se determina su clase específica y se asignan los valores correspondientes.
+
+    /**
+     * Restaura las estadísticas del personaje a sus valores por defecto según su clase específica.
+     *
+     * @param personaje Objeto de tipo Personaje que será reseteado.
      */
     public static void reseteoEstadisticas(Personaje personaje) {
         personaje.setDinero(CreacionPersonajes.DINERO);
@@ -187,9 +188,14 @@ public class GestionEstadisticas {
         }
     }
 
+    /**
+     * Restaura las estadísticas de un enemigo a sus valores iniciales en función de su tipo.
+     *
+     * @param enemigo Objeto de tipo Enemigo que será reseteado.
+     */
     public static void reseteoEstadisticasEnemigo(Enemigo enemigo) {
         enemigo.setFatiga(CreacionPersonajes.ENEMIGO_FATIGA);
-        
+
         if (enemigo.getTipo().equals("Campesino")) {
             enemigo.setVitalidad(CreacionPersonajes.ENEMIGO1_VITALIDAD);
             enemigo.setFuerza(CreacionPersonajes.ENEMIGO1_FUERZA);

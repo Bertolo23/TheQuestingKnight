@@ -92,6 +92,8 @@ public class Misiones {
      * Método que estructura la misión, actualiza los atributos del personaje y muestra los resultados en consola
      * @param mision objeto de la clase Misiones con los datos de la misión actual
      * @param personaje objeto de la clase Personaje que realizará la misión
+     * @param enemigo objeto de la clase Enemigo al que se enfrentara el personaje pricipal en la mision
+     * @param listaObjetos lista que recoge los objetos de la tienda para comprobar si los tiene el personaje durante la mision
      * @throws IOException si hay un error en la entrada del usuario
      */
     public void estructuraMision(Misiones mision, Personaje personaje, Enemigo enemigo, ArrayList<ObjetoTienda> listaObjetos)throws IOException{

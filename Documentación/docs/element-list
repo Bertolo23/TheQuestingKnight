@@ -1,8 +1,11 @@
 unnamed package
-clases.Entrenamiento
-clases.Interfaz
-clases.Misiones
-clases.Partida
-clases.Personajes
-clases.Tienda
+bbdd
+clases.entrenamiento
+clases.estadísticas
+clases.interfaz
+clases.misiones
+clases.partida
+clases.personajes
+clases.tienda
+ficheros
 util

@@ -688,3 +688,52 @@ Teniendo una duraci�n de 00:00:03
 
 ==================================================
 
+          SESIÓN DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 10:22:8 el 25/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 10:22:22 el 25/4/2025
+Teniendo una duración de 00:00:14
+
+---------------------------------------------
+
+
+==================================================
+
+          SESIÓN DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 10:24:57 el 25/4/2025
+Con el personaje [4mLuchador[0m
+Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 10:25:12 el 25/4/2025
+Teniendo una duración de 00:00:14
+
+---------------------------------------------
+            PARTIDA  2
+
+Partida empezada a las 10:25:17 el 25/4/2025
+Con el personaje [4mTanque[0m
+Las estadísticas y el nivel finales fueron: [32m10 [31m8 [33m3 [34m0 [35m7 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 10:33:2 el 25/4/2025
+Teniendo una duración de 00:07:45
+
+---------------------------------------------
+
+
+==================================================
+

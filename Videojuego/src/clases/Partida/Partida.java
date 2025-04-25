@@ -1,4 +1,5 @@
 package clases.partida;
+
 import util.Utilidades;
 
 import java.io.File;
@@ -19,16 +20,16 @@ import clases.interfaz.Titulos;
  * @author IBG
  */
 public class Partida {
-    
+
     /**
      * ATRIBUTOS DE LA CLASE PARTIDA
      */
-    private LocalDateTime fechaInicio; // Fecha y hora de inicio de la partida.
-    private Personaje personaje; // Nombre del personaje con el que se juega la partida.
-    private int[] estadisticas; // Estadísticas finales del personaje al terminar la partida.
-    private LocalDateTime fechaFinal; // Fecha y hora de finalización de la partida.
-    private Duration duracion;
-    private Boolean victoria;
+    private LocalDateTime fechaInicio;// Fecha y hora en la que comienza la partida.
+    private Personaje personaje;// Personaje con el que se juega la partida.
+    private int[] estadisticas;// Estadísticas finales del personaje al terminar la partida.
+    private LocalDateTime fechaFinal;// Fecha y hora en la que finaliza la partida.
+    private Duration duracion;// Duración total de la partida.
+    private Boolean victoria;// Indica si la partida ha sido ganada (true) o perdida (false).
 
     /**
      * CONSTRUCTORES
@@ -37,9 +38,11 @@ public class Partida {
     /**
      * Constructor de la clase Partida.
      * @param fechaInicio Fecha y hora en que comienza la partida.
-     * @param nombrePersonaje Nombre del personaje con el que se juega la partida.
+     * @param personaje Personaje con el que se juega la partida.
      * @param estadisticas Array de enteros que almacena las estadísticas finales del personaje.
      * @param fechaFinal Fecha y hora en que finaliza la partida.
+     * @param duracion Duración total de la partida.
+     * @param victoria Indica si se ha ganado la partida.
      */
     public Partida(LocalDateTime fechaInicio, Personaje personaje, int[] estadisticas, LocalDateTime fechaFinal, Duration duracion, Boolean victoria) {
         this.fechaInicio = fechaInicio;
@@ -51,7 +54,7 @@ public class Partida {
     }
 
     /**
-     * GETTERS Y SETTERS
+     *  GETTERS Y SETTERS
      */
 
     /**
@@ -87,16 +90,16 @@ public class Partida {
     }
 
     /**
-     * Obtiene el tipo de personaje con el que se jugó la partida.
-     * @return El tipo de personaje.
+     * Obtiene el personaje con el que se jugó la partida.
+     * @return El personaje de la partida.
      */
     public Personaje getPersonaje() {
         return personaje;
     }
 
     /**
-     * Establece el tipo de personaje con el que se jugará la partida.
-     * @param personaje El tipo de personaje.
+     * Establece el personaje con el que se jugará la partida.
+     * @param personaje El personaje de la partida.
      */
     public void setPersonaje(Personaje personaje) {
         this.personaje = personaje;
@@ -118,26 +121,42 @@ public class Partida {
         this.fechaFinal = fechaFinal;
     }
 
+    /**
+     * Obtiene la duración total de la partida.
+     * @return Objeto Duration con la duración.
+     */
     public Duration getDuracion() {
         return duracion;
     }
 
+    /**
+     * Establece la duración total de la partida.
+     * @param duracion Objeto Duration con la nueva duración.
+     */
     public void setDuracion(Duration duracion) {
         this.duracion = duracion;
     }
 
+    /**
+     * Indica si la partida fue ganada.
+     * @return true si fue victoria, false si fue derrota.
+     */
     public Boolean getVictoria() {
         return victoria;
     }
 
+    /**
+     * Establece el resultado final de la partida.
+     * @param victoria true si se ganó la partida, false en caso contrario.
+     */
     public void setVictoria(Boolean victoria) {
         this.victoria = victoria;
     }
 
     /**
-     * Método que formatea una fecha y hora en una cadena legible.
-     * @param tiempo Un objeto LocalDateTime con la fecha y hora a formatear.
-     * @return Una cadena con la fecha y hora formateadas en el formato "HH:MM:SS el DD/MM/YYYY".
+     * Formatea una fecha y hora en una cadena legible.
+     * @param tiempo Objeto LocalDateTime a formatear.
+     * @return Cadena con la hora y fecha en formato "HH:MM:SS el DD/MM/YYYY".
      */
     public String horaYFechaCompleta(LocalDateTime tiempo){
         int año = tiempo.getYear();
@@ -149,16 +168,24 @@ public class Partida {
         return hora + ":" + minutos + ":" + segundos + " el " + dia + "/" + mes + "/" + año;
     }
 
+    /**
+     * Devuelve la duración de la partida en formato "HH:MM:SS".
+     * @param duracion Objeto Duration con la duración total.
+     * @return Cadena con la duración formateada.
+     */
     public String duracionPartida(Duration duracion){
         long hora = duracion.toHours();
         long minutos = duracion.toMinutes() % 60;
         long segundos = duracion.getSeconds() % 60;
-
         return String.format("%02d:%02d:%02d", hora, minutos, segundos);
     }
 
+    /**
+     * Exporta una lista de partidas a un fichero de texto.
+     * @param partidas Lista de partidas a exportar.
+     * @param file Fichero de destino.
+     */
     public static void exportarAFichero(ArrayList<Partida> partidas, File file){
-
         int i = 0;
         GestionFicheros.llevarInfoAFichero(file," ".repeat(10)+"SESIÓN DE PARTIDAS\n\n"+"=".repeat(50)+"\n\n");
         for (Partida cadaPartida : partidas) {
@@ -170,8 +197,11 @@ public class Partida {
         GestionFicheros.llevarInfoAFichero(file,"\n\n"+"=".repeat(50)+"\n\n");
     }
 
+    /**
+     * Muestra por pantalla un resumen de las partidas jugadas.
+     * @param partidas Lista de partidas a mostrar.
+     */
     public static void mostrarPartida(ArrayList<Partida> partidas){
-
         int i = 0;
         Titulos.tituloResumenPartida();
         for (Partida cadaPartida : partidas) {
@@ -182,9 +212,13 @@ public class Partida {
         } 
     }
 
+    /**
+     * Devuelve una cadena con los nombres de los objetos en el inventario del personaje.
+     * @param personaje Personaje del que se desea mostrar el inventario.
+     * @return Cadena con los nombres de los objetos.
+     */
     private static String mostrarInventarioPartida(Personaje personaje){
         String[] arrayNombresObjetos = new String[personaje.getInventario().size()];
-
         for (int i = 0;i<personaje.getInventario().size();i++){
             arrayNombresObjetos[i] = personaje.getInventario().get(i).getNombre();
         }
@@ -193,7 +227,7 @@ public class Partida {
 
     /**
      * Representación en cadena de la información de la partida.
-     * @return Una cadena con la fecha de inicio, el nombre del personaje, las estadísticas y la fecha de finalización.
+     * @return Cadena con todos los datos relevantes de la partida.
      */
     @Override
     public String toString() {
@@ -207,10 +241,8 @@ public class Partida {
         Utilidades.ANSI_PURPLE + estadisticas[4] + " " + 
         Utilidades.ANSI_RESET + estadisticas[5] + 
         "\nCompraste "+personaje.getInventario().size()+" objetos fueron: "+mostrarInventarioPartida(personaje)+
-        "\nConcluyo con una victoria: "+victoria+
+        "\nConcluyó con una victoria: "+victoria+
         "\nTerminó a las " + horaYFechaCompleta(fechaFinal)+
         "\nTeniendo una duración de "+duracionPartida(duracion);
     }
-
-    
 }

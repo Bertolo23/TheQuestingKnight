@@ -13,6 +13,17 @@ import util.Utilidades;
 
 public class Pelea {
     
+         /**
+         * Método principal que gestiona la pelea entre un personaje y un enemigo.
+         * Permite al jugador decidir entre atacar o defenderse en cada turno.
+         * La pelea continúa hasta que se cumpla alguna condición de finalización.
+         * 
+         * @param personaje El personaje controlado por el jugador.
+         * @param enemigo El enemigo contra el que se enfrenta.
+         * @param listaObjetos Lista de objetos posibles del juego.
+         * @return El daño total recibido por el personaje durante el combate.
+         * @throws IOException Si hay un error de entrada/salida durante la interacción.
+         */
         public static double pelea(Personaje personaje, Enemigo enemigo, ArrayList<ObjetoTienda> listaObjetos ) throws IOException{
             Random rand = new Random();
             Titulos.enfrentamiento();
@@ -68,6 +79,16 @@ public class Pelea {
             
         }
 
+        /**
+         * Calcula el daño que el personaje recibe de parte del enemigo.
+         * Tiene en cuenta si el personaje tiene un objeto de defensa equipado.
+         * 
+         * @param personaje El personaje que recibe el daño.
+         * @param enemigo El enemigo que inflige el daño.
+         * @param listaObjetos Lista de objetos del juego.
+         * @param rand Instancia de Random para los cálculos aleatorios.
+         * @return El valor del daño recibido, ya ajustado y redondeado.
+         */
         public static double dañoRecibido(Personaje personaje, Enemigo enemigo, ArrayList<ObjetoTienda> listaObjetos, Random rand){
             double dañoEnemigo = 0;
             if (personaje.getInventario().contains(listaObjetos.get(1))) {
@@ -85,6 +106,16 @@ public class Pelea {
             return (double) dañoEnemigo; 
         }
 
+        /**
+         * Calcula el daño que el personaje inflige al enemigo.
+         * Depende de si el personaje tiene un arma equipada o no.
+         * 
+         * @param personaje El personaje que ataca.
+         * @param enemigo El enemigo que recibe el daño.
+         * @param listaObjetos Lista de objetos del juego.
+         * @param rand Instancia de Random para los cálculos aleatorios.
+         * @return El valor del daño infligido, ajustado y redondeado.
+         */
         public static double dañoProvocado(Personaje personaje, Enemigo enemigo, ArrayList<ObjetoTienda> listaObjetos, Random rand){
             double dañoRealizado = 0;
             if (personaje.getInventario().contains(listaObjetos.get(0))) {
@@ -99,6 +130,16 @@ public class Pelea {
             return (double) dañoRealizado; 
         }
 
+        /**
+         * Calcula la probabilidad de que el personaje esquive un ataque enemigo.
+         * Depende de si tiene un objeto defensivo y de la diferencia de estadísticas.
+         * 
+         * @param personaje El personaje que se defiende.
+         * @param enemigo El enemigo que ataca.
+         * @param listaObjetos Lista de objetos del juego.
+         * @param rand Instancia de Random para los cálculos aleatorios.
+         * @return La probabilidad de esquivar el ataque, redondeada.
+         */
         public static double probabilidadFallo(Personaje personaje, Enemigo enemigo, ArrayList<ObjetoTienda> listaObjetos, Random rand){
             double probabilidadFallo = 0;
             if (personaje.getInventario().contains(listaObjetos.get(3))) {

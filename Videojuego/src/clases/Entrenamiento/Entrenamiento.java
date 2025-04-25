@@ -15,7 +15,7 @@ public class Entrenamiento {
     /**
      * Muestra las opciones disponibles para mejorar las estadísticas del personaje durante el entrenamiento.
      *
-     * @param personaje
+     * @param personaje objeto necesario para sacar el nombre de la estadistica única de cada tipode personaje
      * @throws IOException
      */
     public static int preguntasEntrenamiento(Personaje personaje)throws IOException{

@@ -76,7 +76,8 @@ public class Titulos {
                         imprimirCuadroTexto(texto, 30, Utilidades.ANSI_YELLOW);
 
     }
-
+    
+    // Título del Personaje Luchador
     public static String tituloLuchador(){
 
         int margen = 65;
@@ -89,6 +90,7 @@ public class Titulos {
         return luchador;
     }
 
+    // // Título del Personaje Asesino
     public static String tituloAsesino() {
         int margen = 50;
         String asesino = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "     _    ____  _____ ____ ___ _   _  ___  \r\n" +
@@ -100,6 +102,7 @@ public class Titulos {
         return asesino;
     }
 
+    // // Título del Personaje Tanque
     public static String tituloTanque() {
         int margen = 50;
         String tanque = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "  _____  _    _   _  ___  _   _ _____ \r\n" +
@@ -111,6 +114,7 @@ public class Titulos {
         return tanque;
     }
 
+    // // Título del Personaje Mago
     public static String tituloMago() {
         int margen = 50;
         String mago = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "  __  __    _    ____  ___  \r\n" +
@@ -167,6 +171,7 @@ public class Titulos {
                                                     " ".repeat(margen) +" |_| |_|___|____/ |_| \\___/|_| \\_\\___/_/   \\_\\_____| |____/|_____| |_| /_/   \\_\\_| \\_\\|_| |___|____/_/   \\_\\____/ \r\n" +Utilidades.ANSI_RESET);
     }
 
+    // Título que se muestra cuando se sale de la sesion y muestra las partidas jugadas
     public static void tituloResumenPartida(){
         int margen = 40;
         System.out.println(Utilidades.ANSI_PURPLE+  " ".repeat(margen) + "  ____  _____ ____  _   _ __  __ _____ _   _   ____  _____   ____   _    ____ _____ ___ ____    _    \r\n" + //
@@ -177,6 +182,7 @@ public class Titulos {
                                                     " ".repeat(margen) +"                                                                                                           "+Utilidades.ANSI_RESET);
     }
 
+    // Titulo de una opcion del menu de acciones donde se comprueba el menu del personaje
     public static void tituloInventario(){
         int margen = 63;
         System.out.println(Utilidades.ANSI_PURPLE+  " ".repeat(margen) +"  ___ _   ___     _______ _   _ _____  _    ____  ___ ___  \r\n" + //
@@ -186,6 +192,8 @@ public class Titulos {
                                                     " ".repeat(margen) +" |___|_| \\_|  \\_/  |_____|_| \\_| |_/_/   \\_\\_| \\_\\___\\___/ \r\n" + //
                                                     " ".repeat(margen) +"                                                           "+ Utilidades.ANSI_RESET);
     }
+
+    // Imagen que expresa el nombramiento del caballero ganando la partida asi
     public static void nombramiento(){
         int margen = 40;
         System.out.println(Utilidades.ANSI_CYAN+
@@ -229,6 +237,7 @@ public class Titulos {
                         " ".repeat(margen) +"                                                            `+ : :......   '''"+Utilidades.ANSI_RESET);
     }
 
+    // Titulo de fin de partida cuando se gana la partida
     public static void tituloVictoria(){
         int margen = 45;
         System.out.println(Utilidades.ANSI_BLUE+" ".repeat(margen)  +"██╗  ██╗ █████╗ ███████╗     ██████╗  █████╗ ███╗   ██╗ █████╗ ██████╗  ██████╗ ██╗\r\n" + //
@@ -241,6 +250,7 @@ public class Titulos {
     
     }
 
+    // Imagen que expresa la muerte del personaje en la partida
     public static void calavera(){
         int margen = 60;
         System.out.println(
@@ -260,6 +270,7 @@ public class Titulos {
                                         " ".repeat(margen) +"     (_/                                   \\_)");
     }
 
+    // Titulo de fin de partida cuando se muere
     public static void GameOver(){
         int margen = 50;
         System.out.println();
@@ -275,6 +286,10 @@ public class Titulos {
                             System.out.println(" ".repeat(margen) +"                                                    ░                       "+Utilidades.ANSI_RESET);
     }
 
+    /**
+     * Crea el arte ascci de una espada dentro de una variable que sera usada en la tienda
+     * @return variable String
+     */
     public static String espada(){
         int margen = 56;
         String espada =
@@ -311,6 +326,10 @@ public class Titulos {
 
     }
 
+    /**
+     * Crea el arte ascci de una armadura dentro de una variable que sera usada en la tienda
+     * @return variable String
+     */
     public static String armadura() {
         int margen = 71;
         String armadura =
@@ -336,7 +355,10 @@ public class Titulos {
         return armadura;
     }
     
-
+    /**
+     * Crea el arte ascci de un caballo dentro de una variable que sera usada en la tienda
+     * @return variable String
+     */
     public static String caballo() {
         int margen = 62; // Puedes ajustar este valor según necesites
        String caballo =  
@@ -361,6 +383,10 @@ public class Titulos {
             return caballo;
     }
 
+    /**
+     * Crea el arte ascci de un escudo dentro de una variable que sera usada en la tienda
+     * @return variable String
+     */
     public static String escudo() {
         int margen = 72;
         String escudo =  
@@ -390,6 +416,7 @@ public class Titulos {
         return escudo;
     }
     
+    // Imagen de un enfrentamiento entre dos personajes 
     public static void enfrentamiento(){
 
         System.out.print("            *_\r\n" + //
