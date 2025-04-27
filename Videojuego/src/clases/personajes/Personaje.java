@@ -343,7 +343,7 @@ public abstract class Personaje implements Serializable {
         if (personaje instanceof Mago) {
             tituloPersonaje = Titulos.tituloMago();
         }
-
+        Utilidades.espacios(13);
         int margen = 74;
         System.out.println(tituloPersonaje);
         Utilidades.espacios(1);

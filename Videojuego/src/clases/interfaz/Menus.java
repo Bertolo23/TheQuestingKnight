@@ -177,8 +177,12 @@ public class Menus {
                                     if (opcionEstadisticas.equalsIgnoreCase("s") ) {
                                         int idEstadisticas = Utilidades.leerEntero("Escriba el id de la partida");
                                         Utilidades.espacios(2);
+                                        System.out.println(Utilidades.ANSI_UNDERLINE+"ESTADÍSTICAS"+Utilidades.ANSI_RESET);
+                                        Utilidades.espacios(1);
                                         CRUD.selectEstadisticas(idEstadisticas);
                                         Utilidades.espacios(2);
+                                        System.out.println(Utilidades.ANSI_UNDERLINE+"INVENTARIO"+Utilidades.ANSI_RESET);
+                                        Utilidades.espacios(1);
                                         CRUD.selectInventario(idEstadisticas);
                                     }
                                 }else if (opcionHistorial == 2) {
@@ -195,8 +199,9 @@ public class Menus {
                             Utilidades.espacios(2);
                         break;
                 }
-            finPartida = Instant.now();
+            
             if (inicioPartida!=null) {
+                finPartida = Instant.now();
                 partida.setDuracion(Duration.between(inicioPartida, finPartida));
                 partida.setFechaFinal(LocalDateTime.now());
                 partidas.add(partida);
@@ -204,16 +209,18 @@ public class Menus {
             Utilidades.espacios(3);
         }while(!salir);
 
-        if (partidas.get(0).getPersonaje() != null) {
+        if (!partidas.isEmpty()) {
             Partida.mostrarPartida(partidas);
             Partida.exportarAFichero(partidas, file);
-        }
-        for (Partida cadaPartida : partidas) {
-            if (cadaPartida.getPersonaje() != null) {
-                CRUD.insertarPartidaSQL(cadaPartida);
-            }else{
-                System.out.println("Hasta Luego");
+
+            for (Partida cadaPartida : partidas) {
+                if (cadaPartida.getPersonaje() != null) {
+                    CRUD.insertarPartidaSQL(cadaPartida);
+                }
             }
+        }else{
+            System.out.println("Hasta Luego");
         }
+        
     }
 }

@@ -147,7 +147,7 @@ public class CRUD {
             ResultSet resultado = statement.executeQuery();
 
             System.out.printf(" %-9s| %-6s| %-8s| %-16s| %-19s| %-5s|\n",
-                    "Vitalidad", "Fuerza", "Agilidad", "PercepcionMagica", "EstadisticaEspecial", "Nivel");
+                    Utilidades.ANSI_GREEN+"Vitalidad"+Utilidades.ANSI_RESET, Utilidades.ANSI_RED+"Fuerza"+Utilidades.ANSI_RESET, Utilidades.ANSI_YELLOW+"Agilidad"+Utilidades.ANSI_RESET, Utilidades.ANSI_BLUE+"PercepcionMágica"+Utilidades.ANSI_RESET, Utilidades.ANSI_PURPLE+"EstadisticaEspecial"+Utilidades.ANSI_RESET, "Nivel");
 
             while (resultado.next()) {
                 int Vitalidad = resultado.getInt("Vitalidad");
@@ -190,6 +190,8 @@ public class CRUD {
                 System.out.printf(" %-7d| %-7d| %-7d| %-7d|\n", Objeto1, Objeto2, Objeto3, Objeto4);
             }
 
+            Utilidades.espacios(1);
+            System.out.println(Utilidades.ANSI_UNDERLINE+"OBJETOS DISPONIBLES"+Utilidades.ANSI_RESET);
             Utilidades.espacios(1);
             selectObjetos();
 

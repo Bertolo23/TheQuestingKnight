@@ -27,44 +27,45 @@ public class Tienda {
     public static void tiendaDeObjetos(Personaje personaje) throws IOException {
 
         // Verifica si el personaje tiene dinero para comprar
-        if (personaje.getDinero() > 0) {
+        
             boolean salirTienda = false;
             int opcionTienda = 0;
 
             do {
                 Utilidades.espacios(2);
                 Titulos.tituloTienda();
-                opcionTienda = Menus.menuTienda(personaje);
+                if (personaje.getDinero() > 0) {
+                    opcionTienda = Menus.menuTienda(personaje);
 
-                switch (opcionTienda) {
-                    case 1: // Compra de Espada Encantada
-                        ObjetoTienda.gestionCompra(personaje, objeto1, Titulos.espada());
-                        break;
-                    case 2: // Armadura de Placas
-                        ObjetoTienda.gestionCompra(personaje, objeto2, Titulos.armadura());
-                        break;
-                    case 3: // Compra de Báculo
-                        ObjetoTienda.gestionCompra(personaje, objeto3, Titulos.caballo());
-                        break;
-                    case 4: // Compra de Manto
-                        ObjetoTienda.gestionCompra(personaje, objeto4, Titulos.escudo());
-                        break;
-                    case 5: // Salir de la tienda
-                        salirTienda = true;
-                        Utilidades.espacios(2);
-                        break;
-                    default:
-                        System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + Utilidades.ANSI_RESET);
-                        break;
+                    switch (opcionTienda) {
+                        case 1: // Compra de Espada Encantada
+                            ObjetoTienda.gestionCompra(personaje, objeto1, Titulos.espada());
+                            break;
+                        case 2: // Armadura de Placas
+                            ObjetoTienda.gestionCompra(personaje, objeto2, Titulos.armadura());
+                            break;
+                        case 3: // Compra de Báculo
+                            ObjetoTienda.gestionCompra(personaje, objeto3, Titulos.caballo());
+                            break;
+                        case 4: // Compra de Manto
+                            ObjetoTienda.gestionCompra(personaje, objeto4, Titulos.escudo());
+                            break;
+                        case 5: // Salir de la tienda
+                            salirTienda = true;
+                            Utilidades.espacios(2);
+                            break;
+                        default:
+                            System.out.println(Utilidades.ANSI_UNDERLINE + "Escriba una opción válida (1-5)" + Utilidades.ANSI_RESET);
+                            break;
+                    }
+                }else{
+                    System.out.println(Utilidades.ANSI_UNDERLINE+"No tienes dinero no puedes comprar nada"+Utilidades.ANSI_RESET);
+                    Utilidades.espacios(2);
+                    Utilidades.continuar("volver al Menu de Acciones");
+                    salirTienda = true;
                 }
 
             } while (!salirTienda);  
-
-        }else{
-            System.out.println(Utilidades.ANSI_UNDERLINE+"No tienes dinero no puedes comprar nada"+Utilidades.ANSI_RESET);
-            System.out.println();
-            System.out.println();
-        }
     }
 
     /**

@@ -628,7 +628,7 @@ Teniendo una duraciÃ³n de 00:00:15
 
 ==================================================
 
-               SESIÓN
+               SESIï¿½N
 
 ==================================================
 
@@ -636,10 +636,10 @@ Teniendo una duraciÃ³n de 00:00:15
 
 Partida empezada a las 12:28:41 el 23/4/2025
 Con el personaje [4mTanque[0m
-Las estadísticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m1 [35m7 [0m1
+Las estadï¿½sticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m1 [35m7 [0m1
 Compraste 2 objetos fueron: [Espada Encantada, Armadura de Placas]
-Y la partida terminó a las 12:29:5 el 23/4/2025
-Teniendo una duración de 00:00:24
+Y la partida terminï¿½ a las 12:29:5 el 23/4/2025
+Teniendo una duraciï¿½n de 00:00:24
 Y la partida concluyo con una victoria: false
 
 ---------------------------------------------
@@ -647,7 +647,7 @@ Y la partida concluyo con una victoria: false
 
 ==================================================
 
-          SESIÓN DE PARTIDAS
+          SESIï¿½N DE PARTIDAS
 
 ==================================================
 
@@ -655,33 +655,33 @@ Y la partida concluyo con una victoria: false
 
 Partida empezada a las 13:30:18 el 23/4/2025
 Con el personaje [4mLuchador[0m
-Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m3 [35m12 [0m1
+Las estadï¿½sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m3 [35m12 [0m1
 Compraste 0 objetos fueron: []
 Concluyo con una victoria: false
-Terminó a las 13:31:20 el 23/4/2025
-Teniendo una duración de 00:01:02
+Terminï¿½ a las 13:31:20 el 23/4/2025
+Teniendo una duraciï¿½n de 00:01:02
 
 ---------------------------------------------
             PARTIDA  2
 
 Partida empezada a las 13:31:24 el 23/4/2025
 Con el personaje [4mAsesino[0m
-Las estadísticas y el nivel finales fueron: [32m5 [31m6 [33m8 [34m3 [35m9 [0m1
+Las estadï¿½sticas y el nivel finales fueron: [32m5 [31m6 [33m8 [34m3 [35m9 [0m1
 Compraste 0 objetos fueron: []
 Concluyo con una victoria: false
-Terminó a las 13:31:27 el 23/4/2025
-Teniendo una duración de 00:00:02
+Terminï¿½ a las 13:31:27 el 23/4/2025
+Teniendo una duraciï¿½n de 00:00:02
 
 ---------------------------------------------
             PARTIDA  3
 
 Partida empezada a las 13:31:30 el 23/4/2025
 Con el personaje [4mTanque[0m
-Las estadísticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m0 [35m7 [0m1
+Las estadï¿½sticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m0 [35m7 [0m1
 Compraste 0 objetos fueron: []
 Concluyo con una victoria: false
-Terminó a las 13:31:33 el 23/4/2025
-Teniendo una duración de 00:00:03
+Terminï¿½ a las 13:31:33 el 23/4/2025
+Teniendo una duraciï¿½n de 00:00:03
 
 ---------------------------------------------
 
@@ -756,7 +756,7 @@ Teniendo una duraciÃ³n de 00:01:28
 
 ==================================================
 
-          SESIÓN DE PARTIDAS
+          SESIï¿½N DE PARTIDAS
 
 ==================================================
 
@@ -764,11 +764,147 @@ Teniendo una duraciÃ³n de 00:01:28
 
 Partida empezada a las 14:59:0 el 25/4/2025
 Con el personaje [4mLuchador[0m
+Las estadï¿½sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Concluyï¿½ con una victoria: false
+Terminï¿½ a las 14:59:2 el 25/4/2025
+Teniendo una duraciï¿½n de 00:00:01
+
+---------------------------------------------
+
+
+==================================================
+
+          SESIï¿½N DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 12:35:9 el 27/4/2025
+Con el personaje [4mLuchador[0m
+Las estadï¿½sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Concluyï¿½ con una victoria: false
+Terminï¿½ a las 12:35:16 el 27/4/2025
+Teniendo una duraciï¿½n de 00:00:06
+
+---------------------------------------------
+
+
+==================================================
+
+
+            PARTIDA  1
+
+Partida empezada a las 12:42:40 el 27/4/2025
+Con el personaje [4mLuchador[0m
+Las estadï¿½sticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 0 objetos fueron: []
+Concluyï¿½ con una victoria: false
+Terminï¿½ a las 12:42:44 el 27/4/2025
+Teniendo una duraciï¿½n de 00:00:04
+
+---------------------------------------------
+
+
+==================================================
+
+          SESIÓN DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 13:25:46 el 27/4/2025
+Con el personaje [4mLuchador[0m
 Las estadísticas y el nivel finales fueron: [32m9 [31m8 [33m7 [34m2 [35m12 [0m1
+Compraste 4 objetos fueron: [Espada Encantada, Armadura de Placas, Yegua de Guerra, Escudo Antimagia]
+Concluyó con una victoria: false
+Terminó a las 13:31:35 el 27/4/2025
+Teniendo una duración de 00:05:48
+
+---------------------------------------------
+
+
+==================================================
+
+          SESIÓN DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 20:20:5 el 27/4/2025
+Con el personaje [4mAsesino[0m
+Las estadísticas y el nivel finales fueron: [32m5 [31m6 [33m8 [34m3 [35m9 [0m1
 Compraste 0 objetos fueron: []
 Concluyó con una victoria: false
-Terminó a las 14:59:2 el 25/4/2025
-Teniendo una duración de 00:00:01
+Terminó a las 20:20:23 el 27/4/2025
+Teniendo una duración de 00:00:17
+
+---------------------------------------------
+            PARTIDA  2
+
+Partida empezada a las 20:20:28 el 27/4/2025
+Con el personaje [4mTanque[0m
+Las estadísticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m0 [35m7 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 20:20:33 el 27/4/2025
+Teniendo una duración de 00:00:04
+
+---------------------------------------------
+            PARTIDA  3
+
+Partida empezada a las 20:20:35 el 27/4/2025
+Con el personaje [4mMago[0m
+Las estadísticas y el nivel finales fueron: [32m4 [31m3 [33m5 [34m10 [35m10 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 20:20:42 el 27/4/2025
+Teniendo una duración de 00:00:07
+
+---------------------------------------------
+
+
+==================================================
+
+          SESIÓN DE PARTIDAS
+
+==================================================
+
+            PARTIDA  1
+
+Partida empezada a las 20:21:10 el 27/4/2025
+Con el personaje [4mAsesino[0m
+Las estadísticas y el nivel finales fueron: [32m5 [31m6 [33m8 [34m3 [35m9 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 20:21:15 el 27/4/2025
+Teniendo una duración de 00:00:04
+
+---------------------------------------------
+            PARTIDA  2
+
+Partida empezada a las 20:21:17 el 27/4/2025
+Con el personaje [4mTanque[0m
+Las estadísticas y el nivel finales fueron: [32m10 [31m7 [33m3 [34m0 [35m7 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 20:21:21 el 27/4/2025
+Teniendo una duración de 00:00:04
+
+---------------------------------------------
+            PARTIDA  3
+
+Partida empezada a las 20:21:22 el 27/4/2025
+Con el personaje [4mMago[0m
+Las estadísticas y el nivel finales fueron: [32m4 [31m3 [33m5 [34m10 [35m10 [0m1
+Compraste 0 objetos fueron: []
+Concluyó con una victoria: false
+Terminó a las 20:21:27 el 27/4/2025
+Teniendo una duración de 00:00:04
 
 ---------------------------------------------
 

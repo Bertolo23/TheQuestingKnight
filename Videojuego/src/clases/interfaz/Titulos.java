@@ -92,7 +92,7 @@ public class Titulos {
 
     // // Título del Personaje Asesino
     public static String tituloAsesino() {
-        int margen = 50;
+        int margen = 68;
         String asesino = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "     _    ____  _____ ____ ___ _   _  ___  \r\n" +
                                                " ".repeat(margen) + "    / \\  / ___|| ____/ ___|_ _| \\ | |/ _ \\ \r\n" +
                                                " ".repeat(margen) + "   / _ \\ \\___ \\|  _| \\___ \\| ||  \\| | | | |\r\n" +
@@ -104,7 +104,7 @@ public class Titulos {
 
     // // Título del Personaje Tanque
     public static String tituloTanque() {
-        int margen = 50;
+        int margen = 70;
         String tanque = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "  _____  _    _   _  ___  _   _ _____ \r\n" +
                                                " ".repeat(margen) + " |_   _|/ \\  | \\ | |/ _ \\| | | | ____|\r\n" +
                                                " ".repeat(margen) + "   | | / _ \\ |  \\| | | | | | | |  _|  \r\n" +
@@ -116,7 +116,7 @@ public class Titulos {
 
     // // Título del Personaje Mago
     public static String tituloMago() {
-        int margen = 50;
+        int margen = 77;
         String mago = Utilidades.ANSI_PURPLE + " ".repeat(margen) + "  __  __    _    ____  ___  \r\n" +
                                                " ".repeat(margen) + " |  \\/  |  / \\  / ___|/ _ \\ \r\n" +
                                                " ".repeat(margen) + " | |\\/| | / _ \\| |  _| | | |\r\n" +
